@@ -1,0 +1,1000 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WinPlanner
+</name>
+</assembly>
+<members>
+<member name="T:WinPlanner.dstFaktureringsBilagListe.tblFaktureringsBilagDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilagListe.tblFaktureringsBilagRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilagListe.tblFaktureringsBilagRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilagListe">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilagListeTableAdapters.tblFaktureringsBilagTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.GruppeListeDropdown.tblGrupperDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.GruppeListeDropdown.tblGrupperRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.GruppeListeDropdown.tblGrupperRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.GruppeListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.GruppeListeDropdownTableAdapters.tblGrupperTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBookingListe.viewBookingListeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBookingListe.viewBookingListeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBookingListe.viewBookingListeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBookingListe">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstBookingListeTableAdapters.viewBookingListeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstFindLinjerMedFejl.tblLinjerMedFejlDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstFindLinjerMedFejl.tblLinjerMedFejlRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstFindLinjerMedFejl.tblLinjerMedFejlRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstFindLinjerMedFejl">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstFindLinjerMedFejlTableAdapters.tblLinjerMedFejlTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.beskrivelse">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.BookingHeader">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.Cancel">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.chainClosed">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.chainOpen">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.DLU_Logo_Stort">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.dlulogo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.FaktureringHeader">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.file">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.højre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.lockClose">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.lockOpen">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.logo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.MatStatusErSend">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.MatStatusSkalIkkeSendes">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.MatStatusSkalSendes">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.medieplan_top_master">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.MedieplanHeader">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.miniArrow_down">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.miniArrow_up">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.MultiplePagesImage">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.ned">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.ny_stor">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.op">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.orderedlist">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.pilgridned">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.pilgridop">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeAfsluttetOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeFærdigTjekketOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeFaktureretOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeMedieplan">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeNyMedieplan">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeOrdreIkkeSendt">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeRettetOrdreIkkeGenud">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeStandsetOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeUbetaltOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StaKodeUdsendtOrdre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedGreenOff">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedGreenOn">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedRedOff">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedRedOn">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedYellowOff">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.StatusLedYellowOn">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.SupportbilagHeader">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.TabSpace">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.TabStatus">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:WinPlanner.My.Resources.Resources.venstre">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:WinPlanner.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:WinPlanner.dstPlannerPlaner.tblPlannerPlanerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstPlannerPlaner.tblPlannerPlanerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstPlannerPlaner.tblPlannerPlanerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstPlannerPlaner">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstPlannerPlanerTableAdapters.tblPlannerPlanerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.UgedagListeDropdown.tblDageDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.UgedagListeDropdown.tblDageRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.UgedagListeDropdown.tblDageRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.UgedagListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.UgedagListeDropdownTableAdapters.tblDageTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBergskeAfstemning.tblBergskeAfstemningDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBergskeAfstemning.tblBergskeAfstemningRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBergskeAfstemning.tblBergskeAfstemningRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBergskeAfstemning">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstBergskeAfstemningTableAdapters.tblBergskeAfstemningTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstFindMedieplaner.tblFundneplanerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstFindMedieplaner.tblFundneplanerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstFindMedieplaner.tblFundneplanerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstFindMedieplaner">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstFindMedieplanerTableAdapters.tblFundneplanerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanLinjer.tblMedieplanLinjerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanLinjer.tblMedieplanLinjerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanLinjer.tblMedieplanLinjerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanLinjer">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanLinjerTableAdapters.tblMedieplanLinjerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.RegionListeDropdown.tblRegionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.RegionListeDropdown.tblRegionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.RegionListeDropdown.tblRegionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.RegionListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.RegionListeDropdownTableAdapters.tblRegionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselLinjerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselLinjerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler.tblWEBForespørgselLinjerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstForespørgsler">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgslerTableAdapters.tblWEBForespørgselTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstForespørgslerTableAdapters.tblWEBForespørgselLinjerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstFakturaFejl.tblFakturaFejlTekstDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstFakturaFejl.tblFakturaFejlTekstRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstFakturaFejl.tblFakturaFejlTekstRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstFakturaFejl">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstFakturaFejlTableAdapters.tblFakturaFejlTekstTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.UgeavisListeDropdown.tblUgeaviserDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.UgeavisListeDropdown.tblUgeaviserRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.UgeavisListeDropdown.tblUgeaviserRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.UgeavisListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.UgeavisListeDropdownTableAdapters.tblUgeaviserTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilag.tblFaktureringsBilagDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilag.tblFaktureringsBilagRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilag.tblFaktureringsBilagRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilag">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstFaktureringsBilagTableAdapters.tblFaktureringsBilagTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstManglerAnnonceKontrol.tblManglerKontrolDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstManglerAnnonceKontrol.tblManglerKontrolRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstManglerAnnonceKontrol.tblManglerKontrolRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstManglerAnnonceKontrol">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstManglerAnnonceKontrolTableAdapters.tblManglerKontrolTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.PlaceringListeDropdown.tblPlaceringDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.PlaceringListeDropdown.tblPlaceringRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.PlaceringListeDropdown.tblPlaceringRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.PlaceringListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.PlaceringListeDropdownTableAdapters.tblPlaceringTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.PostNrListeDropdown.tblPostNrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.PostNrListeDropdown.tblPostNrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.PostNrListeDropdown.tblPostNrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.PostNrListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.PostNrListeDropdownTableAdapters.tblPostNrTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstErSendt.viewOrdreErSendtDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstErSendt.viewOrdreErSendtRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstErSendt.viewOrdreErSendtRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstErSendt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstErSendtTableAdapters.viewOrdreErSendtTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.DiMPdotNetDataSet.tblBladStamdataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.DiMPdotNetDataSet.tblBladStamdataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.DiMPdotNetDataSet.tblBladStamdataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.DiMPdotNetDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.DiMPdotNetDataSetTableAdapters.tblBladStamdataTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstOversigt.viewOversigtDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstOversigt.viewOversigtRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstOversigt.viewOversigtRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstOversigt">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstOversigtTableAdapters.viewOversigtTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladeMedIRabatform.tblBladeMedIRabatformDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladeMedIRabatform.tblBladeMedIRabatformRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladeMedIRabatform.tblBladeMedIRabatformRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladeMedIRabatform">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstBladeMedIRabatformTableAdapters.tblBladeMedIRabatformTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstMateriale.tblMaterialeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstMateriale.tblMaterialeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstMateriale.tblMaterialeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstMateriale">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstMaterialeTableAdapters.tblMaterialeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.DPKulørListeDropDown.tblDPKulørDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.DPKulørListeDropDown.tblDPKulørRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.DPKulørListeDropDown.tblDPKulørRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.DPKulørListeDropDown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.DPKulørListeDropDownTableAdapters.tblDPKulørTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.AnnoncørListeDropdown.tblAnnoncørerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.AnnoncørListeDropdown.tblAnnoncørerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.AnnoncørListeDropdown.tblAnnoncørerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.AnnoncørListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.AnnoncørListeDropdownTableAdapters.tblAnnoncørerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.BureauListeDropdown.tblBureauerDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.BureauListeDropdown.tblBureauerRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.BureauListeDropdown.tblBureauerRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.BureauListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.BureauListeDropdownTableAdapters.tblBureauerTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstKonkurrenter.tblKonkurrenterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstKonkurrenter.tblKonkurrenterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstKonkurrenter.tblKonkurrenterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstKonkurrenter">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstKonkurrenterTableAdapters.tblKonkurrenterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstOmsætning.OmsætningDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstOmsætning.OmsætningRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstOmsætning.OmsætningRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstOmsætning">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstOmsætningTableAdapters.OmsætningTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstPrislister.tblPrislisterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstPrislister.tblPrislisterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstPrislister.tblPrislisterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstPrislister">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstPrislisterTableAdapters.tblPrislisterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladDækningDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladStamdataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrUgeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPriserDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tableMedAllePriserDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrÅrDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblÅrMedPriserDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladDækningRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladStamdataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrUgeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPriserRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tableMedAllePriserRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrÅrRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblÅrMedPriserRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladDækningRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblBladStamdataRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrUgeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPriserRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tableMedAllePriserRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblPrislisterPrBladPrÅrRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata.tblÅrMedPriserRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdata">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblBladDækningTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblBladStamdataTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblPrislisterPrBladPrUgeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblPrislisterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblPriserTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tableMedAllePriserTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblPrislisterPrBladPrÅrTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstBladStamdataTableAdapters.tblÅrMedPriserTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstGruppeRabatter.tblGruppeRabatterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstGruppeRabatter.tblGruppeRabatterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstGruppeRabatter.tblGruppeRabatterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstGruppeRabatter">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstGruppeRabatterTableAdapters.tblGruppeRabatterTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.GeoKodeListeDropdown.tblGeoKodeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.GeoKodeListeDropdown.tblGeoKodeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.GeoKodeListeDropdown.tblGeoKodeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.GeoKodeListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.GeoKodeListeDropdownTableAdapters.tblGeoKodeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.DelområdeListeDropdown.tblDelOmrådeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.DelområdeListeDropdown.tblDelOmrådeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.DelområdeListeDropdown.tblDelOmrådeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.DelområdeListeDropdown">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.DelområdeListeDropdownTableAdapters.tblDelOmrådeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplan.tblMedieplanDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplan.tblMedieplanRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplan.tblMedieplanRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WinPlanner.dstMedieplan">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WinPlanner.dstMedieplanTableAdapters.tblMedieplanTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+</members>
+</doc>

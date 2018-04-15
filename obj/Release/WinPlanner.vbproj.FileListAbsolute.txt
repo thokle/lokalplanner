@@ -1,0 +1,627 @@
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmImportFraPlanner.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmImportFraPlanner.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.dll
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.xml
+C:\Users\Carl-Erik Sørensen\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmImportFraPlanner.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.Compatibility.dll
+E:\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.Compatibility.dll
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.1.xml
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
+C:\Users\cws\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\index.swf
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Lokal planner.Net.isl
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.exe.config
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.exe.manifest
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.application
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.exe
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.pdb
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\WinPlanner.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\AxInterop.InetCtlsObjects.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\CrystalDecisions.ReportSource.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\CrystalDecisions.Shared.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\CrystalDecisions.Windows.Forms.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\EmailVerifierComponent.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Documents.Core.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Documents.Excel.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Shared.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.AppStylistSupport.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.Misc.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinDataSource.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinDock.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinEditors.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinGrid.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinMaskedEdit.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinSchedule.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinStatusBar.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinTabControl.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinToolbars.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.v14.1.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Interop.InetCtlsObjects.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Microsoft.VisualBasic.Compatibility.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Rebex.Net.Ftp.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Documents.Core.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Documents.Excel.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinToolbars.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinTabControl.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinStatusBar.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinSchedule.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinMaskedEdit.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinGrid.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinEditors.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinDock.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.UltraWinDataSource.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.Misc.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Win.AppStylistSupport.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Infragistics4.Shared.v14.1.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmImportFraPlanner.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+C:\Users\cws.DLU\Documents\Visual Studio 2010\Projects\Lokal planner.Net\WinPlanner\bin\Release\Rebex.Net.ProxySocket.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKommentar.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOpretKontakt.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSletFiler.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdvælgKontakter.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\OversigtSkalSendesGrid.bin
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Common.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Rebex.Net.ProxySocket.dll
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+C:\Users\cws\Google Drive\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+H:\Lokal planner.Net\WinPlanner\bin\Release\index.swf
+H:\Lokal planner.Net\WinPlanner\bin\Release\Lokal planner.Net.isl
+H:\Lokal planner.Net\WinPlanner\bin\Release\OversigtSkalSendesGrid.bin
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.config
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe.manifest
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
+H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Windows.Forms.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinStatusBar.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinSchedule.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinMaskedEdit.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinEditors.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDock.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinDataSource.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.xml
+H:\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKommentar.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOpretKontakt.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSletFiler.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdvælgKontakter.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBerskeAfstemning.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKonkurrentInfo.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnoncørOmsætning.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmEmail.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilagListe.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFaktureringsBilag.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFjernOverførtOrdre.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKopierTilNy.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmOmsætning.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSendTilNavision.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkiftStatus.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmWebExport.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.LPSplashScreen.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmForespørgsler.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaRettelse.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFakturaBemærkning.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAnnonceKontrol.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBilagsbladeTil.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.FrmBladStamData.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmCheckTekst.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmFejlListe.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMaterialeUdsending.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilføjPrisliste.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmVisRabatter.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmBookingListe.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmAbout.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmErSendt.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmGemSom.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmUdsending.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSkalSendes.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRapportVisning.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmTilBlade.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmRabatformer.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMain.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmSupportBilag.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.Resources.resources
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbproj.GenerateResource.Cache
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.licenses
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.TrustInfo.xml
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe.manifest
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
