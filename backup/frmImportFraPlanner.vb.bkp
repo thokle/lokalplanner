@@ -1,0 +1,36 @@
+﻿'Imports Infragistics.Win.UltraWinGrid
+
+'Public Class frmImportFraPlanner
+
+'  Private Sub frmImportFraPlanner_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+'    Me.grdPlannerPlaner.DisplayLayout.Save(My.Computer.FileSystem.SpecialDirectories.CurrentUserApplicationData & "\PlannerGrid.bin", PropertyCategories.All)
+'  End Sub
+
+'  Private Sub frmImportFraPlanner_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+'    If My.Settings.LoadGridUserSettings AndAlso My.Computer.FileSystem.FileExists(My.Computer.FileSystem.SpecialDirectories.CurrentUserApplicationData & "\PlannerGrid.bin") Then
+'      Me.grdPlannerPlaner.DisplayLayout.Load(My.Computer.FileSystem.SpecialDirectories.CurrentUserApplicationData & "\PlannerGrid.bin", PropertyCategories.All)
+'    End If
+'    Me.TblPlannerPlanerTableAdapter.Fill(Me.DstPlannerPlaner.tblPlannerPlaner)
+'  End Sub
+
+'  Private Sub grdPlannerPlaner_DoubleClickRow(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs) Handles grdPlannerPlaner.DoubleClickRow
+
+'    TblPlannerPlanerTableAdapter.UpdateKonsulentCode(frmMain.BrugerNavn, e.Row.Cells("PlannerID").Value)
+'    frmMain.AktivtModul = "Medieplan"
+
+'    Dim nyFrmMedieplan As New frmMedieplan("Medieplan")
+'    nyFrmMedieplan.MdiParent = My.Forms.frmMain
+'    nyFrmMedieplan.cboAnnoncørNO_.Text = e.Row.Cells("Annoncør").Value
+'    nyFrmMedieplan.cboBureauNO_.Text = e.Row.Cells("Bureau").Value
+'    nyFrmMedieplan.txtFormat1.Text = e.Row.Cells("Format1").Value
+'    nyFrmMedieplan.txtFormat2.Text = e.Row.Cells("Format2").Value
+'    nyFrmMedieplan.optAntalFarver.Value = e.Row.Cells("AntalFarver").Value
+'    nyFrmMedieplan.cboPlaceringID.Text = e.Row.Cells("Placering").Value
+
+'    nyFrmMedieplan.Show()
+'    nyFrmMedieplan.WindowState = FormWindowState.Maximized
+'    frmMain.TilføjPlannerAviser(e.Row.Cells("Ugeaviser").Value)
+'    Me.TblPlannerPlanerTableAdapter.Fill(Me.DstPlannerPlaner.tblPlannerPlaner)
+
+'  End Sub
+'End Class

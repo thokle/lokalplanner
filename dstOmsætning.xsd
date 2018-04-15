@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstOmsætning" targetNamespace="http://tempuri.org/dstOmsætning.xsd" xmlns:mstns="http://tempuri.org/dstOmsætning.xsd" xmlns="http://tempuri.org/dstOmsætning.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OmsætningTableAdapter" GeneratorDataComponentClassName="OmsætningTableAdapter" Name="Omsætning" UserDataComponentName="OmsætningTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUgeÅr" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillByUgeÅr" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillByUgeÅr">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN NavisionContact.ContactNoFilter &lt;&gt; '' THEN (SELECT NavCon.Name FROM NavisionContact NavCon WHERE NavCon.No_ = NavisionContact.ContactNoFilter) ELSE NavisionContact.Name END AS Annoncør, NavisionContact2.Name AS Bureau, tblBladStamdata.Navn AS Ugeavis, tblDelOmråde.DelOmrådeKode, 
+                         tblDelOmråde.DelOmrådeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, tblGeoKode.GeoKodeNavn, 
+                         tblGeoKode.GeoKodeSortKey, Salesperson.Name AS Konsulent, CASE WHEN IndrykningsÅr = @År THEN tblMedieplanLinjer.Mm ELSE 0 END AS MmÅrNy, 
+                         CASE WHEN IndrykningsÅr = @År - 1 THEN tblMedieplanLinjer.Mm ELSE 0 END AS MmÅrGammel, 
+                         CASE WHEN IndrykningsÅr = @År THEN tblMedieplanLinjer.Total ELSE 0 END AS PrisÅrNy, 
+                         CASE WHEN IndrykningsÅr = @År - 1 THEN tblMedieplanLinjer.Total ELSE 0 END AS PrisÅrGammel, tblMedieplan.IndrykningsUge, tblMedieplan.IndrykningsÅr, 
+                         tblBladStamdata.Ejerforhold, CASE WHEN tblAnnoncekontrol.SidePlacering IS NULL THEN 0 ELSE tblAnnoncekontrol.SidePlacering END AS SidePlaceringen, CASE WHEN IndrykningsÅr = @År THEN tblMedieplanLinjer.MiljøTillæg ELSE 0 END AS MiljøTillægNy, CASE WHEN IndrykningsÅr = @År - 1 THEN tblMedieplanLinjer.MiljøTillæg ELSE 0 END AS MiljøTillægGammel, CASE WHEN IndrykningsÅr = @År THEN CASE WHEN tblMedieplan.SikkerhedsGodt = 1 THEN CASE WHEN tblMedieplan.InfoGodt = 1 THEN tblMedieplanLinjer.TotalInclTillæg * 0.02 ELSE tblMedieplanLinjer.TotalInclTillæg * 0.01 END ELSE CASE WHEN tblMedieplan.InfoGodt = 1 THEN tblMedieplanLinjer.TotalInclTillæg * 0.01 ELSE 0 END END END AS GodtgørelseNy, CASE WHEN IndrykningsÅr = @År - 1 THEN CASE WHEN tblMedieplan.SikkerhedsGodt = 1 THEN CASE WHEN tblMedieplan.InfoGodt = 1 THEN tblMedieplanLinjer.TotalInclTillæg * 0.02 ELSE tblMedieplanLinjer.TotalInclTillæg * 0.01 END ELSE CASE WHEN tblMedieplan.InfoGodt = 1 THEN tblMedieplanLinjer.TotalInclTillæg * 0.01 ELSE 0 END END END AS GodtgørelseGammel, CASE WHEN IndrykningsÅr = @År THEN 1 ELSE 0 END AS AntalIndrykningerNy, CASE WHEN IndrykningsÅr = @År - 1 THEN 1 ELSE 0 END AS AntalIndrykningerGammel, LTRIM(STR(dbo.tblMedieplan.Format1)) + ' x ' + LTRIM(STR(dbo.tblMedieplan.Format2)) AS Format
+FROM            tblBladStamdata INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblMedieplanLinjer ON tblBladStamdata.BladID = tblMedieplanLinjer.UgeavisID INNER JOIN
+                         tblMedieplan ON tblMedieplanLinjer.MedieplanNr = tblMedieplan.MedieplanNr AND tblMedieplanLinjer.Version = tblMedieplan.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion INNER JOIN
+                         NavisionContact ON tblMedieplan.AnnoncørNo_ = NavisionContact.No_ INNER JOIN
+                         Salesperson ON NavisionContact.[Salesperson Code] = Salesperson.Code LEFT OUTER JOIN
+                         tblAnnoncekontrol ON tblMedieplanLinjer.MedieplanNr = tblAnnoncekontrol.MedieplanNr AND 
+                         tblMedieplanLinjer.UgeavisID = tblAnnoncekontrol.UgeavisID LEFT OUTER JOIN
+                         NavisionContact2 ON tblMedieplan.BureauNo_ = NavisionContact2.No_
+WHERE        (tblMedieplan.Status = 3 OR
+                         tblMedieplan.Status &gt; 4) AND (tblMedieplan.IndrykningsÅr = @År OR
+                         tblMedieplan.IndrykningsÅr = @År - 1) AND (tblMedieplan.IndrykningsUge BETWEEN @FraUge AND @TilUge)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FraUge" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@FraUge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TilUge" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@TilUge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Annoncør" DataSetColumn="Annoncør" />
+              <Mapping SourceColumn="Bureau" DataSetColumn="Bureau" />
+              <Mapping SourceColumn="Ugeavis" DataSetColumn="Ugeavis" />
+              <Mapping SourceColumn="DelOmrådeKode" DataSetColumn="DelOmrådeKode" />
+              <Mapping SourceColumn="DelOmrådeSortKey" DataSetColumn="DelOmrådeSortKey" />
+              <Mapping SourceColumn="HovedGruppeNavn" DataSetColumn="HovedGruppeNavn" />
+              <Mapping SourceColumn="HovedGruppeSortKey" DataSetColumn="HovedGruppeSortKey" />
+              <Mapping SourceColumn="GeoKodeNavn" DataSetColumn="GeoKodeNavn" />
+              <Mapping SourceColumn="GeoKodeSortKey" DataSetColumn="GeoKodeSortKey" />
+              <Mapping SourceColumn="Konsulent" DataSetColumn="Konsulent" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="IndrykningsÅr" DataSetColumn="IndrykningsÅr" />
+              <Mapping SourceColumn="MmÅrNy" DataSetColumn="MmÅrNy" />
+              <Mapping SourceColumn="MmÅrGammel" DataSetColumn="MmÅrGammel" />
+              <Mapping SourceColumn="PrisÅrNy" DataSetColumn="PrisÅrNy" />
+              <Mapping SourceColumn="PrisÅrGammel" DataSetColumn="PrisÅrGammel" />
+              <Mapping SourceColumn="Ejerforhold" DataSetColumn="Ejerforhold" />
+              <Mapping SourceColumn="SidePlaceringen" DataSetColumn="SidePlaceringen" />
+              <Mapping SourceColumn="MiljøTillægNy" DataSetColumn="MiljøTillægNy" />
+              <Mapping SourceColumn="MiljøTillægGammel" DataSetColumn="MiljøTillægGammel" />
+              <Mapping SourceColumn="GodtgørelseNy" DataSetColumn="GodtgørelseNy" />
+              <Mapping SourceColumn="GodtgørelseGammel" DataSetColumn="GodtgørelseGammel" />
+              <Mapping SourceColumn="AntalIndrykningerNy" DataSetColumn="AntalIndrykningerNy" />
+              <Mapping SourceColumn="AntalIndrykningerGammel" DataSetColumn="AntalIndrykningerGammel" />
+              <Mapping SourceColumn="Format" DataSetColumn="Format" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstOmsætning" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dstOmsætning" msprop:Generator_UserDSName="dstOmsætning">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Omsætning" msprop:Generator_UserTableName="Omsætning" msprop:Generator_RowEvArgName="OmsætningRowChangeEvent" msprop:Generator_TableVarName="tableOmsætning" msprop:Generator_TablePropName="Omsætning" msprop:Generator_RowDeletingName="OmsætningRowDeleting" msprop:Generator_RowChangingName="OmsætningRowChanging" msprop:Generator_RowDeletedName="OmsætningRowDeleted" msprop:Generator_RowEvHandlerName="OmsætningRowChangeEventHandler" msprop:Generator_TableClassName="OmsætningDataTable" msprop:Generator_RowChangedName="OmsætningRowChanged" msprop:Generator_RowClassName="OmsætningRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Bureau" msprop:Generator_ColumnVarNameInTable="columnBureau" msprop:Generator_ColumnPropNameInRow="Bureau" msprop:Generator_ColumnPropNameInTable="BureauColumn" msprop:Generator_UserColumnName="Bureau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ugeavis" msprop:Generator_ColumnVarNameInTable="columnUgeavis" msprop:Generator_ColumnPropNameInRow="Ugeavis" msprop:Generator_ColumnPropNameInTable="UgeavisColumn" msprop:Generator_UserColumnName="Ugeavis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DelOmrådeKode" msprop:Generator_ColumnVarNameInTable="columnDelOmrådeKode" msprop:Generator_ColumnPropNameInRow="DelOmrådeKode" msprop:Generator_ColumnPropNameInTable="DelOmrådeKodeColumn" msprop:Generator_UserColumnName="DelOmrådeKode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DelOmrådeSortKey" msprop:Generator_ColumnVarNameInTable="columnDelOmrådeSortKey" msprop:Generator_ColumnPropNameInRow="DelOmrådeSortKey" msprop:Generator_ColumnPropNameInTable="DelOmrådeSortKeyColumn" msprop:Generator_UserColumnName="DelOmrådeSortKey" type="xs:unsignedByte" />
+              <xs:element name="HovedGruppeNavn" msprop:Generator_ColumnVarNameInTable="columnHovedGruppeNavn" msprop:Generator_ColumnPropNameInRow="HovedGruppeNavn" msprop:Generator_ColumnPropNameInTable="HovedGruppeNavnColumn" msprop:Generator_UserColumnName="HovedGruppeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HovedGruppeSortKey" msprop:Generator_ColumnVarNameInTable="columnHovedGruppeSortKey" msprop:Generator_ColumnPropNameInRow="HovedGruppeSortKey" msprop:Generator_ColumnPropNameInTable="HovedGruppeSortKeyColumn" msprop:Generator_UserColumnName="HovedGruppeSortKey" type="xs:unsignedByte" />
+              <xs:element name="GeoKodeNavn" msprop:Generator_ColumnVarNameInTable="columnGeoKodeNavn" msprop:Generator_ColumnPropNameInRow="GeoKodeNavn" msprop:Generator_ColumnPropNameInTable="GeoKodeNavnColumn" msprop:Generator_UserColumnName="GeoKodeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GeoKodeSortKey" msprop:Generator_ColumnVarNameInTable="columnGeoKodeSortKey" msprop:Generator_ColumnPropNameInRow="GeoKodeSortKey" msprop:Generator_ColumnPropNameInTable="GeoKodeSortKeyColumn" msprop:Generator_UserColumnName="GeoKodeSortKey" type="xs:unsignedByte" />
+              <xs:element name="Konsulent" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnKonsulent" msprop:Generator_ColumnPropNameInRow="Konsulent" msprop:Generator_ColumnPropNameInTable="KonsulentColumn" msprop:Generator_UserColumnName="Konsulent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" msprop:Generator_UserColumnName="IndrykningsUge" type="xs:unsignedByte" />
+              <xs:element name="IndrykningsÅr" msprop:Generator_ColumnVarNameInTable="columnIndrykningsÅr" msprop:Generator_ColumnPropNameInRow="IndrykningsÅr" msprop:Generator_ColumnPropNameInTable="IndrykningsÅrColumn" msprop:Generator_UserColumnName="IndrykningsÅr" type="xs:short" />
+              <xs:element name="MmÅrNy" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMmÅrNy" msprop:Generator_ColumnPropNameInRow="MmÅrNy" msprop:Generator_ColumnPropNameInTable="MmÅrNyColumn" msprop:Generator_UserColumnName="MmÅrNy" type="xs:int" minOccurs="0" />
+              <xs:element name="MmÅrGammel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMmÅrGammel" msprop:Generator_ColumnPropNameInRow="MmÅrGammel" msprop:Generator_ColumnPropNameInTable="MmÅrGammelColumn" msprop:Generator_UserColumnName="MmÅrGammel" type="xs:int" minOccurs="0" />
+              <xs:element name="PrisÅrNy" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrisÅrNy" msprop:Generator_ColumnPropNameInRow="PrisÅrNy" msprop:Generator_ColumnPropNameInTable="PrisÅrNyColumn" msprop:Generator_UserColumnName="PrisÅrNy" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PrisÅrGammel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPrisÅrGammel" msprop:Generator_ColumnPropNameInRow="PrisÅrGammel" msprop:Generator_ColumnPropNameInTable="PrisÅrGammelColumn" msprop:Generator_UserColumnName="PrisÅrGammel" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Ejerforhold" msprop:Generator_ColumnVarNameInTable="columnEjerforhold" msprop:Generator_ColumnPropNameInRow="Ejerforhold" msprop:Generator_ColumnPropNameInTable="EjerforholdColumn" msprop:Generator_UserColumnName="Ejerforhold">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SidePlaceringen" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSidePlaceringen" msprop:Generator_ColumnPropNameInRow="SidePlaceringen" msprop:Generator_ColumnPropNameInTable="SidePlaceringenColumn" msprop:Generator_UserColumnName="SidePlaceringen" type="xs:int" minOccurs="0" />
+              <xs:element name="MiljøTillægNy" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMiljøTillægNy" msprop:Generator_ColumnPropNameInRow="MiljøTillægNy" msprop:Generator_ColumnPropNameInTable="MiljøTillægNyColumn" msprop:Generator_UserColumnName="MiljøTillægNy" type="xs:decimal" minOccurs="0" />
+              <xs:element name="MiljøTillægGammel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMiljøTillægGammel" msprop:Generator_ColumnPropNameInRow="MiljøTillægGammel" msprop:Generator_ColumnPropNameInTable="MiljøTillægGammelColumn" msprop:Generator_UserColumnName="MiljøTillægGammel" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GodtgørelseNy" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGodtgørelseNy" msprop:Generator_ColumnPropNameInRow="GodtgørelseNy" msprop:Generator_ColumnPropNameInTable="GodtgørelseNyColumn" msprop:Generator_UserColumnName="GodtgørelseNy" type="xs:decimal" minOccurs="0" />
+              <xs:element name="GodtgørelseGammel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnGodtgørelseGammel" msprop:Generator_ColumnPropNameInRow="GodtgørelseGammel" msprop:Generator_ColumnPropNameInTable="GodtgørelseGammelColumn" msprop:Generator_UserColumnName="GodtgørelseGammel" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AntalIndrykningerNy" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAntalIndrykningerNy" msprop:Generator_ColumnPropNameInRow="AntalIndrykningerNy" msprop:Generator_ColumnPropNameInTable="AntalIndrykningerNyColumn" msprop:Generator_UserColumnName="AntalIndrykningerNy" type="xs:int" minOccurs="0" />
+              <xs:element name="AntalIndrykningerGammel" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAntalIndrykningerGammel" msprop:Generator_ColumnPropNameInRow="AntalIndrykningerGammel" msprop:Generator_ColumnPropNameInTable="AntalIndrykningerGammelColumn" msprop:Generator_UserColumnName="AntalIndrykningerGammel" type="xs:int" minOccurs="0" />
+              <xs:element name="Format" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnPropNameInTable="FormatColumn" msprop:Generator_UserColumnName="Format" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

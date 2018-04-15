@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstKontakterPrBlad" targetNamespace="http://tempuri.org/dstKontakterPrBlad.xsd" xmlns:mstns="http://tempuri.org/dstKontakterPrBlad.xsd" xmlns="http://tempuri.org/dstKontakterPrBlad.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblBladStamdataKopiTableAdapter" GeneratorDataComponentClassName="tblBladStamdataKopiTableAdapter" Name="tblBladStamdataKopi" UserDataComponentName="tblBladStamdataKopiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.Ejerforhold, tblRegion.RegionNavn
+FROM            tblBladStamdata INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID
+WHERE        (tblBladStamdata.HovedgruppeID &lt; 2) AND (tblBladStamdata.Ophørt = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BladID" DataSetColumn="BladID" />
+              <Mapping SourceColumn="Navn" DataSetColumn="Navn" />
+              <Mapping SourceColumn="Ejerforhold" DataSetColumn="Ejerforhold" />
+              <Mapping SourceColumn="RegionNavn" DataSetColumn="RegionNavn" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstKontakterPrBlad" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dstKontakterPrBlad" msprop:Generator_UserDSName="dstKontakterPrBlad">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblBladStamdataKopi" msprop:Generator_TableClassName="tblBladStamdataKopiDataTable" msprop:Generator_TableVarName="tabletblBladStamdataKopi" msprop:Generator_TablePropName="tblBladStamdataKopi" msprop:Generator_RowDeletingName="tblBladStamdataKopiRowDeleting" msprop:Generator_RowChangingName="tblBladStamdataKopiRowChanging" msprop:Generator_RowEvHandlerName="tblBladStamdataKopiRowChangeEventHandler" msprop:Generator_RowDeletedName="tblBladStamdataKopiRowDeleted" msprop:Generator_UserTableName="tblBladStamdataKopi" msprop:Generator_RowChangedName="tblBladStamdataKopiRowChanged" msprop:Generator_RowEvArgName="tblBladStamdataKopiRowChangeEvent" msprop:Generator_RowClassName="tblBladStamdataKopiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BladID" msprop:Generator_ColumnVarNameInTable="columnBladID" msprop:Generator_ColumnPropNameInRow="BladID" msprop:Generator_ColumnPropNameInTable="BladIDColumn" msprop:Generator_UserColumnName="BladID" type="xs:int" />
+              <xs:element name="Navn" msprop:Generator_ColumnVarNameInTable="columnNavn" msprop:Generator_ColumnPropNameInRow="Navn" msprop:Generator_ColumnPropNameInTable="NavnColumn" msprop:Generator_UserColumnName="Navn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ejerforhold" msprop:Generator_ColumnVarNameInTable="columnEjerforhold" msprop:Generator_ColumnPropNameInRow="Ejerforhold" msprop:Generator_ColumnPropNameInTable="EjerforholdColumn" msprop:Generator_UserColumnName="Ejerforhold">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegionNavn" msprop:Generator_ColumnVarNameInTable="columnRegionNavn" msprop:Generator_ColumnPropNameInRow="RegionNavn" msprop:Generator_ColumnPropNameInTable="RegionNavnColumn" msprop:Generator_UserColumnName="RegionNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblBladStamdataKopi" />
+      <xs:field xpath="mstns:BladID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstForespørgsler" targetNamespace="http://tempuri.org/dstForespørgsler.xsd" xmlns:mstns="http://tempuri.org/dstForespørgsler.xsd" xmlns="http://tempuri.org/dstForespørgsler.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblWEBForespørgselTableAdapter" GeneratorDataComponentClassName="tblWEBForespørgselTableAdapter" Name="tblWEBForespørgsel" UserDataComponentName="tblWEBForespørgselTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="False" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     tblWEBForespørgsel.ForespørgselID, tblWEBForespørgsel.Type, tblWEBForespørgsel.MedieplanNr, NavisionContact2.Name, 
+                      tblWEBForespørgsel.Mediebureau, tblWEBForespørgsel.KonsulentCode, tblWEBForespørgsel.AntalBlade, tblWEBForespørgsel.Format, 
+                      tblPlacering.Betegnelse, tblWEBForespørgsel.AntalFarver, tblWEBForespørgsel.AntalIndrykninger, tblWEBForespørgsel.SvarInden, 
+                      tblWEBForespørgsel.Afsluttet, tblWEBForespørgsel.Bemærkning
+FROM         tblWEBForespørgsel INNER JOIN
+                      tblPlacering ON tblWEBForespørgsel.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                      NavisionContact2 ON tblWEBForespørgsel.AnnoncørNo_ = NavisionContact2.No_</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ForespørgselID" DataSetColumn="ForespørgselID" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="Mediebureau" DataSetColumn="Mediebureau" />
+              <Mapping SourceColumn="KonsulentCode" DataSetColumn="KonsulentCode" />
+              <Mapping SourceColumn="AntalBlade" DataSetColumn="AntalBlade" />
+              <Mapping SourceColumn="Format" DataSetColumn="Format" />
+              <Mapping SourceColumn="AntalFarver" DataSetColumn="AntalFarver" />
+              <Mapping SourceColumn="AntalIndrykninger" DataSetColumn="AntalIndrykninger" />
+              <Mapping SourceColumn="SvarInden" DataSetColumn="SvarInden" />
+              <Mapping SourceColumn="Afsluttet" DataSetColumn="Afsluttet" />
+              <Mapping SourceColumn="Bemærkning" DataSetColumn="Bemærkning" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Betegnelse" DataSetColumn="Betegnelse" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByKonsulentCode" GenerateMethods="Fill" GenerateShortCommands="True" GeneratorSourceName="FillByKonsulentCode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy" UserSourceName="FillByKonsulentCode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     tblWEBForespørgsel.ForespørgselID, tblWEBForespørgsel.Type, tblWEBForespørgsel.MedieplanNr, NavisionContact2.Name, 
+                      tblWEBForespørgsel.Mediebureau, tblWEBForespørgsel.KonsulentCode, tblWEBForespørgsel.AntalBlade, tblWEBForespørgsel.Format, 
+                      tblPlacering.Betegnelse, tblWEBForespørgsel.AntalFarver, tblWEBForespørgsel.AntalIndrykninger, tblWEBForespørgsel.SvarInden, 
+                      tblWEBForespørgsel.Afsluttet, tblWEBForespørgsel.Bemærkning
+FROM         tblWEBForespørgsel INNER JOIN
+                      tblPlacering ON tblWEBForespørgsel.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                      NavisionContact2 ON tblWEBForespørgsel.AnnoncørNo_ = NavisionContact2.No_
+WHERE     (tblWEBForespørgsel.KonsulentCode = @KonsulentCode)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="KonsulentCode" ColumnName="KonsulentCode" DataSourceName="DiMPdotNet.dbo.tblWEBForespørgsel" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@KonsulentCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="KonsulentCode" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblWEBForespørgselLinjerTableAdapter" GeneratorDataComponentClassName="tblWEBForespørgselLinjerTableAdapter" Name="tblWEBForespørgselLinjer" UserDataComponentName="tblWEBForespørgselLinjerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="False" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     tblWEBForespørgselLinjer.ForespørgselID, tblWEBForespørgselLinjer.BladID, tblWEBForespørgselLinjer.DLUMmPris, 
+                      tblWEBForespørgselLinjer.DLUMmRabat, tblWEBForespørgselLinjer.DLUFarveTillæg, tblWEBForespørgselLinjer.DLUFarveRabat, 
+                      CASE tblWEBForespørgselLinjer.PlaceringUB WHEN 1 THEN 'Side 3,5,7' WHEN 2 THEN 'Høj. side f. midt' WHEN 3 THEN 'Højre side' WHEN 4 THEN 'Nej'
+                       ELSE '' END AS PlaceringUdenBeregning, tblWEBForespørgselLinjer.BladMmPris, tblWEBForespørgselLinjer.BladMmRabat, 
+                      tblWEBForespørgselLinjer.BladFarveTillæg, tblWEBForespørgselLinjer.BladFarveRabat, tblWEBForespørgselLinjer.BladBemærkning, 
+                      tblBladStamdata.Navn, tblWEBeMails.PersonNavn
+FROM         tblWEBForespørgselLinjer INNER JOIN
+                      tblBladStamdata ON tblWEBForespørgselLinjer.BladID = tblBladStamdata.BladID LEFT OUTER JOIN
+                      tblWEBeMails ON tblWEBForespørgselLinjer.BesvaretAf = tblWEBeMails.PersonID</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ForespørgselID" DataSetColumn="ForespørgselID" />
+              <Mapping SourceColumn="BladID" DataSetColumn="BladID" />
+              <Mapping SourceColumn="DLUMmPris" DataSetColumn="DLUMmPris" />
+              <Mapping SourceColumn="DLUMmRabat" DataSetColumn="DLUMmRabat" />
+              <Mapping SourceColumn="DLUFarveTillæg" DataSetColumn="DLUFarveTillæg" />
+              <Mapping SourceColumn="DLUFarveRabat" DataSetColumn="DLUFarveRabat" />
+              <Mapping SourceColumn="BladMmPris" DataSetColumn="BladMmPris" />
+              <Mapping SourceColumn="BladMmRabat" DataSetColumn="BladMmRabat" />
+              <Mapping SourceColumn="BladFarveTillæg" DataSetColumn="BladFarveTillæg" />
+              <Mapping SourceColumn="BladFarveRabat" DataSetColumn="BladFarveRabat" />
+              <Mapping SourceColumn="BladBemærkning" DataSetColumn="BladBemærkning" />
+              <Mapping SourceColumn="Navn" DataSetColumn="Navn" />
+              <Mapping SourceColumn="PersonNavn" DataSetColumn="PersonNavn" />
+              <Mapping SourceColumn="PlaceringUdenBeregning" DataSetColumn="PlaceringUdenBeregning" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstForespørgsler" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstForespørgsler" msprop:Generator_DataSetName="dstForespørgsler">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblWEBForespørgsel" msprop:Generator_UserTableName="tblWEBForespørgsel" msprop:Generator_RowDeletedName="tblWEBForespørgselRowDeleted" msprop:Generator_RowChangedName="tblWEBForespørgselRowChanged" msprop:Generator_RowClassName="tblWEBForespørgselRow" msprop:Generator_RowChangingName="tblWEBForespørgselRowChanging" msprop:Generator_RowEvArgName="tblWEBForespørgselRowChangeEvent" msprop:Generator_RowEvHandlerName="tblWEBForespørgselRowChangeEventHandler" msprop:Generator_TableClassName="tblWEBForespørgselDataTable" msprop:Generator_TableVarName="tabletblWEBForespørgsel" msprop:Generator_RowDeletingName="tblWEBForespørgselRowDeleting" msprop:Generator_TablePropName="tblWEBForespørgsel">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ForespørgselID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ForespørgselID" msprop:Generator_ColumnVarNameInTable="columnForespørgselID" msprop:Generator_ColumnPropNameInRow="ForespørgselID" msprop:Generator_ColumnPropNameInTable="ForespørgselIDColumn" type="xs:int" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:unsignedByte" />
+              <xs:element name="MedieplanNr" msprop:Generator_UserColumnName="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" type="xs:int" />
+              <xs:element name="Mediebureau" msprop:Generator_UserColumnName="Mediebureau" msprop:Generator_ColumnVarNameInTable="columnMediebureau" msprop:Generator_ColumnPropNameInRow="Mediebureau" msprop:Generator_ColumnPropNameInTable="MediebureauColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KonsulentCode" msprop:Generator_UserColumnName="KonsulentCode" msprop:Generator_ColumnVarNameInTable="columnKonsulentCode" msprop:Generator_ColumnPropNameInRow="KonsulentCode" msprop:Generator_ColumnPropNameInTable="KonsulentCodeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalBlade" msprop:Generator_UserColumnName="AntalBlade" msprop:Generator_ColumnVarNameInTable="columnAntalBlade" msprop:Generator_ColumnPropNameInRow="AntalBlade" msprop:Generator_ColumnPropNameInTable="AntalBladeColumn" type="xs:unsignedByte" />
+              <xs:element name="Format" msprop:Generator_UserColumnName="Format" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnPropNameInTable="FormatColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalFarver" msprop:Generator_UserColumnName="AntalFarver" msprop:Generator_ColumnVarNameInTable="columnAntalFarver" msprop:Generator_ColumnPropNameInRow="AntalFarver" msprop:Generator_ColumnPropNameInTable="AntalFarverColumn" type="xs:unsignedByte" />
+              <xs:element name="AntalIndrykninger" msprop:Generator_UserColumnName="AntalIndrykninger" msprop:Generator_ColumnVarNameInTable="columnAntalIndrykninger" msprop:Generator_ColumnPropNameInRow="AntalIndrykninger" msprop:Generator_ColumnPropNameInTable="AntalIndrykningerColumn" type="xs:unsignedByte" />
+              <xs:element name="SvarInden" msprop:Generator_UserColumnName="SvarInden" msprop:Generator_ColumnVarNameInTable="columnSvarInden" msprop:Generator_ColumnPropNameInRow="SvarInden" msprop:Generator_ColumnPropNameInTable="SvarIndenColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Afsluttet" msprop:Generator_UserColumnName="Afsluttet" msprop:Generator_ColumnVarNameInTable="columnAfsluttet" msprop:Generator_ColumnPropNameInRow="Afsluttet" msprop:Generator_ColumnPropNameInTable="AfsluttetColumn" type="xs:boolean" />
+              <xs:element name="Bemærkning" msprop:Generator_UserColumnName="Bemærkning" msprop:Generator_ColumnVarNameInTable="columnBemærkning" msprop:Generator_ColumnPropNameInRow="Bemærkning" msprop:Generator_ColumnPropNameInTable="BemærkningColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Betegnelse" msprop:Generator_UserColumnName="Betegnelse" msprop:Generator_ColumnVarNameInTable="columnBetegnelse" msprop:Generator_ColumnPropNameInRow="Betegnelse" msprop:Generator_ColumnPropNameInTable="BetegnelseColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblWEBForespørgselLinjer" msprop:Generator_UserTableName="tblWEBForespørgselLinjer" msprop:Generator_RowDeletedName="tblWEBForespørgselLinjerRowDeleted" msprop:Generator_RowChangedName="tblWEBForespørgselLinjerRowChanged" msprop:Generator_RowClassName="tblWEBForespørgselLinjerRow" msprop:Generator_RowChangingName="tblWEBForespørgselLinjerRowChanging" msprop:Generator_RowEvArgName="tblWEBForespørgselLinjerRowChangeEvent" msprop:Generator_RowEvHandlerName="tblWEBForespørgselLinjerRowChangeEventHandler" msprop:Generator_TableClassName="tblWEBForespørgselLinjerDataTable" msprop:Generator_TableVarName="tabletblWEBForespørgselLinjer" msprop:Generator_RowDeletingName="tblWEBForespørgselLinjerRowDeleting" msprop:Generator_TablePropName="tblWEBForespørgselLinjer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ForespørgselID" msprop:Generator_UserColumnName="ForespørgselID" msprop:Generator_ColumnVarNameInTable="columnForespørgselID" msprop:Generator_ColumnPropNameInRow="ForespørgselID" msprop:Generator_ColumnPropNameInTable="ForespørgselIDColumn" type="xs:int" />
+              <xs:element name="BladID" msprop:Generator_UserColumnName="BladID" msprop:Generator_ColumnVarNameInTable="columnBladID" msprop:Generator_ColumnPropNameInRow="BladID" msprop:Generator_ColumnPropNameInTable="BladIDColumn" type="xs:int" />
+              <xs:element name="DLUMmPris" msprop:Generator_UserColumnName="DLUMmPris" msprop:Generator_ColumnVarNameInTable="columnDLUMmPris" msprop:Generator_ColumnPropNameInRow="DLUMmPris" msprop:Generator_ColumnPropNameInTable="DLUMmPrisColumn" type="xs:decimal" />
+              <xs:element name="DLUMmRabat" msprop:Generator_UserColumnName="DLUMmRabat" msprop:Generator_ColumnVarNameInTable="columnDLUMmRabat" msprop:Generator_ColumnPropNameInRow="DLUMmRabat" msprop:Generator_ColumnPropNameInTable="DLUMmRabatColumn" type="xs:double" />
+              <xs:element name="DLUFarveTillæg" msprop:Generator_UserColumnName="DLUFarveTillæg" msprop:Generator_ColumnVarNameInTable="columnDLUFarveTillæg" msprop:Generator_ColumnPropNameInRow="DLUFarveTillæg" msprop:Generator_ColumnPropNameInTable="DLUFarveTillægColumn" type="xs:decimal" />
+              <xs:element name="DLUFarveRabat" msprop:Generator_UserColumnName="DLUFarveRabat" msprop:Generator_ColumnVarNameInTable="columnDLUFarveRabat" msprop:Generator_ColumnPropNameInRow="DLUFarveRabat" msprop:Generator_ColumnPropNameInTable="DLUFarveRabatColumn" type="xs:double" />
+              <xs:element name="BladMmPris" msprop:Generator_UserColumnName="BladMmPris" msprop:Generator_ColumnVarNameInTable="columnBladMmPris" msprop:Generator_ColumnPropNameInRow="BladMmPris" msprop:Generator_ColumnPropNameInTable="BladMmPrisColumn" type="xs:decimal" />
+              <xs:element name="BladMmRabat" msprop:Generator_UserColumnName="BladMmRabat" msprop:Generator_ColumnVarNameInTable="columnBladMmRabat" msprop:Generator_ColumnPropNameInRow="BladMmRabat" msprop:Generator_ColumnPropNameInTable="BladMmRabatColumn" type="xs:double" />
+              <xs:element name="BladFarveTillæg" msprop:Generator_UserColumnName="BladFarveTillæg" msprop:Generator_ColumnVarNameInTable="columnBladFarveTillæg" msprop:Generator_ColumnPropNameInRow="BladFarveTillæg" msprop:Generator_ColumnPropNameInTable="BladFarveTillægColumn" type="xs:decimal" />
+              <xs:element name="BladFarveRabat" msprop:Generator_UserColumnName="BladFarveRabat" msprop:Generator_ColumnVarNameInTable="columnBladFarveRabat" msprop:Generator_ColumnPropNameInRow="BladFarveRabat" msprop:Generator_ColumnPropNameInTable="BladFarveRabatColumn" type="xs:double" />
+              <xs:element name="BladBemærkning" msprop:Generator_UserColumnName="BladBemærkning" msprop:Generator_ColumnVarNameInTable="columnBladBemærkning" msprop:Generator_ColumnPropNameInRow="BladBemærkning" msprop:Generator_ColumnPropNameInTable="BladBemærkningColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Navn" msprop:Generator_UserColumnName="Navn" msprop:Generator_ColumnVarNameInTable="columnNavn" msprop:Generator_ColumnPropNameInRow="Navn" msprop:Generator_ColumnPropNameInTable="NavnColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonNavn" msprop:Generator_UserColumnName="PersonNavn" msprop:Generator_ColumnVarNameInTable="columnPersonNavn" msprop:Generator_ColumnPropNameInRow="PersonNavn" msprop:Generator_ColumnPropNameInTable="PersonNavnColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlaceringUdenBeregning" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PlaceringUdenBeregning" msprop:Generator_ColumnPropNameInRow="PlaceringUdenBeregning" msprop:Generator_ColumnVarNameInTable="columnPlaceringUdenBeregning" msprop:Generator_ColumnPropNameInTable="PlaceringUdenBeregningColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblWEBForespørgsel" />
+      <xs:field xpath="mstns:ForespørgselID" />
+    </xs:unique>
+    <xs:unique name="tblWEBForespørgselLinjer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblWEBForespørgselLinjer" />
+      <xs:field xpath="mstns:ForespørgselID" />
+      <xs:field xpath="mstns:BladID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="tblWEBForespørgselLinjer_tblWEBForespørgsel" msdata:parent="tblWEBForespørgsel" msdata:child="tblWEBForespørgselLinjer" msdata:parentkey="ForespørgselID" msdata:childkey="ForespørgselID" msprop:Generator_UserRelationName="tblWEBForespørgselLinjer_tblWEBForespørgsel" msprop:Generator_RelationVarName="relationtblWEBForespørgselLinjer_tblWEBForespørgsel" msprop:Generator_UserChildTable="tblWEBForespørgselLinjer" msprop:Generator_UserParentTable="tblWEBForespørgsel" msprop:Generator_ParentPropName="tblWEBForespørgselRow" msprop:Generator_ChildPropName="GettblWEBForespørgselLinjerRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

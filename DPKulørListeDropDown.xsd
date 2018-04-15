@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DPKulørListeDropDown" targetNamespace="http://tempuri.org/DPKulørListeDropDown.xsd" xmlns:mstns="http://tempuri.org/DPKulørListeDropDown.xsd" xmlns="http://tempuri.org/DPKulørListeDropDown.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblDPKulørTableAdapter" GeneratorDataComponentClassName="tblDPKulørTableAdapter" Name="tblDPKulør" UserDataComponentName="tblDPKulørTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectName="DiMPdotNet.dbo.tblDPKulør" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="False" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT DPKulørID, Kulør FROM dbo.tblDPKulør WHERE DPKulørID &gt; 0</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DPKulørID" DataSetColumn="DPKulørID" />
+              <Mapping SourceColumn="Kulør" DataSetColumn="Kulør" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DPKulørListeDropDown" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DPKulørListeDropDown" msprop:Generator_DataSetName="DPKulørListeDropDown">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblDPKulør" msprop:Generator_UserTableName="tblDPKulør" msprop:Generator_RowDeletedName="tblDPKulørRowDeleted" msprop:Generator_RowChangedName="tblDPKulørRowChanged" msprop:Generator_RowClassName="tblDPKulørRow" msprop:Generator_RowChangingName="tblDPKulørRowChanging" msprop:Generator_RowEvArgName="tblDPKulørRowChangeEvent" msprop:Generator_RowEvHandlerName="tblDPKulørRowChangeEventHandler" msprop:Generator_TableClassName="tblDPKulørDataTable" msprop:Generator_TableVarName="tabletblDPKulør" msprop:Generator_RowDeletingName="tblDPKulørRowDeleting" msprop:Generator_TablePropName="tblDPKulør">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DPKulørID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="DPKulørID" msprop:Generator_ColumnPropNameInRow="DPKulørID" msprop:Generator_ColumnVarNameInTable="columnDPKulørID" msprop:Generator_ColumnPropNameInTable="DPKulørIDColumn" type="xs:unsignedByte" />
+              <xs:element name="Kulør" msprop:Generator_UserColumnName="Kulør" msprop:Generator_ColumnPropNameInRow="Kulør" msprop:Generator_ColumnVarNameInTable="columnKulør" msprop:Generator_ColumnPropNameInTable="KulørColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblDPKulør" />
+      <xs:field xpath="mstns:DPKulørID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

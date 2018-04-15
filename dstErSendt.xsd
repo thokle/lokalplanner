@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstErSendt" targetNamespace="http://tempuri.org/dstErSendt.xsd" xmlns:mstns="http://tempuri.org/dstErSendt.xsd" xmlns="http://tempuri.org/dstErSendt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewOrdreErSendtTableAdapter" GeneratorDataComponentClassName="viewOrdreErSendtTableAdapter" Name="viewOrdreErSendt" UserDataComponentName="viewOrdreErSendtTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectName="DiMPdotNet.dbo.viewOrdreErSendt" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="False" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT        CASE WHEN viewOrdreErSendt.Version &lt; 10 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) + '-' + LTRIM(STR(viewOrdreErSendt.Version)) 
+                         WHEN viewOrdreErSendt.Version &gt; 10 AND viewOrdreErSendt.Version &lt; 100 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version), 1) 
+                         WHEN viewOrdreErSendt.Version &gt; 100 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 100), 1) 
+                         + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version), 1) END AS Nr, MedieplanNr, Version,
+                             (SELECT        Name
+                               FROM            NavisionContact
+                               WHERE        (No_ = viewOrdreErSendt.AnnoncørNo_)) AS AnnoncørNo_,
+                             (SELECT        Name
+                               FROM            NavisionContact AS NavisionContact_1
+                               WHERE        (No_ = viewOrdreErSendt.BureauNo_)) AS BureauNo_, Format, AntalFarver, IndrykningsUge, OrdreUdsendt, MaterialeFra, MaterialeUdsendt, 
+                         KonsulentCode AS OrdreAnsvarlig,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact AS NavisionContact_2
+                               WHERE        (No_ = viewOrdreErSendt.AnnoncørNo_)) AS SalgsAnsvarlig
+FROM            viewOrdreErSendt</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="AnnoncørNo_" DataSetColumn="AnnoncørNo_" />
+              <Mapping SourceColumn="BureauNo_" DataSetColumn="BureauNo_" />
+              <Mapping SourceColumn="Format" DataSetColumn="Format" />
+              <Mapping SourceColumn="AntalFarver" DataSetColumn="AntalFarver" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="OrdreUdsendt" DataSetColumn="OrdreUdsendt" />
+              <Mapping SourceColumn="MaterialeFra" DataSetColumn="MaterialeFra" />
+              <Mapping SourceColumn="MaterialeUdsendt" DataSetColumn="MaterialeUdsendt" />
+              <Mapping SourceColumn="OrdreAnsvarlig" DataSetColumn="OrdreAnsvarlig" />
+              <Mapping SourceColumn="SalgsAnsvarlig" DataSetColumn="SalgsAnsvarlig" />
+              <Mapping SourceColumn="Nr" DataSetColumn="Nr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectName="DiMPdotNet.dbo.viewOrdreErSendt" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByUger" GenerateMethods="Fill" GenerateShortCommands="True" GeneratorSourceName="FillByUger" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetDataBy" UserSourceName="FillByUger">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT CASE WHEN viewOrdreErSendt.Version &lt; 10 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) + '-' + LTRIM(STR(viewOrdreErSendt.Version)) 
+                         WHEN viewOrdreErSendt.Version &gt; 10 AND viewOrdreErSendt.Version &lt; 100 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version), 1) 
+                         WHEN viewOrdreErSendt.Version &gt; 100 THEN LTRIM(STR(viewOrdreErSendt.MedieplanNr)) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 100), 1) 
+                         + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOrdreErSendt.Version), 1) END AS Nr, (SELECT Name FROM NavisionContact WHERE (No_ = viewOrdreErSendt.AnnoncørNo_)) AS AnnoncørNo_, AntalFarver, (SELECT Name FROM NavisionContact AS NavisionContact_1 WHERE (No_ = viewOrdreErSendt.BureauNo_)) AS BureauNo_, Format, IndrykningsUge, KonsulentCode AS OrdreAnsvarlig, MaterialeFra, MaterialeUdsendt, MedieplanNr, OrdreUdsendt, (SELECT [Salesperson Code] FROM NavisionContact AS NavisionContact_2 WHERE (No_ = viewOrdreErSendt.AnnoncørNo_)) AS SalgsAnsvarlig, Version FROM viewOrdreErSendt WHERE (IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) ORDER BY IndrykningsUge DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="False" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.viewOrdreErSendt" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                      <Parameter AllowDbNull="False" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.viewOrdreErSendt" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="False" SourceVersion="Current">
+                      </Parameter>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstErSendt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstErSendt" msprop:Generator_DataSetName="dstErSendt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="viewOrdreErSendt" msprop:Generator_UserTableName="viewOrdreErSendt" msprop:Generator_RowDeletedName="viewOrdreErSendtRowDeleted" msprop:Generator_RowChangedName="viewOrdreErSendtRowChanged" msprop:Generator_RowClassName="viewOrdreErSendtRow" msprop:Generator_RowChangingName="viewOrdreErSendtRowChanging" msprop:Generator_RowEvArgName="viewOrdreErSendtRowChangeEvent" msprop:Generator_RowEvHandlerName="viewOrdreErSendtRowChangeEventHandler" msprop:Generator_TableClassName="viewOrdreErSendtDataTable" msprop:Generator_TableVarName="tableviewOrdreErSendt" msprop:Generator_RowDeletingName="viewOrdreErSendtRowDeleting" msprop:Generator_TablePropName="viewOrdreErSendt">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedieplanNr" msprop:Generator_UserColumnName="MedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" type="xs:int" />
+              <xs:element name="Version" msprop:Generator_UserColumnName="Version" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInTable="VersionColumn" type="xs:short" />
+              <xs:element name="AnnoncørNo_" msprop:Generator_UserColumnName="AnnoncørNo_" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnAnnoncørNo_" msprop:Generator_ColumnPropNameInTable="AnnoncørNo_Column" msprop:Generator_ColumnPropNameInRow="AnnoncørNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BureauNo_" msprop:Generator_UserColumnName="BureauNo_" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnBureauNo_" msprop:Generator_ColumnPropNameInTable="BureauNo_Column" msprop:Generator_ColumnPropNameInRow="BureauNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Format" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Format" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInTable="FormatColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalFarver" msprop:Generator_UserColumnName="AntalFarver" msprop:Generator_ColumnPropNameInRow="AntalFarver" msprop:Generator_ColumnVarNameInTable="columnAntalFarver" msprop:Generator_ColumnPropNameInTable="AntalFarverColumn" type="xs:unsignedByte" />
+              <xs:element name="IndrykningsUge" msprop:Generator_UserColumnName="IndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" type="xs:unsignedByte" />
+              <xs:element name="OrdreUdsendt" msdata:ReadOnly="true" msprop:Generator_UserColumnName="OrdreUdsendt" msprop:Generator_ColumnPropNameInRow="OrdreUdsendt" msprop:Generator_ColumnVarNameInTable="columnOrdreUdsendt" msprop:Generator_ColumnPropNameInTable="OrdreUdsendtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialeFra" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MaterialeFra" msprop:Generator_ColumnPropNameInRow="MaterialeFra" msprop:Generator_ColumnVarNameInTable="columnMaterialeFra" msprop:Generator_ColumnPropNameInTable="MaterialeFraColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialeUdsendt" msdata:ReadOnly="true" msprop:Generator_UserColumnName="MaterialeUdsendt" msprop:Generator_ColumnPropNameInRow="MaterialeUdsendt" msprop:Generator_ColumnVarNameInTable="columnMaterialeUdsendt" msprop:Generator_ColumnPropNameInTable="MaterialeUdsendtColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrdreAnsvarlig" msprop:Generator_UserColumnName="OrdreAnsvarlig" msprop:Generator_ColumnPropNameInRow="OrdreAnsvarlig" msprop:Generator_ColumnVarNameInTable="columnOrdreAnsvarlig" msprop:Generator_ColumnPropNameInTable="OrdreAnsvarligColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalgsAnsvarlig" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SalgsAnsvarlig" msprop:Generator_ColumnPropNameInRow="SalgsAnsvarlig" msprop:Generator_ColumnVarNameInTable="columnSalgsAnsvarlig" msprop:Generator_ColumnPropNameInTable="SalgsAnsvarligColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Nr" msprop:Generator_ColumnPropNameInRow="Nr" msprop:Generator_ColumnVarNameInTable="columnNr" msprop:Generator_ColumnPropNameInTable="NrColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

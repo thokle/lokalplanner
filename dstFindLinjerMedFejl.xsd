@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstFindLinjerMedFejl" targetNamespace="http://tempuri.org/dstFindLinjerMedFejl.xsd" xmlns:mstns="http://tempuri.org/dstFindLinjerMedFejl.xsd" xmlns="http://tempuri.org/dstFindLinjerMedFejl.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblLinjerMedFejlTableAdapter" GeneratorDataComponentClassName="tblLinjerMedFejlTableAdapter" Name="tblLinjerMedFejl" UserDataComponentName="tblLinjerMedFejlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="False" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT        CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) 
+                         WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, tblBladStamdata.Navn, 
+                         tblAnnoncekontrol.MedieplanNr, tblMedieplan.Version, NavisionContact.Name AS AnnoncørNo_, 
+                         CASE WHEN tblAnnoncekontrol.Fejlkode = 7 THEN tblFejlTekst.FejlTekst + ' Ny Side: ' + tblAnnoncekontrol.IndrykketPåSide + ' Pris: ' + tblAnnoncekontrol.FaktureresTil
+                          ELSE tblFejlTekst.FejlTekst END AS FejlTekst, tblAnnoncekontrol.UgeavisID, tblMedieplan.IndrykningsUge
+FROM            tblMedieplanNr INNER JOIN
+                         tblMedieplan ON tblMedieplanNr.MedieplanNr = tblMedieplan.MedieplanNr AND tblMedieplanNr.AktivVersion = tblMedieplan.Version INNER JOIN
+                         tblAnnoncekontrol INNER JOIN
+                         tblFejlTekst ON tblAnnoncekontrol.Fejlkode = tblFejlTekst.Fejlkode ON tblMedieplanNr.MedieplanNr = tblAnnoncekontrol.MedieplanNr INNER JOIN
+                         NavisionContact ON tblMedieplan.AnnoncørNo_ = NavisionContact.No_ INNER JOIN
+                         tblBladStamdata ON tblAnnoncekontrol.UgeavisID = tblBladStamdata.BladID
+WHERE        (tblAnnoncekontrol.Fejlkode &gt; 0) AND (tblAnnoncekontrol.Ansvar = '') AND (tblMedieplan.Status = 5)</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="UgeavisID" DataSetColumn="UgeavisID" />
+              <Mapping SourceColumn="Navn" DataSetColumn="Navn" />
+              <Mapping SourceColumn="AnnoncørNo_" DataSetColumn="AnnoncørNo_" />
+              <Mapping SourceColumn="FejlTekst" DataSetColumn="FejlTekst" />
+              <Mapping SourceColumn="Nr" DataSetColumn="Nr" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstFindLinjerMedFejl" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstFindLinjerMedFejl" msprop:Generator_DataSetName="dstFindLinjerMedFejl">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblLinjerMedFejl" msprop:Generator_UserTableName="tblLinjerMedFejl" msprop:Generator_RowDeletedName="tblLinjerMedFejlRowDeleted" msprop:Generator_RowChangedName="tblLinjerMedFejlRowChanged" msprop:Generator_RowClassName="tblLinjerMedFejlRow" msprop:Generator_RowChangingName="tblLinjerMedFejlRowChanging" msprop:Generator_RowEvArgName="tblLinjerMedFejlRowChangeEvent" msprop:Generator_RowEvHandlerName="tblLinjerMedFejlRowChangeEventHandler" msprop:Generator_TableClassName="tblLinjerMedFejlDataTable" msprop:Generator_TableVarName="tabletblLinjerMedFejl" msprop:Generator_RowDeletingName="tblLinjerMedFejlRowDeleting" msprop:Generator_TablePropName="tblLinjerMedFejl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedieplanNr" msprop:Generator_UserColumnName="MedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" type="xs:int" />
+              <xs:element name="Version" msprop:Generator_UserColumnName="Version" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInTable="VersionColumn" type="xs:short" />
+              <xs:element name="UgeavisID" msprop:Generator_UserColumnName="UgeavisID" msprop:Generator_ColumnPropNameInRow="UgeavisID" msprop:Generator_ColumnVarNameInTable="columnUgeavisID" msprop:Generator_ColumnPropNameInTable="UgeavisIDColumn" type="xs:int" />
+              <xs:element name="Navn" msprop:Generator_UserColumnName="Navn" msprop:Generator_ColumnVarNameInTable="columnNavn" msprop:Generator_ColumnPropNameInRow="Navn" msprop:Generator_ColumnPropNameInTable="NavnColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnnoncørNo_" msprop:Generator_UserColumnName="AnnoncørNo_" msprop:Generator_ColumnVarNameInTable="columnAnnoncørNo_" msprop:Generator_ColumnPropNameInRow="AnnoncørNo_" msprop:Generator_ColumnPropNameInTable="AnnoncørNo_Column">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FejlTekst" msprop:Generator_UserColumnName="FejlTekst" msprop:Generator_ColumnVarNameInTable="columnFejlTekst" msprop:Generator_ColumnPropNameInRow="FejlTekst" msprop:Generator_ColumnPropNameInTable="FejlTekstColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Nr" msprop:Generator_ColumnVarNameInTable="columnNr" msprop:Generator_ColumnPropNameInRow="Nr" msprop:Generator_ColumnPropNameInTable="NrColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IndrykningsUge" msprop:Generator_UserColumnName="IndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblLinjerMedFejl" />
+      <xs:field xpath="mstns:MedieplanNr" />
+      <xs:field xpath="mstns:Version" />
+      <xs:field xpath="mstns:UgeavisID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

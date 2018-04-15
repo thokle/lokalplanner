@@ -1,0 +1,229 @@
+﻿Imports Infragistics.Win.UltraWinGrid
+Imports Infragistics.Documents.Excel
+Imports System.Diagnostics
+Imports System.IO
+
+Public Class frmOmsætning
+  Private antalGroupByColumns = 0
+  Private currentRow As Integer = 1
+  Private currentColumn As Integer = 0
+  Private workbook As New Workbook()
+  Private workSheet As Worksheet
+  Private columnData(10) As String
+  Private headerMade As Boolean = False
+
+  Private Sub frmOmsætning_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    grdOmsætning.DrawFilter = New SortIndicatorDrawFilter
+    grdOmsætning.DisplayLayout.Bands(0).Columns("GeoKodeNavn").SortComparer = New sortBySortKey
+    grdOmsætning.DisplayLayout.Bands(0).Columns("HovedGruppeNavn").SortComparer = New sortBySortKey
+
+    Dim diffMm As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffMm")
+    diffMm.CustomSummaryCalculator = New clsCalculateDiffMm
+    diffMm.SummaryType = SummaryType.Custom
+    Dim diffKr As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffKr")
+    diffKr.CustomSummaryCalculator = New clsCalculateDiffKr
+    diffKr.SummaryType = SummaryType.Custom
+    Dim diffMmProcent As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffMmProcent")
+    diffMmProcent.CustomSummaryCalculator = New clsCalculateDiffMmProcent
+    diffMmProcent.SummaryType = SummaryType.Custom
+    Dim diffKrProcent As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffKrProcent")
+    diffKrProcent.CustomSummaryCalculator = New clsCalculateDiffKrProcent
+    diffKrProcent.SummaryType = SummaryType.Custom
+    ÅrToolStripTextBox.Text = frmMain.DetteÅr
+    FraUgeToolStripTextBox.Text = frmMain.DenneUge + 1
+    TilUgeToolStripTextBox.Text = frmMain.DenneUge + 1
+    Opdater()
+    'For Each foundFile As String In My.Computer.FileSystem.GetFiles("Z:\GridViews")
+    '  cboRapporter.Items.Add(foundFile.Remove(foundFile.Length - 4, 4).Remove(0, 13))
+    'Next
+  End Sub
+
+  Private Sub btnOpdater_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpdater.Click, btnOpdater2.Click
+    Opdater()
+  End Sub
+
+  Private Sub Opdater()
+    Dim ugeStart As Integer
+    Dim årStart As Integer
+    Dim ugeSlut As Integer
+    Dim årSlut As Integer
+
+    Me.Cursor = Cursors.WaitCursor
+
+    If ÅrToolStripTextBox.TextLength > 3 AndAlso FraUgeToolStripTextBox.TextLength > 0 AndAlso TilUgeToolStripTextBox.TextLength > 0 Then
+      grdOmsætning.DisplayLayout.Bands(0).Columns("MMÅrGammel").Header.Caption = "Mm " & ÅrToolStripTextBox.Text - 1
+      grdOmsætning.DisplayLayout.Bands(0).Columns("MMÅrNy").Header.Caption = "Mm " & ÅrToolStripTextBox.Text
+      grdOmsætning.DisplayLayout.Bands(0).Columns("PrisÅrGammel").Header.Caption = "Kr " & ÅrToolStripTextBox.Text - 1
+      grdOmsætning.DisplayLayout.Bands(0).Columns("PrisÅrNy").Header.Caption = "Kr " & ÅrToolStripTextBox.Text
+      grdOmsætning.DisplayLayout.Bands(0).Columns("MiljøTillægGammel").Header.Caption = "Tillæg " & ÅrToolStripTextBox.Text - 1
+      grdOmsætning.DisplayLayout.Bands(0).Columns("MiljøTillægNy").Header.Caption = "Tillæg " & ÅrToolStripTextBox.Text
+      grdOmsætning.DisplayLayout.Bands(0).Columns("GodtgørelseGammel").Header.Caption = "Godtgørelse " & ÅrToolStripTextBox.Text - 1
+      grdOmsætning.DisplayLayout.Bands(0).Columns("GodtgørelseNy").Header.Caption = "Godtgørelse " & ÅrToolStripTextBox.Text
+      grdOmsætning.DisplayLayout.Bands(0).Columns("AntalIndrykningerNy").Header.Caption = "Indrykninger " & ÅrToolStripTextBox.Text
+      grdOmsætning.DisplayLayout.Bands(0).Columns("AntalIndrykningerGammel").Header.Caption = "Indrykninger " & ÅrToolStripTextBox.Text - 1
+
+      ugeStart = CType(FraUgeToolStripTextBox.Text, Byte)
+      ugeSlut = CType(TilUgeToolStripTextBox.Text, Byte)
+      If ugeStart > ugeSlut Then
+        årStart = CType(ÅrToolStripTextBox.Text, Short) - 1
+        årSlut = CType(ÅrToolStripTextBox.Text, Short)
+      Else
+        årStart = CType(ÅrToolStripTextBox.Text, Short)
+        årSlut = CType(ÅrToolStripTextBox.Text, Short)
+      End If
+      Try
+        If ugeStart <= ugeSlut Then
+          OmsætningTableAdapter.ClearBeforeFill = True
+          OmsætningTableAdapter.FillByUgeÅr(Me.DstOmsætning.Omsætning, årStart, ugeStart, ugeSlut)
+        Else
+          OmsætningTableAdapter.FillByUgeÅr(Me.DstOmsætning.Omsætning, årStart, ugeStart, 53)
+          OmsætningTableAdapter.ClearBeforeFill = False
+          OmsætningTableAdapter.FillByUgeÅr(Me.DstOmsætning.Omsætning, årSlut, 1, ugeSlut)
+        End If
+      Catch ex As System.Exception
+        Me.Cursor = Cursors.Default
+        System.Windows.Forms.MessageBox.Show(ex.Message)
+      End Try
+    End If
+    Me.Cursor = Cursors.Default
+  End Sub
+
+  'Private Sub btnGem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGem.Click
+  '  If sfdGridViews.ShowDialog = Windows.Forms.DialogResult.OK Then
+  '    grdOmsætning.DisplayLayout.Save(sfdGridViews.FileName)
+  '  End If
+  '  cboRapporter.Items.Add(sfdGridViews.FileName.Remove(sfdGridViews.FileName.Length - 4, 4).Remove(0, 13))
+  'End Sub
+
+  'Private Sub cboRapporter_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboRapporter.SelectedIndexChanged
+  '  If My.Computer.FileSystem.FileExists("Z:\GridViews\" + cboRapporter.Text + ".bin") Then
+  '    grdOmsætning.DisplayLayout.Load("Z:\GridViews\" + cboRapporter.Text + ".bin")
+  '    Dim diffMm As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffMm")
+  '    diffMm.CustomSummaryCalculator = New clsCalculateDiffMm
+  '    diffMm.SummaryType = SummaryType.Custom
+  '    Dim diffKr As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffKr")
+  '    diffKr.CustomSummaryCalculator = New clsCalculateDiffKr
+  '    diffKr.SummaryType = SummaryType.Custom
+  '    Dim diffMmProcent As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffMmProcent")
+  '    diffMmProcent.CustomSummaryCalculator = New clsCalculateDiffMmProcent
+  '    diffMmProcent.SummaryType = SummaryType.Custom
+  '    Dim diffKrProcent As SummarySettings = grdOmsætning.DisplayLayout.Bands(0).Summaries("DiffKrProcent")
+  '    diffKrProcent.CustomSummaryCalculator = New clsCalculateDiffKrProcent
+  '    diffKrProcent.SummaryType = SummaryType.Custom
+  '  End If
+  'End Sub
+
+  Private Sub btnLuk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLuk.Click, btnLuk2.Click
+    Me.Close()
+  End Sub
+
+  Private Sub TilUgeToolStripTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TilUgeToolStripTextBox.KeyUp
+    If e.KeyCode = Keys.Return Then Opdater()
+  End Sub
+
+  Private Sub FraUgeToolStripTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles FraUgeToolStripTextBox.KeyUp
+    If e.KeyCode = Keys.Return Then Opdater()
+  End Sub
+
+  Private Sub ÅrToolStripTextBox_KeyUp(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ÅrToolStripTextBox.KeyUp
+    If e.KeyCode = Keys.Return Then Opdater()
+  End Sub
+
+  Private Sub btnExcelExport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExcelExport.Click
+    Dim fileName As String
+    Dim prNavn As String = ""
+    grdOmsætning.DisplayLayout.Override.SummaryDisplayArea = SummaryDisplayAreas.Bottom
+    'grdOmsætning.DisplayLayout.Override.SummaryFooterCaptionVisible = Infragistics.Win.DefaultableBoolean.False
+    workbook.Worksheets.Clear()
+    currentRow = 1
+    headerMade = False
+    workSheet = workbook.Worksheets.Add("Omsætning uge " & FraUgeToolStripTextBox.Text & " - " & TilUgeToolStripTextBox.Text & " " & ÅrToolStripTextBox.Text)
+    antalGroupByColumns = 0
+    For Each acolumn As UltraGridColumn In grdOmsætning.DisplayLayout.Bands(0).SortedColumns
+      If acolumn.IsGroupByColumn Then
+        workSheet.Rows(0).Cells(antalGroupByColumns).Value = acolumn.Header.Caption
+        prNavn = prNavn + " pr. " & acolumn.Header.Caption
+        workSheet.Rows(0).Cells(antalGroupByColumns).CellFormat.Font.Bold = ExcelDefaultableBoolean.True
+        antalGroupByColumns = antalGroupByColumns + 1
+      End If
+    Next
+    currentColumn = antalGroupByColumns
+    Dim filCount As Integer = 0
+    Do
+      fileName = "M:\Oms. uge " & FraUgeToolStripTextBox.Text & "-" & TilUgeToolStripTextBox.Text & " " & ÅrToolStripTextBox.Text & prNavn
+      If filCount = 0 Then
+        fileName = fileName & ".xls" ' fileName.Substring(0, 28) & ".xls"
+      Else
+        fileName = fileName & " v." & filCount.ToString & ".xls"  ' fileName.Substring(0, 23) & " v." & filCount.ToString & ".xls"
+      End If
+      filCount = filCount + 1
+    Loop While File.Exists(fileName)
+
+    ExcelExporter.Export(grdOmsætning, fileName)
+    workbook.Save(fileName) 'Overskriv fil dannet af ExcelExporter
+    ' MessageBox.Show("Gemt som " & fileName, "Excel eksport", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    Dim myProcess As New Process
+    myProcess.StartInfo.FileName = fileName
+    myProcess.Start()
+    grdOmsætning.DisplayLayout.Override.SummaryDisplayArea = SummaryDisplayAreas.Top + SummaryDisplayAreas.Bottom + SummaryDisplayAreas.InGroupByRows + SummaryDisplayAreas.GroupByRowsFooter
+    'grdOmsætning.DisplayLayout.Override.SummaryFooterCaptionVisible = Infragistics.Win.DefaultableBoolean.Default
+  End Sub
+
+  Private Sub ExcelExporter_HeaderCellExporting(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.HeaderCellExportingEventArgs) Handles ExcelExporter.HeaderCellExporting
+    If e.HeaderType = ExcelExport.HeaderTypes.ColumnHeader Then
+      Try
+        If e.GridHeader.Band.Summaries(e.GridHeader.Column.Key).Tag = "" Then
+          If e.GridHeader.Caption = "Ugeavis" Then
+            workSheet.Rows(0).Cells(currentColumn).Value = "Antal indrykninger"
+          Else
+            workSheet.Rows(0).Cells(currentColumn).Value = e.GridHeader.Caption
+          End If
+          workSheet.Rows(0).Cells(currentColumn).CellFormat.Font.Bold = ExcelDefaultableBoolean.True
+          currentColumn = currentColumn + 1
+        End If
+      Catch
+      End Try
+    End If
+  End Sub
+
+  Private Sub ExcelExporter_HeaderRowExported(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.HeaderRowExportedEventArgs) Handles ExcelExporter.HeaderRowExported
+    currentColumn = antalGroupByColumns
+  End Sub
+
+  Private Sub ExcelExporter_HeaderRowExporting(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.HeaderRowExportingEventArgs) Handles ExcelExporter.HeaderRowExporting
+    If headermade Then
+      e.Cancel = True
+    Else
+      headermade = True
+    End If
+  End Sub
+
+  Private Sub ExcelExporter_RowExporting(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.RowExportingEventArgs) Handles ExcelExporter.RowExporting
+    columnData(e.CurrentOutlineLevel) = e.GridRow.Description
+    If e.CurrentOutlineLevel > antalGroupByColumns - 1 Then
+      e.Cancel = True
+    End If
+  End Sub
+
+  Private Sub ExcelExporter_SummaryCellExporting(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.SummaryCellExportingEventArgs) Handles ExcelExporter.SummaryCellExporting
+    If e.Summary IsNot Nothing Then
+      workSheet.Rows(currentRow).Cells(currentColumn).Value = e.Summary.Value
+      workSheet.Rows(currentRow).Cells(currentColumn).CellFormat.FormatString = "#.##0"
+      currentColumn = currentColumn + 1
+    End If
+  End Sub
+
+  Private Sub ExcelExporter_SummaryRowExported(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.SummaryRowExportedEventArgs) Handles ExcelExporter.SummaryRowExported
+    currentRow = currentRow + 1
+    currentColumn = antalGroupByColumns
+  End Sub
+
+  Private Sub ExcelExporter_SummaryRowExporting(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ExcelExport.SummaryRowExportingEventArgs) Handles ExcelExporter.SummaryRowExporting
+    For i As Integer = 0 To antalGroupByColumns - 1
+      workSheet.Rows(currentRow).Cells(i).Value = columnData(i)
+      workSheet.Rows(currentRow).Cells(i).CellFormat.FormatString = "#.##0"
+    Next
+  End Sub
+
+End Class

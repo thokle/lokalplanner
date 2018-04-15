@@ -1,0 +1,127 @@
+Imports Infragistics.Win.UltraWinGrid
+Imports System.Data.SqlClient
+Imports System.Text
+
+Public Class frmUdsending
+  'Private WithEvents _cfilter As New HeaderCheckBoxCreationFilter
+
+  Private Sub frmUdsending_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Me.TblUgeaviserTableAdapter.Fill(Me.UgeavisListeDropdown.tblUgeaviser)
+    'grdBladListe.CreationFilter = _cfilter
+    'lblGenudsendelse.Text = "Send Tjeklister for uge " & frmMain.DenneUge + 1
+    numUge.Value = frmMain.DenneUge + 1
+    numÅr.Value = frmMain.DetteÅr
+  End Sub
+
+  Private Sub btnAnnuller_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnnuller.Click
+    Me.Close()
+  End Sub
+
+  Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click
+    Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
+    Dim cm As SqlCommand = cn.CreateCommand()
+    Dim eMail As String
+    Dim SendIndeværendeUge As Boolean
+    Dim sendeUge As Integer
+    Dim sendeÅr As Integer
+    Dim first As Boolean = True
+    Dim succes As Boolean
+    Dim logTekst As String = ""
+
+    Me.Cursor = Cursors.WaitCursor
+    cm.CommandType = CommandType.Text
+    cn.Open()
+
+    If optUdsendelsesType.Value = 1 Then
+      For Each arow As UltraGridRow In grdBladListe.Rows
+        If arow.Cells("Valgt").Value = True Then
+          cm.CommandText = "SELECT OrdrecheckEmail FROM tblBladStamdata WHERE (BladID = " & arow.Cells("BladID").Value & ")"
+          If IsDBNull(cm.ExecuteScalar) Then
+            eMail = ""
+          Else
+            eMail = cm.ExecuteScalar()
+          End If
+          If eMail <> "" Then
+            cm.CommandText = "SELECT SendIndeværendeUge FROM tblBladStamdata WHERE (BladID = " & arow.Cells("BladID").Value & ")"
+            If IsDBNull(cm.ExecuteScalar()) Then
+              SendIndeværendeUge = False
+            Else
+              SendIndeværendeUge = cm.ExecuteScalar()
+            End If
+            If SendIndeværendeUge Then
+              sendeUge = numUge.Value - 1  'frmMain.DenneUge
+            Else
+              sendeUge = numUge.Value 'frmMain.DenneUge + 1
+            End If
+            sendeÅr = numÅr.Value
+
+            cm.CommandText = "SELECT tblMedieplanNr.MedieplanNr, NavisionContact.Name AS Annoncør, tblMedieplan.AntalFarver, LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format FROM tblMedieplan INNER JOIN tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion INNER JOIN tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN NavisionContact ON tblMedieplan.AnnoncørNo_ = NavisionContact.No_ WHERE (tblMedieplanNr.Status > 2) AND (tblMedieplanNr.Status <> 4) AND (tblMedieplan.IndrykningsÅr = " & sendeÅr & ") AND (tblMedieplan.IndrykningsUge = " & sendeUge & ") AND (tblMedieplanLinjer.UgeavisID = " & arow.Cells("BladID").Value & ")"
+
+            first = True
+
+            Dim HTMLTekst As New StringBuilder
+
+            Dim dr As SqlDataReader = cm.ExecuteReader(CommandBehavior.Default)
+            While dr.Read()
+              If first Then
+                HTMLTekst.Append("<Table border=""1"" cellpadding=""0"" cellspacing=""0"" width=""90%""><TR><TD Width=""10%""><B>Ordre Nr</B></TD><TD Width=""60%""><B>Annoncør</B></TD><TD Width=""20%""><B>Format</B></TD><TD Width=""10%""><B>Farver</B></TD></TR>")
+                first = False
+              End If
+              HTMLTekst.Append("<TR>")
+              HTMLTekst.Append("<TD>" & dr("MedieplanNr").ToString() & "</TD>")
+              HTMLTekst.Append("<TD>" & dr("Annoncør") & "</TD>")
+              HTMLTekst.Append("<TD align=""right"">" & dr("Format") & "</TD>")
+              HTMLTekst.Append("<TD align=""right"">" & dr("AntalFarver") & "</TD>")
+              HTMLTekst.Append("</TR>")
+            End While
+            dr.Close()
+            If Not first Then
+              HTMLTekst.Append("</TABLE>")
+              Dim mail As New clsEmail
+              mail.Til = eMail
+              mail.Subject = "DLU ordre tjekliste for " & arow.Cells("Navn").Value & " i uge " & sendeUge.ToString
+              mail.From = "OrdreUdsending@DeLokaleUgeaviser.dk"
+              mail.BodyMappe = "Z:\Forsendelser\Tjeklister\" & sendeUge.ToString
+              mail.BodyFilNavn = arow.Cells("Navn").Text & " [" & eMail & "]"
+              mail.Body = HTMLTekst.ToString
+              succes = mail.Send()
+              If succes Then
+                logTekst = logTekst + "Tjekliste sendt til " & arow.Cells("Navn").Value & vbCrLf
+              Else
+                logTekst = logTekst + "Tjekliste ikke sendt til " & arow.Cells("Navn").Value & vbCrLf
+              End If
+            End If
+          Else
+            MessageBox.Show("Mangler email for " & arow.Cells("Navn").Value, "Email mangler", MessageBoxButtons.OK, MessageBoxIcon.Error)
+          End If
+        End If
+      Next
+      Me.Cursor = Cursors.Default
+      MessageBox.Show(logTekst, "Tjeklister sendt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Else
+    End If
+    cn.Close()
+    cm.Dispose()
+    cn.Dispose()
+    Me.Close()
+  End Sub
+
+
+  'Private Sub _cfilter_CheckChanged(ByVal sender As Object, ByVal e As HeaderCheckBoxCreationFilter.HeaderCheckBoxEventArgs) Handles _cfilter.CheckChanged
+  '  If grdBladListe.Selected.Rows.Count > 1 Then
+  '    For Each arow As UltraGridRow In grdBladListe.Selected.Rows
+  '      arow.Cells("Valgt").Value = e.CurrentCheckState
+  '      arow.Update()
+  '    Next
+  '  Else
+  '    For Each arow As UltraGridRow In grdBladListe.Rows
+  '      arow.Cells("Valgt").Value = e.CurrentCheckState
+  '      arow.Update()
+  '    Next
+  '  End If
+  'End Sub
+
+  Private Sub optUdsendelsesType_ValueChanged(sender As System.Object, e As System.EventArgs) Handles optUdsendelsesType.ValueChanged
+    If optUdsendelsesType.Value <> 0 Then btnSend.Enabled = True
+  End Sub
+End Class

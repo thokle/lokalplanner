@@ -1,0 +1,15 @@
+Backcolor                       229; 230; 232
+Menubar                         196; 201; 207
+
+
+
+
+
+
+
+
+
+
+
+
+Farvevalg til bladstamdata mainmanu (unlock = 229; 230; 232) && (lock )

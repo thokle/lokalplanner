@@ -1,0 +1,59 @@
+Imports Infragistics.Win.UltraWinGrid
+
+Public Class frmErSendt
+
+  Private Sub frmErSendt_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+    Me.Cursor = Cursors.WaitCursor
+    Me.ViewOrdreErSendtTableAdapter.FillByUger(Me.DstErSendt.viewOrdreErSendt, numFraUge.Value, numTilUge.Value)
+    Me.Cursor = Cursors.Default
+  End Sub
+
+  Private Sub frmErSendt_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    Me.grdOversigt.DisplayLayout.Save(My.Settings.PathGridUserSettings & "OversigtErSendtGrid.bin", PropertyCategories.All)
+  End Sub
+
+  Private Sub frmErSendt_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    If HentBrugersIndstillinger AndAlso My.Computer.FileSystem.FileExists(My.Settings.PathGridUserSettings & "OversigtErSendtGrid.bin") Then
+      Me.grdOversigt.DisplayLayout.Load(My.Settings.PathGridUserSettings & "OversigtErSendtGrid.bin")
+    End If
+    numFraUge.Value = frmMain.DenneUge + 1
+    numTilUge.Value = frmMain.DenneUge + 1
+    grdOversigt.Text = "Er sendt Oversigt Uge " & numFraUge.Value.ToString
+    Me.Text = "Er sendt Uge " & numFraUge.Value.ToString
+    grdOversigt.DisplayLayout.Bands(0).Columns("IndrykningsUge").Hidden = True
+  End Sub
+
+  Private Sub btnOpdater_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpdater.Click
+    If numFraUge.Value - numTilUge.Value = 0 Then
+      grdOversigt.DisplayLayout.Bands(0).Columns("IndrykningsUge").Hidden = True
+      grdOversigt.Text = "Er sendt Oversigt Uge " & numFraUge.Value.ToString
+      Me.Text = "Er sendt Uge " & numFraUge.Value.ToString
+    Else
+      grdOversigt.DisplayLayout.Bands(0).Columns("IndrykningsUge").Hidden = False
+      grdOversigt.Text = "Er sendt Oversigt Uge " & numFraUge.Value.ToString & " til " & numTilUge.Value.ToString
+      Me.Text = "Er sendt Uge " & numFraUge.Value.ToString & " til " & numTilUge.Value.ToString
+    End If
+    Me.ViewOrdreErSendtTableAdapter.FillByUger(Me.DstErSendt.viewOrdreErSendt, numFraUge.Value, numTilUge.Value)
+  End Sub
+
+  Private Sub btnLuk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLuk.Click
+    Me.Close()
+  End Sub
+
+  Private Sub grdOversigt_DoubleClickRow(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs) Handles grdOversigt.DoubleClickRow
+    Dim mediePlanNr As Integer
+    Integer.TryParse(e.Row.Cells("MedieplanNr").Value, mediePlanNr)
+    Dim version As Integer
+    Integer.TryParse(e.Row.Cells("Version").Value, version)
+
+    If mediePlanNr > 0 AndAlso version > 0 Then
+      Me.Cursor = Cursors.WaitCursor
+      frmMain.AktivtModul = "Booking"
+      Dim nyFrmMedieplan As New frmMedieplan(frmMain.AktivtModul, mediePlanNr, version)
+      nyFrmMedieplan.MdiParent = My.Forms.frmMain
+      nyFrmMedieplan.Show()
+      nyFrmMedieplan.WindowState = FormWindowState.Maximized
+      Me.Cursor = Cursors.Default
+    End If
+  End Sub
+End Class

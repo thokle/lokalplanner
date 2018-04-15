@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstFindMedieplaner" targetNamespace="http://tempuri.org/dstFindMedieplaner.xsd" xmlns:mstns="http://tempuri.org/dstFindMedieplaner.xsd" xmlns="http://tempuri.org/dstFindMedieplaner.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblFundneplanerTableAdapter" GeneratorDataComponentClassName="tblFundneplanerTableAdapter" Name="tblFundneplaner" UserDataComponentName="tblFundneplanerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="AnnoncørNo_" DataSetColumn="AnnoncørNo_" />
+              <Mapping SourceColumn="BureauNo_" DataSetColumn="BureauNo_" />
+              <Mapping SourceColumn="AntalFarver" DataSetColumn="AntalFarver" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="KonsulentCode" DataSetColumn="KonsulentCode" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="Nr" DataSetColumn="Nr" />
+              <Mapping SourceColumn="Betegnelse" DataSetColumn="Betegnelse" />
+              <Mapping SourceColumn="Format" DataSetColumn="Format" />
+              <Mapping SourceColumn="AntalUgeaviser" DataSetColumn="AntalUgeaviser" />
+              <Mapping SourceColumn="Beskrivelse" DataSetColumn="Beskrivelse" />
+              <Mapping SourceColumn="Overskrift" DataSetColumn="Overskrift" />
+              <Mapping SourceColumn="RettelserEfterAnnoncekontrol" DataSetColumn="RettelserEfterAnnoncekontrol" />
+              <Mapping SourceColumn="SalgsAnsvarlig" DataSetColumn="SalgsAnsvarlig" />
+              <Mapping SourceColumn="OprettetDato" DataSetColumn="OprettetDato" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillByAnnoncørNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByAnnoncørNo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNoBureauNo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAnnoncørNoBureauNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByAnnoncørNoBureauNo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND 
+                         @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNoBureauNoKonsulentCode" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy7" GeneratorSourceName="FillByAnnoncørNoBureauNoKonsulentCode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByAnnoncørNoBureauNoKonsulentCode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.KonsulentCode = @KonsulentCode) AND 
+                         (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.Version BETWEEN 
+                         @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="KonsulentCode" ColumnName="KonsulentCode" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@KonsulentCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="KonsulentCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNoBureauNoUgeavisID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAnnoncørNoBureauNoUgeavisID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByAnnoncørNoBureauNoUgeavisID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND 
+                         @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplanLinjer.UgeavisID = @UgeavisID) AND (tblMedieplan.Version BETWEEN @VersionFra AND 
+                         @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeavisID" ColumnName="UgeavisID" DataSourceName="DiMPdotNet.dbo.tblMedieplanLinjer" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UgeavisID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UgeavisID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNoKonsulentCode" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAnnoncørNoKonsulentCode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByAnnoncørNoKonsulentCode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.KonsulentCode = @KonsulentCode) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND 
+                         @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="KonsulentCode" ColumnName="KonsulentCode" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@KonsulentCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="KonsulentCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAnnoncørNoUgeavisID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAnnoncørNoUgeavisID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="FillByAnnoncørNoUgeavisID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE        (tblMedieplan.AnnoncørNo_ = @AnnoncørNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplanLinjer.UgeavisID = @UgeavisID) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="AnnoncørNo" ColumnName="AnnoncørNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@AnnoncørNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="AnnoncørNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeavisID" ColumnName="UgeavisID" DataSourceName="DiMPdotNet.dbo.tblMedieplanLinjer" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UgeavisID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UgeavisID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByBureauNo" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByBureauNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="FillByBureauNo">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByBureauNoKonsulentCode" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy10" GeneratorSourceName="FillByBureauNoKonsulentCode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="FillByBureauNoKonsulentCode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.KonsulentCode = @KonsulentCode) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND 
+                         @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="KonsulentCode" ColumnName="KonsulentCode" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@KonsulentCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="KonsulentCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByBureauNoUgeavisID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByBureauNoUgeavisID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="FillByBureauNoUgeavisID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE        (tblMedieplan.BureauNo_ = @BureauNo) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplanLinjer.UgeavisID = @UgeavisID) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauNo" ColumnName="BureauNo_" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@BureauNo" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="BureauNo_" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeavisID" ColumnName="UgeavisID" DataSourceName="DiMPdotNet.dbo.tblMedieplanLinjer" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UgeavisID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UgeavisID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByBureauOrdreNr" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByBureauOrdreNr" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="FillByBureauOrdreNr">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT 
+                         CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) WHEN tblMedieplan.Version &gt; 10 AND
+                          tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE        (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplanLinjer.BureauOrdreNr = @BureauOrdreNr) OR
+                         (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                         (tblMedieplan.FællesBureauOrdreNr = @BureauOrdreNr)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+HAVING        (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BureauOrdreNr" ColumnName="BureauOrdreNr" DataSourceName="DiMPdotNet.dbo.tblMedieplanLinjer" DataTypeServer="nvarchar(30)" DbType="String" Direction="Input" ParameterName="@BureauOrdreNr" Precision="0" ProviderType="NVarChar" Scale="0" Size="30" SourceColumn="BureauOrdreNr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByKonsulentCode" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByKonsulentCode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="FillByKonsulentCode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.KonsulentCode = @KonsulentCode) AND (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) 
+                         AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="KonsulentCode" ColumnName="KonsulentCode" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@KonsulentCode" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="KonsulentCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByMedieplanNr" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByMedieplanNr" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillByMedieplanNr">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.MedieplanNr = @MedieplanNr) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                         (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedieplanNr" ColumnName="MedieplanNr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MedieplanNr" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MedieplanNr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByStatusIkkeUdsendt" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByStatusIkkeUdsendt" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="FillByStatusIkkeUdsendt">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE        (tblMedieplanNr.Status &lt; 3)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUgeavisID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy5" GeneratorSourceName="FillByUgeavisID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="FillByUgeavisID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                      WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                      + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) 
+                      WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) 
+                      + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                      CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                      tblMedieplan.KontaktpersonTilhører = 2 THEN
+                          (SELECT     Name
+                            FROM          NavisionContact AS Contact1
+                            WHERE      (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                          (SELECT     Name
+                            FROM          NavisionContact AS Contact1
+                            WHERE      (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                      CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                          (SELECT     Name
+                            FROM          NavisionContact AS Contact2
+                            WHERE      (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                          (SELECT     Name
+                            FROM          NavisionContact AS Contact2
+                            WHERE      (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, 
+                      tblPlacering.Betegnelse, LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, 
+                      COUNT(tblMedieplanLinjer.UgeavisID) AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, 
+                      tblMedieplan.MedieplanNr, tblMedieplan.Version, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                          (SELECT     [Salesperson Code]
+                            FROM          NavisionContact
+                            WHERE      (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM         tblMedieplan INNER JOIN
+                      tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                      tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND 
+                      tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                      tblMedieplanNr ON tblMedieplan.MedieplanNr = tblMedieplanNr.MedieplanNr AND tblMedieplan.Version = tblMedieplanNr.AktivVersion
+WHERE     (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND 
+                      (tblMedieplanLinjer.UgeavisID = @UgeavisID) AND (tblMedieplan.Version BETWEEN @VersionFra AND @VersionTil) AND 
+                      (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                      tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, 
+                      tblMedieplan.IndrykningsUge, tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, 
+                      tblMedieplan.Version, tblMedieplan.MedieplanNr, tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, 
+                      tblMedieplan.RettelserEfterAnnoncekontrol, tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeavisID" ColumnName="UgeavisID" DataSourceName="DiMPdotNet.dbo.tblMedieplanLinjer" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UgeavisID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UgeavisID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUger" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByUger" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="FillByUger">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) PERCENT CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) 
+                         WHEN tblMedieplan.Version &gt; 10 AND tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører = 0 OR
+                         tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 1 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact1
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS AnnoncørNo_, 
+                         CASE WHEN tblMedieplan.KontaktpersonTilhører &lt; 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) WHEN tblMedieplan.KontaktpersonTilhører = 2 THEN
+                             (SELECT        Name
+                               FROM            NavisionContact AS Contact2
+                               WHERE        (No_ = tblMedieplan.BureauNo_)) + ' - ' + tblMedieplan.Kontaktperson END AS BureauNo_, tblMedieplan.Beskrivelse, tblPlacering.Betegnelse, 
+                         LTRIM(STR(tblMedieplan.Format1)) + ' x ' + LTRIM(STR(tblMedieplan.Format2)) AS Format, tblMedieplan.AntalFarver, COUNT(tblMedieplanLinjer.UgeavisID) 
+                         AS AntalUgeaviser, tblMedieplan.KonsulentCode, tblMedieplan.IndrykningsUge, tblMedieplan.Status, tblMedieplan.MedieplanNr, tblMedieplan.Version, 
+                         tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact
+                               WHERE        (No_ = tblMedieplan.AnnoncørNo_)) AS SalgsAnsvarlig, tblMedieplan.OprettetDato
+FROM            tblMedieplan INNER JOIN
+                         tblPlacering ON tblMedieplan.PlaceringID = tblPlacering.PlaceringID INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version
+WHERE        (tblMedieplan.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.Version BETWEEN 
+                         @VersionFra AND @VersionTil) AND (tblMedieplan.RettelserEfterAnnoncekontrol = 0 OR
+                         tblMedieplan.RettelserEfterAnnoncekontrol = @MedtagRettelser)
+GROUP BY tblMedieplan.AnnoncørNo_, tblMedieplan.BureauNo_, tblMedieplan.Format1, tblMedieplan.Format2, tblMedieplan.AntalFarver, tblMedieplan.IndrykningsUge, 
+                         tblMedieplan.Beskrivelse, tblMedieplan.KonsulentCode, tblMedieplan.Status, tblPlacering.Betegnelse, tblMedieplan.Version, tblMedieplan.MedieplanNr, 
+                         tblMedieplan.Kontaktperson, tblMedieplan.KontaktpersonTilhører, tblMedieplan.Overskrift, tblMedieplan.RettelserEfterAnnoncekontrol, 
+                         tblMedieplan.OprettetDato
+ORDER BY tblMedieplan.MedieplanNr, tblMedieplan.Version</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionFra" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionFra" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="VersionTil" ColumnName="Version" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@VersionTil" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="Version" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MedtagRettelser" ColumnName="RettelserEfterAnnoncekontrol" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@MedtagRettelser" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="RettelserEfterAnnoncekontrol" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstFindMedieplaner" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dstFindMedieplaner" msprop:Generator_UserDSName="dstFindMedieplaner">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblFundneplaner" msprop:Generator_UserTableName="tblFundneplaner" msprop:Generator_RowEvArgName="tblFundneplanerRowChangeEvent" msprop:Generator_TableVarName="tabletblFundneplaner" msprop:Generator_TablePropName="tblFundneplaner" msprop:Generator_RowDeletingName="tblFundneplanerRowDeleting" msprop:Generator_RowChangingName="tblFundneplanerRowChanging" msprop:Generator_RowDeletedName="tblFundneplanerRowDeleted" msprop:Generator_RowEvHandlerName="tblFundneplanerRowChangeEventHandler" msprop:Generator_TableClassName="tblFundneplanerDataTable" msprop:Generator_RowChangedName="tblFundneplanerRowChanged" msprop:Generator_RowClassName="tblFundneplanerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" msprop:Generator_UserColumnName="MedieplanNr" type="xs:int" />
+              <xs:element name="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" msprop:Generator_UserColumnName="Version" type="xs:short" />
+              <xs:element name="AnnoncørNo_" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AnnoncørNo_" msprop:Generator_ColumnVarNameInTable="columnAnnoncørNo_" msprop:Generator_ColumnPropNameInTable="AnnoncørNo_Column" msprop:Generator_UserColumnName="AnnoncørNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BureauNo_" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="BureauNo_" msprop:Generator_ColumnVarNameInTable="columnBureauNo_" msprop:Generator_ColumnPropNameInTable="BureauNo_Column" msprop:Generator_UserColumnName="BureauNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalFarver" msprop:Generator_ColumnVarNameInTable="columnAntalFarver" msprop:Generator_ColumnPropNameInRow="AntalFarver" msprop:Generator_ColumnPropNameInTable="AntalFarverColumn" msprop:Generator_UserColumnName="AntalFarver" type="xs:unsignedByte" />
+              <xs:element name="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" msprop:Generator_UserColumnName="IndrykningsUge" type="xs:unsignedByte" />
+              <xs:element name="KonsulentCode" msprop:nullValue="(Empty)" msprop:Generator_ColumnPropNameInRow="KonsulentCode" msprop:Generator_ColumnVarNameInTable="columnKonsulentCode" msprop:Generator_ColumnPropNameInTable="KonsulentCodeColumn" msprop:Generator_UserColumnName="KonsulentCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:unsignedByte" />
+              <xs:element name="Nr" msdata:ReadOnly="true" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Nr" msprop:Generator_ColumnVarNameInTable="columnNr" msprop:Generator_ColumnPropNameInTable="NrColumn" msprop:Generator_UserColumnName="Nr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Betegnelse" msprop:nullValue="(Empty)" msprop:Generator_ColumnPropNameInRow="Betegnelse" msprop:Generator_ColumnVarNameInTable="columnBetegnelse" msprop:Generator_ColumnPropNameInTable="BetegnelseColumn" msprop:Generator_UserColumnName="Betegnelse">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Format" msdata:ReadOnly="true" msprop:nullValue="(Empty)" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInTable="FormatColumn" msprop:Generator_UserColumnName="Format" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalUgeaviser" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAntalUgeaviser" msprop:Generator_ColumnPropNameInRow="AntalUgeaviser" msprop:Generator_ColumnPropNameInTable="AntalUgeaviserColumn" msprop:Generator_UserColumnName="AntalUgeaviser" type="xs:int" minOccurs="0" />
+              <xs:element name="Beskrivelse" msprop:Generator_ColumnVarNameInTable="columnBeskrivelse" msprop:Generator_ColumnPropNameInRow="Beskrivelse" msprop:Generator_ColumnPropNameInTable="BeskrivelseColumn" msprop:Generator_UserColumnName="Beskrivelse">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Overskrift" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Overskrift" msprop:Generator_ColumnVarNameInTable="columnOverskrift" msprop:Generator_ColumnPropNameInTable="OverskriftColumn" msprop:Generator_UserColumnName="Overskrift">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RettelserEfterAnnoncekontrol" msprop:Generator_ColumnVarNameInTable="columnRettelserEfterAnnoncekontrol" msprop:Generator_ColumnPropNameInRow="RettelserEfterAnnoncekontrol" msprop:Generator_ColumnPropNameInTable="RettelserEfterAnnoncekontrolColumn" msprop:Generator_UserColumnName="RettelserEfterAnnoncekontrol" type="xs:boolean" />
+              <xs:element name="SalgsAnsvarlig" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSalgsAnsvarlig" msprop:Generator_ColumnPropNameInRow="SalgsAnsvarlig" msprop:Generator_ColumnPropNameInTable="SalgsAnsvarligColumn" msprop:Generator_UserColumnName="SalgsAnsvarlig" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OprettetDato" msprop:Generator_ColumnVarNameInTable="columnOprettetDato" msprop:Generator_ColumnPropNameInRow="OprettetDato" msprop:Generator_ColumnPropNameInTable="OprettetDatoColumn" msprop:Generator_UserColumnName="OprettetDato" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblFundneplaner" />
+      <xs:field xpath="mstns:MedieplanNr" />
+      <xs:field xpath="mstns:Version" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

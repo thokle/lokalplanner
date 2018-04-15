@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstManglerAnnonceKontrol" targetNamespace="http://tempuri.org/dstManglerAnnonceKontrol.xsd" xmlns:mstns="http://tempuri.org/dstManglerAnnonceKontrol.xsd" xmlns="http://tempuri.org/dstManglerAnnonceKontrol.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblManglerKontrolTableAdapter" GeneratorDataComponentClassName="tblManglerKontrolTableAdapter" Name="tblManglerKontrol" UserDataComponentName="tblManglerKontrolTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT tblBladStamdata.Navn, tblBladStamdata.BladID, tblMedieplan.IndrykningsUge
+FROM         tblMedieplanNr INNER JOIN
+                      tblMedieplan ON tblMedieplanNr.MedieplanNr = tblMedieplan.MedieplanNr AND tblMedieplanNr.AktivVersion = tblMedieplan.Version INNER JOIN
+                      tblMedieplanLinjer ON tblMedieplan.Version = tblMedieplanLinjer.Version AND 
+                      tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr INNER JOIN
+                      tblBladStamdata ON tblMedieplanLinjer.UgeavisID = tblBladStamdata.BladID LEFT OUTER JOIN
+                      tblAnnoncekontrol ON tblMedieplanLinjer.MedieplanNr = tblAnnoncekontrol.MedieplanNr AND 
+                      tblMedieplanLinjer.UgeavisID = tblAnnoncekontrol.UgeavisID
+WHERE     (tblAnnoncekontrol.ErKontrolleret IS NULL) AND (tblMedieplanNr.Status = 3)
+
+ORDER BY tblBladStamdata.Navn, tblMedieplan.IndrykningsUge DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Navn" DataSetColumn="Navn" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="BladID" DataSetColumn="BladID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUge" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByUge" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByUge">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT tblBladStamdata.Navn, tblBladStamdata.BladID, tblMedieplan.IndrykningsUge
+FROM         tblMedieplanNr INNER JOIN
+                      tblMedieplan ON tblMedieplanNr.MedieplanNr = tblMedieplan.MedieplanNr AND tblMedieplanNr.AktivVersion = tblMedieplan.Version INNER JOIN
+                      tblMedieplanLinjer ON tblMedieplan.Version = tblMedieplanLinjer.Version AND 
+                      tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr INNER JOIN
+                      tblBladStamdata ON tblMedieplanLinjer.UgeavisID = tblBladStamdata.BladID LEFT OUTER JOIN
+                      tblAnnoncekontrol ON tblMedieplanLinjer.MedieplanNr = tblAnnoncekontrol.MedieplanNr AND 
+                      tblMedieplanLinjer.UgeavisID = tblAnnoncekontrol.UgeavisID
+WHERE     (tblMedieplan.IndrykningsUge &lt;= @Uge) AND (tblMedieplan.IndrykningsÅr = YEAR({ fn NOW() })) AND (tblMedieplanNr.Status = 3) AND 
+                      (tblAnnoncekontrol.ErKontrolleret IS NULL) OR
+                      (tblMedieplan.IndrykningsÅr = YEAR({ fn NOW() }) - 1) AND (tblMedieplanNr.Status = 3) AND (tblAnnoncekontrol.ErKontrolleret IS NULL)
+ORDER BY tblBladStamdata.Navn, tblMedieplan.IndrykningsUge DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Uge" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Uge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstManglerAnnonceKontrol" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:Generator_DataSetName="dstManglerAnnonceKontrol" msprop:Generator_UserDSName="dstManglerAnnonceKontrol">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblManglerKontrol" msprop:Generator_UserTableName="tblManglerKontrol" msprop:Generator_RowEvArgName="tblManglerKontrolRowChangeEvent" msprop:Generator_TableVarName="tabletblManglerKontrol" msprop:Generator_TablePropName="tblManglerKontrol" msprop:Generator_RowDeletingName="tblManglerKontrolRowDeleting" msprop:Generator_RowChangingName="tblManglerKontrolRowChanging" msprop:Generator_RowDeletedName="tblManglerKontrolRowDeleted" msprop:Generator_RowEvHandlerName="tblManglerKontrolRowChangeEventHandler" msprop:Generator_TableClassName="tblManglerKontrolDataTable" msprop:Generator_RowChangedName="tblManglerKontrolRowChanged" msprop:Generator_RowClassName="tblManglerKontrolRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Navn" msprop:Generator_ColumnVarNameInTable="columnNavn" msprop:Generator_ColumnPropNameInRow="Navn" msprop:Generator_ColumnPropNameInTable="NavnColumn" msprop:Generator_UserColumnName="Navn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" msprop:Generator_UserColumnName="IndrykningsUge" type="xs:unsignedByte" />
+              <xs:element name="BladID" msprop:Generator_ColumnVarNameInTable="columnBladID" msprop:Generator_ColumnPropNameInRow="BladID" msprop:Generator_ColumnPropNameInTable="BladIDColumn" msprop:Generator_UserColumnName="BladID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblManglerKontrol" />
+      <xs:field xpath="mstns:BladID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

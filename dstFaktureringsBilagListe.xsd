@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstFaktureringsBilagListe" targetNamespace="http://tempuri.org/dstFaktureringsBilagListe.xsd" xmlns:mstns="http://tempuri.org/dstFaktureringsBilagListe.xsd" xmlns="http://tempuri.org/dstFaktureringsBilagListe.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblFaktureringsBilagTableAdapter" GeneratorDataComponentClassName="tblFaktureringsBilagTableAdapter" Name="tblFaktureringsBilag" UserDataComponentName="tblFaktureringsBilagTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblFaktureringsBilag.MedieplanNr, tblMedieplan.Version, tblFaktureringsBilag.BemærkningNr, tblFaktureringsBilag.UgeavisNavn, tblMedieplan.IndrykningsUge, 
+                         tblFaktureringsBilag.Oprettet, tblFaktureringsBilag.OprettetAf, tblMedieplanNr.Status
+FROM            tblFaktureringsBilag INNER JOIN
+                         tblMedieplanNr ON tblFaktureringsBilag.MedieplanNr = tblMedieplanNr.MedieplanNr INNER JOIN
+                         tblMedieplan ON tblMedieplanNr.MedieplanNr = tblMedieplan.MedieplanNr AND tblMedieplanNr.AktivVersion = tblMedieplan.Version
+WHERE        (tblFaktureringsBilag.ErRettet = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="BemærkningNr" DataSetColumn="BemærkningNr" />
+              <Mapping SourceColumn="UgeavisNavn" DataSetColumn="UgeavisNavn" />
+              <Mapping SourceColumn="Oprettet" DataSetColumn="Oprettet" />
+              <Mapping SourceColumn="OprettetAf" DataSetColumn="OprettetAf" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstFaktureringsBilagListe" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dstFaktureringsBilagListe" msprop:Generator_DataSetName="dstFaktureringsBilagListe" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblFaktureringsBilag" msprop:Generator_UserTableName="tblFaktureringsBilag" msprop:Generator_RowDeletedName="tblFaktureringsBilagRowDeleted" msprop:Generator_RowChangedName="tblFaktureringsBilagRowChanged" msprop:Generator_RowClassName="tblFaktureringsBilagRow" msprop:Generator_RowChangingName="tblFaktureringsBilagRowChanging" msprop:Generator_RowEvArgName="tblFaktureringsBilagRowChangeEvent" msprop:Generator_RowEvHandlerName="tblFaktureringsBilagRowChangeEventHandler" msprop:Generator_TableClassName="tblFaktureringsBilagDataTable" msprop:Generator_TableVarName="tabletblFaktureringsBilag" msprop:Generator_RowDeletingName="tblFaktureringsBilagRowDeleting" msprop:Generator_TablePropName="tblFaktureringsBilag">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedieplanNr" msprop:Generator_UserColumnName="MedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" type="xs:int" />
+              <xs:element name="BemærkningNr" msprop:Generator_UserColumnName="BemærkningNr" msprop:Generator_ColumnPropNameInRow="BemærkningNr" msprop:Generator_ColumnVarNameInTable="columnBemærkningNr" msprop:Generator_ColumnPropNameInTable="BemærkningNrColumn" type="xs:short" />
+              <xs:element name="UgeavisNavn" msprop:Generator_UserColumnName="UgeavisNavn" msprop:Generator_ColumnPropNameInRow="UgeavisNavn" msprop:Generator_ColumnVarNameInTable="columnUgeavisNavn" msprop:Generator_ColumnPropNameInTable="UgeavisNavnColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Oprettet" msprop:Generator_UserColumnName="Oprettet" msprop:Generator_ColumnPropNameInRow="Oprettet" msprop:Generator_ColumnVarNameInTable="columnOprettet" msprop:Generator_ColumnPropNameInTable="OprettetColumn" type="xs:dateTime" />
+              <xs:element name="OprettetAf" msprop:Generator_UserColumnName="OprettetAf" msprop:Generator_ColumnPropNameInRow="OprettetAf" msprop:Generator_ColumnVarNameInTable="columnOprettetAf" msprop:Generator_ColumnPropNameInTable="OprettetAfColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Version" msprop:Generator_UserColumnName="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" type="xs:short" />
+              <xs:element name="IndrykningsUge" msprop:Generator_UserColumnName="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" type="xs:unsignedByte" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInTable="StatusColumn" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblFaktureringsBilag" />
+      <xs:field xpath="mstns:MedieplanNr" />
+      <xs:field xpath="mstns:BemærkningNr" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

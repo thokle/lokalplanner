@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstOversigt" targetNamespace="http://tempuri.org/dstOversigt.xsd" xmlns:mstns="http://tempuri.org/dstOversigt.xsd" xmlns="http://tempuri.org/dstOversigt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="viewOversigtTableAdapter" GeneratorDataComponentClassName="viewOversigtTableAdapter" Name="viewOversigt" UserDataComponentName="viewOversigtTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN viewOversigt.Version &lt; 10 THEN LTRIM(STR(viewOversigt.MedieplanNr)) + '-' + LTRIM(STR(viewOversigt.Version)) WHEN viewOversigt.Version &gt; 10 AND
+                          viewOversigt.Version &lt; 100 THEN LTRIM(STR(viewOversigt.MedieplanNr)) + '-' + RIGHT(LTRIM(viewOversigt.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(viewOversigt.Version), 1) WHEN viewOversigt.Version &gt; 100 THEN LTRIM(STR(viewOversigt.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(viewOversigt.Version / 100), 1) + '-' + RIGHT(LTRIM(viewOversigt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOversigt.Version), 1) END AS Nr, 
+                         viewOversigt.MedieplanNr, viewOversigt.Version,
+                             (SELECT        Name
+                               FROM            NavisionContact
+                               WHERE        (No_ = viewOversigt.AnnoncørNo_)) AS AnnoncørNo_,
+                             (SELECT        Name
+                               FROM            NavisionContact AS NavisionContact_1
+                               WHERE        (No_ = viewOversigt.BureauNo_)) AS BureauNo_, viewOversigt.Format, viewOversigt.AntalFarver, viewOversigt.IndrykningsUge, 
+                         viewOversigt.OrdreUdsendt, viewOversigt.MaterialeFra, viewOversigt.MaterialeUdsendt, viewOversigt.KonsulentCode AS OrdreAnsvarlig,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact AS NavisionContact_2
+                               WHERE        (No_ = viewOversigt.AnnoncørNo_)) AS SalgsAnsvarlig, viewOversigt.Overskrift, viewOversigt.Deadline, tblMedieplanNr.Kommentar
+FROM            viewOversigt INNER JOIN
+                         tblMedieplanNr ON viewOversigt.MedieplanNr = tblMedieplanNr.MedieplanNr</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MedieplanNr" DataSetColumn="MedieplanNr" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="AnnoncørNo_" DataSetColumn="AnnoncørNo_" />
+              <Mapping SourceColumn="BureauNo_" DataSetColumn="BureauNo_" />
+              <Mapping SourceColumn="Format" DataSetColumn="Format" />
+              <Mapping SourceColumn="AntalFarver" DataSetColumn="AntalFarver" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="OrdreUdsendt" DataSetColumn="OrdreUdsendt" />
+              <Mapping SourceColumn="MaterialeFra" DataSetColumn="MaterialeFra" />
+              <Mapping SourceColumn="MaterialeUdsendt" DataSetColumn="MaterialeUdsendt" />
+              <Mapping SourceColumn="OrdreAnsvarlig" DataSetColumn="OrdreAnsvarlig" />
+              <Mapping SourceColumn="SalgsAnsvarlig" DataSetColumn="SalgsAnsvarlig" />
+              <Mapping SourceColumn="Nr" DataSetColumn="Nr" />
+              <Mapping SourceColumn="Overskrift" DataSetColumn="Overskrift" />
+              <Mapping SourceColumn="Deadline" DataSetColumn="Deadline" />
+              <Mapping SourceColumn="Kommentar" DataSetColumn="Kommentar" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUger" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByUger" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByUger">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        (SELECT        Name
+                          FROM            NavisionContact
+                          WHERE        (No_ = viewOversigt.AnnoncørNo_)) AS AnnoncørNo_, viewOversigt.AntalFarver,
+                             (SELECT        Name
+                               FROM            NavisionContact AS NavisionContact_1
+                               WHERE        (No_ = viewOversigt.BureauNo_)) AS BureauNo_, viewOversigt.Format, viewOversigt.IndrykningsUge, viewOversigt.KonsulentCode AS OrdreAnsvarlig, 
+                         viewOversigt.MaterialeFra, viewOversigt.MaterialeUdsendt, viewOversigt.MedieplanNr, 
+                         CASE WHEN viewOversigt.Version &lt; 10 THEN LTRIM(STR(viewOversigt.MedieplanNr)) + '-' + LTRIM(STR(viewOversigt.Version)) WHEN viewOversigt.Version &gt; 10 AND
+                          viewOversigt.Version &lt; 100 THEN LTRIM(STR(viewOversigt.MedieplanNr)) + '-' + RIGHT(LTRIM(viewOversigt.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(viewOversigt.Version), 1) WHEN viewOversigt.Version &gt; 100 THEN LTRIM(STR(viewOversigt.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(viewOversigt.Version / 100), 1) + '-' + RIGHT(LTRIM(viewOversigt.Version / 10), 1) + '-' + RIGHT(LTRIM(viewOversigt.Version), 1) END AS Nr, 
+                         viewOversigt.OrdreUdsendt, viewOversigt.Overskrift,
+                             (SELECT        [Salesperson Code]
+                               FROM            NavisionContact AS NavisionContact_2
+                               WHERE        (No_ = viewOversigt.AnnoncørNo_)) AS SalgsAnsvarlig, viewOversigt.Version, viewOversigt.Deadline, tblMedieplanNr.Kommentar
+FROM            viewOversigt INNER JOIN
+                         tblMedieplanNr ON viewOversigt.MedieplanNr = tblMedieplanNr.MedieplanNr
+WHERE        (viewOversigt.IndrykningsUge BETWEEN @UgeStart AND @UgeSlut)
+ORDER BY viewOversigt.IndrykningsUge</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeStart" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.viewOversigt" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeStart" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeSlut" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.viewOversigt" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@UgeSlut" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstOversigt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dstOversigt" msprop:Generator_UserDSName="dstOversigt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="viewOversigt" msprop:Generator_UserTableName="viewOversigt" msprop:Generator_RowEvArgName="viewOversigtRowChangeEvent" msprop:Generator_TableVarName="tableviewOversigt" msprop:Generator_TablePropName="viewOversigt" msprop:Generator_RowDeletingName="viewOversigtRowDeleting" msprop:Generator_RowChangingName="viewOversigtRowChanging" msprop:Generator_RowDeletedName="viewOversigtRowDeleted" msprop:Generator_RowEvHandlerName="viewOversigtRowChangeEventHandler" msprop:Generator_TableClassName="viewOversigtDataTable" msprop:Generator_RowChangedName="viewOversigtRowChanged" msprop:Generator_RowClassName="viewOversigtRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MedieplanNr" msprop:Generator_ColumnVarNameInTable="columnMedieplanNr" msprop:Generator_ColumnPropNameInRow="MedieplanNr" msprop:Generator_ColumnPropNameInTable="MedieplanNrColumn" msprop:Generator_UserColumnName="MedieplanNr" type="xs:int" />
+              <xs:element name="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" msprop:Generator_UserColumnName="Version" type="xs:short" />
+              <xs:element name="AnnoncørNo_" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AnnoncørNo_" msprop:Generator_ColumnVarNameInTable="columnAnnoncørNo_" msprop:Generator_ColumnPropNameInTable="AnnoncørNo_Column" msprop:Generator_UserColumnName="AnnoncørNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BureauNo_" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="BureauNo_" msprop:Generator_ColumnVarNameInTable="columnBureauNo_" msprop:Generator_ColumnPropNameInTable="BureauNo_Column" msprop:Generator_UserColumnName="BureauNo_" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Format" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFormat" msprop:Generator_ColumnPropNameInRow="Format" msprop:Generator_ColumnPropNameInTable="FormatColumn" msprop:Generator_UserColumnName="Format" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AntalFarver" msprop:Generator_ColumnVarNameInTable="columnAntalFarver" msprop:Generator_ColumnPropNameInRow="AntalFarver" msprop:Generator_ColumnPropNameInTable="AntalFarverColumn" msprop:Generator_UserColumnName="AntalFarver" type="xs:unsignedByte" />
+              <xs:element name="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" msprop:Generator_UserColumnName="IndrykningsUge" type="xs:unsignedByte" />
+              <xs:element name="OrdreUdsendt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnOrdreUdsendt" msprop:Generator_ColumnPropNameInRow="OrdreUdsendt" msprop:Generator_ColumnPropNameInTable="OrdreUdsendtColumn" msprop:Generator_UserColumnName="OrdreUdsendt">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialeFra" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMaterialeFra" msprop:Generator_ColumnPropNameInRow="MaterialeFra" msprop:Generator_ColumnPropNameInTable="MaterialeFraColumn" msprop:Generator_UserColumnName="MaterialeFra" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialeUdsendt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMaterialeUdsendt" msprop:Generator_ColumnPropNameInRow="MaterialeUdsendt" msprop:Generator_ColumnPropNameInTable="MaterialeUdsendtColumn" msprop:Generator_UserColumnName="MaterialeUdsendt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrdreAnsvarlig" msprop:Generator_ColumnVarNameInTable="columnOrdreAnsvarlig" msprop:Generator_ColumnPropNameInRow="OrdreAnsvarlig" msprop:Generator_ColumnPropNameInTable="OrdreAnsvarligColumn" msprop:Generator_UserColumnName="OrdreAnsvarlig">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalgsAnsvarlig" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSalgsAnsvarlig" msprop:Generator_ColumnPropNameInRow="SalgsAnsvarlig" msprop:Generator_ColumnPropNameInTable="SalgsAnsvarligColumn" msprop:Generator_UserColumnName="SalgsAnsvarlig" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNr" msprop:Generator_ColumnPropNameInRow="Nr" msprop:Generator_ColumnPropNameInTable="NrColumn" msprop:Generator_UserColumnName="Nr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Overskrift" msprop:Generator_ColumnVarNameInTable="columnOverskrift" msprop:Generator_ColumnPropNameInRow="Overskrift" msprop:Generator_ColumnPropNameInTable="OverskriftColumn" msprop:Generator_UserColumnName="Overskrift">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Deadline" msprop:Generator_ColumnVarNameInTable="columnDeadline" msprop:Generator_ColumnPropNameInRow="Deadline" msprop:Generator_ColumnPropNameInTable="DeadlineColumn" msprop:Generator_UserColumnName="Deadline" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Kommentar" msprop:Generator_ColumnVarNameInTable="columnKommentar" msprop:Generator_ColumnPropNameInRow="Kommentar" msprop:Generator_ColumnPropNameInTable="KommentarColumn" msprop:Generator_UserColumnName="Kommentar">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

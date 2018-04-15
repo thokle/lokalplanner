@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BureauListeDropdown" targetNamespace="http://tempuri.org/BureauListeDropdown.xsd" xmlns:mstns="http://tempuri.org/BureauListeDropdown.xsd" xmlns="http://tempuri.org/BureauListeDropdown.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="dimpSQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dimpSQLConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.dimpSQLConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DDFdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DDFdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DDFdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblBureauerTableAdapter" GeneratorDataComponentClassName="tblBureauerTableAdapter" Name="tblBureauer" UserDataComponentName="tblBureauerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DDFdotNetConnectionString (MySettings)" DbObjectName="DDF.dbo.DLU$Contact" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     [DLU$Contact].No_ AS AnnoncørID, [DLU$Contact].Name AS Annoncør
+FROM         [DLU$Contact] INNER JOIN
+                      [DLU$Contact Business Relation] ON [DLU$Contact].No_ = [DLU$Contact Business Relation].[Contact No_] INNER JOIN
+                      [DLU$Contact Mailing Group] ON [DLU$Contact].No_ = [DLU$Contact Mailing Group].[Contact No_]
+WHERE     ([DLU$Contact].Type = 0) AND ([DLU$Contact Business Relation].[Link to Table] = 1) AND 
+                      ([DLU$Contact Business Relation].[Business Relation Code] = 'CUST') AND ([DLU$Contact Business Relation].No_ &lt;&gt; '') AND 
+                      ([DLU$Contact Mailing Group].[Mailing Group Code] &lt;&gt; 'ANNONCØR')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Annoncør" DataSetColumn="Annoncør" />
+              <Mapping SourceColumn="AnnoncørID" DataSetColumn="AnnoncørID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BureauListeDropdown" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="BureauListeDropdown" msprop:Generator_UserDSName="BureauListeDropdown">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblBureauer" msprop:Generator_UserTableName="tblBureauer" msprop:Generator_RowEvArgName="tblBureauerRowChangeEvent" msprop:Generator_TableVarName="tabletblBureauer" msprop:Generator_TablePropName="tblBureauer" msprop:Generator_RowDeletingName="tblBureauerRowDeleting" msprop:Generator_RowChangingName="tblBureauerRowChanging" msprop:Generator_RowDeletedName="tblBureauerRowDeleted" msprop:Generator_RowEvHandlerName="tblBureauerRowChangeEventHandler" msprop:Generator_TableClassName="tblBureauerDataTable" msprop:Generator_RowChangedName="tblBureauerRowChanged" msprop:Generator_RowClassName="tblBureauerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnnoncørID" msprop:Generator_ColumnVarNameInTable="columnAnnoncørID" msprop:Generator_ColumnPropNameInRow="AnnoncørID" msprop:Generator_ColumnPropNameInTable="AnnoncørIDColumn" msprop:Generator_UserColumnName="AnnoncørID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblBureauer" />
+      <xs:field xpath="mstns:AnnoncørID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

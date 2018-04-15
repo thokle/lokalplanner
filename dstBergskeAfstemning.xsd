@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dstBergskeAfstemning" targetNamespace="http://tempuri.org/dstBergskeAfstemning.xsd" xmlns:mstns="http://tempuri.org/dstBergskeAfstemning.xsd" xmlns="http://tempuri.org/dstBergskeAfstemning.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblBergskeAfstemningTableAdapter" GeneratorDataComponentClassName="tblBergskeAfstemningTableAdapter" Name="tblBergskeAfstemning" UserDataComponentName="tblBergskeAfstemningTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUgeOgÅr" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="FillByUgeOgÅr" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillByUgeOgÅr">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CASE WHEN tblMedieplan.Version &lt; 10 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplan.Version)) WHEN tblMedieplan.Version &gt; 10 AND
+                          tblMedieplan.Version &lt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) WHEN tblMedieplan.Version &gt; 100 THEN LTRIM(STR(tblMedieplan.MedieplanNr)) 
+                         + '-' + RIGHT(LTRIM(tblMedieplan.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplan.Version), 1) END AS Nr, 
+                         NavisionContact.Name AS Annoncør, tblMedieplan.IndrykningsUge, tblBladStamdata.Navn AS Ugeavis, tblMedieplanLinjer.Mm, 
+                         CASE WHEN tblMedieplanLinjer.TotalPris IS NULL THEN 0 ELSE tblMedieplanLinjer.TotalPris / 1.25 END AS Netto
+FROM            tblMedIGruppe INNER JOIN
+                         tblMedieplanNr INNER JOIN
+                         tblMedieplan INNER JOIN
+                         tblMedieplanLinjer ON tblMedieplan.MedieplanNr = tblMedieplanLinjer.MedieplanNr AND tblMedieplan.Version = tblMedieplanLinjer.Version INNER JOIN
+                         tblBladStamdata ON tblMedieplanLinjer.UgeavisID = tblBladStamdata.BladID ON tblMedieplanNr.MedieplanNr = tblMedieplan.MedieplanNr AND 
+                         tblMedieplanNr.AktivVersion = tblMedieplan.Version ON tblMedIGruppe.ID = tblBladStamdata.BladID INNER JOIN
+                         tblAktivGruppeVersion ON tblMedIGruppe.Version = tblAktivGruppeVersion.AktivVersion INNER JOIN
+                         NavisionContact ON tblMedieplan.AnnoncørNo_ = NavisionContact.No_
+WHERE        (tblBladStamdata.BladID = 26 OR
+                         tblBladStamdata.BladID = 43) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.IndrykningsUge BETWEEN @FraUge AND @TilUge) AND 
+                         (tblMedieplanNr.Status &gt; 6) OR
+                         (tblMedIGruppe.GruppeID = 26 OR
+                         tblMedIGruppe.GruppeID = 46 OR
+                         tblMedIGruppe.GruppeID = 47 OR
+                         tblMedIGruppe.GruppeID = 53) AND (tblBladStamdata.BladID &lt; 110 AND tblBladStamdata.BladID &lt;&gt; 19 OR
+                         tblBladStamdata.BladID &gt; 153 AND tblBladStamdata.BladID &lt;&gt; 161 AND tblBladStamdata.BladID &lt;&gt; 175 AND tblBladStamdata.BladID &lt;&gt; 186 AND 
+                         tblBladStamdata.BladID &lt;&gt; 233 AND tblBladStamdata.BladID &lt;&gt; 254 AND tblBladStamdata.BladID &lt;&gt; 257 AND tblBladStamdata.BladID &lt;&gt; 293 AND 
+                         tblBladStamdata.BladID &lt;&gt; 365) AND (tblMedieplan.IndrykningsÅr = @År) AND (tblMedieplan.IndrykningsUge BETWEEN @FraUge AND @TilUge) AND 
+                         (tblMedieplanNr.Status &gt; 6)
+ORDER BY tblMedieplan.IndrykningsUge, Ugeavis, Nr</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="År" ColumnName="IndrykningsÅr" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="smallint" DbType="Int16" Direction="Input" ParameterName="@År" Precision="0" ProviderType="SmallInt" Scale="0" Size="2" SourceColumn="IndrykningsÅr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FraUge" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@FraUge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TilUge" ColumnName="IndrykningsUge" DataSourceName="DiMPdotNet.dbo.tblMedieplan" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@TilUge" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="IndrykningsUge" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nr" DataSetColumn="Nr" />
+              <Mapping SourceColumn="Annoncør" DataSetColumn="Annoncør" />
+              <Mapping SourceColumn="IndrykningsUge" DataSetColumn="IndrykningsUge" />
+              <Mapping SourceColumn="Ugeavis" DataSetColumn="Ugeavis" />
+              <Mapping SourceColumn="Mm" DataSetColumn="Mm" />
+              <Mapping SourceColumn="Netto" DataSetColumn="Netto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dstBergskeAfstemning" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dstBergskeAfstemning" msprop:Generator_UserDSName="dstBergskeAfstemning">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblBergskeAfstemning" msprop:Generator_TableClassName="tblBergskeAfstemningDataTable" msprop:Generator_TableVarName="tabletblBergskeAfstemning" msprop:Generator_TablePropName="tblBergskeAfstemning" msprop:Generator_RowDeletingName="tblBergskeAfstemningRowDeleting" msprop:Generator_UserTableName="tblBergskeAfstemning" msprop:Generator_RowChangingName="tblBergskeAfstemningRowChanging" msprop:Generator_RowEvHandlerName="tblBergskeAfstemningRowChangeEventHandler" msprop:Generator_RowDeletedName="tblBergskeAfstemningRowDeleted" msprop:Generator_RowEvArgName="tblBergskeAfstemningRowChangeEvent" msprop:Generator_RowChangedName="tblBergskeAfstemningRowChanged" msprop:Generator_RowClassName="tblBergskeAfstemningRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nr" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNr" msprop:Generator_ColumnPropNameInRow="Nr" msprop:Generator_ColumnPropNameInTable="NrColumn" msprop:Generator_UserColumnName="Nr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IndrykningsUge" msprop:Generator_ColumnVarNameInTable="columnIndrykningsUge" msprop:Generator_ColumnPropNameInRow="IndrykningsUge" msprop:Generator_ColumnPropNameInTable="IndrykningsUgeColumn" msprop:Generator_UserColumnName="IndrykningsUge" type="xs:unsignedByte" />
+              <xs:element name="Ugeavis" msprop:Generator_ColumnVarNameInTable="columnUgeavis" msprop:Generator_ColumnPropNameInRow="Ugeavis" msprop:Generator_ColumnPropNameInTable="UgeavisColumn" msprop:Generator_UserColumnName="Ugeavis" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mm" msprop:Generator_ColumnVarNameInTable="columnMm" msprop:Generator_ColumnPropNameInRow="Mm" msprop:Generator_ColumnPropNameInTable="MmColumn" msprop:Generator_UserColumnName="Mm" type="xs:short" />
+              <xs:element name="Netto" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetto" msprop:Generator_ColumnPropNameInRow="Netto" msprop:Generator_ColumnPropNameInTable="NettoColumn" msprop:Generator_UserColumnName="Netto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

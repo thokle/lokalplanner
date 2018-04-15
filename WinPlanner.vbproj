@@ -1,0 +1,1767 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>WinPlanner.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>None</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E586281B-9F62-4EDD-856B-BAC62C833F57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WinPlanner.My.MyApplication</StartupObject>
+    <RootNamespace>WinPlanner</RootNamespace>
+    <AssemblyName>WinPlanner</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>Resources\dlulogo.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>26F05604B9E80684F9A1451AF74E34ADC2A0AC7D</ManifestCertificateThumbprint>
+    <ManifestKeyFile>WinDiMP_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <TargetZone>Custom</TargetZone>
+    <SignManifests>false</SignManifests>
+    <OptionStrict>Off</OptionStrict>
+    <ExcludedPermissions>
+    </ExcludedPermissions>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>greg\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>Lokal planner.Net</ProductName>
+    <PublisherName>HC. Applications I-S</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WinPlanner.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <Optimize>true</Optimize>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WinPlanner.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>WinPlanner.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common, Version=1.0.2676.29250, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>S:\.Net Version\Lokal planner .net 4.0\Common.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Infragistics4.Documents.Core.v14.2, Version=14.2.20142.2168, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Documents.Excel.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinToolbars.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinTabControl.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinStatusBar.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinSchedule.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinSchedule.v14.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinMaskedEdit.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinMaskedEdit.v14.2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinGrid.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinGrid.ExcelExport.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinEditors.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDock.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinDock.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.UltraWinDataSource.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.Misc.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Win.AppStylistSupport.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v14.2, Version=14.2.20142.2132, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>C:\Program Files\Infragistics\2014.2\Windows Forms\CLR4.0\Bin\Infragistics4.Shared.v14.2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AxInterop.InetCtlsObjects">
+      <HintPath>bin\Release\AxInterop.InetCtlsObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailVerifierComponent">
+      <HintPath>bin\Release\EmailVerifierComponent.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Rebex.Net.Ftp">
+      <HintPath>bin\Release\Rebex.Net.Ftp.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Net.ProxySocket">
+      <HintPath>..\..\..\..\..\..\..\VS2010SetUpFiles\Rebex.Net.ProxySocket.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnnoncørListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnnoncørListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="basDiverse.vb" />
+    <Compile Include="BureauListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BureauListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="clsCountNotDeleted.vb" />
+    <Compile Include="clsMedieplanData.vb" />
+    <Compile Include="clsMedieplanHoved.vb" />
+    <Compile Include="clsUdsending.vb" />
+    <Compile Include="BilagUdenLæsertalUdenPostNr.vb">
+      <DependentUpon>BilagUdenLæsertalUdenPostNr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BilagMedLæsertalUdenPostNr.vb">
+      <DependentUpon>BilagMedLæsertalUdenPostNr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BilagMedLæsertalMedPostNr.vb">
+      <DependentUpon>BilagMedLæsertalMedPostNr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="BilagUdenLæsertalMedPostNr.vb">
+      <DependentUpon>BilagUdenLæsertalMedPostNr.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dstKontaktArbOmråder.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstKontaktArbOmråder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstKontakterPrBlad.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstKontakterPrBlad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstKontakterPrBlad.vb">
+      <DependentUpon>dstKontakterPrBlad.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstKontaktFunktionerDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstKontaktFunktionerDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstKontaktTitlerDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstKontaktTitlerDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EjerforholdDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EjerforholdDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmKommentar.Designer.vb">
+      <DependentUpon>frmKommentar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKommentar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiljøTillæg.Designer.vb">
+      <DependentUpon>frmMiljøTillæg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMiljøTillæg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpretKontakt.Designer.vb">
+      <DependentUpon>frmOpretKontakt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpretKontakt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSletFiler.Designer.vb">
+      <DependentUpon>frmSletFiler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSletFiler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUdvælgKontakter.Designer.vb">
+      <DependentUpon>frmUdvælgKontakter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUdvælgKontakter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedieplanMedOplagUdenTillæg.vb">
+      <DependentUpon>MedieplanMedOplagUdenTillæg.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dstBergskeAfstemning.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstBergskeAfstemning.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstKonkurrenter.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstKonkurrenter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FakturaBilagInclAnnoncekontrolFejl.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FakturaBilagInclAnnoncekontrolFejl.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmBergskeAfstemning.Designer.vb">
+      <DependentUpon>frmBergskeAfstemning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBergskeAfstemning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKonkurrentInfo.Designer.vb">
+      <DependentUpon>frmKonkurrentInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKonkurrentInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedieplanMedOplagMedTillæg.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedieplanMedOplagMedTillæg.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebtillægBilag.vb">
+      <DependentUpon>WebtillægBilag.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dstFaktureringsBilag.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFaktureringsBilag.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstFaktureringsBilagListe.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFaktureringsBilagListe.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FakturaBilag2InclFaktureringsFejl.vb">
+      <DependentUpon>FakturaBilag2InclFaktureringsFejl.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FakturaBilag2InclAnnoncekontrolFejl.vb">
+      <DependentUpon>FakturaBilag2InclAnnoncekontrolFejl.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dstOmsætning.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstOmsætning.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FakturaBilagInclFaktureringsFejl.vb">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FakturaBilagInclFaktureringsFejl.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnnoncørOmsætning.Designer.vb">
+      <DependentUpon>frmAnnoncørOmsætning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnnoncørOmsætning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmail.Designer.vb">
+      <DependentUpon>frmEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFaktureringsBilagListe.Designer.vb">
+      <DependentUpon>frmFaktureringsBilagListe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFaktureringsBilagListe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFaktureringsBilag.Designer.vb">
+      <DependentUpon>frmFaktureringsBilag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFaktureringsBilag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFjernOverførtOrdre.Designer.vb">
+      <DependentUpon>frmFjernOverførtOrdre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFjernOverførtOrdre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKopierTilNy.Designer.vb">
+      <DependentUpon>frmKopierTilNy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmKopierTilNy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOmsætning.Designer.vb">
+      <DependentUpon>frmOmsætning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOmsætning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSendTilNavision.Designer.vb">
+      <DependentUpon>frmSendTilNavision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSendTilNavision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSkiftStatus.Designer.vb">
+      <DependentUpon>frmSkiftStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSkiftStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWebExport.Designer.vb">
+      <DependentUpon>frmWebExport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmWebExport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LPSplashScreen.Designer.vb">
+      <DependentUpon>LPSplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LPSplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dstForespørgsler.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstForespørgsler.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmForespørgsler.Designer.vb">
+      <DependentUpon>frmForespørgsler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmForespørgsler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dstFakturaFejl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFakturaFejl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmFakturaRettelse.Designer.vb">
+      <DependentUpon>frmFakturaRettelse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFakturaRettelse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFakturaBemærkning.Designer.vb">
+      <DependentUpon>frmFakturaBemærkning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFakturaBemærkning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DelområdeListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DelområdeListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstBladeMedIRabatform.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstBladeMedIRabatform.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstBladStamdata.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstBladStamdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstFindLinjerMedFejl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFindLinjerMedFejl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstGruppeRabatter.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstGruppeRabatter.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstManglerAnnonceKontrol.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstManglerAnnonceKontrol.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstPrislister.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstPrislister.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnnonceKontrol.Designer.vb">
+      <DependentUpon>frmAnnonceKontrol.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAnnonceKontrol.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBilagsbladeTil.Designer.vb">
+      <DependentUpon>frmBilagsbladeTil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBilagsbladeTil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBladStamData.Designer.vb">
+      <DependentUpon>frmBladStamData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBladStamData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckTekst.designer.vb">
+      <DependentUpon>frmCheckTekst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCheckTekst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFejlListe.Designer.vb">
+      <DependentUpon>frmFejlListe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFejlListe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMaterialeUdsending.designer.vb">
+      <DependentUpon>frmMaterialeUdsending.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMaterialeUdsending.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTilføjPrisliste.Designer.vb">
+      <DependentUpon>frmTilføjPrisliste.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTilføjPrisliste.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisRabatter.Designer.vb">
+      <DependentUpon>frmVisRabatter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisRabatter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeoKodeListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeoKodeListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GruppeListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GruppeListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstBookingListe.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstBookingListe.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstBookingListe.vb">
+      <DependentUpon>dstBookingListe.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookingListe.Designer.vb">
+      <DependentUpon>frmBookingListe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookingListe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dstErSendt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstErSendt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.Designer.vb">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmErSendt.Designer.vb">
+      <DependentUpon>frmErSendt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmErSendt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dstMateriale.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstMateriale.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmGemSom.Designer.vb">
+      <DependentUpon>frmGemSom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGemSom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUdsending.Designer.vb">
+      <DependentUpon>frmUdsending.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUdsending.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataSourceKonkurrentInfo.Designer.vb">
+      <DependentUpon>dataSourceKonkurrentInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dataSourceKonkurrentInfo.vb">
+    </Compile>
+    <Compile Include="dataSourceMedieplan.Designer.vb">
+      <DependentUpon>dataSourceMedieplan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dataSourceMedieplan.vb">
+    </Compile>
+    <Compile Include="DiMPdotNetDataSet.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DiMPdotNetDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DPKulørListeDropDown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DPKulørListeDropDown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstFindMedieplaner.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFindMedieplaner.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstMedieplan.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstMedieplan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstMedieplanLinjer.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstMedieplanLinjer.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dstOversigt.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstOversigt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmSkalSendes.Designer.vb">
+      <DependentUpon>frmSkalSendes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSkalSendes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRapportVisning.Designer.vb">
+      <DependentUpon>frmRapportVisning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRapportVisning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTilBlade.Designer.vb">
+      <DependentUpon>frmTilBlade.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTilBlade.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRabatformer.Designer.vb">
+      <DependentUpon>frmRabatformer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRabatformer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedieplan.designer.vb">
+      <DependentUpon>frmMedieplan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedieplan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupportBilag.Designer.vb">
+      <DependentUpon>frmSupportBilag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupportBilag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeaderCheckBoxCreationFilter.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="clsEmail.vb" />
+    <Compile Include="PlaceringListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlaceringListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PostNrListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostNrListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RegionListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegionListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SortIndicatorDrawFilter.vb" />
+    <Compile Include="sortBySortKey.vb" />
+    <Compile Include="UgeavisListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UgeavisListeDropdown.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UgedagListeDropdown.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UgedagListeDropdown.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BilagUdenLæsertalUdenPostNr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BilagUdenLæsertalUdenPostNr.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilagMedLæsertalUdenPostNr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BilagMedLæsertalUdenPostNr.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilagMedLæsertalMedPostNr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BilagMedLæsertalMedPostNr.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BilagUdenLæsertalMedPostNr.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BilagUdenLæsertalMedPostNr.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKommentar.resx">
+      <DependentUpon>frmKommentar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedieplan.resx">
+      <DependentUpon>frmMedieplan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiljøTillæg.resx">
+      <DependentUpon>frmMiljøTillæg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpretKontakt.resx">
+      <DependentUpon>frmOpretKontakt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSletFiler.resx">
+      <DependentUpon>frmSletFiler.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUdvælgKontakter.resx">
+      <DependentUpon>frmUdvælgKontakter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedieplanMedOplagUdenTillæg.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MedieplanMedOplagUdenTillæg.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FakturaBilagInclAnnoncekontrolFejl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FakturaBilagInclAnnoncekontrolFejl.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBergskeAfstemning.resx">
+      <DependentUpon>frmBergskeAfstemning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKonkurrentInfo.resx">
+      <DependentUpon>frmKonkurrentInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="WebtillægBilag.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WebtillægBilag.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FakturaBilag2InclFaktureringsFejl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FakturaBilag2InclFaktureringsFejl.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FakturaBilag2InclAnnoncekontrolFejl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FakturaBilag2InclAnnoncekontrolFejl.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FakturaBilagInclFaktureringsFejl.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FakturaBilagInclFaktureringsFejl.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnnoncørOmsætning.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAnnoncørOmsætning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFaktureringsBilagListe.resx">
+      <DependentUpon>frmFaktureringsBilagListe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFaktureringsBilag.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFaktureringsBilag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFjernOverførtOrdre.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFjernOverførtOrdre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKopierTilNy.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmKopierTilNy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOmsætning.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmOmsætning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSendTilNavision.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSendTilNavision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSkiftStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSkiftStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWebExport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWebExport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LPSplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LPSplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForespørgsler.resx">
+      <DependentUpon>frmForespørgsler.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFakturaRettelse.resx">
+      <DependentUpon>frmFakturaRettelse.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFakturaBemærkning.resx">
+      <DependentUpon>frmFakturaBemærkning.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAnnonceKontrol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAnnonceKontrol.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBilagsbladeTil.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBilagsbladeTil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBladStamData.resx">
+      <DependentUpon>frmBladStamData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckTekst.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCheckTekst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFejlListe.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFejlListe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMaterialeUdsending.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMaterialeUdsending.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTilføjPrisliste.resx">
+      <DependentUpon>frmTilføjPrisliste.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisRabatter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmVisRabatter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedieplanMedOplagMedTillæg.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MedieplanMedOplagMedTillæg.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBookingListe.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBookingListe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmErSendt.resx">
+      <DependentUpon>frmErSendt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGemSom.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGemSom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUdsending.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmUdsending.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSkalSendes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSkalSendes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRapportVisning.resx">
+      <DependentUpon>frmRapportVisning.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTilBlade.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTilBlade.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRabatformer.resx">
+      <DependentUpon>frmRabatformer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupportBilag.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSupportBilag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiMPdotNetDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiMPdotNetDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DiMPdotNetDataSet.xss">
+      <DependentUpon>DiMPdotNetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dstBergskeAfstemning.xsc">
+      <DependentUpon>dstBergskeAfstemning.xsd</DependentUpon>
+    </None>
+    <None Include="dstBergskeAfstemning.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstBergskeAfstemning.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstBergskeAfstemning.xss">
+      <DependentUpon>dstBergskeAfstemning.xsd</DependentUpon>
+    </None>
+    <None Include="dstKonkurrenter.xsc">
+      <DependentUpon>dstKonkurrenter.xsd</DependentUpon>
+    </None>
+    <None Include="dstKonkurrenter.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstKonkurrenter.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstKonkurrenter.xss">
+      <DependentUpon>dstKonkurrenter.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktArbOmråder.xsc">
+      <DependentUpon>dstKontaktArbOmråder.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktArbOmråder.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstKontaktArbOmråder.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstKontaktArbOmråder.xss">
+      <DependentUpon>dstKontaktArbOmråder.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontakterPrBlad.xsc">
+      <DependentUpon>dstKontakterPrBlad.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontakterPrBlad.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstKontakterPrBlad.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstKontakterPrBlad.xss">
+      <DependentUpon>dstKontakterPrBlad.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktFunktionerDropdown.xsc">
+      <DependentUpon>dstKontaktFunktionerDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktFunktionerDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstKontaktFunktionerDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstKontaktFunktionerDropdown.xss">
+      <DependentUpon>dstKontaktFunktionerDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktTitlerDropdown.xsc">
+      <DependentUpon>dstKontaktTitlerDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="dstKontaktTitlerDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstKontaktTitlerDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstKontaktTitlerDropdown.xss">
+      <DependentUpon>dstKontaktTitlerDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="EjerforholdDropdown.xsc">
+      <DependentUpon>EjerforholdDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="EjerforholdDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EjerforholdDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EjerforholdDropdown.xss">
+      <DependentUpon>EjerforholdDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dlulogo.ico" />
+    <Content Include="index.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="DelområdeListeDropdown.xsc">
+      <DependentUpon>DelområdeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="DelområdeListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DelområdeListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DelområdeListeDropdown.xss">
+      <DependentUpon>DelområdeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="dstBladeMedIRabatform.xsc">
+      <DependentUpon>dstBladeMedIRabatform.xsd</DependentUpon>
+    </None>
+    <None Include="dstBladeMedIRabatform.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstBladeMedIRabatform.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstBladeMedIRabatform.xss">
+      <DependentUpon>dstBladeMedIRabatform.xsd</DependentUpon>
+    </None>
+    <None Include="dstBladStamdata.xsc">
+      <DependentUpon>dstBladStamdata.xsd</DependentUpon>
+    </None>
+    <None Include="dstBladStamdata.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>dstBladStamdata.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstBladStamdata.xss">
+      <DependentUpon>dstBladStamdata.xsd</DependentUpon>
+    </None>
+    <None Include="dstBookingListe.xsc">
+      <DependentUpon>dstBookingListe.xsd</DependentUpon>
+    </None>
+    <None Include="dstBookingListe.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstBookingListe.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstBookingListe.xss">
+      <DependentUpon>dstBookingListe.xsd</DependentUpon>
+    </None>
+    <None Include="AnnoncørListeDropdown.xsc">
+      <DependentUpon>AnnoncørListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="AnnoncørListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AnnoncørListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AnnoncørListeDropdown.xss">
+      <DependentUpon>AnnoncørListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="BureauListeDropdown.xsc">
+      <DependentUpon>BureauListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="BureauListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BureauListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BureauListeDropdown.xss">
+      <DependentUpon>BureauListeDropdown.xsd</DependentUpon>
+    </None>
+    <Content Include="Lokal planner.Net.isl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="dstFaktureringsBilag.xsc">
+      <DependentUpon>dstFaktureringsBilag.xsd</DependentUpon>
+    </None>
+    <None Include="dstFaktureringsBilag.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFaktureringsBilag.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstFaktureringsBilag.xss">
+      <DependentUpon>dstFaktureringsBilag.xsd</DependentUpon>
+    </None>
+    <None Include="dstFaktureringsBilagListe.xsc">
+      <DependentUpon>dstFaktureringsBilagListe.xsd</DependentUpon>
+    </None>
+    <None Include="dstFaktureringsBilagListe.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFaktureringsBilagListe.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstFaktureringsBilagListe.xss">
+      <DependentUpon>dstFaktureringsBilagListe.xsd</DependentUpon>
+    </None>
+    <None Include="OversigtSkalSendesGrid.bin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\beskrivelse.png" />
+    <Content Include="Resources\BookingHeader.png" />
+    <None Include="dstFakturaFejl.xsc">
+      <DependentUpon>dstFakturaFejl.xsd</DependentUpon>
+    </None>
+    <None Include="dstFakturaFejl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFakturaFejl.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstFakturaFejl.xss">
+      <DependentUpon>dstFakturaFejl.xsd</DependentUpon>
+    </None>
+    <None Include="dstFindLinjerMedFejl.xsc">
+      <DependentUpon>dstFindLinjerMedFejl.xsd</DependentUpon>
+    </None>
+    <None Include="dstFindLinjerMedFejl.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFindLinjerMedFejl.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstFindLinjerMedFejl.xss">
+      <DependentUpon>dstFindLinjerMedFejl.xsd</DependentUpon>
+    </None>
+    <None Include="dstForespørgsler.xsc">
+      <DependentUpon>dstForespørgsler.xsd</DependentUpon>
+    </None>
+    <None Include="dstForespørgsler.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstForespørgsler.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstForespørgsler.xss">
+      <DependentUpon>dstForespørgsler.xsd</DependentUpon>
+    </None>
+    <None Include="dstGruppeRabatter.xsc">
+      <DependentUpon>dstGruppeRabatter.xsd</DependentUpon>
+    </None>
+    <None Include="dstGruppeRabatter.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstGruppeRabatter.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstGruppeRabatter.xss">
+      <DependentUpon>dstGruppeRabatter.xsd</DependentUpon>
+    </None>
+    <None Include="dstManglerAnnonceKontrol.xsc">
+      <DependentUpon>dstManglerAnnonceKontrol.xsd</DependentUpon>
+    </None>
+    <None Include="dstManglerAnnonceKontrol.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstManglerAnnonceKontrol.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstManglerAnnonceKontrol.xss">
+      <DependentUpon>dstManglerAnnonceKontrol.xsd</DependentUpon>
+    </None>
+    <None Include="dstOmsætning.xsc">
+      <DependentUpon>dstOmsætning.xsd</DependentUpon>
+    </None>
+    <None Include="dstOmsætning.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstOmsætning.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstOmsætning.xss">
+      <DependentUpon>dstOmsætning.xsd</DependentUpon>
+    </None>
+    <None Include="dstPrislister.xsc">
+      <DependentUpon>dstPrislister.xsd</DependentUpon>
+    </None>
+    <None Include="dstPrislister.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstPrislister.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstPrislister.xss">
+      <DependentUpon>dstPrislister.xsd</DependentUpon>
+    </None>
+    <None Include="GeoKodeListeDropdown.xsc">
+      <DependentUpon>GeoKodeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="GeoKodeListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GeoKodeListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GeoKodeListeDropdown.xss">
+      <DependentUpon>GeoKodeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="GruppeListeDropdown.xsc">
+      <DependentUpon>GruppeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="GruppeListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GruppeListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GruppeListeDropdown.xss">
+      <DependentUpon>GruppeListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="PostNrListeDropdown.xsc">
+      <DependentUpon>PostNrListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="PostNrListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PostNrListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PostNrListeDropdown.xss">
+      <DependentUpon>PostNrListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="RegionListeDropdown.xsc">
+      <DependentUpon>RegionListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="RegionListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RegionListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RegionListeDropdown.xss">
+      <DependentUpon>RegionListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\dlulogo.jpg" />
+    <None Include="Resources\Cancel.ico" />
+    <None Include="Resources\DLU Logo Stort.png" />
+    <None Include="Resources\checked.png" />
+    <Content Include="Resources\COLORBESKRIVELSER.txt" />
+    <Content Include="Resources\dlu64x64.ico" />
+    <Content Include="Resources\dlulogo.ico" />
+    <Content Include="Resources\FaktureringHeader.png" />
+    <None Include="Resources\file.gif" />
+    <Content Include="Resources\favicon.ico" />
+    <Content Include="Resources\højre.png" />
+    <None Include="Resources\KonkurrentInfoGridLayout.lyt" />
+    <None Include="Resources\logo.png">
+    </None>
+    <Content Include="Resources\MatStatusErSend.png" />
+    <Content Include="Resources\MatStatusSkalIkkeSendes.png" />
+    <Content Include="Resources\MatStatusSkalSendes.png" />
+    <Content Include="Resources\medieplan-top-master.png" />
+    <Content Include="Resources\MedieplanHeader.png" />
+    <Content Include="Resources\miniArrow_down.bmp" />
+    <Content Include="Resources\miniArrow_up.bmp" />
+    <None Include="Resources\MultiplePagesImage.bmp" />
+    <Content Include="Resources\ned.png" />
+    <None Include="Resources\ny stor.png" />
+    <Content Include="Resources\op.png" />
+    <None Include="Resources\orderedlist.gif" />
+    <Content Include="Resources\pilgridned.png" />
+    <Content Include="Resources\pilgridop.png" />
+    <None Include="Resources\prik.bmp" />
+    <Content Include="Resources\StaKodeAfsluttetOrdre.png" />
+    <Content Include="Resources\StaKodeFærdigTjekketOrdre.png" />
+    <Content Include="Resources\StaKodeFaktureretOrdre.png" />
+    <Content Include="Resources\StaKodeMedieplan.png" />
+    <Content Include="Resources\StaKodeNyMedieplan.png" />
+    <Content Include="Resources\StaKodeOrdreIkkeSendt.png" />
+    <Content Include="Resources\StaKodeRettetOrdreIkkeGenud.png" />
+    <Content Include="Resources\StaKodeStandsetOrdre.png" />
+    <Content Include="Resources\StaKodeUbetaltOrdre.png" />
+    <Content Include="Resources\StaKodeUdsendtOrdre.png" />
+    <Content Include="Resources\StatusLedGreenOff.png" />
+    <Content Include="Resources\StatusLedGreenOn.png" />
+    <Content Include="Resources\StatusLedRedOff.png" />
+    <Content Include="Resources\StatusLedRedOn.png" />
+    <Content Include="Resources\StatusLedYellowOff.png" />
+    <Content Include="Resources\StatusLedYellowOn.png" />
+    <Content Include="Resources\SupportbilagHeader.png" />
+    <Content Include="Resources\TabBooking.png" />
+    <Content Include="Resources\TabFakturering.png" />
+    <Content Include="Resources\TabMediaplan.png" />
+    <Content Include="Resources\TabMedieplan.png" />
+    <Content Include="Resources\TabSpace.png" />
+    <Content Include="Resources\TabStatus.png" />
+    <None Include="Resources\unchecked.png" />
+    <Content Include="Resources\venstre.png" />
+    <None Include="DiMPdotNetDataSet.xsc">
+      <DependentUpon>DiMPdotNetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DPKulørListeDropDown.xsc">
+      <DependentUpon>DPKulørListeDropDown.xsd</DependentUpon>
+    </None>
+    <None Include="DPKulørListeDropDown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DPKulørListeDropDown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DPKulørListeDropDown.xss">
+      <DependentUpon>DPKulørListeDropDown.xsd</DependentUpon>
+    </None>
+    <None Include="dstErSendt.xsc">
+      <DependentUpon>dstErSendt.xsd</DependentUpon>
+    </None>
+    <None Include="dstErSendt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstErSendt.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstErSendt.xss">
+      <DependentUpon>dstErSendt.xsd</DependentUpon>
+    </None>
+    <None Include="dstFindMedieplaner.xsc">
+      <DependentUpon>dstFindMedieplaner.xsd</DependentUpon>
+    </None>
+    <None Include="dstFindMedieplaner.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFindMedieplaner.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstFindMedieplaner.xss">
+      <DependentUpon>dstFindMedieplaner.xsd</DependentUpon>
+    </None>
+    <None Include="dstMateriale.xsc">
+      <DependentUpon>dstMateriale.xsd</DependentUpon>
+    </None>
+    <None Include="dstMateriale.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstMateriale.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstMateriale.xss">
+      <DependentUpon>dstMateriale.xsd</DependentUpon>
+    </None>
+    <None Include="dstMedieplan.xsc">
+      <DependentUpon>dstMedieplan.xsd</DependentUpon>
+    </None>
+    <None Include="dstMedieplan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstMedieplan.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstMedieplan.xss">
+      <DependentUpon>dstMedieplan.xsd</DependentUpon>
+    </None>
+    <None Include="dstMedieplanLinjer.xsc">
+      <DependentUpon>dstMedieplanLinjer.xsd</DependentUpon>
+    </None>
+    <None Include="dstMedieplanLinjer.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstMedieplanLinjer.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dstMedieplanLinjer.xss">
+      <DependentUpon>dstMedieplanLinjer.xsd</DependentUpon>
+    </None>
+    <None Include="dstOversigt.xsc">
+      <DependentUpon>dstOversigt.xsd</DependentUpon>
+    </None>
+    <None Include="dstOversigt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstOversigt.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstOversigt.xss">
+      <DependentUpon>dstOversigt.xsd</DependentUpon>
+    </None>
+    <None Include="PlaceringListeDropdown.xsc">
+      <DependentUpon>PlaceringListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="PlaceringListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlaceringListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlaceringListeDropdown.xss">
+      <DependentUpon>PlaceringListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="UgeavisListeDropdown.xsc">
+      <DependentUpon>UgeavisListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="UgeavisListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UgeavisListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UgeavisListeDropdown.xss">
+      <DependentUpon>UgeavisListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="UgedagListeDropdown.xsc">
+      <DependentUpon>UgedagListeDropdown.xsd</DependentUpon>
+    </None>
+    <None Include="UgedagListeDropdown.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UgedagListeDropdown.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UgedagListeDropdown.xss">
+      <DependentUpon>UgedagListeDropdown.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports for .NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Data.Access.Components.2.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Data Access Components 2.8</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.CrystalReports.Engine">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportSource">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Shared">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.Windows.Forms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Documents.Core.v14.2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\COLORBESKRIVELSER.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_ReplaceNonNumerics="True" BuildVersion_UseGlobalSettings="False" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Any" BuildVersion_BuildAction="Both" BuildVersion_BuildVersioningStyle="DeltaBaseYear.MonthStamp.DayStamp.TimeStamp" BuildVersion_StartDate="2011/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_AssemblyInfoFilename="My Project\AssemblyInfo.vb" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DiMPdotNetDataSet" targetNamespace="http://tempuri.org/DiMPdotNetDataSet.xsd" xmlns:mstns="http://tempuri.org/DiMPdotNetDataSet.xsd" xmlns="http://tempuri.org/DiMPdotNetDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DiMPdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DiMPdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DiMPdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblBladStamdataTableAdapter" GeneratorDataComponentClassName="tblBladStamdataTableAdapter" Name="tblBladStamdata" UserDataComponentName="tblBladStamdataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, SUM(tblBladDækning.Oplag) AS Oplag, 
+                         AVG(tblBladDækning.DækningsGrad) AS DækningsGrad, tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, 
+                         tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, 
+                         tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER JOIN
+                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr LEFT OUTER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID LEFT OUTER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID
+WHERE        (tblBladStamdata.Ophørt = 0) AND (tblHovedGruppe.HovedGruppeID &lt; 2) AND (tblGrupper.Version = 1)
+GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, 
+                         tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, 
+                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, 
+                         tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, 
+                         tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BladID" DataSetColumn="BladID" />
+              <Mapping SourceColumn="Navn" DataSetColumn="Navn" />
+              <Mapping SourceColumn="Oplag" DataSetColumn="Oplag" />
+              <Mapping SourceColumn="PostBy" DataSetColumn="PostBy" />
+              <Mapping SourceColumn="DækningsGrad" DataSetColumn="DækningsGrad" />
+              <Mapping SourceColumn="GeoKodeNavn" DataSetColumn="GeoKodeNavn" />
+              <Mapping SourceColumn="GeoKodeSortKey" DataSetColumn="GeoKodeSortKey" />
+              <Mapping SourceColumn="HovedGruppeNavn" DataSetColumn="HovedGruppeNavn" />
+              <Mapping SourceColumn="HovedGruppeSortKey" DataSetColumn="HovedGruppeSortKey" />
+              <Mapping SourceColumn="DelOmrådeNavn" DataSetColumn="DelOmrådeNavn" />
+              <Mapping SourceColumn="DelOmrådeSortKey" DataSetColumn="DelOmrådeSortKey" />
+              <Mapping SourceColumn="DagNavn" DataSetColumn="DagNavn" />
+              <Mapping SourceColumn="GruppeNavn" DataSetColumn="GruppeNavn" />
+              <Mapping SourceColumn="Navn2" DataSetColumn="Navn2" />
+              <Mapping SourceColumn="Adresse" DataSetColumn="Adresse" />
+              <Mapping SourceColumn="Adresse2" DataSetColumn="Adresse2" />
+              <Mapping SourceColumn="Tlf" DataSetColumn="Tlf" />
+              <Mapping SourceColumn="Fax" DataSetColumn="Fax" />
+              <Mapping SourceColumn="CVR" DataSetColumn="CVR" />
+              <Mapping SourceColumn="RegionNavn" DataSetColumn="RegionNavn" />
+              <Mapping SourceColumn="RegionSortKey" DataSetColumn="RegionSortKey" />
+              <Mapping SourceColumn="Kontaktperson" DataSetColumn="Kontaktperson" />
+              <Mapping SourceColumn="OrdredeadlineTekst" DataSetColumn="OrdredeadlineTekst" />
+              <Mapping SourceColumn="OrdredeadlineRubrik" DataSetColumn="OrdredeadlineRubrik" />
+              <Mapping SourceColumn="MaterialedeadlineTekst" DataSetColumn="MaterialedeadlineTekst" />
+              <Mapping SourceColumn="MaterialedeadlineRubrik" DataSetColumn="MaterialedeadlineRubrik" />
+              <Mapping SourceColumn="PostNr" DataSetColumn="PostNr" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillAlle" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillAlle" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillAlle">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, SUM(tblBladDækning.Oplag) AS Oplag, 
+                         AVG(tblBladDækning.DækningsGrad) AS DækningsGrad, tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, 
+                         tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, 
+                         tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER JOIN
+                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr LEFT OUTER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID LEFT OUTER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID
+WHERE        (tblGrupper.Version = 1)
+GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, 
+                         tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, 
+                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, 
+                         tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, 
+                         tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDækningsGrad" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDækning" GeneratorSourceName="FillByDækningsGrad" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByDækningsGrad">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladDækning.PostNr, tblPostNr.PostBy, tblBladDækning.Oplag, tblBladDækning.DækningsGrad, 
+                         tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, 
+                         tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, 
+                         tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID INNER JOIN
+                         tblPostNr ON tblBladDækning.PostNr = tblPostNr.PostNr INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID
+WHERE        (tblBladDækning.DækningsGrad &gt;= @DækningsGrad) AND (tblBladStamdata.Ophørt = 0) AND (tblGrupper.Version = 1) AND (tblHovedGruppe.HovedGruppeID &lt; 2)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DækningsGrad" ColumnName="DækningsGrad" DataSourceName="DiMPdotNet.dbo.tblBladDækning" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DækningsGrad" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DækningsGrad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByPostNrMedDækningsgrad" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByPostNrMedDækningsgrad" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillByPostNrMedDækningsgrad">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladDækning.PostNr, tblPostNr.PostBy, tblBladDækning.Oplag, tblBladDækning.DækningsGrad, 
+                         tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, 
+                         tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, 
+                         tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID INNER JOIN
+                         tblPostNr ON tblBladDækning.PostNr = tblPostNr.PostNr INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID
+WHERE        (tblBladDækning.DækningsGrad &gt;= @DækningsGrad) AND (tblBladStamdata.Ophørt = 0) AND (tblBladDækning.PostNr IN
+                             (SELECT        PostNr
+                               FROM            tblPostNrSøgning
+                               WHERE        (BrugerNavn = @BrugerNavn))) AND (tblGrupper.Version = 1) AND (tblHovedGruppe.HovedGruppeID &lt; 2)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DækningsGrad" ColumnName="DækningsGrad" DataSourceName="DiMPdotNet.dbo.tblBladDækning" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DækningsGrad" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DækningsGrad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BrugerNavn" ColumnName="" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@BrugerNavn" Precision="0" Scale="0" Size="50" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByUgeavisID" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByUgeavisID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByUgeavisID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, SUM(tblBladDækning.Oplag) AS Oplag, 
+                         AVG(tblBladDækning.DækningsGrad) AS DækningsGrad, tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, 
+                         tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, 
+                         tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER JOIN
+                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr
+WHERE        (tblBladStamdata.BladID = @UgeavisID) AND (tblGrupper.Version = 1)
+GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, 
+                         tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, 
+                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, 
+                         tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, 
+                         tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UgeavisID" ColumnName="BladID" DataSourceName="DiMPdotNet.dbo.tblBladStamdata" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UgeavisID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BladID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DiMPdotNetConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillGrupper" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillGrupper" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillGrupper">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, SUM(tblBladDækning.Oplag) AS Oplag, 
+                         AVG(tblBladDækning.DækningsGrad) AS DækningsGrad, tblRegion.RegionNavn, tblRegion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, 
+                         tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey, 
+                         tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, 
+                         tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, 
+                         tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+FROM            tblBladStamdata INNER JOIN
+                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN
+                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN
+                         tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN
+                         tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER JOIN
+                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr INNER JOIN
+                         tblMedIGruppe ON tblBladStamdata.BladID = tblMedIGruppe.ID INNER JOIN
+                         tblGrupper ON tblMedIGruppe.GruppeID = tblGrupper.GruppeID AND tblMedIGruppe.Version = tblGrupper.Version INNER JOIN
+                         tblAktivGruppeVersion ON tblGrupper.Version = tblAktivGruppeVersion.AktivVersion LEFT OUTER JOIN
+                         tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID LEFT OUTER JOIN
+                         tblDage ON tblBladStamdata.UgedagID = tblDage.DagID
+WHERE        (tblBladStamdata.Ophørt = 0) AND (tblHovedGruppe.HovedGruppeID &lt; 2)
+GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, 
+                         tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, 
+                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, 
+                         tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, 
+                         tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik
+ORDER BY tblGrupper.GruppeNavn</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DiMPdotNetDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DiMPdotNetDataSet" msprop:Generator_UserDSName="DiMPdotNetDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblBladStamdata" msprop:Generator_UserTableName="tblBladStamdata" msprop:Generator_RowEvArgName="tblBladStamdataRowChangeEvent" msprop:Generator_TableVarName="tabletblBladStamdata" msprop:Generator_TablePropName="tblBladStamdata" msprop:Generator_RowDeletingName="tblBladStamdataRowDeleting" msprop:Generator_RowChangingName="tblBladStamdataRowChanging" msprop:Generator_RowDeletedName="tblBladStamdataRowDeleted" msprop:Generator_RowEvHandlerName="tblBladStamdataRowChangeEventHandler" msprop:Generator_TableClassName="tblBladStamdataDataTable" msprop:Generator_RowChangedName="tblBladStamdataRowChanged" msprop:Generator_RowClassName="tblBladStamdataRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BladID" msprop:Generator_ColumnVarNameInTable="columnBladID" msprop:Generator_ColumnPropNameInRow="BladID" msprop:Generator_ColumnPropNameInTable="BladIDColumn" msprop:Generator_UserColumnName="BladID" type="xs:int" />
+              <xs:element name="Navn" msprop:Generator_ColumnVarNameInTable="columnNavn" msprop:Generator_ColumnPropNameInRow="Navn" msprop:Generator_ColumnPropNameInTable="NavnColumn" msprop:Generator_UserColumnName="Navn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Oplag" msprop:Generator_ColumnVarNameInTable="columnOplag" msprop:Generator_ColumnPropNameInRow="Oplag" msprop:Generator_ColumnPropNameInTable="OplagColumn" msprop:Generator_UserColumnName="Oplag" type="xs:int" minOccurs="0" />
+              <xs:element name="PostBy" msprop:Generator_ColumnVarNameInTable="columnPostBy" msprop:Generator_ColumnPropNameInRow="PostBy" msprop:Generator_ColumnPropNameInTable="PostByColumn" msprop:Generator_UserColumnName="PostBy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DækningsGrad" msprop:Generator_ColumnVarNameInTable="columnDækningsGrad" msprop:Generator_ColumnPropNameInRow="DækningsGrad" msprop:Generator_ColumnPropNameInTable="DækningsGradColumn" msprop:Generator_UserColumnName="DækningsGrad" type="xs:int" minOccurs="0" />
+              <xs:element name="GeoKodeNavn" msprop:Generator_ColumnVarNameInTable="columnGeoKodeNavn" msprop:Generator_ColumnPropNameInRow="GeoKodeNavn" msprop:Generator_ColumnPropNameInTable="GeoKodeNavnColumn" msprop:Generator_UserColumnName="GeoKodeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GeoKodeSortKey" msprop:Generator_ColumnVarNameInTable="columnGeoKodeSortKey" msprop:Generator_ColumnPropNameInRow="GeoKodeSortKey" msprop:Generator_ColumnPropNameInTable="GeoKodeSortKeyColumn" msprop:Generator_UserColumnName="GeoKodeSortKey" type="xs:unsignedByte" />
+              <xs:element name="HovedGruppeNavn" msprop:Generator_ColumnVarNameInTable="columnHovedGruppeNavn" msprop:Generator_ColumnPropNameInRow="HovedGruppeNavn" msprop:Generator_ColumnPropNameInTable="HovedGruppeNavnColumn" msprop:Generator_UserColumnName="HovedGruppeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HovedGruppeSortKey" msprop:Generator_ColumnVarNameInTable="columnHovedGruppeSortKey" msprop:Generator_ColumnPropNameInRow="HovedGruppeSortKey" msprop:Generator_ColumnPropNameInTable="HovedGruppeSortKeyColumn" msprop:Generator_UserColumnName="HovedGruppeSortKey" type="xs:unsignedByte" />
+              <xs:element name="DelOmrådeNavn" msprop:Generator_ColumnVarNameInTable="columnDelOmrådeNavn" msprop:Generator_ColumnPropNameInRow="DelOmrådeNavn" msprop:Generator_ColumnPropNameInTable="DelOmrådeNavnColumn" msprop:Generator_UserColumnName="DelOmrådeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DelOmrådeSortKey" msprop:Generator_ColumnVarNameInTable="columnDelOmrådeSortKey" msprop:Generator_ColumnPropNameInRow="DelOmrådeSortKey" msprop:Generator_ColumnPropNameInTable="DelOmrådeSortKeyColumn" msprop:Generator_UserColumnName="DelOmrådeSortKey" type="xs:unsignedByte" />
+              <xs:element name="DagNavn" msprop:Generator_ColumnVarNameInTable="columnDagNavn" msprop:Generator_ColumnPropNameInRow="DagNavn" msprop:Generator_ColumnPropNameInTable="DagNavnColumn" msprop:Generator_UserColumnName="DagNavn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GruppeNavn" msprop:Generator_ColumnVarNameInTable="columnGruppeNavn" msprop:Generator_ColumnPropNameInRow="GruppeNavn" msprop:Generator_ColumnPropNameInTable="GruppeNavnColumn" msprop:Generator_UserColumnName="GruppeNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Navn2" msprop:Generator_ColumnVarNameInTable="columnNavn2" msprop:Generator_ColumnPropNameInRow="Navn2" msprop:Generator_ColumnPropNameInTable="Navn2Column" msprop:Generator_UserColumnName="Navn2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adresse" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_UserColumnName="Adresse">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Adresse2" msprop:Generator_ColumnVarNameInTable="columnAdresse2" msprop:Generator_ColumnPropNameInRow="Adresse2" msprop:Generator_ColumnPropNameInTable="Adresse2Column" msprop:Generator_UserColumnName="Adresse2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tlf" msprop:Generator_ColumnVarNameInTable="columnTlf" msprop:Generator_ColumnPropNameInRow="Tlf" msprop:Generator_ColumnPropNameInTable="TlfColumn" msprop:Generator_UserColumnName="Tlf">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fax" msprop:Generator_ColumnVarNameInTable="columnFax" msprop:Generator_ColumnPropNameInRow="Fax" msprop:Generator_ColumnPropNameInTable="FaxColumn" msprop:Generator_UserColumnName="Fax">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CVR" msprop:Generator_ColumnVarNameInTable="columnCVR" msprop:Generator_ColumnPropNameInRow="CVR" msprop:Generator_ColumnPropNameInTable="CVRColumn" msprop:Generator_UserColumnName="CVR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegionNavn" msprop:Generator_ColumnVarNameInTable="columnRegionNavn" msprop:Generator_ColumnPropNameInRow="RegionNavn" msprop:Generator_ColumnPropNameInTable="RegionNavnColumn" msprop:Generator_UserColumnName="RegionNavn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegionSortKey" msprop:Generator_ColumnVarNameInTable="columnRegionSortKey" msprop:Generator_ColumnPropNameInRow="RegionSortKey" msprop:Generator_ColumnPropNameInTable="RegionSortKeyColumn" msprop:Generator_UserColumnName="RegionSortKey" type="xs:unsignedByte" />
+              <xs:element name="Kontaktperson" msprop:Generator_ColumnVarNameInTable="columnKontaktperson" msprop:Generator_ColumnPropNameInRow="Kontaktperson" msprop:Generator_ColumnPropNameInTable="KontaktpersonColumn" msprop:Generator_UserColumnName="Kontaktperson" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrdredeadlineTekst" msprop:Generator_ColumnVarNameInTable="columnOrdredeadlineTekst" msprop:Generator_ColumnPropNameInRow="OrdredeadlineTekst" msprop:Generator_ColumnPropNameInTable="OrdredeadlineTekstColumn" msprop:Generator_UserColumnName="OrdredeadlineTekst" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OrdredeadlineRubrik" msprop:Generator_ColumnVarNameInTable="columnOrdredeadlineRubrik" msprop:Generator_ColumnPropNameInRow="OrdredeadlineRubrik" msprop:Generator_ColumnPropNameInTable="OrdredeadlineRubrikColumn" msprop:Generator_UserColumnName="OrdredeadlineRubrik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialedeadlineTekst" msprop:Generator_ColumnVarNameInTable="columnMaterialedeadlineTekst" msprop:Generator_ColumnPropNameInRow="MaterialedeadlineTekst" msprop:Generator_ColumnPropNameInTable="MaterialedeadlineTekstColumn" msprop:Generator_UserColumnName="MaterialedeadlineTekst" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaterialedeadlineRubrik" msprop:Generator_ColumnVarNameInTable="columnMaterialedeadlineRubrik" msprop:Generator_ColumnPropNameInRow="MaterialedeadlineRubrik" msprop:Generator_ColumnPropNameInTable="MaterialedeadlineRubrikColumn" msprop:Generator_UserColumnName="MaterialedeadlineRubrik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PostNr" msprop:Generator_ColumnVarNameInTable="columnPostNr" msprop:Generator_ColumnPropNameInRow="PostNr" msprop:Generator_ColumnPropNameInTable="PostNrColumn" msprop:Generator_UserColumnName="PostNr" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblBladStamdata" />
+      <xs:field xpath="mstns:BladID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

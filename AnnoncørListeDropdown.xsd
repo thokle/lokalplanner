@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AnnoncørListeDropdown" targetNamespace="http://tempuri.org/AnnoncørListeDropdown.xsd" xmlns:mstns="http://tempuri.org/AnnoncørListeDropdown.xsd" xmlns="http://tempuri.org/AnnoncørListeDropdown.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="dimpSQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dimpSQLConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.dimpSQLConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DDFdotNetConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DDFdotNetConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinPlanner.My.MySettings.GlobalReference.Default.DDFdotNetConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblAnnoncørerTableAdapter" GeneratorDataComponentClassName="tblAnnoncørerTableAdapter" Name="tblAnnoncører" UserDataComponentName="tblAnnoncørerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DDFdotNetConnectionString (MySettings)" DbObjectName="DDF.dbo.DLU$Contact" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT DLU$Contact.No_ AS AnnoncørID, DLU$Contact.Name AS Annoncør
+FROM            DLU$Contact INNER JOIN
+                         [DLU$Contact Business Relation] ON DLU$Contact.No_ = [DLU$Contact Business Relation].[Contact No_] INNER JOIN
+                         [DLU$Contact Mailing Group] ON DLU$Contact.No_ = [DLU$Contact Mailing Group].[Contact No_]
+WHERE        (DLU$Contact.Type = 0) AND ([DLU$Contact Business Relation].[Link to Table] = 1) AND ([DLU$Contact Business Relation].[Business Relation Code] = 'CUST') AND 
+                         ([DLU$Contact Business Relation].No_ &lt;&gt; '')  AND
+                          ([DLU$Contact Mailing Group].[Mailing Group Code] &lt;&gt; 'INAKTIVE')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Annoncør" DataSetColumn="Annoncør" />
+              <Mapping SourceColumn="AnnoncørID" DataSetColumn="AnnoncørID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AnnoncørListeDropdown" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="AnnoncørListeDropdown" msprop:Generator_UserDSName="AnnoncørListeDropdown">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblAnnoncører" msprop:Generator_UserTableName="tblAnnoncører" msprop:Generator_RowEvArgName="tblAnnoncørerRowChangeEvent" msprop:Generator_TableVarName="tabletblAnnoncører" msprop:Generator_TablePropName="tblAnnoncører" msprop:Generator_RowDeletingName="tblAnnoncørerRowDeleting" msprop:Generator_RowChangingName="tblAnnoncørerRowChanging" msprop:Generator_RowDeletedName="tblAnnoncørerRowDeleted" msprop:Generator_RowEvHandlerName="tblAnnoncørerRowChangeEventHandler" msprop:Generator_TableClassName="tblAnnoncørerDataTable" msprop:Generator_RowChangedName="tblAnnoncørerRowChanged" msprop:Generator_RowClassName="tblAnnoncørerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnnoncørID" msprop:Generator_ColumnVarNameInTable="columnAnnoncørID" msprop:Generator_ColumnPropNameInRow="AnnoncørID" msprop:Generator_ColumnPropNameInTable="AnnoncørIDColumn" msprop:Generator_UserColumnName="AnnoncørID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblAnnoncører" />
+      <xs:field xpath="mstns:AnnoncørID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
