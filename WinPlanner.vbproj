@@ -1761,7 +1761,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_ReplaceNonNumerics="True" BuildVersion_UseGlobalSettings="False" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Any" BuildVersion_BuildAction="Both" BuildVersion_BuildVersioningStyle="DeltaBaseYear.MonthStamp.DayStamp.TimeStamp" BuildVersion_StartDate="2011/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_AssemblyInfoFilename="My Project\AssemblyInfo.vb" />
+      <UserProperties BuildVersion_AssemblyInfoFilename="My Project\AssemblyInfo.vb" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2011/1/1" BuildVersion_BuildVersioningStyle="DeltaBaseYear.MonthStamp.DayStamp.TimeStamp" BuildVersion_BuildAction="Both" BuildVersion_ConfigurationName="Any" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UseGlobalSettings="False" BuildVersion_ReplaceNonNumerics="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

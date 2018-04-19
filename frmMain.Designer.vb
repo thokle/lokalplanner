@@ -27,55 +27,55 @@ Partial Class frmMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Dim panFindMedieplanBooking As System.Windows.Forms.Panel
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblBladStamdata", -1)
-        Dim UltraGridColumn63 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn64 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Navn", -1, Nothing, 1, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
-        Dim UltraGridColumn65 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Oplag")
-        Dim UltraGridColumn66 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
-        Dim UltraGridColumn67 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DækningsGrad")
-        Dim UltraGridColumn68 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeNavn", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, True)
-        Dim UltraGridColumn69 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeSortKey")
-        Dim UltraGridColumn70 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeNavn")
-        Dim UltraGridColumn71 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeSortKey")
-        Dim UltraGridColumn72 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeNavn")
-        Dim UltraGridColumn73 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeSortKey")
-        Dim UltraGridColumn74 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
-        Dim UltraGridColumn75 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GruppeNavn")
-        Dim UltraGridColumn76 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Navn2")
-        Dim UltraGridColumn77 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Adresse")
-        Dim UltraGridColumn78 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Adresse2")
-        Dim UltraGridColumn79 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Tlf")
-        Dim UltraGridColumn80 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fax")
-        Dim UltraGridColumn81 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CVR")
-        Dim UltraGridColumn82 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionNavn")
-        Dim UltraGridColumn83 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionSortKey")
-        Dim UltraGridColumn84 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Kontaktperson")
-        Dim UltraGridColumn85 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OrdredeadlineTekst")
-        Dim UltraGridColumn86 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OrdredeadlineRubrik")
-        Dim UltraGridColumn87 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialedeadlineTekst")
-        Dim UltraGridColumn88 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialedeadlineRubrik")
-        Dim UltraGridColumn89 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
-        Dim UltraGridColumn90 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Ejerforhold")
+        Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Navn", -1, Nothing, 1, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
+        Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Oplag")
+        Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
+        Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DækningsGrad")
+        Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeNavn", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, True)
+        Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeSortKey")
+        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeNavn")
+        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeSortKey")
+        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeNavn")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeSortKey")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
+        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GruppeNavn")
+        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Navn2")
+        Dim UltraGridColumn32 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Adresse")
+        Dim UltraGridColumn33 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Adresse2")
+        Dim UltraGridColumn34 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Tlf")
+        Dim UltraGridColumn35 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fax")
+        Dim UltraGridColumn36 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CVR")
+        Dim UltraGridColumn37 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionNavn")
+        Dim UltraGridColumn38 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionSortKey")
+        Dim UltraGridColumn39 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Kontaktperson")
+        Dim UltraGridColumn40 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OrdredeadlineTekst")
+        Dim UltraGridColumn41 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OrdredeadlineRubrik")
+        Dim UltraGridColumn42 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialedeadlineTekst")
+        Dim UltraGridColumn43 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialedeadlineRubrik")
+        Dim UltraGridColumn44 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
+        Dim UltraGridColumn62 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Ejerforhold")
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblFundneplaner", -1)
-        Dim UltraGridColumn45 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MedieplanNr")
-        Dim UltraGridColumn46 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Version")
-        Dim UltraGridColumn47 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AnnoncørNo_")
-        Dim UltraGridColumn48 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BureauNo_")
-        Dim UltraGridColumn49 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AntalFarver")
-        Dim UltraGridColumn50 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndrykningsUge")
-        Dim UltraGridColumn51 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KonsulentCode")
-        Dim UltraGridColumn52 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Status")
-        Dim UltraGridColumn53 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nr", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
-        Dim UltraGridColumn54 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Betegnelse")
-        Dim UltraGridColumn55 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Format")
-        Dim UltraGridColumn56 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AntalUgeaviser")
-        Dim UltraGridColumn57 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Beskrivelse")
-        Dim UltraGridColumn58 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Overskrift")
-        Dim UltraGridColumn59 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RettelserEfterAnnoncekontrol")
-        Dim UltraGridColumn60 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SalgsAnsvarlig")
-        Dim UltraGridColumn61 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OprettetDato")
+        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MedieplanNr")
+        Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Version")
+        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AnnoncørNo_")
+        Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BureauNo_")
+        Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AntalFarver")
+        Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndrykningsUge")
+        Dim UltraGridColumn7 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KonsulentCode")
+        Dim UltraGridColumn8 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Status")
+        Dim UltraGridColumn9 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nr", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
+        Dim UltraGridColumn10 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Betegnelse")
+        Dim UltraGridColumn11 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Format")
+        Dim UltraGridColumn12 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("AntalUgeaviser")
+        Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Beskrivelse")
+        Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Overskrift")
+        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RettelserEfterAnnoncekontrol")
+        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SalgsAnsvarlig")
+        Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("OprettetDato")
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -243,13 +243,14 @@ Partial Class frmMain
         Me._frmMainUnpinnedTabAreaBottom = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
         Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl()
         Me.DockableWindow4 = New Infragistics.Win.UltraWinDock.DockableWindow()
+        Me.DockableWindow2 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.DockableWindow3 = New Infragistics.Win.UltraWinDock.DockableWindow()
-        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.AppStylist = New Infragistics.Win.AppStyling.Runtime.AppStylistRuntime(Me.components)
         Me.statusBar = New Infragistics.Win.UltraWinStatusBar.UltraStatusBar()
         Me.timerOmsætning = New System.Windows.Forms.Timer(Me.components)
         Me.ExcelExporter = New Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(Me.components)
         Me._frmMain_Toolbars_Dock_Area_Left = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
+        Me.toolbarManager = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
         Me._frmMain_Toolbars_Dock_Area_Right = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me._frmMain_Toolbars_Dock_Area_Top = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me._frmMain_Toolbars_Dock_Area_Bottom = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
@@ -257,15 +258,14 @@ Partial Class frmMain
         Me.TblUgeaviserTableAdapter = New WinPlanner.UgeavisListeDropdownTableAdapters.tblUgeaviserTableAdapter()
         Me.TblFundneplanerTableAdapter = New WinPlanner.dstFindMedieplanerTableAdapters.tblFundneplanerTableAdapter()
         Me.TblBureauerTableAdapter = New WinPlanner.BureauListeDropdownTableAdapters.tblBureauerTableAdapter()
-        Me.WindowDockingArea4 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea6 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea5 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea2 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
-        Me.DockableWindow2 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.DiMPdotNetDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DiMPdotNetDataSet = New WinPlanner.DiMPdotNetDataSet()
-        Me.toolbarManager = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
+        Me.WindowDockingArea4 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.TblBladStamdataTableAdapter = New WinPlanner.DiMPdotNetDataSetTableAdapters.tblBladStamdataTableAdapter()
+        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         panFindMedieplan = New System.Windows.Forms.Panel()
         panFindMedieplanBooking = New System.Windows.Forms.Panel()
         panFindMedieplan.SuspendLayout()
@@ -316,13 +316,13 @@ Partial Class frmMain
         CType(Me.DstFindMedieplaner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dockManager, System.ComponentModel.ISupportInitialize).BeginInit()
         Me._frmMainAutoHideControl.SuspendLayout()
-        Me.DockableWindow3.SuspendLayout()
-        Me.DockableWindow1.SuspendLayout()
-        CType(Me.statusBar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DockableWindow2.SuspendLayout()
+        Me.DockableWindow3.SuspendLayout()
+        CType(Me.statusBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DockableWindow1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panFindMedieplan
@@ -1013,7 +1013,7 @@ Partial Class frmMain
         Me.txtPostBy.Location = New System.Drawing.Point(71, 30)
         Me.txtPostBy.Name = "txtPostBy"
         Me.txtPostBy.NullText = "- Skriv bynavne -"
-        Me.txtPostBy.Size = New System.Drawing.Size(12251, 22)
+        Me.txtPostBy.Size = New System.Drawing.Size(12427, 22)
         Me.txtPostBy.TabIndex = 11
         Me.txtPostBy.WordWrap = False
         '
@@ -1056,7 +1056,7 @@ Partial Class frmMain
         Me.txtPostNr.Location = New System.Drawing.Point(71, 3)
         Me.txtPostNr.Name = "txtPostNr"
         Me.txtPostNr.NullText = "- Skriv postnr -"
-        Me.txtPostNr.Size = New System.Drawing.Size(12251, 22)
+        Me.txtPostNr.Size = New System.Drawing.Size(12427, 22)
         Me.txtPostNr.TabIndex = 10
         Me.txtPostNr.WordWrap = False
         '
@@ -1083,75 +1083,75 @@ Partial Class frmMain
         Me.toolbarManager.SetContextMenuUltra(Me.grdFindUgeavis, "Edit")
         Me.grdFindUgeavis.DataMember = "tblBladStamdata"
         Me.grdFindUgeavis.DataSource = Me.DiMPdotNetDataSetBindingSource
-        UltraGridColumn63.Header.VisiblePosition = 1
-        UltraGridColumn63.Hidden = True
-        UltraGridColumn63.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        UltraGridColumn64.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn64.Header.Caption = "Lokal Ugeavis"
-        UltraGridColumn64.Header.Fixed = True
-        UltraGridColumn64.Header.FixedHeaderIndicator = Infragistics.Win.UltraWinGrid.FixedHeaderIndicator.None
-        UltraGridColumn64.Header.VisiblePosition = 0
-        UltraGridColumn64.Width = 199
-        UltraGridColumn65.Header.VisiblePosition = 9
-        UltraGridColumn66.Header.Caption = "Post by"
-        UltraGridColumn66.Header.VisiblePosition = 7
-        UltraGridColumn66.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
-        UltraGridColumn67.Header.Caption = "Dækningsgrad"
-        UltraGridColumn67.Header.VisiblePosition = 8
-        UltraGridColumn67.Hidden = True
-        UltraGridColumn67.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
-        UltraGridColumn68.Header.Caption = "Geokode"
-        UltraGridColumn68.Header.VisiblePosition = 2
-        UltraGridColumn69.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn69.Header.VisiblePosition = 10
-        UltraGridColumn69.Hidden = True
-        UltraGridColumn69.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        UltraGridColumn70.Header.Caption = "DD el. DL"
-        UltraGridColumn70.Header.VisiblePosition = 5
-        UltraGridColumn70.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
-        UltraGridColumn71.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn71.Header.VisiblePosition = 11
-        UltraGridColumn71.Hidden = True
-        UltraGridColumn71.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        UltraGridColumn72.Header.Caption = "Delområde"
-        UltraGridColumn72.Header.VisiblePosition = 4
-        UltraGridColumn72.Width = 81
-        UltraGridColumn73.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn73.Header.VisiblePosition = 12
-        UltraGridColumn73.Hidden = True
-        UltraGridColumn73.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        UltraGridColumn74.Header.Caption = "Ugedag"
-        UltraGridColumn74.Header.VisiblePosition = 13
-        UltraGridColumn75.Header.Caption = "Faktura Gruppe"
-        UltraGridColumn75.Header.VisiblePosition = 14
-        UltraGridColumn76.Header.Caption = "Navn 2"
-        UltraGridColumn76.Header.VisiblePosition = 15
-        UltraGridColumn77.Header.VisiblePosition = 16
-        UltraGridColumn78.Header.Caption = "Adresse 2"
-        UltraGridColumn78.Header.VisiblePosition = 17
-        UltraGridColumn79.Header.VisiblePosition = 18
-        UltraGridColumn80.Header.VisiblePosition = 19
-        UltraGridColumn81.Header.VisiblePosition = 20
-        UltraGridColumn82.Header.Caption = "Region"
-        UltraGridColumn82.Header.VisiblePosition = 3
-        UltraGridColumn83.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn83.Header.VisiblePosition = 21
-        UltraGridColumn83.Hidden = True
-        UltraGridColumn83.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        UltraGridColumn84.Header.VisiblePosition = 22
-        UltraGridColumn85.Header.Caption = "Ordredeadline Tekst"
-        UltraGridColumn85.Header.VisiblePosition = 23
-        UltraGridColumn86.Header.Caption = "Ordredeadline Rubrik"
-        UltraGridColumn86.Header.VisiblePosition = 24
-        UltraGridColumn87.Header.Caption = "Materialedeadline Tekst"
-        UltraGridColumn87.Header.VisiblePosition = 25
-        UltraGridColumn88.Header.Caption = "Materialedeadline Rubrik"
-        UltraGridColumn88.Header.VisiblePosition = 26
-        UltraGridColumn89.Header.Caption = "Post nr"
-        UltraGridColumn89.Header.VisiblePosition = 6
-        UltraGridColumn89.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
-        UltraGridColumn90.Header.VisiblePosition = 27
-        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn63, UltraGridColumn64, UltraGridColumn65, UltraGridColumn66, UltraGridColumn67, UltraGridColumn68, UltraGridColumn69, UltraGridColumn70, UltraGridColumn71, UltraGridColumn72, UltraGridColumn73, UltraGridColumn74, UltraGridColumn75, UltraGridColumn76, UltraGridColumn77, UltraGridColumn78, UltraGridColumn79, UltraGridColumn80, UltraGridColumn81, UltraGridColumn82, UltraGridColumn83, UltraGridColumn84, UltraGridColumn85, UltraGridColumn86, UltraGridColumn87, UltraGridColumn88, UltraGridColumn89, UltraGridColumn90})
+        UltraGridColumn18.Header.VisiblePosition = 1
+        UltraGridColumn18.Hidden = True
+        UltraGridColumn18.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
+        UltraGridColumn19.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn19.Header.Caption = "Lokal Ugeavis"
+        UltraGridColumn19.Header.Fixed = True
+        UltraGridColumn19.Header.FixedHeaderIndicator = Infragistics.Win.UltraWinGrid.FixedHeaderIndicator.None
+        UltraGridColumn19.Header.VisiblePosition = 0
+        UltraGridColumn19.Width = 199
+        UltraGridColumn20.Header.VisiblePosition = 9
+        UltraGridColumn21.Header.Caption = "Post by"
+        UltraGridColumn21.Header.VisiblePosition = 7
+        UltraGridColumn21.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
+        UltraGridColumn22.Header.Caption = "Dækningsgrad"
+        UltraGridColumn22.Header.VisiblePosition = 8
+        UltraGridColumn22.Hidden = True
+        UltraGridColumn22.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
+        UltraGridColumn23.Header.Caption = "Geokode"
+        UltraGridColumn23.Header.VisiblePosition = 2
+        UltraGridColumn24.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn24.Header.VisiblePosition = 10
+        UltraGridColumn24.Hidden = True
+        UltraGridColumn24.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
+        UltraGridColumn25.Header.Caption = "DD el. DL"
+        UltraGridColumn25.Header.VisiblePosition = 5
+        UltraGridColumn25.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
+        UltraGridColumn26.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn26.Header.VisiblePosition = 11
+        UltraGridColumn26.Hidden = True
+        UltraGridColumn26.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
+        UltraGridColumn27.Header.Caption = "Delområde"
+        UltraGridColumn27.Header.VisiblePosition = 4
+        UltraGridColumn27.Width = 81
+        UltraGridColumn28.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn28.Header.VisiblePosition = 12
+        UltraGridColumn28.Hidden = True
+        UltraGridColumn28.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
+        UltraGridColumn29.Header.Caption = "Ugedag"
+        UltraGridColumn29.Header.VisiblePosition = 13
+        UltraGridColumn30.Header.Caption = "Faktura Gruppe"
+        UltraGridColumn30.Header.VisiblePosition = 14
+        UltraGridColumn31.Header.Caption = "Navn 2"
+        UltraGridColumn31.Header.VisiblePosition = 15
+        UltraGridColumn32.Header.VisiblePosition = 16
+        UltraGridColumn33.Header.Caption = "Adresse 2"
+        UltraGridColumn33.Header.VisiblePosition = 17
+        UltraGridColumn34.Header.VisiblePosition = 18
+        UltraGridColumn35.Header.VisiblePosition = 19
+        UltraGridColumn36.Header.VisiblePosition = 20
+        UltraGridColumn37.Header.Caption = "Region"
+        UltraGridColumn37.Header.VisiblePosition = 3
+        UltraGridColumn38.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn38.Header.VisiblePosition = 21
+        UltraGridColumn38.Hidden = True
+        UltraGridColumn38.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[True]
+        UltraGridColumn39.Header.VisiblePosition = 22
+        UltraGridColumn40.Header.Caption = "Ordredeadline Tekst"
+        UltraGridColumn40.Header.VisiblePosition = 23
+        UltraGridColumn41.Header.Caption = "Ordredeadline Rubrik"
+        UltraGridColumn41.Header.VisiblePosition = 24
+        UltraGridColumn42.Header.Caption = "Materialedeadline Tekst"
+        UltraGridColumn42.Header.VisiblePosition = 25
+        UltraGridColumn43.Header.Caption = "Materialedeadline Rubrik"
+        UltraGridColumn43.Header.VisiblePosition = 26
+        UltraGridColumn44.Header.Caption = "Post nr"
+        UltraGridColumn44.Header.VisiblePosition = 6
+        UltraGridColumn44.HiddenWhenGroupBy = Infragistics.Win.DefaultableBoolean.[False]
+        UltraGridColumn62.Header.VisiblePosition = 27
+        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn62})
         UltraGridBand2.IndentationGroupByRow = 0
         UltraGridBand2.IndentationGroupByRowExpansionIndicator = 0
         UltraGridBand2.ScrollTipField = "Navn"
@@ -1246,65 +1246,65 @@ Partial Class frmMain
         '
         Me.grdFundnePlaner.DataSource = Me.TblFundneplanerBindingSource
         Me.grdFundnePlaner.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn45.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn45.Header.VisiblePosition = 1
-        UltraGridColumn45.Hidden = True
-        UltraGridColumn45.Width = 33
-        UltraGridColumn46.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn46.Header.VisiblePosition = 12
-        UltraGridColumn46.Hidden = True
-        UltraGridColumn46.Width = 49
-        UltraGridColumn47.Header.Caption = "Annoncør"
-        UltraGridColumn47.Header.VisiblePosition = 2
-        UltraGridColumn47.ProportionalResize = True
-        UltraGridColumn47.Width = 210
-        UltraGridColumn48.Header.Caption = "Bureau"
-        UltraGridColumn48.Header.VisiblePosition = 3
-        UltraGridColumn48.ProportionalResize = True
-        UltraGridColumn48.Width = 176
-        UltraGridColumn49.Header.Caption = "Farver"
-        UltraGridColumn49.Header.VisiblePosition = 7
-        UltraGridColumn49.ProportionalResize = True
-        UltraGridColumn49.Width = 105
-        UltraGridColumn50.Header.Caption = "Uge"
-        UltraGridColumn50.Header.VisiblePosition = 10
-        UltraGridColumn50.ProportionalResize = True
-        UltraGridColumn50.Width = 37
-        UltraGridColumn51.Header.Caption = "Ordre ansv."
-        UltraGridColumn51.Header.VisiblePosition = 9
-        UltraGridColumn51.ProportionalResize = True
-        UltraGridColumn51.Width = 57
-        UltraGridColumn52.Header.VisiblePosition = 11
-        UltraGridColumn52.Hidden = True
-        UltraGridColumn52.ProportionalResize = True
-        UltraGridColumn52.Width = 75
-        UltraGridColumn53.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn53.Header.Caption = "Medieplan nr"
-        UltraGridColumn53.Header.VisiblePosition = 0
-        UltraGridColumn53.ProportionalResize = True
-        UltraGridColumn53.Width = 104
-        UltraGridColumn54.Header.Caption = "Placering"
-        UltraGridColumn54.Header.VisiblePosition = 5
-        UltraGridColumn54.ProportionalResize = True
-        UltraGridColumn54.Width = 62
-        UltraGridColumn55.Header.VisiblePosition = 6
-        UltraGridColumn55.ProportionalResize = True
-        UltraGridColumn55.Width = 77
-        UltraGridColumn56.Header.Caption = "Antal aviser"
-        UltraGridColumn56.Header.VisiblePosition = 8
-        UltraGridColumn56.ProportionalResize = True
-        UltraGridColumn56.Width = 67
-        UltraGridColumn57.Header.VisiblePosition = 4
-        UltraGridColumn58.Header.VisiblePosition = 13
-        UltraGridColumn59.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
-        UltraGridColumn59.Header.VisiblePosition = 14
-        UltraGridColumn59.Hidden = True
-        UltraGridColumn60.Header.Caption = "Salgs Ansvarlig"
-        UltraGridColumn60.Header.VisiblePosition = 15
-        UltraGridColumn61.Header.Caption = "Oprettet Dato"
-        UltraGridColumn61.Header.VisiblePosition = 16
-        UltraGridColumn61.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Date]
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58, UltraGridColumn59, UltraGridColumn60, UltraGridColumn61})
+        UltraGridColumn1.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn1.Header.VisiblePosition = 1
+        UltraGridColumn1.Hidden = True
+        UltraGridColumn1.Width = 33
+        UltraGridColumn2.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn2.Header.VisiblePosition = 12
+        UltraGridColumn2.Hidden = True
+        UltraGridColumn2.Width = 49
+        UltraGridColumn3.Header.Caption = "Annoncør"
+        UltraGridColumn3.Header.VisiblePosition = 2
+        UltraGridColumn3.ProportionalResize = True
+        UltraGridColumn3.Width = 210
+        UltraGridColumn4.Header.Caption = "Bureau"
+        UltraGridColumn4.Header.VisiblePosition = 3
+        UltraGridColumn4.ProportionalResize = True
+        UltraGridColumn4.Width = 176
+        UltraGridColumn5.Header.Caption = "Farver"
+        UltraGridColumn5.Header.VisiblePosition = 7
+        UltraGridColumn5.ProportionalResize = True
+        UltraGridColumn5.Width = 105
+        UltraGridColumn6.Header.Caption = "Uge"
+        UltraGridColumn6.Header.VisiblePosition = 10
+        UltraGridColumn6.ProportionalResize = True
+        UltraGridColumn6.Width = 37
+        UltraGridColumn7.Header.Caption = "Ordre ansv."
+        UltraGridColumn7.Header.VisiblePosition = 9
+        UltraGridColumn7.ProportionalResize = True
+        UltraGridColumn7.Width = 57
+        UltraGridColumn8.Header.VisiblePosition = 11
+        UltraGridColumn8.Hidden = True
+        UltraGridColumn8.ProportionalResize = True
+        UltraGridColumn8.Width = 75
+        UltraGridColumn9.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn9.Header.Caption = "Medieplan nr"
+        UltraGridColumn9.Header.VisiblePosition = 0
+        UltraGridColumn9.ProportionalResize = True
+        UltraGridColumn9.Width = 104
+        UltraGridColumn10.Header.Caption = "Placering"
+        UltraGridColumn10.Header.VisiblePosition = 5
+        UltraGridColumn10.ProportionalResize = True
+        UltraGridColumn10.Width = 62
+        UltraGridColumn11.Header.VisiblePosition = 6
+        UltraGridColumn11.ProportionalResize = True
+        UltraGridColumn11.Width = 77
+        UltraGridColumn12.Header.Caption = "Antal aviser"
+        UltraGridColumn12.Header.VisiblePosition = 8
+        UltraGridColumn12.ProportionalResize = True
+        UltraGridColumn12.Width = 67
+        UltraGridColumn13.Header.VisiblePosition = 4
+        UltraGridColumn14.Header.VisiblePosition = 13
+        UltraGridColumn15.ExcludeFromColumnChooser = Infragistics.Win.UltraWinGrid.ExcludeFromColumnChooser.[True]
+        UltraGridColumn15.Header.VisiblePosition = 14
+        UltraGridColumn15.Hidden = True
+        UltraGridColumn16.Header.Caption = "Salgs Ansvarlig"
+        UltraGridColumn16.Header.VisiblePosition = 15
+        UltraGridColumn17.Header.Caption = "Oprettet Dato"
+        UltraGridColumn17.Header.VisiblePosition = 16
+        UltraGridColumn17.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Date]
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17})
         Me.grdFundnePlaner.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.grdFundnePlaner.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
         Me.grdFundnePlaner.DisplayLayout.ColumnChooserEnabled = Infragistics.Win.DefaultableBoolean.[True]
@@ -1449,14 +1449,14 @@ Partial Class frmMain
         '_frmMainAutoHideControl
         '
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow4)
-        Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow2)
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow3)
+        Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow2)
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow1)
         Me._frmMainAutoHideControl.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frmMainAutoHideControl.Location = New System.Drawing.Point(1003, 0)
+        Me._frmMainAutoHideControl.Location = New System.Drawing.Point(982, 44)
         Me._frmMainAutoHideControl.Name = "_frmMainAutoHideControl"
         Me._frmMainAutoHideControl.Owner = Me.dockManager
-        Me._frmMainAutoHideControl.Size = New System.Drawing.Size(11, 736)
+        Me._frmMainAutoHideControl.Size = New System.Drawing.Size(11, 669)
         Me._frmMainAutoHideControl.TabIndex = 37
         '
         'DockableWindow4
@@ -1465,25 +1465,25 @@ Partial Class frmMain
         Me.DockableWindow4.Name = "DockableWindow4"
         Me.DockableWindow4.Owner = Me.dockManager
         Me.DockableWindow4.Size = New System.Drawing.Size(326, 669)
-        Me.DockableWindow4.TabIndex = 97
+        Me.DockableWindow4.TabIndex = 85
+        '
+        'DockableWindow2
+        '
+        Me.DockableWindow2.Controls.Add(panFindMedieplan)
+        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
+        Me.DockableWindow2.Name = "DockableWindow2"
+        Me.DockableWindow2.Owner = Me.dockManager
+        Me.DockableWindow2.Size = New System.Drawing.Size(0, 0)
+        Me.DockableWindow2.TabIndex = 93
         '
         'DockableWindow3
         '
-        Me.DockableWindow3.Controls.Add(panFindMedieplan)
+        Me.DockableWindow3.Controls.Add(Me.splitContainer)
         Me.DockableWindow3.Location = New System.Drawing.Point(0, 0)
         Me.DockableWindow3.Name = "DockableWindow3"
         Me.DockableWindow3.Owner = Me.dockManager
         Me.DockableWindow3.Size = New System.Drawing.Size(0, 0)
-        Me.DockableWindow3.TabIndex = 98
-        '
-        'DockableWindow1
-        '
-        Me.DockableWindow1.Controls.Add(Me.grdFundnePlaner)
-        Me.DockableWindow1.Location = New System.Drawing.Point(5, 0)
-        Me.DockableWindow1.Name = "DockableWindow1"
-        Me.DockableWindow1.Owner = Me.dockManager
-        Me.DockableWindow1.Size = New System.Drawing.Size(326, 669)
-        Me.DockableWindow1.TabIndex = 99
+        Me.DockableWindow3.TabIndex = 92
         '
         'statusBar
         '
@@ -1518,115 +1518,6 @@ Partial Class frmMain
         Me._frmMain_Toolbars_Dock_Area_Left.Name = "_frmMain_Toolbars_Dock_Area_Left"
         Me._frmMain_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 690)
         Me._frmMain_Toolbars_Dock_Area_Left.ToolbarsManager = Me.toolbarManager
-        '
-        '_frmMain_Toolbars_Dock_Area_Right
-        '
-        Me._frmMain_Toolbars_Dock_Area_Right.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frmMain_Toolbars_Dock_Area_Right.BackColor = System.Drawing.SystemColors.ControlLight
-        Me._frmMain_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
-        Me._frmMain_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frmMain_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1014, 23)
-        Me._frmMain_Toolbars_Dock_Area_Right.Name = "_frmMain_Toolbars_Dock_Area_Right"
-        Me._frmMain_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 690)
-        Me._frmMain_Toolbars_Dock_Area_Right.ToolbarsManager = Me.toolbarManager
-        '
-        '_frmMain_Toolbars_Dock_Area_Top
-        '
-        Me._frmMain_Toolbars_Dock_Area_Top.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frmMain_Toolbars_Dock_Area_Top.BackColor = System.Drawing.SystemColors.ControlLight
-        Me._frmMain_Toolbars_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
-        Me._frmMain_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frmMain_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
-        Me._frmMain_Toolbars_Dock_Area_Top.Name = "_frmMain_Toolbars_Dock_Area_Top"
-        Me._frmMain_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1014, 23)
-        Me._frmMain_Toolbars_Dock_Area_Top.ToolbarsManager = Me.toolbarManager
-        '
-        '_frmMain_Toolbars_Dock_Area_Bottom
-        '
-        Me._frmMain_Toolbars_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frmMain_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.SystemColors.ControlLight
-        Me._frmMain_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
-        Me._frmMain_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frmMain_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 713)
-        Me._frmMain_Toolbars_Dock_Area_Bottom.Name = "_frmMain_Toolbars_Dock_Area_Bottom"
-        Me._frmMain_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1014, 0)
-        Me._frmMain_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.toolbarManager
-        '
-        'TblAnnoncørerTableAdapter
-        '
-        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
-        '
-        'TblUgeaviserTableAdapter
-        '
-        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
-        '
-        'TblFundneplanerTableAdapter
-        '
-        Me.TblFundneplanerTableAdapter.ClearBeforeFill = True
-        '
-        'TblBureauerTableAdapter
-        '
-        Me.TblBureauerTableAdapter.ClearBeforeFill = True
-        '
-        'WindowDockingArea4
-        '
-        Me.WindowDockingArea4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WindowDockingArea4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea4.Location = New System.Drawing.Point(0, 44)
-        Me.WindowDockingArea4.Name = "WindowDockingArea4"
-        Me.WindowDockingArea4.Owner = Me.dockManager
-        Me.WindowDockingArea4.Size = New System.Drawing.Size(404, 665)
-        Me.WindowDockingArea4.TabIndex = 0
-        '
-        'WindowDockingArea6
-        '
-        Me.WindowDockingArea6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.WindowDockingArea6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea6.Location = New System.Drawing.Point(589, 44)
-        Me.WindowDockingArea6.Name = "WindowDockingArea6"
-        Me.WindowDockingArea6.Owner = Me.dockManager
-        Me.WindowDockingArea6.Size = New System.Drawing.Size(993, 105)
-        Me.WindowDockingArea6.TabIndex = 0
-        '
-        'WindowDockingArea5
-        '
-        Me.WindowDockingArea5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WindowDockingArea5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea5.Location = New System.Drawing.Point(0, 44)
-        Me.WindowDockingArea5.Name = "WindowDockingArea5"
-        Me.WindowDockingArea5.Owner = Me.dockManager
-        Me.WindowDockingArea5.Size = New System.Drawing.Size(100, 100)
-        Me.WindowDockingArea5.TabIndex = 91
-        '
-        'WindowDockingArea2
-        '
-        Me.WindowDockingArea2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.WindowDockingArea2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea2.Location = New System.Drawing.Point(0, 44)
-        Me.WindowDockingArea2.Name = "WindowDockingArea2"
-        Me.WindowDockingArea2.Owner = Me.dockManager
-        Me.WindowDockingArea2.Size = New System.Drawing.Size(993, 186)
-        Me.WindowDockingArea2.TabIndex = 76
-        '
-        'DockableWindow2
-        '
-        Me.DockableWindow2.Controls.Add(Me.splitContainer)
-        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
-        Me.DockableWindow2.Name = "DockableWindow2"
-        Me.DockableWindow2.Owner = Me.dockManager
-        Me.DockableWindow2.Size = New System.Drawing.Size(0, 0)
-        Me.DockableWindow2.TabIndex = 97
-        '
-        'DiMPdotNetDataSetBindingSource
-        '
-        Me.DiMPdotNetDataSetBindingSource.DataSource = Me.DiMPdotNetDataSet
-        Me.DiMPdotNetDataSetBindingSource.Position = 0
-        '
-        'DiMPdotNetDataSet
-        '
-        Me.DiMPdotNetDataSet.DataSetName = "DiMPdotNetDataSet"
-        Me.DiMPdotNetDataSet.EnforceConstraints = False
-        Me.DiMPdotNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'toolbarManager
         '
@@ -1756,9 +1647,118 @@ Partial Class frmMain
         Me.toolbarManager.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {PopupMenuTool9, PopupMenuTool11, PopupMenuTool12, PopupMenuTool13, PopupMenuTool14, PopupMenuTool15, ButtonTool9, PopupMenuTool16, MdiWindowListTool2, ButtonTool13, ButtonTool14, ButtonTool15, ButtonTool16, ButtonTool18, ButtonTool20, ButtonTool22, ButtonTool24, ButtonTool26, ButtonTool28, ButtonTool29, ButtonTool30, ButtonTool33, ButtonTool37, ButtonTool39, ButtonTool41, ButtonTool42, ButtonTool47, ButtonTool3, ButtonTool10, ButtonTool12, ButtonTool34, ButtonTool43, ButtonTool45, ButtonTool49, ButtonTool51, ButtonTool53, ButtonTool55, ButtonTool57, ButtonTool58, ButtonTool60})
         Me.toolbarManager.TransitionAreas = Infragistics.Win.UltraWinToolbars.ToolbarTransitionAreas.MainMenuTools
         '
+        '_frmMain_Toolbars_Dock_Area_Right
+        '
+        Me._frmMain_Toolbars_Dock_Area_Right.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frmMain_Toolbars_Dock_Area_Right.BackColor = System.Drawing.SystemColors.ControlLight
+        Me._frmMain_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
+        Me._frmMain_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frmMain_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1014, 23)
+        Me._frmMain_Toolbars_Dock_Area_Right.Name = "_frmMain_Toolbars_Dock_Area_Right"
+        Me._frmMain_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 690)
+        Me._frmMain_Toolbars_Dock_Area_Right.ToolbarsManager = Me.toolbarManager
+        '
+        '_frmMain_Toolbars_Dock_Area_Top
+        '
+        Me._frmMain_Toolbars_Dock_Area_Top.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frmMain_Toolbars_Dock_Area_Top.BackColor = System.Drawing.SystemColors.ControlLight
+        Me._frmMain_Toolbars_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
+        Me._frmMain_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frmMain_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
+        Me._frmMain_Toolbars_Dock_Area_Top.Name = "_frmMain_Toolbars_Dock_Area_Top"
+        Me._frmMain_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1014, 23)
+        Me._frmMain_Toolbars_Dock_Area_Top.ToolbarsManager = Me.toolbarManager
+        '
+        '_frmMain_Toolbars_Dock_Area_Bottom
+        '
+        Me._frmMain_Toolbars_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frmMain_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.SystemColors.ControlLight
+        Me._frmMain_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
+        Me._frmMain_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frmMain_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 713)
+        Me._frmMain_Toolbars_Dock_Area_Bottom.Name = "_frmMain_Toolbars_Dock_Area_Bottom"
+        Me._frmMain_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1014, 0)
+        Me._frmMain_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.toolbarManager
+        '
+        'TblAnnoncørerTableAdapter
+        '
+        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
+        '
+        'TblUgeaviserTableAdapter
+        '
+        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
+        '
+        'TblFundneplanerTableAdapter
+        '
+        Me.TblFundneplanerTableAdapter.ClearBeforeFill = True
+        '
+        'TblBureauerTableAdapter
+        '
+        Me.TblBureauerTableAdapter.ClearBeforeFill = True
+        '
+        'WindowDockingArea6
+        '
+        Me.WindowDockingArea6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.WindowDockingArea6.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea6.Location = New System.Drawing.Point(589, 44)
+        Me.WindowDockingArea6.Name = "WindowDockingArea6"
+        Me.WindowDockingArea6.Owner = Me.dockManager
+        Me.WindowDockingArea6.Size = New System.Drawing.Size(404, 665)
+        Me.WindowDockingArea6.TabIndex = 0
+        '
+        'WindowDockingArea5
+        '
+        Me.WindowDockingArea5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.WindowDockingArea5.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea5.Location = New System.Drawing.Point(0, 44)
+        Me.WindowDockingArea5.Name = "WindowDockingArea5"
+        Me.WindowDockingArea5.Owner = Me.dockManager
+        Me.WindowDockingArea5.Size = New System.Drawing.Size(993, 105)
+        Me.WindowDockingArea5.TabIndex = 91
+        '
+        'WindowDockingArea2
+        '
+        Me.WindowDockingArea2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WindowDockingArea2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea2.Location = New System.Drawing.Point(0, 44)
+        Me.WindowDockingArea2.Name = "WindowDockingArea2"
+        Me.WindowDockingArea2.Owner = Me.dockManager
+        Me.WindowDockingArea2.Size = New System.Drawing.Size(100, 100)
+        Me.WindowDockingArea2.TabIndex = 76
+        '
+        'DiMPdotNetDataSetBindingSource
+        '
+        Me.DiMPdotNetDataSetBindingSource.DataSource = Me.DiMPdotNetDataSet
+        Me.DiMPdotNetDataSetBindingSource.Position = 0
+        '
+        'DiMPdotNetDataSet
+        '
+        Me.DiMPdotNetDataSet.DataSetName = "DiMPdotNetDataSet"
+        Me.DiMPdotNetDataSet.EnforceConstraints = False
+        Me.DiMPdotNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'WindowDockingArea4
+        '
+        Me.WindowDockingArea4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.WindowDockingArea4.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea4.Location = New System.Drawing.Point(0, 44)
+        Me.WindowDockingArea4.Name = "WindowDockingArea4"
+        Me.WindowDockingArea4.Owner = Me.dockManager
+        Me.WindowDockingArea4.Size = New System.Drawing.Size(993, 186)
+        Me.WindowDockingArea4.TabIndex = 0
+        '
         'TblBladStamdataTableAdapter
         '
         Me.TblBladStamdataTableAdapter.ClearBeforeFill = True
+        '
+        'DockableWindow1
+        '
+        Me.DockableWindow1.Controls.Add(Me.grdFundnePlaner)
+        Me.DockableWindow1.Location = New System.Drawing.Point(0, 0)
+        Me.DockableWindow1.Name = "DockableWindow1"
+        Me.DockableWindow1.Owner = Me.dockManager
+        Me.DockableWindow1.Size = New System.Drawing.Size(0, 0)
+        Me.DockableWindow1.TabIndex = 94
         '
         'frmMain
         '
@@ -1770,11 +1770,11 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1014, 736)
         Me.toolbarManager.SetContextMenuUltra(Me, "Edit")
+        Me.Controls.Add(Me.WindowDockingArea5)
         Me.Controls.Add(Me._frmMainAutoHideControl)
-        Me.Controls.Add(Me.WindowDockingArea6)
         Me.Controls.Add(panFindMedieplanBooking)
-        Me.Controls.Add(Me.WindowDockingArea2)
         Me.Controls.Add(Me.WindowDockingArea4)
+        Me.Controls.Add(Me.WindowDockingArea6)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaBottom)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaTop)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaLeft)
@@ -1845,13 +1845,13 @@ Partial Class frmMain
         CType(Me.dockManager, System.Configuration.IPersistComponentSettings).LoadComponentSettings()
         CType(Me.dockManager, System.ComponentModel.ISupportInitialize).EndInit()
         Me._frmMainAutoHideControl.ResumeLayout(False)
-        Me.DockableWindow3.ResumeLayout(False)
-        Me.DockableWindow1.ResumeLayout(False)
-        CType(Me.statusBar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DockableWindow2.ResumeLayout(False)
+        Me.DockableWindow3.ResumeLayout(False)
+        CType(Me.statusBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DockableWindow1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1952,7 +1952,7 @@ Partial Class frmMain
   Friend WithEvents ExcelExporter As Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter
   Friend WithEvents chkVisInAktive As Infragistics.Win.UltraWinEditors.UltraCheckEditor
   Friend WithEvents chkVisInAktiveBooking As Infragistics.Win.UltraWinEditors.UltraCheckEditor
-  Friend WithEvents DockableWindow1 As Infragistics.Win.UltraWinDock.DockableWindow
     Friend WithEvents DockableWindow3 As Infragistics.Win.UltraWinDock.DockableWindow
     Friend WithEvents DockableWindow2 As Infragistics.Win.UltraWinDock.DockableWindow
+    Friend WithEvents DockableWindow1 As Infragistics.Win.UltraWinDock.DockableWindow
 End Class

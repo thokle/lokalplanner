@@ -27,33 +27,7 @@ Partial Class frmMedieplan
         Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Klik her for at tilføje fakturabemærkning", Infragistics.Win.ToolTipImage.Info, Nothing, Infragistics.Win.DefaultableBoolean.[Default])
-        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem11 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem13 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem14 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem15 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem16 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim UltraToolTipInfo7 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, "Bilagsblad modtager", Infragistics.Win.DefaultableBoolean.[True])
-        Dim ValueListItem17 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem18 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Klik her for at åbne/lukke fakturerings bilag", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
-        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Warning, "For at save:", Infragistics.Win.DefaultableBoolean.[True])
-        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Der er vedhæftet et support bilag", Infragistics.Win.ToolTipImage.Info, "Bilag vedhæftet", Infragistics.Win.DefaultableBoolean.[True])
-        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Klik her for at åbne/lukke historik", Infragistics.Win.ToolTipImage.Info, "Historik", Infragistics.Win.DefaultableBoolean.[True])
-        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, "Kommentar", Infragistics.Win.DefaultableBoolean.[True])
-        Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMedieplan))
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("OrdreLinjer", -1)
         Dim UltraGridColumn367 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RowID")
@@ -179,6 +153,31 @@ Partial Class frmMedieplan
         Dim SummarySettings8 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("TotalInclTillæg", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "TotalInclTillæg", 54, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "TotalInclTillæg", 54, True)
         Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem11 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem12 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem13 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem14 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem15 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem16 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, "Bilagsblad modtager", Infragistics.Win.DefaultableBoolean.[True])
+        Dim ValueListItem17 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem18 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Klik her for at åbne/lukke fakturerings bilag", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Warning, "For at save:", Infragistics.Win.DefaultableBoolean.[True])
+        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Der er vedhæftet et support bilag", Infragistics.Win.ToolTipImage.Info, "Bilag vedhæftet", Infragistics.Win.DefaultableBoolean.[True])
+        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Klik her for at åbne/lukke historik", Infragistics.Win.ToolTipImage.Info, "Historik", Infragistics.Win.DefaultableBoolean.[True])
+        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, "Kommentar", Infragistics.Win.DefaultableBoolean.[True])
+        Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMedieplan))
         Me.cboUgebladListe = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.TblUgeaviserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UgeavisListeDropdown = New WinPlanner.UgeavisListeDropdown()
@@ -219,13 +218,15 @@ Partial Class frmMedieplan
         Me.grpMedieplanHoved = New Infragistics.Win.Misc.UltraGroupBox()
         Me.txtHistorik = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtKommentar = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.grdCC = New Infragistics.Win.UltraWinGrid.UltraGridColumnChooser()
+        Me.grdOrdreLinjer = New Infragistics.Win.UltraWinGrid.UltraGrid()
+        Me.DataSourceMedieplan = New WinPlanner.dataSourceMedieplan(Me.components)
         Me.lblKommentar = New Infragistics.Win.Misc.UltraLabel()
         Me.clbMiljøTillægOpkræves = New System.Windows.Forms.CheckedListBox()
         Me.chkMiljøTillægVises = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.chkMiljøTillægOpkræves = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.chkKunForhandlerBundForskellig = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.chkMaterialeModtaget = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
-        Me.btnFakturaBemærkning = New Infragistics.Win.Misc.UltraButton()
         Me.lblIndrykningsÅr = New Infragistics.Win.Misc.UltraLabel()
         Me.numIndrykningsÅr = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
         Me.txtOverskrift = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -268,7 +269,6 @@ Partial Class frmMedieplan
         Me.btnTilExcel = New Infragistics.Win.Misc.UltraButton()
         Me.chkFarveSærRabat = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.btnGenberegn = New Infragistics.Win.Misc.UltraButton()
-        Me.grdCC = New Infragistics.Win.UltraWinGrid.UltraGridColumnChooser()
         Me.chkMmSærRabat = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.TblAnnoncørerTableAdapter = New WinPlanner.AnnoncørListeDropdownTableAdapters.tblAnnoncørerTableAdapter()
         Me.TblBureauerTableAdapter = New WinPlanner.BureauListeDropdownTableAdapters.tblBureauerTableAdapter()
@@ -282,8 +282,6 @@ Partial Class frmMedieplan
         Me.picStatus = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.picPipeline = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.chkVisLåstePriser = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
-        Me.grdOrdreLinjer = New Infragistics.Win.UltraWinGrid.UltraGrid()
-        Me.DataSourceMedieplan = New WinPlanner.dataSourceMedieplan(Me.components)
         CType(Me.cboUgebladListe, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblUgeaviserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UgeavisListeDropdown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -310,6 +308,9 @@ Partial Class frmMedieplan
         Me.grpMedieplanHoved.SuspendLayout()
         CType(Me.txtHistorik, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKommentar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grdCC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkMiljøTillægVises, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkMiljøTillægOpkræves, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkKunForhandlerBundForskellig, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -327,11 +328,8 @@ Partial Class frmMedieplan
         CType(Me.optFakturering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.optGruppering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkFarveSærRabat, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grdCC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboUgebladListe
@@ -632,7 +630,7 @@ Partial Class frmMedieplan
         Me.txtRekvisitionsNr.MaxLength = 30
         Me.txtRekvisitionsNr.Name = "txtRekvisitionsNr"
         Me.txtRekvisitionsNr.NullText = "- Skriv Rekvisitionsnr -"
-        Me.txtRekvisitionsNr.Size = New System.Drawing.Size(176, 22)
+        Me.txtRekvisitionsNr.Size = New System.Drawing.Size(271, 22)
         Me.txtRekvisitionsNr.TabIndex = 18
         Me.txtRekvisitionsNr.Tag = "Toggle"
         Me.txtRekvisitionsNr.Visible = False
@@ -712,7 +710,6 @@ Partial Class frmMedieplan
         Me.grpMedieplanHoved.Controls.Add(Me.chkMiljøTillægOpkræves)
         Me.grpMedieplanHoved.Controls.Add(Me.chkKunForhandlerBundForskellig)
         Me.grpMedieplanHoved.Controls.Add(Me.chkMaterialeModtaget)
-        Me.grpMedieplanHoved.Controls.Add(Me.btnFakturaBemærkning)
         Me.grpMedieplanHoved.Controls.Add(Me.lblIndrykningsÅr)
         Me.grpMedieplanHoved.Controls.Add(Me.numIndrykningsÅr)
         Me.grpMedieplanHoved.Controls.Add(Me.txtOverskrift)
@@ -767,7 +764,7 @@ Partial Class frmMedieplan
         '
         Me.txtHistorik.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtHistorik.Location = New System.Drawing.Point(360, 10)
+        Me.txtHistorik.Location = New System.Drawing.Point(360, 115)
         Me.txtHistorik.Multiline = True
         Me.txtHistorik.Name = "txtHistorik"
         Me.txtHistorik.ReadOnly = True
@@ -780,7 +777,7 @@ Partial Class frmMedieplan
         '
         Me.txtKommentar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtKommentar.Location = New System.Drawing.Point(1076, 10)
+        Me.txtKommentar.Location = New System.Drawing.Point(1170, 10)
         Me.txtKommentar.MaxLength = 250
         Me.txtKommentar.Multiline = True
         Me.txtKommentar.Name = "txtKommentar"
@@ -788,618 +785,9 @@ Partial Class frmMedieplan
         Appearance1.TextHAlignAsString = "Center"
         Appearance1.TextVAlignAsString = "Middle"
         Me.txtKommentar.NullTextAppearance = Appearance1
-        Me.txtKommentar.Size = New System.Drawing.Size(207, 77)
+        Me.txtKommentar.Size = New System.Drawing.Size(113, 77)
         Me.txtKommentar.TabIndex = 399
         Me.txtKommentar.Visible = False
-        '
-        'lblKommentar
-        '
-        Me.lblKommentar.AutoSize = True
-        Me.lblKommentar.Location = New System.Drawing.Point(999, 14)
-        Me.lblKommentar.Name = "lblKommentar"
-        Me.lblKommentar.Size = New System.Drawing.Size(71, 15)
-        Me.lblKommentar.TabIndex = 398
-        Me.lblKommentar.Tag = "Toggle"
-        Me.lblKommentar.Text = "Kommentar"
-        Me.lblKommentar.Visible = False
-        '
-        'clbMiljøTillægOpkræves
-        '
-        Me.clbMiljøTillægOpkræves.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.clbMiljøTillægOpkræves.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.clbMiljøTillægOpkræves.ColumnWidth = 87
-        Me.clbMiljøTillægOpkræves.FormattingEnabled = True
-        Me.clbMiljøTillægOpkræves.Items.AddRange(New Object() {"Midtjyske", "Fynske", "NorthMedia", "DSVP", "Jyske A/S"})
-        Me.clbMiljøTillægOpkræves.Location = New System.Drawing.Point(195, 155)
-        Me.clbMiljøTillægOpkræves.MultiColumn = True
-        Me.clbMiljøTillægOpkræves.Name = "clbMiljøTillægOpkræves"
-        Me.clbMiljøTillægOpkræves.Size = New System.Drawing.Size(263, 32)
-        Me.clbMiljøTillægOpkræves.TabIndex = 397
-        Me.clbMiljøTillægOpkræves.Visible = False
-        '
-        'chkMiljøTillægVises
-        '
-        Me.chkMiljøTillægVises.Location = New System.Drawing.Point(38, 173)
-        Me.chkMiljøTillægVises.Name = "chkMiljøTillægVises"
-        Me.chkMiljøTillægVises.Size = New System.Drawing.Size(151, 15)
-        Me.chkMiljøTillægVises.TabIndex = 396
-        Me.chkMiljøTillægVises.Text = "Miljøtillæg vises i grid"
-        Me.chkMiljøTillægVises.Visible = False
-        '
-        'chkMiljøTillægOpkræves
-        '
-        Me.chkMiljøTillægOpkræves.Checked = True
-        Me.chkMiljøTillægOpkræves.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkMiljøTillægOpkræves.Location = New System.Drawing.Point(24, 153)
-        Me.chkMiljøTillægOpkræves.Name = "chkMiljøTillægOpkræves"
-        Me.chkMiljøTillægOpkræves.Size = New System.Drawing.Size(140, 20)
-        Me.chkMiljøTillægOpkræves.TabIndex = 395
-        Me.chkMiljøTillægOpkræves.Text = "Miljøtillæg opkræves"
-        Me.chkMiljøTillægOpkræves.Visible = False
-        '
-        'chkKunForhandlerBundForskellig
-        '
-        Me.chkKunForhandlerBundForskellig.Checked = True
-        Me.chkKunForhandlerBundForskellig.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkKunForhandlerBundForskellig.Location = New System.Drawing.Point(703, 169)
-        Me.chkKunForhandlerBundForskellig.Name = "chkKunForhandlerBundForskellig"
-        Me.chkKunForhandlerBundForskellig.Size = New System.Drawing.Size(202, 18)
-        Me.chkKunForhandlerBundForskellig.TabIndex = 393
-        Me.chkKunForhandlerBundForskellig.Text = "Kun forhandlerbund forskellig"
-        Me.chkKunForhandlerBundForskellig.Visible = False
-        '
-        'chkMaterialeModtaget
-        '
-        Me.chkMaterialeModtaget.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chkMaterialeModtaget.Location = New System.Drawing.Point(528, 108)
-        Me.chkMaterialeModtaget.Name = "chkMaterialeModtaget"
-        Me.chkMaterialeModtaget.Size = New System.Drawing.Size(110, 20)
-        Me.chkMaterialeModtaget.TabIndex = 392
-        Me.chkMaterialeModtaget.Tag = "Toggle"
-        Me.chkMaterialeModtaget.Text = "Matr. modtaget"
-        Me.chkMaterialeModtaget.Visible = False
-        '
-        'btnFakturaBemærkning
-        '
-        Me.btnFakturaBemærkning.Enabled = False
-        Me.btnFakturaBemærkning.Location = New System.Drawing.Point(572, 36)
-        Me.btnFakturaBemærkning.Name = "btnFakturaBemærkning"
-        Me.btnFakturaBemærkning.ShowFocusRect = False
-        Me.btnFakturaBemærkning.ShowOutline = False
-        Me.btnFakturaBemærkning.Size = New System.Drawing.Size(116, 18)
-        Me.btnFakturaBemærkning.TabIndex = 391
-        Me.btnFakturaBemærkning.Tag = "Toggle"
-        Me.btnFakturaBemærkning.Text = "&Fakt. bemærkning"
-        UltraToolTipInfo6.ToolTipImage = Infragistics.Win.ToolTipImage.Info
-        UltraToolTipInfo6.ToolTipText = "Klik her for at tilføje fakturabemærkning"
-        UltraToolTipInfo6.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
-        Me.ToolTipManager.SetUltraToolTip(Me.btnFakturaBemærkning, UltraToolTipInfo6)
-        Me.btnFakturaBemærkning.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        Me.btnFakturaBemærkning.Visible = False
-        '
-        'lblIndrykningsÅr
-        '
-        Me.lblIndrykningsÅr.AutoSize = True
-        Me.lblIndrykningsÅr.Location = New System.Drawing.Point(197, 134)
-        Me.lblIndrykningsÅr.Name = "lblIndrykningsÅr"
-        Me.lblIndrykningsÅr.Size = New System.Drawing.Size(48, 15)
-        Me.lblIndrykningsÅr.TabIndex = 388
-        Me.lblIndrykningsÅr.Text = "Indr. år"
-        '
-        'numIndrykningsÅr
-        '
-        Me.numIndrykningsÅr.Location = New System.Drawing.Point(251, 130)
-        Me.numIndrykningsÅr.MaskDisplayMode = Infragistics.Win.UltraWinMaskedEdit.MaskMode.Raw
-        Me.numIndrykningsÅr.MaskInput = "nnnn"
-        Me.numIndrykningsÅr.MaxValue = 2020
-        Me.numIndrykningsÅr.MinValue = 1996
-        Me.numIndrykningsÅr.Name = "numIndrykningsÅr"
-        Me.numIndrykningsÅr.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.numIndrykningsÅr.Size = New System.Drawing.Size(68, 22)
-        Me.numIndrykningsÅr.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
-        Me.numIndrykningsÅr.SpinWrap = True
-        Me.numIndrykningsÅr.TabIndex = 8
-        Me.numIndrykningsÅr.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
-        Me.numIndrykningsÅr.Value = 2008
-        '
-        'txtOverskrift
-        '
-        Me.txtOverskrift.Location = New System.Drawing.Point(464, 10)
-        Me.txtOverskrift.MaxLength = 30
-        Me.txtOverskrift.Name = "txtOverskrift"
-        Me.txtOverskrift.NullText = "- Skriv Overskrift -"
-        Me.txtOverskrift.Size = New System.Drawing.Size(224, 22)
-        Me.txtOverskrift.TabIndex = 9
-        Me.txtOverskrift.Tag = "Toggle"
-        Me.txtOverskrift.Visible = False
-        '
-        'lblOverskrift
-        '
-        Me.lblOverskrift.AutoSize = True
-        Me.lblOverskrift.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblOverskrift.Location = New System.Drawing.Point(360, 14)
-        Me.lblOverskrift.Name = "lblOverskrift"
-        Me.lblOverskrift.Size = New System.Drawing.Size(60, 15)
-        Me.lblOverskrift.TabIndex = 387
-        Me.lblOverskrift.Tag = "Toggle"
-        Me.lblOverskrift.Text = "Overskrift"
-        Me.lblOverskrift.Visible = False
-        '
-        'txtBemærkningTilUgeavis
-        '
-        Me.txtBemærkningTilUgeavis.AcceptsReturn = True
-        Me.txtBemærkningTilUgeavis.Location = New System.Drawing.Point(808, 88)
-        Me.txtBemærkningTilUgeavis.MaxLength = 250
-        Me.txtBemærkningTilUgeavis.Multiline = True
-        Me.txtBemærkningTilUgeavis.Name = "txtBemærkningTilUgeavis"
-        Me.txtBemærkningTilUgeavis.NullText = "- Skriv Bemærkning til Ugeaviserne -"
-        Me.txtBemærkningTilUgeavis.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtBemærkningTilUgeavis.ShowOverflowIndicator = True
-        Me.txtBemærkningTilUgeavis.Size = New System.Drawing.Size(176, 46)
-        Me.txtBemærkningTilUgeavis.TabIndex = 21
-        Me.txtBemærkningTilUgeavis.Tag = "Toggle"
-        Me.txtBemærkningTilUgeavis.Visible = False
-        '
-        'lblBemærkningTilUgeavis
-        '
-        Me.lblBemærkningTilUgeavis.AutoSize = True
-        Me.lblBemærkningTilUgeavis.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblBemærkningTilUgeavis.Location = New System.Drawing.Point(703, 87)
-        Me.lblBemærkningTilUgeavis.Name = "lblBemærkningTilUgeavis"
-        Me.lblBemærkningTilUgeavis.Size = New System.Drawing.Size(77, 15)
-        Me.lblBemærkningTilUgeavis.TabIndex = 385
-        Me.lblBemærkningTilUgeavis.Tag = "Toggle"
-        Me.lblBemærkningTilUgeavis.Text = "Bemærkning"
-        Me.lblBemærkningTilUgeavis.Visible = False
-        '
-        'txtBemærkningTilAnnoncør
-        '
-        Me.txtBemærkningTilAnnoncør.AcceptsReturn = True
-        Me.txtBemærkningTilAnnoncør.Location = New System.Drawing.Point(464, 10)
-        Me.txtBemærkningTilAnnoncør.MaxLength = 250
-        Me.txtBemærkningTilAnnoncør.Multiline = True
-        Me.txtBemærkningTilAnnoncør.Name = "txtBemærkningTilAnnoncør"
-        Me.txtBemærkningTilAnnoncør.NullText = "- Skriv Bemærkning til Annoncøren -"
-        Me.txtBemærkningTilAnnoncør.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtBemærkningTilAnnoncør.ShowOverflowIndicator = True
-        Me.txtBemærkningTilAnnoncør.Size = New System.Drawing.Size(224, 46)
-        Me.txtBemærkningTilAnnoncør.TabIndex = 8
-        Me.txtBemærkningTilAnnoncør.Tag = "Toggle"
-        '
-        'txtMaterialeFølgerFraLeverandør
-        '
-        Me.txtMaterialeFølgerFraLeverandør.Location = New System.Drawing.Point(326, 112)
-        Me.txtMaterialeFølgerFraLeverandør.MaxLength = 30
-        Me.txtMaterialeFølgerFraLeverandør.Name = "txtMaterialeFølgerFraLeverandør"
-        Me.txtMaterialeFølgerFraLeverandør.NullText = "- Skriv matr. leverandør (til DLU) -"
-        Me.txtMaterialeFølgerFraLeverandør.Size = New System.Drawing.Size(224, 22)
-        Me.txtMaterialeFølgerFraLeverandør.TabIndex = 16
-        Me.txtMaterialeFølgerFraLeverandør.Visible = False
-        '
-        'lblFællesBureauOrdreNr
-        '
-        Me.lblFællesBureauOrdreNr.AutoSize = True
-        Me.lblFællesBureauOrdreNr.Location = New System.Drawing.Point(703, 148)
-        Me.lblFællesBureauOrdreNr.Name = "lblFællesBureauOrdreNr"
-        Me.lblFællesBureauOrdreNr.Size = New System.Drawing.Size(95, 15)
-        Me.lblFællesBureauOrdreNr.TabIndex = 384
-        Me.lblFællesBureauOrdreNr.Tag = ""
-        Me.lblFællesBureauOrdreNr.Text = "Bureau ordre nr"
-        Me.lblFællesBureauOrdreNr.Visible = False
-        '
-        'txtFællesBureauOrdreNr
-        '
-        Me.txtFællesBureauOrdreNr.Location = New System.Drawing.Point(808, 144)
-        Me.txtFællesBureauOrdreNr.MaxLength = 30
-        Me.txtFællesBureauOrdreNr.Name = "txtFællesBureauOrdreNr"
-        Me.txtFællesBureauOrdreNr.NullText = " - Skriv Bureauordrenr -"
-        Me.txtFællesBureauOrdreNr.Size = New System.Drawing.Size(176, 22)
-        Me.txtFællesBureauOrdreNr.TabIndex = 22
-        Me.txtFællesBureauOrdreNr.Tag = ""
-        Me.txtFællesBureauOrdreNr.Visible = False
-        '
-        'optSammeMateriale
-        '
-        Me.optSammeMateriale.CheckedIndex = 0
-        ValueListItem8.DataValue = True
-        ValueListItem8.DisplayText = "Samme"
-        ValueListItem9.DataValue = False
-        ValueListItem9.DisplayText = "Forskelligt"
-        Me.optSammeMateriale.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem8, ValueListItem9})
-        Me.optSammeMateriale.Location = New System.Drawing.Point(464, 153)
-        Me.optSammeMateriale.Name = "optSammeMateriale"
-        Me.optSammeMateriale.Size = New System.Drawing.Size(150, 18)
-        Me.optSammeMateriale.TabIndex = 17
-        Me.optSammeMateriale.Tag = ""
-        Me.optSammeMateriale.Text = "Samme"
-        '
-        'btnMateriale
-        '
-        Me.btnMateriale.Location = New System.Drawing.Point(360, 130)
-        Me.btnMateriale.Name = "btnMateriale"
-        Me.btnMateriale.ShowFocusRect = False
-        Me.btnMateriale.ShowOutline = False
-        Me.btnMateriale.Size = New System.Drawing.Size(87, 22)
-        Me.btnMateriale.TabIndex = 15
-        Me.btnMateriale.Text = "Send &Matr."
-        Me.btnMateriale.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        Me.btnMateriale.Visible = False
-        '
-        'txtBrugMaterialeFraUge
-        '
-        Me.txtBrugMaterialeFraUge.Location = New System.Drawing.Point(464, 106)
-        Me.txtBrugMaterialeFraUge.Name = "txtBrugMaterialeFraUge"
-        Me.txtBrugMaterialeFraUge.NullText = "- Uge -"
-        Me.txtBrugMaterialeFraUge.Size = New System.Drawing.Size(58, 22)
-        Me.txtBrugMaterialeFraUge.TabIndex = 14
-        Me.txtBrugMaterialeFraUge.Tag = ""
-        Me.txtBrugMaterialeFraUge.Visible = False
-        '
-        'lblMatFraUge
-        '
-        Me.lblMatFraUge.AutoSize = True
-        Me.lblMatFraUge.Location = New System.Drawing.Point(360, 110)
-        Me.lblMatFraUge.Name = "lblMatFraUge"
-        Me.lblMatFraUge.Size = New System.Drawing.Size(79, 15)
-        Me.lblMatFraUge.TabIndex = 380
-        Me.lblMatFraUge.Tag = ""
-        Me.lblMatFraUge.Text = "Matr. fra uge"
-        Me.lblMatFraUge.Visible = False
-        '
-        'optMaterialeFølgerFra
-        '
-        Me.optMaterialeFølgerFra.CheckedIndex = 1
-        ValueListItem10.DataValue = CType(0, Byte)
-        ValueListItem10.DisplayText = "Tidligere Uge"
-        ValueListItem11.DataValue = CType(1, Byte)
-        ValueListItem11.DisplayText = "DLU"
-        ValueListItem12.DataValue = CType(2, Byte)
-        ValueListItem12.DisplayText = "Bur."
-        ValueListItem13.DataValue = CType(3, Byte)
-        ValueListItem13.DisplayText = "Ann."
-        Me.optMaterialeFølgerFra.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem10, ValueListItem11, ValueListItem12, ValueListItem13})
-        Me.optMaterialeFølgerFra.Location = New System.Drawing.Point(464, 84)
-        Me.optMaterialeFølgerFra.Name = "optMaterialeFølgerFra"
-        Me.optMaterialeFølgerFra.Size = New System.Drawing.Size(242, 18)
-        Me.optMaterialeFølgerFra.TabIndex = 13
-        Me.optMaterialeFølgerFra.Tag = "Toggle"
-        Me.optMaterialeFølgerFra.Text = "DLU"
-        Me.optMaterialeFølgerFra.Visible = False
-        '
-        'lblMaterialeFølgerFra
-        '
-        Me.lblMaterialeFølgerFra.AutoSize = True
-        Me.lblMaterialeFølgerFra.Location = New System.Drawing.Point(360, 86)
-        Me.lblMaterialeFølgerFra.Name = "lblMaterialeFølgerFra"
-        Me.lblMaterialeFølgerFra.Size = New System.Drawing.Size(90, 15)
-        Me.lblMaterialeFølgerFra.TabIndex = 378
-        Me.lblMaterialeFølgerFra.Tag = "Toggle"
-        Me.lblMaterialeFølgerFra.Text = "Matr. følger fra"
-        Me.lblMaterialeFølgerFra.Visible = False
-        '
-        'lblBemærkningTilAnnoncør
-        '
-        Me.lblBemærkningTilAnnoncør.AutoSize = True
-        Me.lblBemærkningTilAnnoncør.Font = New System.Drawing.Font("Verdana", 8.25!)
-        Me.lblBemærkningTilAnnoncør.Location = New System.Drawing.Point(360, 14)
-        Me.lblBemærkningTilAnnoncør.Name = "lblBemærkningTilAnnoncør"
-        Me.lblBemærkningTilAnnoncør.Size = New System.Drawing.Size(77, 15)
-        Me.lblBemærkningTilAnnoncør.TabIndex = 374
-        Me.lblBemærkningTilAnnoncør.Tag = "Toggle"
-        Me.lblBemærkningTilAnnoncør.Text = "Bemærkning"
-        '
-        'optBilagsBladeTil
-        '
-        ValueListItem14.DataValue = CType(1, Byte)
-        ValueListItem14.DisplayText = "Annoncør"
-        ValueListItem15.DataValue = CType(2, Byte)
-        ValueListItem15.DisplayText = "Bureau"
-        ValueListItem16.DataValue = CType(3, Byte)
-        ValueListItem16.DisplayText = "Anden"
-        Me.optBilagsBladeTil.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem14, ValueListItem15, ValueListItem16})
-        Me.optBilagsBladeTil.Location = New System.Drawing.Point(785, 36)
-        Me.optBilagsBladeTil.Name = "optBilagsBladeTil"
-        Me.optBilagsBladeTil.Size = New System.Drawing.Size(199, 18)
-        Me.optBilagsBladeTil.TabIndex = 19
-        Me.optBilagsBladeTil.Tag = "Toggle"
-        UltraToolTipInfo7.Enabled = Infragistics.Win.DefaultableBoolean.[True]
-        UltraToolTipInfo7.ToolTipImage = Infragistics.Win.ToolTipImage.Info
-        UltraToolTipInfo7.ToolTipTextFormatted = "<span style=""font-weight:bold;"">Sendes Til:<span style=""font-weight:normal;""><br/" & _
-    "></span><br/><br/></span>"
-        UltraToolTipInfo7.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
-        UltraToolTipInfo7.ToolTipTitle = "Bilagsblad modtager"
-        Me.ToolTipManager.SetUltraToolTip(Me.optBilagsBladeTil, UltraToolTipInfo7)
-        Me.optBilagsBladeTil.Visible = False
-        '
-        'lblFakturering
-        '
-        Me.lblFakturering.AutoSize = True
-        Me.lblFakturering.Location = New System.Drawing.Point(360, 38)
-        Me.lblFakturering.Name = "lblFakturering"
-        Me.lblFakturering.Size = New System.Drawing.Size(70, 15)
-        Me.lblFakturering.TabIndex = 372
-        Me.lblFakturering.Tag = "Toggle"
-        Me.lblFakturering.Text = "Fakturering"
-        Me.lblFakturering.Visible = False
-        '
-        'optFakturering
-        '
-        Me.optFakturering.CheckedIndex = 0
-        ValueListItem17.DataValue = CType(1, Byte)
-        ValueListItem17.DisplayText = "DLU"
-        ValueListItem18.DataValue = CType(0, Byte)
-        ValueListItem18.DisplayText = "Blad"
-        Me.optFakturering.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem17, ValueListItem18})
-        Me.optFakturering.Location = New System.Drawing.Point(464, 36)
-        Me.optFakturering.Name = "optFakturering"
-        Me.optFakturering.Size = New System.Drawing.Size(102, 18)
-        Me.optFakturering.TabIndex = 10
-        Me.optFakturering.Tag = "Toggle"
-        Me.optFakturering.Text = "DLU"
-        Me.optFakturering.Visible = False
-        '
-        'optGruppering
-        '
-        Me.optGruppering.CheckedIndex = 0
-        ValueListItem4.DataValue = CType(0, Byte)
-        ValueListItem4.DisplayText = "Regioner"
-        ValueListItem5.DataValue = CType(1, Byte)
-        ValueListItem5.DisplayText = "Rabatformer"
-        ValueListItem6.DataValue = CType(2, Byte)
-        ValueListItem6.DisplayText = "Udsendingsgrupper"
-        ValueListItem7.DataValue = CType(3, Byte)
-        ValueListItem7.DisplayText = "Ingen"
-        Me.optGruppering.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem4, ValueListItem5, ValueListItem6, ValueListItem7})
-        Me.optGruppering.Location = New System.Drawing.Point(64, 215)
-        Me.optGruppering.Name = "optGruppering"
-        Me.optGruppering.Size = New System.Drawing.Size(255, 39)
-        Me.optGruppering.TabIndex = 365
-        Me.optGruppering.TabStop = False
-        Me.optGruppering.Text = "Regioner"
-        Me.optGruppering.ValueMember = ""
-        '
-        'lblGruppering
-        '
-        Me.lblGruppering.AutoSize = True
-        Me.lblGruppering.Location = New System.Drawing.Point(1, 224)
-        Me.lblGruppering.Name = "lblGruppering"
-        Me.lblGruppering.Size = New System.Drawing.Size(57, 15)
-        Me.lblGruppering.TabIndex = 366
-        Me.lblGruppering.Text = "Sortering"
-        '
-        'ToolTipManager
-        '
-        Appearance58.FontData.SizeInPoints = 10.0!
-        Me.ToolTipManager.Appearance = Appearance58
-        Me.ToolTipManager.AutoPopDelay = 50000
-        Me.ToolTipManager.ContainingControl = Me
-        Me.ToolTipManager.DisplayStyle = Infragistics.Win.ToolTipDisplayStyle.BalloonTip
-        Me.ToolTipManager.InitialDelay = 0
-        Me.ToolTipManager.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
-        Appearance60.FontData.BoldAsString = "True"
-        Appearance60.FontData.SizeInPoints = 14.0!
-        Appearance60.FontData.UnderlineAsString = "True"
-        Me.ToolTipManager.ToolTipTitleAppearance = Appearance60
-        '
-        'btnVisFaktureringsBilag
-        '
-        Me.btnVisFaktureringsBilag.Image = Global.WinPlanner.My.Resources.Resources.file
-        Me.btnVisFaktureringsBilag.Location = New System.Drawing.Point(886, 4)
-        Me.btnVisFaktureringsBilag.Name = "btnVisFaktureringsBilag"
-        Me.btnVisFaktureringsBilag.Size = New System.Drawing.Size(25, 28)
-        Me.btnVisFaktureringsBilag.TabIndex = 380
-        Me.btnVisFaktureringsBilag.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        UltraToolTipInfo1.ToolTipText = "Klik her for at åbne/lukke fakturerings bilag"
-        UltraToolTipInfo1.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
-        Me.ToolTipManager.SetUltraToolTip(Me.btnVisFaktureringsBilag, UltraToolTipInfo1)
-        Me.btnVisFaktureringsBilag.UseVisualStyleBackColor = True
-        Me.btnVisFaktureringsBilag.Visible = False
-        '
-        'picRød
-        '
-        Me.picRød.AutoSize = True
-        Me.picRød.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(232, Byte), Integer))
-        Me.picRød.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picRød.Image = CType(resources.GetObject("picRød.Image"), Object)
-        Me.picRød.Location = New System.Drawing.Point(734, 7)
-        Me.picRød.Name = "picRød"
-        Me.picRød.Size = New System.Drawing.Size(26, 22)
-        Me.picRød.TabIndex = 332
-        Me.picRød.Tag = "On"
-        UltraToolTipInfo2.Enabled = Infragistics.Win.DefaultableBoolean.[True]
-        UltraToolTipInfo2.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
-        UltraToolTipInfo2.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
-        UltraToolTipInfo2.ToolTipTitle = "For at save:"
-        Me.ToolTipManager.SetUltraToolTip(Me.picRød, UltraToolTipInfo2)
-        '
-        'btnSupportBilag
-        '
-        Me.btnSupportBilag.Image = Global.WinPlanner.My.Resources.Resources.MultiplePagesImage
-        Me.btnSupportBilag.Location = New System.Drawing.Point(766, 9)
-        Me.btnSupportBilag.Name = "btnSupportBilag"
-        Me.btnSupportBilag.Size = New System.Drawing.Size(22, 22)
-        Me.btnSupportBilag.TabIndex = 371
-        Me.btnSupportBilag.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        UltraToolTipInfo3.Enabled = Infragistics.Win.DefaultableBoolean.[True]
-        UltraToolTipInfo3.ToolTipImage = Infragistics.Win.ToolTipImage.Info
-        UltraToolTipInfo3.ToolTipText = "Der er vedhæftet et support bilag"
-        UltraToolTipInfo3.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
-        UltraToolTipInfo3.ToolTipTitle = "Bilag vedhæftet"
-        Me.ToolTipManager.SetUltraToolTip(Me.btnSupportBilag, UltraToolTipInfo3)
-        Me.btnSupportBilag.UseVisualStyleBackColor = True
-        Me.btnSupportBilag.Visible = False
-        '
-        'btnHistorik
-        '
-        Me.btnHistorik.Image = CType(resources.GetObject("btnHistorik.Image"), System.Drawing.Image)
-        Me.btnHistorik.Location = New System.Drawing.Point(793, 6)
-        Me.btnHistorik.Name = "btnHistorik"
-        Me.btnHistorik.Size = New System.Drawing.Size(25, 25)
-        Me.btnHistorik.TabIndex = 376
-        Me.btnHistorik.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        UltraToolTipInfo4.Enabled = Infragistics.Win.DefaultableBoolean.[True]
-        UltraToolTipInfo4.ToolTipImage = Infragistics.Win.ToolTipImage.Info
-        UltraToolTipInfo4.ToolTipText = "Klik her for at åbne/lukke historik"
-        UltraToolTipInfo4.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
-        UltraToolTipInfo4.ToolTipTitle = "Historik"
-        Me.ToolTipManager.SetUltraToolTip(Me.btnHistorik, UltraToolTipInfo4)
-        Me.btnHistorik.UseVisualStyleBackColor = True
-        Me.btnHistorik.Visible = False
-        '
-        'btnKommentar
-        '
-        Me.btnKommentar.BackgroundImage = Global.WinPlanner.My.Resources.Resources.file
-        Me.btnKommentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnKommentar.Location = New System.Drawing.Point(824, 3)
-        Me.btnKommentar.Name = "btnKommentar"
-        Me.btnKommentar.Size = New System.Drawing.Size(28, 28)
-        Me.btnKommentar.TabIndex = 381
-        Me.btnKommentar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        UltraToolTipInfo5.Enabled = Infragistics.Win.DefaultableBoolean.[True]
-        UltraToolTipInfo5.ToolTipImage = Infragistics.Win.ToolTipImage.Info
-        UltraToolTipInfo5.ToolTipTextFormatted = "Klik her for at <b>skrive</b> en intern Kommentar."
-        UltraToolTipInfo5.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
-        UltraToolTipInfo5.ToolTipTitle = "Kommentar"
-        Me.ToolTipManager.SetUltraToolTip(Me.btnKommentar, UltraToolTipInfo5)
-        Me.btnKommentar.UseVisualStyleBackColor = False
-        Me.btnKommentar.Visible = False
-        '
-        'btnUdskriv
-        '
-        Me.btnUdskriv.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnUdskriv.Enabled = False
-        Me.btnUdskriv.Location = New System.Drawing.Point(1095, 484)
-        Me.btnUdskriv.Name = "btnUdskriv"
-        Me.btnUdskriv.ShowFocusRect = False
-        Me.btnUdskriv.ShowOutline = False
-        Me.btnUdskriv.Size = New System.Drawing.Size(87, 24)
-        Me.btnUdskriv.TabIndex = 367
-        Me.btnUdskriv.Text = "&Udskriv"
-        Me.btnUdskriv.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'btnTilBooking
-        '
-        Me.btnTilBooking.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTilBooking.Enabled = False
-        Me.btnTilBooking.Location = New System.Drawing.Point(902, 484)
-        Me.btnTilBooking.Name = "btnTilBooking"
-        Me.btnTilBooking.ShowFocusRect = False
-        Me.btnTilBooking.ShowOutline = False
-        Me.btnTilBooking.Size = New System.Drawing.Size(87, 24)
-        Me.btnTilBooking.TabIndex = 368
-        Me.btnTilBooking.Text = "Til &Booking"
-        Me.btnTilBooking.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'btnAnnuller
-        '
-        Me.btnAnnuller.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnAnnuller.Location = New System.Drawing.Point(12, 484)
-        Me.btnAnnuller.Name = "btnAnnuller"
-        Me.btnAnnuller.ShowFocusRect = False
-        Me.btnAnnuller.ShowOutline = False
-        Me.btnAnnuller.Size = New System.Drawing.Size(87, 24)
-        Me.btnAnnuller.TabIndex = 19
-        Me.btnAnnuller.Text = "&Annuller"
-        Me.btnAnnuller.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'Timer
-        '
-        Me.Timer.Interval = 300
-        '
-        'btnTilBlade
-        '
-        Me.btnTilBlade.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTilBlade.Enabled = False
-        Me.btnTilBlade.Location = New System.Drawing.Point(705, 484)
-        Me.btnTilBlade.Name = "btnTilBlade"
-        Me.btnTilBlade.ShowFocusRect = False
-        Me.btnTilBlade.ShowOutline = False
-        Me.btnTilBlade.Size = New System.Drawing.Size(87, 24)
-        Me.btnTilBlade.TabIndex = 369
-        Me.btnTilBlade.Text = "&Til Blade"
-        Me.btnTilBlade.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'btnDækningskort
-        '
-        Me.btnDækningskort.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDækningskort.Location = New System.Drawing.Point(995, 484)
-        Me.btnDækningskort.Name = "btnDækningskort"
-        Me.btnDækningskort.ShowFocusRect = False
-        Me.btnDækningskort.ShowOutline = False
-        Me.btnDækningskort.Size = New System.Drawing.Size(94, 24)
-        Me.btnDækningskort.TabIndex = 370
-        Me.btnDækningskort.Text = "&Dækningskort"
-        Me.btnDækningskort.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'timerSupportBilag
-        '
-        Me.timerSupportBilag.Interval = 500
-        '
-        'lblMedieplanNr
-        '
-        Appearance59.BackColor = System.Drawing.Color.Gainsboro
-        Me.lblMedieplanNr.Appearance = Appearance59
-        Me.lblMedieplanNr.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMedieplanNr.Location = New System.Drawing.Point(105, 12)
-        Me.lblMedieplanNr.Name = "lblMedieplanNr"
-        Me.lblMedieplanNr.Size = New System.Drawing.Size(101, 14)
-        Me.lblMedieplanNr.TabIndex = 372
-        Me.lblMedieplanNr.Text = "- ikke tildelt -"
-        Me.lblMedieplanNr.UseAppStyling = False
-        '
-        'timer365
-        '
-        Me.timer365.Interval = 500
-        '
-        'btnGenUdsend
-        '
-        Me.btnGenUdsend.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenUdsend.Enabled = False
-        Me.btnGenUdsend.Location = New System.Drawing.Point(612, 484)
-        Me.btnGenUdsend.Name = "btnGenUdsend"
-        Me.btnGenUdsend.ShowFocusRect = False
-        Me.btnGenUdsend.ShowOutline = False
-        Me.btnGenUdsend.Size = New System.Drawing.Size(87, 24)
-        Me.btnGenUdsend.TabIndex = 373
-        Me.btnGenUdsend.Text = "Genudsend"
-        Me.btnGenUdsend.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        Me.btnGenUdsend.Visible = False
-        '
-        'btnTilExcel
-        '
-        Me.btnTilExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnTilExcel.Enabled = False
-        Me.btnTilExcel.Location = New System.Drawing.Point(1188, 220)
-        Me.btnTilExcel.Name = "btnTilExcel"
-        Me.btnTilExcel.ShowFocusRect = False
-        Me.btnTilExcel.ShowOutline = False
-        Me.btnTilExcel.Size = New System.Drawing.Size(87, 24)
-        Me.btnTilExcel.TabIndex = 374
-        Me.btnTilExcel.Text = "Send til Excel"
-        Me.btnTilExcel.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        Me.btnTilExcel.UseMnemonic = False
-        '
-        'chkFarveSærRabat
-        '
-        Me.chkFarveSærRabat.Location = New System.Drawing.Point(635, 222)
-        Me.chkFarveSærRabat.Name = "chkFarveSærRabat"
-        Me.chkFarveSærRabat.Size = New System.Drawing.Size(172, 20)
-        Me.chkFarveSærRabat.TabIndex = 375
-        Me.chkFarveSærRabat.Text = "Alle må give farverabat"
-        Me.chkFarveSærRabat.Visible = False
-        '
-        'btnGenberegn
-        '
-        Me.btnGenberegn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnGenberegn.Location = New System.Drawing.Point(1080, 220)
-        Me.btnGenberegn.Name = "btnGenberegn"
-        Me.btnGenberegn.ShowFocusRect = False
-        Me.btnGenberegn.ShowOutline = False
-        Me.btnGenberegn.Size = New System.Drawing.Size(87, 24)
-        Me.btnGenberegn.TabIndex = 377
-        Me.btnGenberegn.Text = "Genberegn"
-        Me.btnGenberegn.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
-        Me.btnGenberegn.Visible = False
         '
         'grdCC
         '
@@ -1437,107 +825,6 @@ Partial Class frmMedieplan
         Me.grdCC.TabIndex = 378
         Me.grdCC.Text = "Vælg Kolonner"
         Me.grdCC.Visible = False
-        '
-        'chkMmSærRabat
-        '
-        Me.chkMmSærRabat.Location = New System.Drawing.Point(422, 222)
-        Me.chkMmSærRabat.Name = "chkMmSærRabat"
-        Me.chkMmSærRabat.Size = New System.Drawing.Size(172, 20)
-        Me.chkMmSærRabat.TabIndex = 379
-        Me.chkMmSærRabat.Text = "Alle må give mm rabat"
-        '
-        'TblAnnoncørerTableAdapter
-        '
-        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
-        '
-        'TblBureauerTableAdapter
-        '
-        Me.TblBureauerTableAdapter.ClearBeforeFill = True
-        '
-        'TblPlaceringTableAdapter
-        '
-        Me.TblPlaceringTableAdapter.ClearBeforeFill = True
-        '
-        'TblDPKulørTableAdapter
-        '
-        Me.TblDPKulørTableAdapter.ClearBeforeFill = True
-        '
-        'TblUgeaviserTableAdapter
-        '
-        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
-        '
-        'picMinMax
-        '
-        Me.picMinMax.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picMinMax.Image = CType(resources.GetObject("picMinMax.Image"), Object)
-        Me.picMinMax.Location = New System.Drawing.Point(1, 248)
-        Me.picMinMax.Margin = New System.Windows.Forms.Padding(0)
-        Me.picMinMax.Name = "picMinMax"
-        Me.picMinMax.Size = New System.Drawing.Size(22, 22)
-        Me.picMinMax.TabIndex = 362
-        '
-        'picGrøn
-        '
-        Me.picGrøn.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picGrøn.Image = CType(resources.GetObject("picGrøn.Image"), Object)
-        Me.picGrøn.Location = New System.Drawing.Point(687, 7)
-        Me.picGrøn.Name = "picGrøn"
-        Me.picGrøn.Size = New System.Drawing.Size(28, 22)
-        Me.picGrøn.TabIndex = 330
-        Me.picGrøn.Tag = "Off"
-        '
-        'picGul
-        '
-        Me.picGul.AutoSize = True
-        Me.picGul.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picGul.Image = CType(resources.GetObject("picGul.Image"), Object)
-        Me.picGul.Location = New System.Drawing.Point(715, 7)
-        Me.picGul.Name = "picGul"
-        Me.picGul.Size = New System.Drawing.Size(18, 22)
-        Me.picGul.TabIndex = 331
-        Me.picGul.Tag = "Off"
-        '
-        'picStatusKode
-        '
-        Me.picStatusKode.AutoSize = True
-        Me.picStatusKode.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picStatusKode.Image = CType(resources.GetObject("picStatusKode.Image"), Object)
-        Me.picStatusKode.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.picStatusKode.Location = New System.Drawing.Point(261, 14)
-        Me.picStatusKode.Name = "picStatusKode"
-        Me.picStatusKode.Size = New System.Drawing.Size(221, 10)
-        Me.picStatusKode.TabIndex = 339
-        '
-        'picStatus
-        '
-        Me.picStatus.AutoSize = True
-        Me.picStatus.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picStatus.Image = CType(resources.GetObject("picStatus.Image"), Object)
-        Me.picStatus.Location = New System.Drawing.Point(17, 7)
-        Me.picStatus.Name = "picStatus"
-        Me.picStatus.Size = New System.Drawing.Size(750, 23)
-        Me.picStatus.TabIndex = 329
-        '
-        'picPipeline
-        '
-        Me.picPipeline.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picPipeline.AutoSize = True
-        Me.picPipeline.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picPipeline.Image = CType(resources.GetObject("picPipeline.Image"), Object)
-        Me.picPipeline.Location = New System.Drawing.Point(1143, 2)
-        Me.picPipeline.Name = "picPipeline"
-        Me.picPipeline.ScaleImage = Infragistics.Win.ScaleImage.Never
-        Me.picPipeline.Size = New System.Drawing.Size(145, 26)
-        Me.picPipeline.TabIndex = 326
-        '
-        'chkVisLåstePriser
-        '
-        Me.chkVisLåstePriser.Location = New System.Drawing.Point(326, 224)
-        Me.chkVisLåstePriser.Name = "chkVisLåstePriser"
-        Me.chkVisLåstePriser.Size = New System.Drawing.Size(102, 20)
-        Me.chkVisLåstePriser.TabIndex = 382
-        Me.chkVisLåstePriser.Text = "Vis Lås priser"
-        Me.chkVisLåstePriser.Visible = False
         '
         'grdOrdreLinjer
         '
@@ -1999,6 +1286,698 @@ Partial Class frmMedieplan
         Me.DataSourceMedieplan.Placering = 1
         Me.DataSourceMedieplan.Version = 0
         '
+        'lblKommentar
+        '
+        Me.lblKommentar.AutoSize = True
+        Me.lblKommentar.Location = New System.Drawing.Point(1095, 13)
+        Me.lblKommentar.Name = "lblKommentar"
+        Me.lblKommentar.Size = New System.Drawing.Size(71, 15)
+        Me.lblKommentar.TabIndex = 398
+        Me.lblKommentar.Tag = "Toggle"
+        Me.lblKommentar.Text = "Kommentar"
+        Me.lblKommentar.Visible = False
+        '
+        'clbMiljøTillægOpkræves
+        '
+        Me.clbMiljøTillægOpkræves.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.clbMiljøTillægOpkræves.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.clbMiljøTillægOpkræves.ColumnWidth = 87
+        Me.clbMiljøTillægOpkræves.FormattingEnabled = True
+        Me.clbMiljøTillægOpkræves.Items.AddRange(New Object() {"Midtjyske", "Fynske", "NorthMedia", "DSVP", "Jyske A/S"})
+        Me.clbMiljøTillægOpkræves.Location = New System.Drawing.Point(195, 155)
+        Me.clbMiljøTillægOpkræves.MultiColumn = True
+        Me.clbMiljøTillægOpkræves.Name = "clbMiljøTillægOpkræves"
+        Me.clbMiljøTillægOpkræves.Size = New System.Drawing.Size(263, 32)
+        Me.clbMiljøTillægOpkræves.TabIndex = 397
+        Me.clbMiljøTillægOpkræves.Visible = False
+        '
+        'chkMiljøTillægVises
+        '
+        Me.chkMiljøTillægVises.Location = New System.Drawing.Point(38, 173)
+        Me.chkMiljøTillægVises.Name = "chkMiljøTillægVises"
+        Me.chkMiljøTillægVises.Size = New System.Drawing.Size(151, 15)
+        Me.chkMiljøTillægVises.TabIndex = 396
+        Me.chkMiljøTillægVises.Text = "Miljøtillæg vises i grid"
+        Me.chkMiljøTillægVises.Visible = False
+        '
+        'chkMiljøTillægOpkræves
+        '
+        Me.chkMiljøTillægOpkræves.Checked = True
+        Me.chkMiljøTillægOpkræves.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkMiljøTillægOpkræves.Location = New System.Drawing.Point(24, 153)
+        Me.chkMiljøTillægOpkræves.Name = "chkMiljøTillægOpkræves"
+        Me.chkMiljøTillægOpkræves.Size = New System.Drawing.Size(140, 20)
+        Me.chkMiljøTillægOpkræves.TabIndex = 395
+        Me.chkMiljøTillægOpkræves.Text = "Miljøtillæg opkræves"
+        Me.chkMiljøTillægOpkræves.Visible = False
+        '
+        'chkKunForhandlerBundForskellig
+        '
+        Me.chkKunForhandlerBundForskellig.Checked = True
+        Me.chkKunForhandlerBundForskellig.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkKunForhandlerBundForskellig.Location = New System.Drawing.Point(703, 169)
+        Me.chkKunForhandlerBundForskellig.Name = "chkKunForhandlerBundForskellig"
+        Me.chkKunForhandlerBundForskellig.Size = New System.Drawing.Size(202, 18)
+        Me.chkKunForhandlerBundForskellig.TabIndex = 393
+        Me.chkKunForhandlerBundForskellig.Text = "Kun forhandlerbund forskellig"
+        Me.chkKunForhandlerBundForskellig.Visible = False
+        '
+        'chkMaterialeModtaget
+        '
+        Me.chkMaterialeModtaget.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chkMaterialeModtaget.Location = New System.Drawing.Point(528, 108)
+        Me.chkMaterialeModtaget.Name = "chkMaterialeModtaget"
+        Me.chkMaterialeModtaget.Size = New System.Drawing.Size(110, 20)
+        Me.chkMaterialeModtaget.TabIndex = 392
+        Me.chkMaterialeModtaget.Tag = "Toggle"
+        Me.chkMaterialeModtaget.Text = "Matr. modtaget"
+        Me.chkMaterialeModtaget.Visible = False
+        '
+        'lblIndrykningsÅr
+        '
+        Me.lblIndrykningsÅr.AutoSize = True
+        Me.lblIndrykningsÅr.Location = New System.Drawing.Point(197, 134)
+        Me.lblIndrykningsÅr.Name = "lblIndrykningsÅr"
+        Me.lblIndrykningsÅr.Size = New System.Drawing.Size(48, 15)
+        Me.lblIndrykningsÅr.TabIndex = 388
+        Me.lblIndrykningsÅr.Text = "Indr. år"
+        '
+        'numIndrykningsÅr
+        '
+        Me.numIndrykningsÅr.Location = New System.Drawing.Point(251, 130)
+        Me.numIndrykningsÅr.MaskDisplayMode = Infragistics.Win.UltraWinMaskedEdit.MaskMode.Raw
+        Me.numIndrykningsÅr.MaskInput = "nnnn"
+        Me.numIndrykningsÅr.MaxValue = 2020
+        Me.numIndrykningsÅr.MinValue = 1996
+        Me.numIndrykningsÅr.Name = "numIndrykningsÅr"
+        Me.numIndrykningsÅr.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.numIndrykningsÅr.Size = New System.Drawing.Size(68, 22)
+        Me.numIndrykningsÅr.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
+        Me.numIndrykningsÅr.SpinWrap = True
+        Me.numIndrykningsÅr.TabIndex = 8
+        Me.numIndrykningsÅr.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
+        Me.numIndrykningsÅr.Value = 2008
+        '
+        'txtOverskrift
+        '
+        Me.txtOverskrift.Location = New System.Drawing.Point(464, 10)
+        Me.txtOverskrift.MaxLength = 30
+        Me.txtOverskrift.Name = "txtOverskrift"
+        Me.txtOverskrift.NullText = "- Skriv Overskrift -"
+        Me.txtOverskrift.Size = New System.Drawing.Size(224, 22)
+        Me.txtOverskrift.TabIndex = 9
+        Me.txtOverskrift.Tag = "Toggle"
+        Me.txtOverskrift.Visible = False
+        '
+        'lblOverskrift
+        '
+        Me.lblOverskrift.AutoSize = True
+        Me.lblOverskrift.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.lblOverskrift.Location = New System.Drawing.Point(360, 14)
+        Me.lblOverskrift.Name = "lblOverskrift"
+        Me.lblOverskrift.Size = New System.Drawing.Size(60, 15)
+        Me.lblOverskrift.TabIndex = 387
+        Me.lblOverskrift.Tag = "Toggle"
+        Me.lblOverskrift.Text = "Overskrift"
+        Me.lblOverskrift.Visible = False
+        '
+        'txtBemærkningTilUgeavis
+        '
+        Me.txtBemærkningTilUgeavis.AcceptsReturn = True
+        Me.txtBemærkningTilUgeavis.Location = New System.Drawing.Point(808, 88)
+        Me.txtBemærkningTilUgeavis.MaxLength = 250
+        Me.txtBemærkningTilUgeavis.Multiline = True
+        Me.txtBemærkningTilUgeavis.Name = "txtBemærkningTilUgeavis"
+        Me.txtBemærkningTilUgeavis.NullText = "- Skriv Bemærkning til Ugeaviserne -"
+        Me.txtBemærkningTilUgeavis.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtBemærkningTilUgeavis.ShowOverflowIndicator = True
+        Me.txtBemærkningTilUgeavis.Size = New System.Drawing.Size(176, 46)
+        Me.txtBemærkningTilUgeavis.TabIndex = 21
+        Me.txtBemærkningTilUgeavis.Tag = "Toggle"
+        Me.txtBemærkningTilUgeavis.Visible = False
+        '
+        'lblBemærkningTilUgeavis
+        '
+        Me.lblBemærkningTilUgeavis.AutoSize = True
+        Me.lblBemærkningTilUgeavis.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.lblBemærkningTilUgeavis.Location = New System.Drawing.Point(703, 87)
+        Me.lblBemærkningTilUgeavis.Name = "lblBemærkningTilUgeavis"
+        Me.lblBemærkningTilUgeavis.Size = New System.Drawing.Size(77, 15)
+        Me.lblBemærkningTilUgeavis.TabIndex = 385
+        Me.lblBemærkningTilUgeavis.Tag = "Toggle"
+        Me.lblBemærkningTilUgeavis.Text = "Bemærkning"
+        Me.lblBemærkningTilUgeavis.Visible = False
+        '
+        'txtBemærkningTilAnnoncør
+        '
+        Me.txtBemærkningTilAnnoncør.AcceptsReturn = True
+        Me.txtBemærkningTilAnnoncør.Location = New System.Drawing.Point(464, 10)
+        Me.txtBemærkningTilAnnoncør.MaxLength = 250
+        Me.txtBemærkningTilAnnoncør.Multiline = True
+        Me.txtBemærkningTilAnnoncør.Name = "txtBemærkningTilAnnoncør"
+        Me.txtBemærkningTilAnnoncør.NullText = "- Skriv Bemærkning til Annoncøren -"
+        Me.txtBemærkningTilAnnoncør.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtBemærkningTilAnnoncør.ShowOverflowIndicator = True
+        Me.txtBemærkningTilAnnoncør.Size = New System.Drawing.Size(224, 46)
+        Me.txtBemærkningTilAnnoncør.TabIndex = 8
+        Me.txtBemærkningTilAnnoncør.Tag = "Toggle"
+        '
+        'txtMaterialeFølgerFraLeverandør
+        '
+        Me.txtMaterialeFølgerFraLeverandør.Location = New System.Drawing.Point(326, 112)
+        Me.txtMaterialeFølgerFraLeverandør.MaxLength = 30
+        Me.txtMaterialeFølgerFraLeverandør.Name = "txtMaterialeFølgerFraLeverandør"
+        Me.txtMaterialeFølgerFraLeverandør.NullText = "- Skriv matr. leverandør (til DLU) -"
+        Me.txtMaterialeFølgerFraLeverandør.Size = New System.Drawing.Size(224, 22)
+        Me.txtMaterialeFølgerFraLeverandør.TabIndex = 16
+        Me.txtMaterialeFølgerFraLeverandør.Visible = False
+        '
+        'lblFællesBureauOrdreNr
+        '
+        Me.lblFællesBureauOrdreNr.AutoSize = True
+        Me.lblFællesBureauOrdreNr.Location = New System.Drawing.Point(703, 148)
+        Me.lblFællesBureauOrdreNr.Name = "lblFællesBureauOrdreNr"
+        Me.lblFællesBureauOrdreNr.Size = New System.Drawing.Size(95, 15)
+        Me.lblFællesBureauOrdreNr.TabIndex = 384
+        Me.lblFællesBureauOrdreNr.Tag = ""
+        Me.lblFællesBureauOrdreNr.Text = "Bureau ordre nr"
+        Me.lblFællesBureauOrdreNr.Visible = False
+        '
+        'txtFællesBureauOrdreNr
+        '
+        Me.txtFællesBureauOrdreNr.Location = New System.Drawing.Point(808, 144)
+        Me.txtFællesBureauOrdreNr.MaxLength = 30
+        Me.txtFællesBureauOrdreNr.Name = "txtFællesBureauOrdreNr"
+        Me.txtFællesBureauOrdreNr.NullText = " - Skriv Bureauordrenr -"
+        Me.txtFællesBureauOrdreNr.Size = New System.Drawing.Size(176, 22)
+        Me.txtFællesBureauOrdreNr.TabIndex = 22
+        Me.txtFællesBureauOrdreNr.Tag = ""
+        Me.txtFællesBureauOrdreNr.Visible = False
+        '
+        'optSammeMateriale
+        '
+        Me.optSammeMateriale.CheckedIndex = 0
+        ValueListItem8.DataValue = True
+        ValueListItem8.DisplayText = "Samme"
+        ValueListItem9.DataValue = False
+        ValueListItem9.DisplayText = "Forskelligt"
+        Me.optSammeMateriale.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem8, ValueListItem9})
+        Me.optSammeMateriale.Location = New System.Drawing.Point(464, 153)
+        Me.optSammeMateriale.Name = "optSammeMateriale"
+        Me.optSammeMateriale.Size = New System.Drawing.Size(150, 18)
+        Me.optSammeMateriale.TabIndex = 17
+        Me.optSammeMateriale.Tag = ""
+        Me.optSammeMateriale.Text = "Samme"
+        '
+        'btnMateriale
+        '
+        Me.btnMateriale.Location = New System.Drawing.Point(360, 130)
+        Me.btnMateriale.Name = "btnMateriale"
+        Me.btnMateriale.ShowFocusRect = False
+        Me.btnMateriale.ShowOutline = False
+        Me.btnMateriale.Size = New System.Drawing.Size(87, 22)
+        Me.btnMateriale.TabIndex = 15
+        Me.btnMateriale.Text = "Send &Matr."
+        Me.btnMateriale.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        Me.btnMateriale.Visible = False
+        '
+        'txtBrugMaterialeFraUge
+        '
+        Me.txtBrugMaterialeFraUge.Location = New System.Drawing.Point(464, 106)
+        Me.txtBrugMaterialeFraUge.Name = "txtBrugMaterialeFraUge"
+        Me.txtBrugMaterialeFraUge.NullText = "- Uge -"
+        Me.txtBrugMaterialeFraUge.Size = New System.Drawing.Size(58, 22)
+        Me.txtBrugMaterialeFraUge.TabIndex = 14
+        Me.txtBrugMaterialeFraUge.Tag = ""
+        Me.txtBrugMaterialeFraUge.Visible = False
+        '
+        'lblMatFraUge
+        '
+        Me.lblMatFraUge.AutoSize = True
+        Me.lblMatFraUge.Location = New System.Drawing.Point(360, 110)
+        Me.lblMatFraUge.Name = "lblMatFraUge"
+        Me.lblMatFraUge.Size = New System.Drawing.Size(79, 15)
+        Me.lblMatFraUge.TabIndex = 380
+        Me.lblMatFraUge.Tag = ""
+        Me.lblMatFraUge.Text = "Matr. fra uge"
+        Me.lblMatFraUge.Visible = False
+        '
+        'optMaterialeFølgerFra
+        '
+        Me.optMaterialeFølgerFra.CheckedIndex = 1
+        ValueListItem10.DataValue = CType(0, Byte)
+        ValueListItem10.DisplayText = "Tidligere Uge"
+        ValueListItem11.DataValue = CType(1, Byte)
+        ValueListItem11.DisplayText = "DLU"
+        ValueListItem12.DataValue = CType(2, Byte)
+        ValueListItem12.DisplayText = "Bur."
+        ValueListItem13.DataValue = CType(3, Byte)
+        ValueListItem13.DisplayText = "Ann."
+        Me.optMaterialeFølgerFra.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem10, ValueListItem11, ValueListItem12, ValueListItem13})
+        Me.optMaterialeFølgerFra.Location = New System.Drawing.Point(464, 84)
+        Me.optMaterialeFølgerFra.Name = "optMaterialeFølgerFra"
+        Me.optMaterialeFølgerFra.Size = New System.Drawing.Size(242, 18)
+        Me.optMaterialeFølgerFra.TabIndex = 13
+        Me.optMaterialeFølgerFra.Tag = "Toggle"
+        Me.optMaterialeFølgerFra.Text = "DLU"
+        Me.optMaterialeFølgerFra.Visible = False
+        '
+        'lblMaterialeFølgerFra
+        '
+        Me.lblMaterialeFølgerFra.AutoSize = True
+        Me.lblMaterialeFølgerFra.Location = New System.Drawing.Point(360, 86)
+        Me.lblMaterialeFølgerFra.Name = "lblMaterialeFølgerFra"
+        Me.lblMaterialeFølgerFra.Size = New System.Drawing.Size(90, 15)
+        Me.lblMaterialeFølgerFra.TabIndex = 378
+        Me.lblMaterialeFølgerFra.Tag = "Toggle"
+        Me.lblMaterialeFølgerFra.Text = "Matr. følger fra"
+        Me.lblMaterialeFølgerFra.Visible = False
+        '
+        'lblBemærkningTilAnnoncør
+        '
+        Me.lblBemærkningTilAnnoncør.AutoSize = True
+        Me.lblBemærkningTilAnnoncør.Font = New System.Drawing.Font("Verdana", 8.25!)
+        Me.lblBemærkningTilAnnoncør.Location = New System.Drawing.Point(360, 14)
+        Me.lblBemærkningTilAnnoncør.Name = "lblBemærkningTilAnnoncør"
+        Me.lblBemærkningTilAnnoncør.Size = New System.Drawing.Size(77, 15)
+        Me.lblBemærkningTilAnnoncør.TabIndex = 374
+        Me.lblBemærkningTilAnnoncør.Tag = "Toggle"
+        Me.lblBemærkningTilAnnoncør.Text = "Bemærkning"
+        '
+        'optBilagsBladeTil
+        '
+        ValueListItem14.DataValue = CType(1, Byte)
+        ValueListItem14.DisplayText = "Annoncør"
+        ValueListItem15.DataValue = CType(2, Byte)
+        ValueListItem15.DisplayText = "Bureau"
+        ValueListItem16.DataValue = CType(3, Byte)
+        ValueListItem16.DisplayText = "Anden"
+        Me.optBilagsBladeTil.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem14, ValueListItem15, ValueListItem16})
+        Me.optBilagsBladeTil.Location = New System.Drawing.Point(785, 36)
+        Me.optBilagsBladeTil.Name = "optBilagsBladeTil"
+        Me.optBilagsBladeTil.Size = New System.Drawing.Size(199, 18)
+        Me.optBilagsBladeTil.TabIndex = 19
+        Me.optBilagsBladeTil.Tag = "Toggle"
+        UltraToolTipInfo6.Enabled = Infragistics.Win.DefaultableBoolean.[True]
+        UltraToolTipInfo6.ToolTipImage = Infragistics.Win.ToolTipImage.Info
+        UltraToolTipInfo6.ToolTipTextFormatted = "<span style=""font-weight:bold;"">Sendes Til:<span style=""font-weight:normal;""><br/" & _
+    "></span><br/><br/></span>"
+        UltraToolTipInfo6.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
+        UltraToolTipInfo6.ToolTipTitle = "Bilagsblad modtager"
+        Me.ToolTipManager.SetUltraToolTip(Me.optBilagsBladeTil, UltraToolTipInfo6)
+        Me.optBilagsBladeTil.Visible = False
+        '
+        'lblFakturering
+        '
+        Me.lblFakturering.AutoSize = True
+        Me.lblFakturering.Location = New System.Drawing.Point(360, 38)
+        Me.lblFakturering.Name = "lblFakturering"
+        Me.lblFakturering.Size = New System.Drawing.Size(70, 15)
+        Me.lblFakturering.TabIndex = 372
+        Me.lblFakturering.Tag = "Toggle"
+        Me.lblFakturering.Text = "Fakturering"
+        Me.lblFakturering.Visible = False
+        '
+        'optFakturering
+        '
+        Me.optFakturering.CheckedIndex = 0
+        ValueListItem17.DataValue = CType(1, Byte)
+        ValueListItem17.DisplayText = "DLU"
+        ValueListItem18.DataValue = CType(0, Byte)
+        ValueListItem18.DisplayText = "Blad"
+        Me.optFakturering.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem17, ValueListItem18})
+        Me.optFakturering.Location = New System.Drawing.Point(464, 36)
+        Me.optFakturering.Name = "optFakturering"
+        Me.optFakturering.Size = New System.Drawing.Size(102, 18)
+        Me.optFakturering.TabIndex = 10
+        Me.optFakturering.Tag = "Toggle"
+        Me.optFakturering.Text = "DLU"
+        Me.optFakturering.Visible = False
+        '
+        'optGruppering
+        '
+        Me.optGruppering.CheckedIndex = 0
+        ValueListItem4.DataValue = CType(0, Byte)
+        ValueListItem4.DisplayText = "Regioner"
+        ValueListItem5.DataValue = CType(1, Byte)
+        ValueListItem5.DisplayText = "Rabatformer"
+        ValueListItem6.DataValue = CType(2, Byte)
+        ValueListItem6.DisplayText = "Udsendingsgrupper"
+        ValueListItem7.DataValue = CType(3, Byte)
+        ValueListItem7.DisplayText = "Ingen"
+        Me.optGruppering.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem4, ValueListItem5, ValueListItem6, ValueListItem7})
+        Me.optGruppering.Location = New System.Drawing.Point(64, 215)
+        Me.optGruppering.Name = "optGruppering"
+        Me.optGruppering.Size = New System.Drawing.Size(255, 39)
+        Me.optGruppering.TabIndex = 365
+        Me.optGruppering.TabStop = False
+        Me.optGruppering.Text = "Regioner"
+        Me.optGruppering.ValueMember = ""
+        '
+        'lblGruppering
+        '
+        Me.lblGruppering.AutoSize = True
+        Me.lblGruppering.Location = New System.Drawing.Point(1, 224)
+        Me.lblGruppering.Name = "lblGruppering"
+        Me.lblGruppering.Size = New System.Drawing.Size(57, 15)
+        Me.lblGruppering.TabIndex = 366
+        Me.lblGruppering.Text = "Sortering"
+        '
+        'ToolTipManager
+        '
+        Appearance58.FontData.SizeInPoints = 10.0!
+        Me.ToolTipManager.Appearance = Appearance58
+        Me.ToolTipManager.AutoPopDelay = 50000
+        Me.ToolTipManager.ContainingControl = Me
+        Me.ToolTipManager.DisplayStyle = Infragistics.Win.ToolTipDisplayStyle.BalloonTip
+        Me.ToolTipManager.InitialDelay = 0
+        Me.ToolTipManager.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
+        Appearance60.FontData.BoldAsString = "True"
+        Appearance60.FontData.SizeInPoints = 14.0!
+        Appearance60.FontData.UnderlineAsString = "True"
+        Me.ToolTipManager.ToolTipTitleAppearance = Appearance60
+        '
+        'btnVisFaktureringsBilag
+        '
+        Me.btnVisFaktureringsBilag.Image = Global.WinPlanner.My.Resources.Resources.file
+        Me.btnVisFaktureringsBilag.Location = New System.Drawing.Point(886, 4)
+        Me.btnVisFaktureringsBilag.Name = "btnVisFaktureringsBilag"
+        Me.btnVisFaktureringsBilag.Size = New System.Drawing.Size(25, 28)
+        Me.btnVisFaktureringsBilag.TabIndex = 380
+        Me.btnVisFaktureringsBilag.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        UltraToolTipInfo1.ToolTipText = "Klik her for at åbne/lukke fakturerings bilag"
+        UltraToolTipInfo1.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
+        Me.ToolTipManager.SetUltraToolTip(Me.btnVisFaktureringsBilag, UltraToolTipInfo1)
+        Me.btnVisFaktureringsBilag.UseVisualStyleBackColor = True
+        Me.btnVisFaktureringsBilag.Visible = False
+        '
+        'picRød
+        '
+        Me.picRød.AutoSize = True
+        Me.picRød.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(232, Byte), Integer))
+        Me.picRød.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picRød.Image = CType(resources.GetObject("picRød.Image"), Object)
+        Me.picRød.Location = New System.Drawing.Point(734, 7)
+        Me.picRød.Name = "picRød"
+        Me.picRød.Size = New System.Drawing.Size(26, 22)
+        Me.picRød.TabIndex = 332
+        Me.picRød.Tag = "On"
+        UltraToolTipInfo2.Enabled = Infragistics.Win.DefaultableBoolean.[True]
+        UltraToolTipInfo2.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
+        UltraToolTipInfo2.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
+        UltraToolTipInfo2.ToolTipTitle = "For at save:"
+        Me.ToolTipManager.SetUltraToolTip(Me.picRød, UltraToolTipInfo2)
+        '
+        'btnSupportBilag
+        '
+        Me.btnSupportBilag.Image = Global.WinPlanner.My.Resources.Resources.MultiplePagesImage
+        Me.btnSupportBilag.Location = New System.Drawing.Point(766, 9)
+        Me.btnSupportBilag.Name = "btnSupportBilag"
+        Me.btnSupportBilag.Size = New System.Drawing.Size(22, 22)
+        Me.btnSupportBilag.TabIndex = 371
+        Me.btnSupportBilag.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        UltraToolTipInfo3.Enabled = Infragistics.Win.DefaultableBoolean.[True]
+        UltraToolTipInfo3.ToolTipImage = Infragistics.Win.ToolTipImage.Info
+        UltraToolTipInfo3.ToolTipText = "Der er vedhæftet et support bilag"
+        UltraToolTipInfo3.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
+        UltraToolTipInfo3.ToolTipTitle = "Bilag vedhæftet"
+        Me.ToolTipManager.SetUltraToolTip(Me.btnSupportBilag, UltraToolTipInfo3)
+        Me.btnSupportBilag.UseVisualStyleBackColor = True
+        Me.btnSupportBilag.Visible = False
+        '
+        'btnHistorik
+        '
+        Me.btnHistorik.Image = CType(resources.GetObject("btnHistorik.Image"), System.Drawing.Image)
+        Me.btnHistorik.Location = New System.Drawing.Point(793, 6)
+        Me.btnHistorik.Name = "btnHistorik"
+        Me.btnHistorik.Size = New System.Drawing.Size(25, 25)
+        Me.btnHistorik.TabIndex = 376
+        Me.btnHistorik.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        UltraToolTipInfo4.Enabled = Infragistics.Win.DefaultableBoolean.[True]
+        UltraToolTipInfo4.ToolTipImage = Infragistics.Win.ToolTipImage.Info
+        UltraToolTipInfo4.ToolTipText = "Klik her for at åbne/lukke historik"
+        UltraToolTipInfo4.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Raw
+        UltraToolTipInfo4.ToolTipTitle = "Historik"
+        Me.ToolTipManager.SetUltraToolTip(Me.btnHistorik, UltraToolTipInfo4)
+        Me.btnHistorik.UseVisualStyleBackColor = True
+        Me.btnHistorik.Visible = False
+        '
+        'btnKommentar
+        '
+        Me.btnKommentar.BackgroundImage = Global.WinPlanner.My.Resources.Resources.file
+        Me.btnKommentar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnKommentar.Location = New System.Drawing.Point(824, 3)
+        Me.btnKommentar.Name = "btnKommentar"
+        Me.btnKommentar.Size = New System.Drawing.Size(28, 28)
+        Me.btnKommentar.TabIndex = 381
+        Me.btnKommentar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        UltraToolTipInfo5.Enabled = Infragistics.Win.DefaultableBoolean.[True]
+        UltraToolTipInfo5.ToolTipImage = Infragistics.Win.ToolTipImage.Info
+        UltraToolTipInfo5.ToolTipTextFormatted = "Klik her for at <b>skrive</b> en intern Kommentar."
+        UltraToolTipInfo5.ToolTipTextStyle = Infragistics.Win.ToolTipTextStyle.Formatted
+        UltraToolTipInfo5.ToolTipTitle = "Kommentar"
+        Me.ToolTipManager.SetUltraToolTip(Me.btnKommentar, UltraToolTipInfo5)
+        Me.btnKommentar.UseVisualStyleBackColor = False
+        Me.btnKommentar.Visible = False
+        '
+        'btnUdskriv
+        '
+        Me.btnUdskriv.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnUdskriv.Enabled = False
+        Me.btnUdskriv.Location = New System.Drawing.Point(1095, 484)
+        Me.btnUdskriv.Name = "btnUdskriv"
+        Me.btnUdskriv.ShowFocusRect = False
+        Me.btnUdskriv.ShowOutline = False
+        Me.btnUdskriv.Size = New System.Drawing.Size(87, 24)
+        Me.btnUdskriv.TabIndex = 367
+        Me.btnUdskriv.Text = "&Udskriv"
+        Me.btnUdskriv.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'btnTilBooking
+        '
+        Me.btnTilBooking.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTilBooking.Enabled = False
+        Me.btnTilBooking.Location = New System.Drawing.Point(902, 484)
+        Me.btnTilBooking.Name = "btnTilBooking"
+        Me.btnTilBooking.ShowFocusRect = False
+        Me.btnTilBooking.ShowOutline = False
+        Me.btnTilBooking.Size = New System.Drawing.Size(87, 24)
+        Me.btnTilBooking.TabIndex = 368
+        Me.btnTilBooking.Text = "Til &Booking"
+        Me.btnTilBooking.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'btnAnnuller
+        '
+        Me.btnAnnuller.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnAnnuller.Location = New System.Drawing.Point(12, 484)
+        Me.btnAnnuller.Name = "btnAnnuller"
+        Me.btnAnnuller.ShowFocusRect = False
+        Me.btnAnnuller.ShowOutline = False
+        Me.btnAnnuller.Size = New System.Drawing.Size(87, 24)
+        Me.btnAnnuller.TabIndex = 19
+        Me.btnAnnuller.Text = "&Annuller"
+        Me.btnAnnuller.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'Timer
+        '
+        Me.Timer.Interval = 300
+        '
+        'btnTilBlade
+        '
+        Me.btnTilBlade.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTilBlade.Enabled = False
+        Me.btnTilBlade.Location = New System.Drawing.Point(705, 484)
+        Me.btnTilBlade.Name = "btnTilBlade"
+        Me.btnTilBlade.ShowFocusRect = False
+        Me.btnTilBlade.ShowOutline = False
+        Me.btnTilBlade.Size = New System.Drawing.Size(87, 24)
+        Me.btnTilBlade.TabIndex = 369
+        Me.btnTilBlade.Text = "&Til Blade"
+        Me.btnTilBlade.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'btnDækningskort
+        '
+        Me.btnDækningskort.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDækningskort.Location = New System.Drawing.Point(995, 484)
+        Me.btnDækningskort.Name = "btnDækningskort"
+        Me.btnDækningskort.ShowFocusRect = False
+        Me.btnDækningskort.ShowOutline = False
+        Me.btnDækningskort.Size = New System.Drawing.Size(94, 24)
+        Me.btnDækningskort.TabIndex = 370
+        Me.btnDækningskort.Text = "&Dækningskort"
+        Me.btnDækningskort.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'timerSupportBilag
+        '
+        Me.timerSupportBilag.Interval = 500
+        '
+        'lblMedieplanNr
+        '
+        Appearance59.BackColor = System.Drawing.Color.Gainsboro
+        Me.lblMedieplanNr.Appearance = Appearance59
+        Me.lblMedieplanNr.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMedieplanNr.Location = New System.Drawing.Point(105, 12)
+        Me.lblMedieplanNr.Name = "lblMedieplanNr"
+        Me.lblMedieplanNr.Size = New System.Drawing.Size(101, 14)
+        Me.lblMedieplanNr.TabIndex = 372
+        Me.lblMedieplanNr.Text = "- ikke tildelt -"
+        Me.lblMedieplanNr.UseAppStyling = False
+        '
+        'timer365
+        '
+        Me.timer365.Interval = 500
+        '
+        'btnGenUdsend
+        '
+        Me.btnGenUdsend.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGenUdsend.Enabled = False
+        Me.btnGenUdsend.Location = New System.Drawing.Point(612, 484)
+        Me.btnGenUdsend.Name = "btnGenUdsend"
+        Me.btnGenUdsend.ShowFocusRect = False
+        Me.btnGenUdsend.ShowOutline = False
+        Me.btnGenUdsend.Size = New System.Drawing.Size(87, 24)
+        Me.btnGenUdsend.TabIndex = 373
+        Me.btnGenUdsend.Text = "Genudsend"
+        Me.btnGenUdsend.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        Me.btnGenUdsend.Visible = False
+        '
+        'btnTilExcel
+        '
+        Me.btnTilExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnTilExcel.Enabled = False
+        Me.btnTilExcel.Location = New System.Drawing.Point(1188, 220)
+        Me.btnTilExcel.Name = "btnTilExcel"
+        Me.btnTilExcel.ShowFocusRect = False
+        Me.btnTilExcel.ShowOutline = False
+        Me.btnTilExcel.Size = New System.Drawing.Size(87, 24)
+        Me.btnTilExcel.TabIndex = 374
+        Me.btnTilExcel.Text = "Send til Excel"
+        Me.btnTilExcel.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        Me.btnTilExcel.UseMnemonic = False
+        '
+        'chkFarveSærRabat
+        '
+        Me.chkFarveSærRabat.Location = New System.Drawing.Point(635, 222)
+        Me.chkFarveSærRabat.Name = "chkFarveSærRabat"
+        Me.chkFarveSærRabat.Size = New System.Drawing.Size(172, 20)
+        Me.chkFarveSærRabat.TabIndex = 375
+        Me.chkFarveSærRabat.Text = "Alle må give farverabat"
+        Me.chkFarveSærRabat.Visible = False
+        '
+        'btnGenberegn
+        '
+        Me.btnGenberegn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnGenberegn.Location = New System.Drawing.Point(1080, 220)
+        Me.btnGenberegn.Name = "btnGenberegn"
+        Me.btnGenberegn.ShowFocusRect = False
+        Me.btnGenberegn.ShowOutline = False
+        Me.btnGenberegn.Size = New System.Drawing.Size(87, 24)
+        Me.btnGenberegn.TabIndex = 377
+        Me.btnGenberegn.Text = "Genberegn"
+        Me.btnGenberegn.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
+        Me.btnGenberegn.Visible = False
+        '
+        'chkMmSærRabat
+        '
+        Me.chkMmSærRabat.Location = New System.Drawing.Point(422, 222)
+        Me.chkMmSærRabat.Name = "chkMmSærRabat"
+        Me.chkMmSærRabat.Size = New System.Drawing.Size(172, 20)
+        Me.chkMmSærRabat.TabIndex = 379
+        Me.chkMmSærRabat.Text = "Alle må give mm rabat"
+        '
+        'TblAnnoncørerTableAdapter
+        '
+        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
+        '
+        'TblBureauerTableAdapter
+        '
+        Me.TblBureauerTableAdapter.ClearBeforeFill = True
+        '
+        'TblPlaceringTableAdapter
+        '
+        Me.TblPlaceringTableAdapter.ClearBeforeFill = True
+        '
+        'TblDPKulørTableAdapter
+        '
+        Me.TblDPKulørTableAdapter.ClearBeforeFill = True
+        '
+        'TblUgeaviserTableAdapter
+        '
+        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
+        '
+        'picMinMax
+        '
+        Me.picMinMax.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picMinMax.Image = CType(resources.GetObject("picMinMax.Image"), Object)
+        Me.picMinMax.Location = New System.Drawing.Point(1, 248)
+        Me.picMinMax.Margin = New System.Windows.Forms.Padding(0)
+        Me.picMinMax.Name = "picMinMax"
+        Me.picMinMax.Size = New System.Drawing.Size(22, 22)
+        Me.picMinMax.TabIndex = 362
+        '
+        'picGrøn
+        '
+        Me.picGrøn.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picGrøn.Image = CType(resources.GetObject("picGrøn.Image"), Object)
+        Me.picGrøn.Location = New System.Drawing.Point(687, 7)
+        Me.picGrøn.Name = "picGrøn"
+        Me.picGrøn.Size = New System.Drawing.Size(28, 22)
+        Me.picGrøn.TabIndex = 330
+        Me.picGrøn.Tag = "Off"
+        '
+        'picGul
+        '
+        Me.picGul.AutoSize = True
+        Me.picGul.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picGul.Image = CType(resources.GetObject("picGul.Image"), Object)
+        Me.picGul.Location = New System.Drawing.Point(715, 7)
+        Me.picGul.Name = "picGul"
+        Me.picGul.Size = New System.Drawing.Size(18, 22)
+        Me.picGul.TabIndex = 331
+        Me.picGul.Tag = "Off"
+        '
+        'picStatusKode
+        '
+        Me.picStatusKode.AutoSize = True
+        Me.picStatusKode.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picStatusKode.Image = CType(resources.GetObject("picStatusKode.Image"), Object)
+        Me.picStatusKode.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.picStatusKode.Location = New System.Drawing.Point(261, 14)
+        Me.picStatusKode.Name = "picStatusKode"
+        Me.picStatusKode.Size = New System.Drawing.Size(221, 10)
+        Me.picStatusKode.TabIndex = 339
+        '
+        'picStatus
+        '
+        Me.picStatus.AutoSize = True
+        Me.picStatus.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picStatus.Image = CType(resources.GetObject("picStatus.Image"), Object)
+        Me.picStatus.Location = New System.Drawing.Point(17, 7)
+        Me.picStatus.Name = "picStatus"
+        Me.picStatus.Size = New System.Drawing.Size(750, 23)
+        Me.picStatus.TabIndex = 329
+        '
+        'picPipeline
+        '
+        Me.picPipeline.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picPipeline.AutoSize = True
+        Me.picPipeline.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picPipeline.Image = CType(resources.GetObject("picPipeline.Image"), Object)
+        Me.picPipeline.Location = New System.Drawing.Point(1143, 2)
+        Me.picPipeline.Name = "picPipeline"
+        Me.picPipeline.ScaleImage = Infragistics.Win.ScaleImage.Never
+        Me.picPipeline.Size = New System.Drawing.Size(145, 26)
+        Me.picPipeline.TabIndex = 326
+        '
+        'chkVisLåstePriser
+        '
+        Me.chkVisLåstePriser.Location = New System.Drawing.Point(326, 224)
+        Me.chkVisLåstePriser.Name = "chkVisLåstePriser"
+        Me.chkVisLåstePriser.Size = New System.Drawing.Size(102, 20)
+        Me.chkVisLåstePriser.TabIndex = 382
+        Me.chkVisLåstePriser.Text = "Vis Lås priser"
+        Me.chkVisLåstePriser.Visible = False
+        '
         'frmMedieplan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -2070,6 +2049,9 @@ Partial Class frmMedieplan
         Me.grpMedieplanHoved.PerformLayout()
         CType(Me.txtHistorik, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKommentar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grdCC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkMiljøTillægVises, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkMiljøTillægOpkræves, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkKunForhandlerBundForskellig, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2087,11 +2069,8 @@ Partial Class frmMedieplan
         CType(Me.optFakturering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.optGruppering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkFarveSærRabat, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grdCC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2188,8 +2167,7 @@ Partial Class frmMedieplan
   Friend WithEvents ExcelExporter As Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter
   Friend WithEvents chkFarveSærRabat As Infragistics.Win.UltraWinEditors.UltraCheckEditor
   Friend WithEvents btnHistorik As System.Windows.Forms.Button
-  Private WithEvents btnFakturaBemærkning As Infragistics.Win.Misc.UltraButton
-  Private WithEvents btnGenberegn As Infragistics.Win.Misc.UltraButton
+    Private WithEvents btnGenberegn As Infragistics.Win.Misc.UltraButton
   Friend WithEvents grdCC As Infragistics.Win.UltraWinGrid.UltraGridColumnChooser
   Friend WithEvents chkMmSærRabat As Infragistics.Win.UltraWinEditors.UltraCheckEditor
   Friend WithEvents chkMaterialeModtaget As Infragistics.Win.UltraWinEditors.UltraCheckEditor

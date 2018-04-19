@@ -391,7 +391,7 @@ Public Class frmMedieplan
     btnGenUdsend.Enabled = True
     picMinMax.Enabled = True
     grdCC.Enabled = True
-    btnFakturaBemærkning.Enabled = True
+
     btnTilExcel.Enabled = True
 
     btnKopierTilNy.Cursor = Cursors.Default
@@ -406,7 +406,7 @@ Public Class frmMedieplan
     picMinMax.Cursor = Cursors.Default
     btnGenUdsend.Cursor = Cursors.Default
     grdCC.Cursor = Cursors.Default
-    btnFakturaBemærkning.Cursor = Cursors.Default
+
     btnTilExcel.Cursor = Cursors.Default
   End Sub
 
@@ -1748,7 +1748,7 @@ Public Class frmMedieplan
       btnLuk.Enabled = True
       btnUdskriv.Enabled = True
       btnMateriale.Enabled = True
-      btnFakturaBemærkning.Enabled = True
+
       If _IsAktiv Then btnTilBlade.Enabled = True
       btnTilExcel.Enabled = True
       If _modul <> "Medieplan" Then
@@ -1768,7 +1768,7 @@ Public Class frmMedieplan
       btnTilBlade.Enabled = False
       btnGenUdsend.Enabled = False
       btnTilExcel.Enabled = False
-      btnFakturaBemærkning.Enabled = False
+
     End If
   End Sub
 
@@ -4024,10 +4024,10 @@ Public Class frmMedieplan
     End If
   End Sub
 
-  Private Sub btnFakturaBemærkning_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFakturaBemærkning.Click
-    Dim nyFrmFakturaBemærkning As New frmFakturaBemærkning(_medieplanNr)
-    nyFrmFakturaBemærkning.ShowDialog()
-  End Sub
+    Private Sub btnFakturaBemærkning_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Dim nyFrmFakturaBemærkning As New frmFakturaBemærkning(_medieplanNr)
+        nyFrmFakturaBemærkning.ShowDialog()
+    End Sub
 
   Private Sub lblAnnoncør_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblAnnoncør.Click
     cboAnnoncørNO_.Appearance.BackColor = Color.AliceBlue
