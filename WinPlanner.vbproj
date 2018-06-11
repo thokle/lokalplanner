@@ -128,7 +128,7 @@
   <ItemGroup>
     <Reference Include="Common, Version=1.0.2676.29250, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>S:\.Net Version\Lokal planner .net 4.0\Common.dll</HintPath>
+      <HintPath>C:\Windows\System32\common.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Infragistics4.Documents.Core.v14.2, Version=14.2.20142.2168, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
@@ -209,10 +209,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="AxInterop.InetCtlsObjects">
-      <HintPath>bin\Release\AxInterop.InetCtlsObjects.dll</HintPath>
-    </Reference>
-    <Reference Include="EmailVerifierComponent">
-      <HintPath>bin\Release\EmailVerifierComponent.dll</HintPath>
+      <HintPath>..\..\AxInterop.InetCtlsObjects.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -235,10 +232,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rebex.Net.Ftp">
-      <HintPath>bin\Release\Rebex.Net.Ftp.dll</HintPath>
+      <HintPath>..\..\Rebex.Net.Ftp.dll</HintPath>
     </Reference>
     <Reference Include="Rebex.Net.ProxySocket">
-      <HintPath>..\..\..\..\..\..\..\VS2010SetUpFiles\Rebex.Net.ProxySocket.dll</HintPath>
+      <HintPath>..\..\Rebex.Net.ProxySocket.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -1751,6 +1748,9 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -1761,7 +1761,7 @@
   -->
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_AssemblyInfoFilename="My Project\AssemblyInfo.vb" BuildVersion_UpdateFileVersion="True" BuildVersion_StartDate="2011/1/1" BuildVersion_BuildVersioningStyle="DeltaBaseYear.MonthStamp.DayStamp.TimeStamp" BuildVersion_BuildAction="Both" BuildVersion_ConfigurationName="Any" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UseGlobalSettings="False" BuildVersion_ReplaceNonNumerics="True" />
+      <UserProperties BuildVersion_ReplaceNonNumerics="True" BuildVersion_UseGlobalSettings="False" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_ConfigurationName="Any" BuildVersion_BuildAction="Both" BuildVersion_BuildVersioningStyle="DeltaBaseYear.MonthStamp.DayStamp.TimeStamp" BuildVersion_StartDate="2011/1/1" BuildVersion_UpdateFileVersion="True" BuildVersion_AssemblyInfoFilename="My Project\AssemblyInfo.vb" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

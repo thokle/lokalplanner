@@ -232,6 +232,8 @@ Partial Class frmMain
         Me.lblPostNr = New Infragistics.Win.Misc.UltraLabel()
         Me.chkMedtagOphørte = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.grdFindUgeavis = New Infragistics.Win.UltraWinGrid.UltraGrid()
+        Me.DiMPdotNetDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DiMPdotNetDataSet = New WinPlanner.DiMPdotNetDataSet()
         Me.btnOverførBlade = New Infragistics.Win.Misc.UltraButton()
         Me.grdFundnePlaner = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.TblFundneplanerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -243,8 +245,8 @@ Partial Class frmMain
         Me._frmMainUnpinnedTabAreaBottom = New Infragistics.Win.UltraWinDock.UnpinnedTabArea()
         Me._frmMainAutoHideControl = New Infragistics.Win.UltraWinDock.AutoHideControl()
         Me.DockableWindow4 = New Infragistics.Win.UltraWinDock.DockableWindow()
-        Me.DockableWindow2 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.DockableWindow3 = New Infragistics.Win.UltraWinDock.DockableWindow()
+        Me.DockableWindow2 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.AppStylist = New Infragistics.Win.AppStyling.Runtime.AppStylistRuntime(Me.components)
         Me.statusBar = New Infragistics.Win.UltraWinStatusBar.UltraStatusBar()
         Me.timerOmsætning = New System.Windows.Forms.Timer(Me.components)
@@ -261,11 +263,8 @@ Partial Class frmMain
         Me.WindowDockingArea6 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea5 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea2 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
-        Me.DiMPdotNetDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DiMPdotNetDataSet = New WinPlanner.DiMPdotNetDataSet()
         Me.WindowDockingArea4 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.TblBladStamdataTableAdapter = New WinPlanner.DiMPdotNetDataSetTableAdapters.tblBladStamdataTableAdapter()
-        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         panFindMedieplan = New System.Windows.Forms.Panel()
         panFindMedieplanBooking = New System.Windows.Forms.Panel()
         panFindMedieplan.SuspendLayout()
@@ -311,18 +310,18 @@ Partial Class frmMain
         CType(Me.txtPostNr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkMedtagOphørte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdFindUgeavis, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdFundnePlaner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblFundneplanerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DstFindMedieplaner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dockManager, System.ComponentModel.ISupportInitialize).BeginInit()
         Me._frmMainAutoHideControl.SuspendLayout()
-        Me.DockableWindow2.SuspendLayout()
+        Me.DockableWindow4.SuspendLayout()
         Me.DockableWindow3.SuspendLayout()
+        Me.DockableWindow2.SuspendLayout()
         CType(Me.statusBar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DockableWindow1.SuspendLayout()
         Me.SuspendLayout()
         '
         'panFindMedieplan
@@ -1230,6 +1229,17 @@ Partial Class frmMain
         Me.grdFindUgeavis.Text = "Find Ugeavis"
         Me.grdFindUgeavis.UpdateMode = Infragistics.Win.UltraWinGrid.UpdateMode.OnUpdate
         '
+        'DiMPdotNetDataSetBindingSource
+        '
+        Me.DiMPdotNetDataSetBindingSource.DataSource = Me.DiMPdotNetDataSet
+        Me.DiMPdotNetDataSetBindingSource.Position = 0
+        '
+        'DiMPdotNetDataSet
+        '
+        Me.DiMPdotNetDataSet.DataSetName = "DiMPdotNetDataSet"
+        Me.DiMPdotNetDataSet.EnforceConstraints = False
+        Me.DiMPdotNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'btnOverførBlade
         '
         Me.btnOverførBlade.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -1451,7 +1461,6 @@ Partial Class frmMain
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow4)
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow3)
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow2)
-        Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow1)
         Me._frmMainAutoHideControl.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._frmMainAutoHideControl.Location = New System.Drawing.Point(982, 44)
         Me._frmMainAutoHideControl.Name = "_frmMainAutoHideControl"
@@ -1461,29 +1470,30 @@ Partial Class frmMain
         '
         'DockableWindow4
         '
+        Me.DockableWindow4.Controls.Add(Me.splitContainer)
         Me.DockableWindow4.Location = New System.Drawing.Point(-10000, 0)
         Me.DockableWindow4.Name = "DockableWindow4"
         Me.DockableWindow4.Owner = Me.dockManager
         Me.DockableWindow4.Size = New System.Drawing.Size(326, 669)
-        Me.DockableWindow4.TabIndex = 85
-        '
-        'DockableWindow2
-        '
-        Me.DockableWindow2.Controls.Add(panFindMedieplan)
-        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
-        Me.DockableWindow2.Name = "DockableWindow2"
-        Me.DockableWindow2.Owner = Me.dockManager
-        Me.DockableWindow2.Size = New System.Drawing.Size(0, 0)
-        Me.DockableWindow2.TabIndex = 93
+        Me.DockableWindow4.TabIndex = 97
         '
         'DockableWindow3
         '
-        Me.DockableWindow3.Controls.Add(Me.splitContainer)
+        Me.DockableWindow3.Controls.Add(panFindMedieplan)
         Me.DockableWindow3.Location = New System.Drawing.Point(0, 0)
         Me.DockableWindow3.Name = "DockableWindow3"
         Me.DockableWindow3.Owner = Me.dockManager
         Me.DockableWindow3.Size = New System.Drawing.Size(0, 0)
-        Me.DockableWindow3.TabIndex = 92
+        Me.DockableWindow3.TabIndex = 98
+        '
+        'DockableWindow2
+        '
+        Me.DockableWindow2.Controls.Add(Me.grdFundnePlaner)
+        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
+        Me.DockableWindow2.Name = "DockableWindow2"
+        Me.DockableWindow2.Owner = Me.dockManager
+        Me.DockableWindow2.Size = New System.Drawing.Size(0, 0)
+        Me.DockableWindow2.TabIndex = 99
         '
         'statusBar
         '
@@ -1726,17 +1736,6 @@ Partial Class frmMain
         Me.WindowDockingArea2.Size = New System.Drawing.Size(100, 100)
         Me.WindowDockingArea2.TabIndex = 76
         '
-        'DiMPdotNetDataSetBindingSource
-        '
-        Me.DiMPdotNetDataSetBindingSource.DataSource = Me.DiMPdotNetDataSet
-        Me.DiMPdotNetDataSetBindingSource.Position = 0
-        '
-        'DiMPdotNetDataSet
-        '
-        Me.DiMPdotNetDataSet.DataSetName = "DiMPdotNetDataSet"
-        Me.DiMPdotNetDataSet.EnforceConstraints = False
-        Me.DiMPdotNetDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'WindowDockingArea4
         '
         Me.WindowDockingArea4.Dock = System.Windows.Forms.DockStyle.Top
@@ -1751,15 +1750,6 @@ Partial Class frmMain
         '
         Me.TblBladStamdataTableAdapter.ClearBeforeFill = True
         '
-        'DockableWindow1
-        '
-        Me.DockableWindow1.Controls.Add(Me.grdFundnePlaner)
-        Me.DockableWindow1.Location = New System.Drawing.Point(0, 0)
-        Me.DockableWindow1.Name = "DockableWindow1"
-        Me.DockableWindow1.Owner = Me.dockManager
-        Me.DockableWindow1.Size = New System.Drawing.Size(0, 0)
-        Me.DockableWindow1.TabIndex = 94
-        '
         'frmMain
         '
         Me.AcceptButton = Me.btnFind
@@ -1770,11 +1760,11 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(1014, 736)
         Me.toolbarManager.SetContextMenuUltra(Me, "Edit")
-        Me.Controls.Add(Me.WindowDockingArea5)
         Me.Controls.Add(Me._frmMainAutoHideControl)
         Me.Controls.Add(panFindMedieplanBooking)
-        Me.Controls.Add(Me.WindowDockingArea4)
         Me.Controls.Add(Me.WindowDockingArea6)
+        Me.Controls.Add(Me.WindowDockingArea5)
+        Me.Controls.Add(Me.WindowDockingArea4)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaBottom)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaTop)
         Me.Controls.Add(Me._frmMainUnpinnedTabAreaLeft)
@@ -1839,19 +1829,19 @@ Partial Class frmMain
         CType(Me.txtPostNr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkMedtagOphørte, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grdFindUgeavis, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grdFundnePlaner, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblFundneplanerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DstFindMedieplaner, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dockManager, System.Configuration.IPersistComponentSettings).LoadComponentSettings()
         CType(Me.dockManager, System.ComponentModel.ISupportInitialize).EndInit()
         Me._frmMainAutoHideControl.ResumeLayout(False)
-        Me.DockableWindow2.ResumeLayout(False)
+        Me.DockableWindow4.ResumeLayout(False)
         Me.DockableWindow3.ResumeLayout(False)
+        Me.DockableWindow2.ResumeLayout(False)
         CType(Me.statusBar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.toolbarManager, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DiMPdotNetDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DiMPdotNetDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DockableWindow1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1954,5 +1944,4 @@ Partial Class frmMain
   Friend WithEvents chkVisInAktiveBooking As Infragistics.Win.UltraWinEditors.UltraCheckEditor
     Friend WithEvents DockableWindow3 As Infragistics.Win.UltraWinDock.DockableWindow
     Friend WithEvents DockableWindow2 As Infragistics.Win.UltraWinDock.DockableWindow
-    Friend WithEvents DockableWindow1 As Infragistics.Win.UltraWinDock.DockableWindow
 End Class
