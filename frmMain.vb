@@ -255,15 +255,14 @@ Public Class frmMain
         dr2.Close()
       Catch ex2 As Exception
         MsgBox("Der opstod en fejl da bruger roller skulle findes for " & _BrugerNavn & ".", MsgBoxStyle.Exclamation, "Fejl ved roller!")
-      End Try
-        Else
+            End Try
+            If _BrugerNavn.Equals("TK") Then
 
-            sourceDir = "C:\users\" & _BrugerNavn & "\appdata\local\temp"
-        End If
-        If _BrugerNavn.Equals("TK") Then
-
-            sourceDir = "C:\users\" & _BrugerNavn & "\appdata\local\temp"
-        End If
+                sourceDir = "C:\users\" & _BrugerNavn & "\appdata\local\temp"
+            End If
+    Else
+      sourceDir = "C:\users\" & _BrugerNavn & "\appdata\local\temp"
+    End If
 
     Dim tmpList As String() = Directory.GetFiles(sourceDir, "*.tmp")
 

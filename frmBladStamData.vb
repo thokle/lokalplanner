@@ -43,8 +43,16 @@ Public Class FrmBladStamData
 
   Private Sub InitializePrisCollection()
     Dim placeringID As Integer
+    Dim året As Byte
+    Dim teksten As String
 
     InitializeComponent()
+    For i As Integer = 2010 To frmMain.DetteÅr
+      året = i - 2000
+      teksten = CStr(i)
+      cboÅr.Items.Add(året, teksten)
+    Next i
+
     For Each tab As Infragistics.Win.UltraWinTabControl.UltraTab In tabPriser.Tabs
       For Each ctrl As Control In grpPriser.Controls
         If TypeOf ctrl Is UltraTextEditor Then
@@ -566,7 +574,7 @@ Public Class FrmBladStamData
     savePriser(_previousBladID, _previousÅr, _previousPrisliste)
     indlæsPriser()
     If _nyTilføjet Then
-      ' MessageBox.Show("Ny positionchanged " & txtUgeavisID.Text) 
+      MessageBox.Show("Ny positionchanged " & txtUgeavisID.Text)
       Dim i As Integer
       Dim huskPosition As Integer = TblBladStamdataBindingSource.Position
       Dim huskFilter As String = TblBladStamdataBindingSource.Filter

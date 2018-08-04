@@ -42,14 +42,14 @@ WHERE     ([DLU$Contact].Type = 0) AND ([DLU$Contact Business Relation].[Link to
         <xs:element name="tblBureauer" msprop:Generator_UserTableName="tblBureauer" msprop:Generator_RowEvArgName="tblBureauerRowChangeEvent" msprop:Generator_TableVarName="tabletblBureauer" msprop:Generator_TablePropName="tblBureauer" msprop:Generator_RowDeletingName="tblBureauerRowDeleting" msprop:Generator_RowChangingName="tblBureauerRowChanging" msprop:Generator_RowDeletedName="tblBureauerRowDeleted" msprop:Generator_RowEvHandlerName="tblBureauerRowChangeEventHandler" msprop:Generator_TableClassName="tblBureauerDataTable" msprop:Generator_RowChangedName="tblBureauerRowChanged" msprop:Generator_RowClassName="tblBureauerRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør">
+              <xs:element name="Annoncør" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Annoncør" msprop:Generator_ColumnVarNameInTable="columnAnnoncør" msprop:Generator_ColumnPropNameInTable="AnnoncørColumn" msprop:Generator_UserColumnName="Annoncør" default=" ">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AnnoncørID" msprop:Generator_ColumnVarNameInTable="columnAnnoncørID" msprop:Generator_ColumnPropNameInRow="AnnoncørID" msprop:Generator_ColumnPropNameInTable="AnnoncørIDColumn" msprop:Generator_UserColumnName="AnnoncørID">
+              <xs:element name="AnnoncørID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="AnnoncørID" msprop:Generator_ColumnVarNameInTable="columnAnnoncørID" msprop:Generator_ColumnPropNameInTable="AnnoncørIDColumn" msprop:Generator_UserColumnName="AnnoncørID" default="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />

@@ -30,7 +30,8 @@ Public Class frmMedieplan
   Private _brugtGruppeVersion As Integer = 0
   Private ReadOnly _overførtFraPrisforespørgsel As Boolean = False
   Private _anvendtMiljøTillæg As Double = 0
-  Private _Kommentar As String = ""
+    Private _Kommentar As String = ""
+    Private _fakService As FakturaBemærkningService = New FakturaBemærkningService
 
   Public ReadOnly Property Version() As Integer
     Get
@@ -414,7 +415,10 @@ Public Class frmMedieplan
     Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
     Dim table As New dstMedieplan.tblMedieplanDataTable
 
-    DataSourceMedieplan.MedieplanNr = _medieplanNr
+        txtRekvisitionsNr.Text = _fakService.getFakturaBemærkng(_medieplanNr)
+
+
+        DataSourceMedieplan.MedieplanNr = _medieplanNr
     DataSourceMedieplan.Version = _version
     _DataValues.MedieplanNr = _medieplanNr
     _DataValues.Version = _version
@@ -1524,33 +1528,33 @@ Public Class frmMedieplan
     _DataValues.Fakturering = optFakturering.Value
   End Sub
 
-  Private Sub txtRekvisitionsNr_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRekvisitionsNr.TextChanged
-    Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
-    Dim cm As SqlCommand = cn.CreateCommand()
+    'Private Sub txtRekvisitionsNr_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRekvisitionsNr.TextChanged
+    '  Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
+    '  Dim cm As SqlCommand = cn.CreateCommand()
 
-    _DataValues.RekvisitionsNr = txtRekvisitionsNr.Text
+    '  _DataValues.RekvisitionsNr = txtRekvisitionsNr.Text
 
-    If _medieplanNr > 0 AndAlso _version > 0 Then
-      Try
-        cm.CommandType = CommandType.Text
-        cm.CommandText = "UPDATE tblMedieplan SET RekvisitionsNr = '" & txtRekvisitionsNr.Text & "" & "' WHERE (MedieplanNr = " & _medieplanNr & " AND Version = " & _version & ")"
-        cn.Open()
-        cm.ExecuteNonQuery()
-        If txtRekvisitionsNr.TextLength > 0 Then
-          cm.CommandText = "UPDATE tblMedieplanNr SET FakturaBemærkning3 = 'Rekvisitions nr.: " & txtRekvisitionsNr.Text.Replace("'", "''") & "' WHERE (MedieplanNr = " & _medieplanNr & ")"
-        Else
-          cm.CommandText = "UPDATE tblMedieplanNr SET FakturaBemærkning3 = '' WHERE (MedieplanNr = " & _medieplanNr & ")"
-        End If
-        cm.ExecuteNonQuery()
-        cn.Close()
-      Catch ex As Exception
-        MessageBox.Show("Der opstod en fejl da feltet skulle opdateres.", "SQL fejl", MessageBoxButtons.OK, MessageBoxIcon.Error)
-      Finally
-        cm.Dispose()
-        cn.Dispose()
-      End Try
-    End If
-  End Sub
+    '  If _medieplanNr > 0 AndAlso _version > 0 Then
+    '    Try
+    '      cm.CommandType = CommandType.Text
+    '      cm.CommandText = "UPDATE tblMedieplan SET RekvisitionsNr = '" & txtRekvisitionsNr.Text & "" & "' WHERE (MedieplanNr = " & _medieplanNr & " AND Version = " & _version & ")"
+    '      cn.Open()
+    '      cm.ExecuteNonQuery()
+    '      If txtRekvisitionsNr.TextLength > 0 Then
+    '        cm.CommandText = "UPDATE tblMedieplanNr SET FakturaBemærkning3 = 'Rekvisitions nr.: " & txtRekvisitionsNr.Text.Replace("'", "''") & "' WHERE (MedieplanNr = " & _medieplanNr & ")"
+    '      Else
+    '        cm.CommandText = "UPDATE tblMedieplanNr SET FakturaBemærkning3 = '' WHERE (MedieplanNr = " & _medieplanNr & ")"
+    '      End If
+    '      cm.ExecuteNonQuery()
+    '      cn.Close()
+    '    Catch ex As Exception
+    '      MessageBox.Show("Der opstod en fejl da feltet skulle opdateres.", "SQL fejl", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '    Finally
+    '      cm.Dispose()
+    '      cn.Dispose()
+    '    End Try
+    '  End If
+    'End Sub
 
   Private Sub optBilagsBladeTil_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optBilagsBladeTil.ValueChanged
     If Not _IsLoading Then
@@ -4210,8 +4214,8 @@ Public Class frmMedieplan
       End If
       DataSourceMedieplan.AnvendtMiljøTillæg = _anvendtMiljøTillæg
     Else
-      DataSourceMedieplan.AnvendtMiljøTillæg = 0
       _anvendtMiljøTillæg = 0
+      DataSourceMedieplan.AnvendtMiljøTillæg = 0
     End If
     skalMiljøTillægVisesCheckVises()
   End Sub
@@ -4323,4 +4327,6 @@ Public Class frmMedieplan
       grdOrdreLinjer.DisplayLayout.Bands(0).Columns("PrisLåst").Hidden = True
     End If
   End Sub
+
+   
 End Class

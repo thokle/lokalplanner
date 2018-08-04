@@ -128,7 +128,7 @@
   <ItemGroup>
     <Reference Include="Common, Version=1.0.2676.29250, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\System32\common.dll</HintPath>
+      <HintPath>S:\.Net Version\Lokal planner .net 4.0\Common.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Infragistics4.Documents.Core.v14.2, Version=14.2.20142.2168, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
@@ -209,7 +209,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="AxInterop.InetCtlsObjects">
-      <HintPath>..\..\AxInterop.InetCtlsObjects.dll</HintPath>
+      <HintPath>bin\Release\AxInterop.InetCtlsObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="EmailVerifierComponent">
+      <HintPath>bin\Release\EmailVerifierComponent.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -232,10 +235,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rebex.Net.Ftp">
-      <HintPath>..\..\Rebex.Net.Ftp.dll</HintPath>
+      <HintPath>bin\Release\Rebex.Net.Ftp.dll</HintPath>
     </Reference>
     <Reference Include="Rebex.Net.ProxySocket">
-      <HintPath>..\..\Rebex.Net.ProxySocket.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\VS2010SetUpFiles\Rebex.Net.ProxySocket.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -308,6 +311,11 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="dstFakturaBemærkning.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstFakturaBemærkning.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dstKontaktArbOmråder.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -336,6 +344,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EjerforholdDropdown.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FakturaBemærkningService.vb" />
     <Compile Include="frmKommentar.Designer.vb">
       <DependentUpon>frmKommentar.vb</DependentUpon>
     </Compile>
@@ -1037,6 +1046,17 @@
     </None>
     <None Include="dstBergskeAfstemning.xss">
       <DependentUpon>dstBergskeAfstemning.xsd</DependentUpon>
+    </None>
+    <None Include="dstFakturaBemærkning.xsc">
+      <DependentUpon>dstFakturaBemærkning.xsd</DependentUpon>
+    </None>
+    <None Include="dstFakturaBemærkning.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstFakturaBemærkning.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dstFakturaBemærkning.xss">
+      <DependentUpon>dstFakturaBemærkning.xsd</DependentUpon>
     </None>
     <None Include="dstKonkurrenter.xsc">
       <DependentUpon>dstKonkurrenter.xsd</DependentUpon>
@@ -1747,9 +1767,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

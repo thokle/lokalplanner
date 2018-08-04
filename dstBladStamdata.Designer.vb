@@ -1799,12 +1799,9 @@ Partial Public Class dstBladStamdata
             Me.columnNavn.AllowDBNull = false
             Me.columnNavn.MaxLength = 30
             Me.columnNavn2.MaxLength = 30
-            Me.columnAdresse.AllowDBNull = false
             Me.columnAdresse.MaxLength = 30
             Me.columnAdresse2.MaxLength = 30
-            Me.columnTlf.AllowDBNull = false
             Me.columnTlf.MaxLength = 15
-            Me.columnFax.AllowDBNull = false
             Me.columnFax.MaxLength = 15
             Me.columnCVR.MaxLength = 15
             Me.columnFIK.MaxLength = 15
@@ -4143,7 +4140,11 @@ Partial Public Class dstBladStamdata
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Adresse() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.AdresseColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.AdresseColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Adresse' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.AdresseColumn) = value
@@ -4184,7 +4185,11 @@ Partial Public Class dstBladStamdata
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Tlf() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.TlfColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.TlfColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Tlf' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.TlfColumn) = value
@@ -4195,7 +4200,11 @@ Partial Public Class dstBladStamdata
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Fax() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.FaxColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.FaxColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fax' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.FaxColumn) = value
@@ -4957,6 +4966,18 @@ Partial Public Class dstBladStamdata
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAdresseNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.AdresseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAdresseNull()
+            Me(Me.tabletblBladStamdata.AdresseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsAdresse2Null() As Boolean
             Return Me.IsNull(Me.tabletblBladStamdata.Adresse2Column)
         End Function
@@ -4977,6 +4998,30 @@ Partial Public Class dstBladStamdata
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetPostNrNull()
             Me(Me.tabletblBladStamdata.PostNrColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTlfNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.TlfColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTlfNull()
+            Me(Me.tabletblBladStamdata.TlfColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFaxNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.FaxColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFaxNull()
+            Me(Me.tabletblBladStamdata.FaxColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7215,175 +7260,9 @@ Namespace dstBladStamdataTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [tblBladStamdata] WHERE (([BladID] = @Original_BladID) AND ([Navn] = "& _ 
-                "@Original_Navn) AND ((@IsNull_Navn2 = 1 AND [Navn2] IS NULL) OR ([Navn2] = @Orig"& _ 
-                "inal_Navn2)) AND ([Adresse] = @Original_Adresse) AND ((@IsNull_Adresse2 = 1 AND "& _ 
-                "[Adresse2] IS NULL) OR ([Adresse2] = @Original_Adresse2)) AND ((@IsNull_PostNr ="& _ 
-                " 1 AND [PostNr] IS NULL) OR ([PostNr] = @Original_PostNr)) AND ([Tlf] = @Origina"& _ 
-                "l_Tlf) AND ([Fax] = @Original_Fax) AND ((@IsNull_CVR = 1 AND [CVR] IS NULL) OR ("& _ 
-                "[CVR] = @Original_CVR)) AND ((@IsNull_FIK = 1 AND [FIK] IS NULL) OR ([FIK] = @Or"& _ 
-                "iginal_FIK)) AND ((@IsNull_Kontaktperson = 1 AND [Kontaktperson] IS NULL) OR ([K"& _ 
-                "ontaktperson] = @Original_Kontaktperson)) AND ((@IsNull_HovedgruppeID = 1 AND [H"& _ 
-                "ovedgruppeID] IS NULL) OR ([HovedgruppeID] = @Original_HovedgruppeID)) AND ((@Is"& _ 
-                "Null_MedlemMåned = 1 AND [MedlemMåned] IS NULL) OR ([MedlemMåned] = @Original_Me"& _ 
-                "dlemMåned)) AND ((@IsNull_MedlemÅr = 1 AND [MedlemÅr] IS NULL) OR ([MedlemÅr] = "& _ 
-                "@Original_MedlemÅr)) AND ((@IsNull_MedlemSiden = 1 AND [MedlemSiden] IS NULL) OR"& _ 
-                " ([MedlemSiden] = @Original_MedlemSiden)) AND ([Ejerforhold] = @Original_Ejerfor"& _ 
-                "hold) AND ((@IsNull_Koncern = 1 AND [Koncern] IS NULL) OR ([Koncern] = @Original"& _ 
-                "_Koncern)) AND ((@IsNull_RegionID = 1 AND [RegionID] IS NULL) OR ([RegionID] = @"& _ 
-                "Original_RegionID)) AND ((@IsNull_DelOmrådeID = 1 AND [DelOmrådeID] IS NULL) OR "& _ 
-                "([DelOmrådeID] = @Original_DelOmrådeID)) AND ((@IsNull_GeoKodeID = 1 AND [GeoKod"& _ 
-                "eID] IS NULL) OR ([GeoKodeID] = @Original_GeoKodeID)) AND ((@IsNull_Totalområde "& _ 
-                "= 1 AND [Totalområde] IS NULL) OR ([Totalområde] = @Original_Totalområde)) AND ("& _ 
-                "(@IsNull_TotalområdePct = 1 AND [TotalområdePct] IS NULL) OR ([TotalområdePct] ="& _ 
-                " @Original_TotalområdePct)) AND ((@IsNull_Primær = 1 AND [Primær] IS NULL) OR (["& _ 
-                "Primær] = @Original_Primær)) AND ((@IsNull_PrimærPct = 1 AND [PrimærPct] IS NULL"& _ 
-                ") OR ([PrimærPct] = @Original_PrimærPct)) AND ((@IsNull_Oplag = 1 AND [Oplag] IS"& _ 
-                " NULL) OR ([Oplag] = @Original_Oplag)) AND ((@IsNull_UgedagID = 1 AND [UgedagID]"& _ 
-                " IS NULL) OR ([UgedagID] = @Original_UgedagID)) AND ((@IsNull_Format = 1 AND [Fo"& _ 
-                "rmat] IS NULL) OR ([Format] = @Original_Format)) AND ((@IsNull_OrdredeadlineTeks"& _ 
-                "t = 1 AND [OrdredeadlineTekst] IS NULL) OR ([OrdredeadlineTekst] = @Original_Ord"& _ 
-                "redeadlineTekst)) AND ((@IsNull_OrdredeadlineRubrik = 1 AND [OrdredeadlineRubrik"& _ 
-                "] IS NULL) OR ([OrdredeadlineRubrik] = @Original_OrdredeadlineRubrik)) AND ((@Is"& _ 
-                "Null_MaterialedeadlineTekst = 1 AND [MaterialedeadlineTekst] IS NULL) OR ([Mater"& _ 
-                "ialedeadlineTekst] = @Original_MaterialedeadlineTekst)) AND ((@IsNull_Materialed"& _ 
-                "eadlineRubrik = 1 AND [MaterialedeadlineRubrik] IS NULL) OR ([MaterialedeadlineR"& _ 
-                "ubrik] = @Original_MaterialedeadlineRubrik)) AND ((@IsNull_OrdreEmail = 1 AND [O"& _ 
-                "rdreEmail] IS NULL) OR ([OrdreEmail] = @Original_OrdreEmail)) AND ((@IsNull_Ordr"& _ 
-                "echeckEmail = 1 AND [OrdrecheckEmail] IS NULL) OR ([OrdrecheckEmail] = @Original"& _ 
-                "_OrdrecheckEmail)) AND ((@IsNull_OrdrecheckSendeDagID = 1 AND [OrdrecheckSendeDa"& _ 
-                "gID] IS NULL) OR ([OrdrecheckSendeDagID] = @Original_OrdrecheckSendeDagID)) AND "& _ 
-                "((@IsNull_SendetidOrdrecheck = 1 AND [SendetidOrdrecheck] IS NULL) OR ([Sendetid"& _ 
-                "Ordrecheck] = @Original_SendetidOrdrecheck)) AND ((@IsNull_SendIndeværendeUge = "& _ 
-                "1 AND [SendIndeværendeUge] IS NULL) OR ([SendIndeværendeUge] = @Original_SendInd"& _ 
-                "eværendeUge)) AND ((@IsNull_StamdataEmail = 1 AND [StamdataEmail] IS NULL) OR (["& _ 
-                "StamdataEmail] = @Original_StamdataEmail)) AND ((@IsNull_PrisforespørgselEmails "& _ 
-                "= 1 AND [PrisforespørgselEmails] IS NULL) OR ([PrisforespørgselEmails] = @Origin"& _ 
-                "al_PrisforespørgselEmails)) AND ((@IsNull_OrienteringEmails = 1 AND [Orientering"& _ 
-                "Emails] IS NULL) OR ([OrienteringEmails] = @Original_OrienteringEmails)) AND ((@"& _ 
-                "IsNull_Emails = 1 AND [Emails] IS NULL) OR ([Emails] = @Original_Emails)) AND (("& _ 
-                "@IsNull_KontaktpersonerEmails = 1 AND [KontaktpersonerEmails] IS NULL) OR ([Kont"& _ 
-                "aktpersonerEmails] = @Original_KontaktpersonerEmails)) AND ((@IsNull_BogholderiE"& _ 
-                "mails = 1 AND [BogholderiEmails] IS NULL) OR ([BogholderiEmails] = @Original_Bog"& _ 
-                "holderiEmails)) AND ((@IsNull_MedieNetKode = 1 AND [MedieNetKode] IS NULL) OR (["& _ 
-                "MedieNetKode] = @Original_MedieNetKode)) AND ((@IsNull_MatGodtBeløb = 1 AND [Mat"& _ 
-                "GodtBeløb] IS NULL) OR ([MatGodtBeløb] = @Original_MatGodtBeløb)) AND ((@IsNull_"& _ 
-                "Hjemmeside = 1 AND [Hjemmeside] IS NULL) OR ([Hjemmeside] = @Original_Hjemmeside"& _ 
-                ")) AND ((@IsNull_RedaktionEmail = 1 AND [RedaktionEmail] IS NULL) OR ([Redaktion"& _ 
-                "Email] = @Original_RedaktionEmail)) AND ((@IsNull_AnnonceEmail = 1 AND [AnnonceE"& _ 
-                "mail] IS NULL) OR ([AnnonceEmail] = @Original_AnnonceEmail)) AND ((@IsNull_Mater"& _ 
-                "ialeEmail = 1 AND [MaterialeEmail] IS NULL) OR ([MaterialeEmail] = @Original_Mat"& _ 
-                "erialeEmail)) AND ((@IsNull_AnnonceKontrolEmail = 1 AND [AnnonceKontrolEmail] IS"& _ 
-                " NULL) OR ([AnnonceKontrolEmail] = @Original_AnnonceKontrolEmail)) AND ((@IsNull"& _ 
-                "_BilagsbladeEmail = 1 AND [BilagsbladeEmail] IS NULL) OR ([BilagsbladeEmail] = @"& _ 
-                "Original_BilagsbladeEmail)) AND ((@IsNull_BogholderiKontaktperson = 1 AND [Bogho"& _ 
-                "lderiKontaktperson] IS NULL) OR ([BogholderiKontaktperson] = @Original_Bogholder"& _ 
-                "iKontaktperson)) AND ([FakturaGruppeID] = @Original_FakturaGruppeID) AND ((@IsNu"& _ 
-                "ll_MåGiveFarveRabat = 1 AND [MåGiveFarveRabat] IS NULL) OR ([MåGiveFarveRabat] ="& _ 
-                " @Original_MåGiveFarveRabat)) AND ([Ophørt] = @Original_Ophørt) AND ([VisPåWWW] "& _ 
-                "= @Original_VisPåWWW))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [tblBladStamdata] WHERE (([BladID] = @Original_BladID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Navn", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Navn2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Navn2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Adresse", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Adresse2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Adresse2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PostNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PostNr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PostNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PostNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tlf", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tlf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Fax", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fax", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CVR", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CVR", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CVR", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CVR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FIK", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FIK", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FIK", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FIK", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Kontaktperson", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kontaktperson", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Kontaktperson", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kontaktperson", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HovedgruppeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HovedgruppeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HovedgruppeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HovedgruppeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemMåned", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemMåned", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemMåned", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemMåned", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemÅr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemÅr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemÅr", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemÅr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemSiden", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemSiden", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemSiden", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemSiden", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Ejerforhold", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ejerforhold", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Koncern", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Koncern", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Koncern", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Koncern", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegionID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DelOmrådeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelOmrådeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DelOmrådeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelOmrådeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GeoKodeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GeoKodeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GeoKodeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GeoKodeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Totalområde", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Totalområde", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Totalområde", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Totalområde", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalområdePct", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalområdePct", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalområdePct", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalområdePct", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Primær", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Primær", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Primær", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Primær", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrimærPct", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrimærPct", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrimærPct", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrimærPct", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Oplag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Oplag", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Oplag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Oplag", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UgedagID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UgedagID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UgedagID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UgedagID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Format", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Format", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Format", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Format", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdredeadlineTekst", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineTekst", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdredeadlineTekst", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineTekst", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdredeadlineRubrik", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineRubrik", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdredeadlineRubrik", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineRubrik", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialedeadlineTekst", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineTekst", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialedeadlineTekst", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineTekst", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialedeadlineRubrik", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineRubrik", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialedeadlineRubrik", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineRubrik", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdreEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdreEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdreEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdreEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdrecheckEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdrecheckEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdrecheckSendeDagID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckSendeDagID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdrecheckSendeDagID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckSendeDagID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SendetidOrdrecheck", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendetidOrdrecheck", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SendetidOrdrecheck", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendetidOrdrecheck", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SendIndeværendeUge", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendIndeværendeUge", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SendIndeværendeUge", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendIndeværendeUge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StamdataEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StamdataEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_StamdataEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StamdataEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrisforespørgselEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrisforespørgselEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrisforespørgselEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrisforespørgselEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrienteringEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrienteringEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrienteringEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrienteringEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Emails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_KontaktpersonerEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "KontaktpersonerEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_KontaktpersonerEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "KontaktpersonerEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BogholderiEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BogholderiEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedieNetKode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieNetKode", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedieNetKode", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieNetKode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MatGodtBeløb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MatGodtBeløb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MatGodtBeløb", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MatGodtBeløb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Hjemmeside", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hjemmeside", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hjemmeside", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hjemmeside", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RedaktionEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RedaktionEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RedaktionEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RedaktionEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AnnonceEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AnnonceEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialeEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialeEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialeEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialeEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AnnonceKontrolEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceKontrolEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AnnonceKontrolEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceKontrolEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BilagsbladeEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BilagsbladeEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BilagsbladeEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BilagsbladeEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BogholderiKontaktperson", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiKontaktperson", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BogholderiKontaktperson", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiKontaktperson", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FakturaGruppeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaGruppeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MåGiveFarveRabat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MåGiveFarveRabat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MåGiveFarveRabat", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MåGiveFarveRabat", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Ophørt", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ophørt", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisPåWWW", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisPåWWW", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblBladStamdata] SET [BladID] = @BladID, [Navn] = @Navn, [Navn2] = @Navn2"& _ 
@@ -7409,84 +7288,18 @@ Namespace dstBladStamdataTableAdapters
                 "l] = @BilagsbladeEmail, [GruppeRabat] = @GruppeRabat, [SamannonceringsRabat] = @"& _ 
                 "SamannonceringsRabat, [BogholderiKontaktperson] = @BogholderiKontaktperson, [Fak"& _ 
                 "turaGruppeID] = @FakturaGruppeID, [MåGiveFarveRabat] = @MåGiveFarveRabat, [Ophør"& _ 
-                "t] = @Ophørt, [VisPåWWW] = @VisPåWWW WHERE (([BladID] = @Original_BladID) AND (["& _ 
-                "Navn] = @Original_Navn) AND ((@IsNull_Navn2 = 1 AND [Navn2] IS NULL) OR ([Navn2]"& _ 
-                " = @Original_Navn2)) AND ([Adresse] = @Original_Adresse) AND ((@IsNull_Adresse2 "& _ 
-                "= 1 AND [Adresse2] IS NULL) OR ([Adresse2] = @Original_Adresse2)) AND ((@IsNull_"& _ 
-                "PostNr = 1 AND [PostNr] IS NULL) OR ([PostNr] = @Original_PostNr)) AND ([Tlf] = "& _ 
-                "@Original_Tlf) AND ([Fax] = @Original_Fax) AND ((@IsNull_CVR = 1 AND [CVR] IS NU"& _ 
-                "LL) OR ([CVR] = @Original_CVR)) AND ((@IsNull_FIK = 1 AND [FIK] IS NULL) OR ([FI"& _ 
-                "K] = @Original_FIK)) AND ((@IsNull_Kontaktperson = 1 AND [Kontaktperson] IS NULL"& _ 
-                ") OR ([Kontaktperson] = @Original_Kontaktperson)) AND ((@IsNull_HovedgruppeID = "& _ 
-                "1 AND [HovedgruppeID] IS NULL) OR ([HovedgruppeID] = @Original_HovedgruppeID)) A"& _ 
-                "ND ((@IsNull_MedlemMåned = 1 AND [MedlemMåned] IS NULL) OR ([MedlemMåned] = @Ori"& _ 
-                "ginal_MedlemMåned)) AND ((@IsNull_MedlemÅr = 1 AND [MedlemÅr] IS NULL) OR ([Medl"& _ 
-                "emÅr] = @Original_MedlemÅr)) AND ((@IsNull_MedlemSiden = 1 AND [MedlemSiden] IS "& _ 
-                "NULL) OR ([MedlemSiden] = @Original_MedlemSiden)) AND ([Ejerforhold] = @Original"& _ 
-                "_Ejerforhold) AND ((@IsNull_Koncern = 1 AND [Koncern] IS NULL) OR ([Koncern] = @"& _ 
-                "Original_Koncern)) AND ((@IsNull_RegionID = 1 AND [RegionID] IS NULL) OR ([Regio"& _ 
-                "nID] = @Original_RegionID)) AND ((@IsNull_DelOmrådeID = 1 AND [DelOmrådeID] IS N"& _ 
-                "ULL) OR ([DelOmrådeID] = @Original_DelOmrådeID)) AND ((@IsNull_GeoKodeID = 1 AND"& _ 
-                " [GeoKodeID] IS NULL) OR ([GeoKodeID] = @Original_GeoKodeID)) AND ((@IsNull_Tota"& _ 
-                "lområde = 1 AND [Totalområde] IS NULL) OR ([Totalområde] = @Original_Totalområde"& _ 
-                ")) AND ((@IsNull_TotalområdePct = 1 AND [TotalområdePct] IS NULL) OR ([Totalområ"& _ 
-                "dePct] = @Original_TotalområdePct)) AND ((@IsNull_Primær = 1 AND [Primær] IS NUL"& _ 
-                "L) OR ([Primær] = @Original_Primær)) AND ((@IsNull_PrimærPct = 1 AND [PrimærPct]"& _ 
-                " IS NULL) OR ([PrimærPct] = @Original_PrimærPct)) AND ((@IsNull_Oplag = 1 AND [O"& _ 
-                "plag] IS NULL) OR ([Oplag] = @Original_Oplag)) AND ((@IsNull_UgedagID = 1 AND [U"& _ 
-                "gedagID] IS NULL) OR ([UgedagID] = @Original_UgedagID)) AND ((@IsNull_Format = 1"& _ 
-                " AND [Format] IS NULL) OR ([Format] = @Original_Format)) AND ((@IsNull_Ordredead"& _ 
-                "lineTekst = 1 AND [OrdredeadlineTekst] IS NULL) OR ([OrdredeadlineTekst] = @Orig"& _ 
-                "inal_OrdredeadlineTekst)) AND ((@IsNull_OrdredeadlineRubrik = 1 AND [Ordredeadli"& _ 
-                "neRubrik] IS NULL) OR ([OrdredeadlineRubrik] = @Original_OrdredeadlineRubrik)) A"& _ 
-                "ND ((@IsNull_MaterialedeadlineTekst = 1 AND [MaterialedeadlineTekst] IS NULL) OR"& _ 
-                " ([MaterialedeadlineTekst] = @Original_MaterialedeadlineTekst)) AND ((@IsNull_Ma"& _ 
-                "terialedeadlineRubrik = 1 AND [MaterialedeadlineRubrik] IS NULL) OR ([Materialed"& _ 
-                "eadlineRubrik] = @Original_MaterialedeadlineRubrik)) AND ((@IsNull_OrdreEmail = "& _ 
-                "1 AND [OrdreEmail] IS NULL) OR ([OrdreEmail] = @Original_OrdreEmail)) AND ((@IsN"& _ 
-                "ull_OrdrecheckEmail = 1 AND [OrdrecheckEmail] IS NULL) OR ([OrdrecheckEmail] = @"& _ 
-                "Original_OrdrecheckEmail)) AND ((@IsNull_OrdrecheckSendeDagID = 1 AND [Ordrechec"& _ 
-                "kSendeDagID] IS NULL) OR ([OrdrecheckSendeDagID] = @Original_OrdrecheckSendeDagI"& _ 
-                "D)) AND ((@IsNull_SendetidOrdrecheck = 1 AND [SendetidOrdrecheck] IS NULL) OR (["& _ 
-                "SendetidOrdrecheck] = @Original_SendetidOrdrecheck)) AND ((@IsNull_SendIndeværen"& _ 
-                "deUge = 1 AND [SendIndeværendeUge] IS NULL) OR ([SendIndeværendeUge] = @Original"& _ 
-                "_SendIndeværendeUge)) AND ((@IsNull_StamdataEmail = 1 AND [StamdataEmail] IS NUL"& _ 
-                "L) OR ([StamdataEmail] = @Original_StamdataEmail)) AND ((@IsNull_Prisforespørgse"& _ 
-                "lEmails = 1 AND [PrisforespørgselEmails] IS NULL) OR ([PrisforespørgselEmails] ="& _ 
-                " @Original_PrisforespørgselEmails)) AND ((@IsNull_OrienteringEmails = 1 AND [Ori"& _ 
-                "enteringEmails] IS NULL) OR ([OrienteringEmails] = @Original_OrienteringEmails))"& _ 
-                " AND ((@IsNull_Emails = 1 AND [Emails] IS NULL) OR ([Emails] = @Original_Emails)"& _ 
-                ") AND ((@IsNull_KontaktpersonerEmails = 1 AND [KontaktpersonerEmails] IS NULL) O"& _ 
-                "R ([KontaktpersonerEmails] = @Original_KontaktpersonerEmails)) AND ((@IsNull_Bog"& _ 
-                "holderiEmails = 1 AND [BogholderiEmails] IS NULL) OR ([BogholderiEmails] = @Orig"& _ 
-                "inal_BogholderiEmails)) AND ((@IsNull_MedieNetKode = 1 AND [MedieNetKode] IS NUL"& _ 
-                "L) OR ([MedieNetKode] = @Original_MedieNetKode)) AND ((@IsNull_MatGodtBeløb = 1 "& _ 
-                "AND [MatGodtBeløb] IS NULL) OR ([MatGodtBeløb] = @Original_MatGodtBeløb)) AND (("& _ 
-                "@IsNull_Hjemmeside = 1 AND [Hjemmeside] IS NULL) OR ([Hjemmeside] = @Original_Hj"& _ 
-                "emmeside)) AND ((@IsNull_RedaktionEmail = 1 AND [RedaktionEmail] IS NULL) OR ([R"& _ 
-                "edaktionEmail] = @Original_RedaktionEmail)) AND ((@IsNull_AnnonceEmail = 1 AND ["& _ 
-                "AnnonceEmail] IS NULL) OR ([AnnonceEmail] = @Original_AnnonceEmail)) AND ((@IsNu"& _ 
-                "ll_MaterialeEmail = 1 AND [MaterialeEmail] IS NULL) OR ([MaterialeEmail] = @Orig"& _ 
-                "inal_MaterialeEmail)) AND ((@IsNull_AnnonceKontrolEmail = 1 AND [AnnonceKontrolE"& _ 
-                "mail] IS NULL) OR ([AnnonceKontrolEmail] = @Original_AnnonceKontrolEmail)) AND ("& _ 
-                "(@IsNull_BilagsbladeEmail = 1 AND [BilagsbladeEmail] IS NULL) OR ([BilagsbladeEm"& _ 
-                "ail] = @Original_BilagsbladeEmail)) AND ((@IsNull_BogholderiKontaktperson = 1 AN"& _ 
-                "D [BogholderiKontaktperson] IS NULL) OR ([BogholderiKontaktperson] = @Original_B"& _ 
-                "ogholderiKontaktperson)) AND ([FakturaGruppeID] = @Original_FakturaGruppeID) AND"& _ 
-                " ((@IsNull_MåGiveFarveRabat = 1 AND [MåGiveFarveRabat] IS NULL) OR ([MåGiveFarve"& _ 
-                "Rabat] = @Original_MåGiveFarveRabat)) AND ([Ophørt] = @Original_Ophørt) AND ([Vi"& _ 
-                "sPåWWW] = @Original_VisPåWWW));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT BladID, Navn, Navn2, Adresse, Adresse2, "& _ 
-                "PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID, MedlemMåned, MedlemÅr,"& _ 
-                " MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeID, GeoKodeID, Totalområd"& _ 
-                "e, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst, Oplag, UgedagID, Forma"& _ 
-                "t, OrdredeadlineTekst, OrdredeadlineRubrik, MaterialedeadlineTekst, Materialedea"& _ 
-                "dlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSendeDagID, SendetidOrdreche"& _ 
-                "ck, SendIndeværendeUge, StamdataEmail, PrisforespørgselEmails, OrienteringEmails"& _ 
-                ", Emails, KontaktpersonerEmails, BogholderiEmails, MedieNetKode, MatGodtBeløb, H"& _ 
-                "jemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail, AnnonceKontrolEmail, Bi"& _ 
-                "lagsbladeEmail, GruppeRabat, SamannonceringsRabat, BogholderiKontaktperson, Fakt"& _ 
-                "uraGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW FROM tblBladStamdata WHERE (Blad"& _ 
-                "ID = @BladID)"
+                "t] = @Ophørt, [VisPåWWW] = @VisPåWWW WHERE (([BladID] = @Original_BladID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
+                "ECT BladID, Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktp"& _ 
+                "erson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, "& _ 
+                "RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct"& _ 
+                ", WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, Ordredeadline"& _ 
+                "Rubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckE"& _ 
+                "mail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmai"& _ 
+                "l, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, Bog"& _ 
+                "holderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEm"& _ 
+                "ail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, Samanno"& _ 
+                "nceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophør"& _ 
+                "t, VisPåWWW FROM tblBladStamdata WHERE (BladID = @BladID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Navn", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7547,106 +7360,6 @@ Namespace dstBladStamdataTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ophørt", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ophørt", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VisPåWWW", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisPåWWW", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Navn", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Navn2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Navn2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Adresse", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Adresse2", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse2", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Adresse2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PostNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PostNr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PostNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PostNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Tlf", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Tlf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Fax", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Fax", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CVR", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CVR", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CVR", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CVR", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_FIK", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FIK", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FIK", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FIK", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Kontaktperson", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kontaktperson", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Kontaktperson", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Kontaktperson", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_HovedgruppeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HovedgruppeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_HovedgruppeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "HovedgruppeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemMåned", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemMåned", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemMåned", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemMåned", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemÅr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemÅr", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemÅr", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemÅr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedlemSiden", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemSiden", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedlemSiden", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedlemSiden", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Ejerforhold", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ejerforhold", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Koncern", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Koncern", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Koncern", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Koncern", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RegionID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegionID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RegionID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RegionID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DelOmrådeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelOmrådeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DelOmrådeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DelOmrådeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_GeoKodeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GeoKodeID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_GeoKodeID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "GeoKodeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Totalområde", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Totalområde", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Totalområde", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Totalområde", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TotalområdePct", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalområdePct", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TotalområdePct", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TotalområdePct", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Primær", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Primær", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Primær", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Primær", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrimærPct", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrimærPct", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrimærPct", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrimærPct", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Oplag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Oplag", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Oplag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Oplag", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UgedagID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UgedagID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UgedagID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UgedagID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Format", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Format", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Format", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Format", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdredeadlineTekst", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineTekst", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdredeadlineTekst", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineTekst", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdredeadlineRubrik", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineRubrik", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdredeadlineRubrik", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdredeadlineRubrik", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialedeadlineTekst", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineTekst", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialedeadlineTekst", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineTekst", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialedeadlineRubrik", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineRubrik", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialedeadlineRubrik", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialedeadlineRubrik", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdreEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdreEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdreEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdreEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdrecheckEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdrecheckEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrdrecheckSendeDagID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckSendeDagID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrdrecheckSendeDagID", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrdrecheckSendeDagID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SendetidOrdrecheck", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendetidOrdrecheck", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SendetidOrdrecheck", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendetidOrdrecheck", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SendIndeværendeUge", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendIndeværendeUge", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SendIndeværendeUge", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SendIndeværendeUge", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_StamdataEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StamdataEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_StamdataEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "StamdataEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PrisforespørgselEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrisforespørgselEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PrisforespørgselEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PrisforespørgselEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OrienteringEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrienteringEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OrienteringEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OrienteringEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Emails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Emails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Emails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_KontaktpersonerEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "KontaktpersonerEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_KontaktpersonerEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "KontaktpersonerEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BogholderiEmails", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiEmails", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BogholderiEmails", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiEmails", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MedieNetKode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieNetKode", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedieNetKode", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieNetKode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MatGodtBeløb", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MatGodtBeløb", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MatGodtBeløb", Global.System.Data.SqlDbType.TinyInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MatGodtBeløb", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Hjemmeside", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hjemmeside", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hjemmeside", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hjemmeside", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RedaktionEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RedaktionEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RedaktionEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RedaktionEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AnnonceEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AnnonceEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MaterialeEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialeEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MaterialeEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MaterialeEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_AnnonceKontrolEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceKontrolEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_AnnonceKontrolEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "AnnonceKontrolEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BilagsbladeEmail", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BilagsbladeEmail", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BilagsbladeEmail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BilagsbladeEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BogholderiKontaktperson", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiKontaktperson", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BogholderiKontaktperson", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BogholderiKontaktperson", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FakturaGruppeID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaGruppeID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_MåGiveFarveRabat", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MåGiveFarveRabat", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MåGiveFarveRabat", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MåGiveFarveRabat", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Ophørt", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ophørt", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VisPåWWW", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisPåWWW", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7750,413 +7463,8 @@ Namespace dstBladStamdataTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete( _
-                    ByVal Original_BladID As Integer,  _
-                    ByVal Original_Navn As String,  _
-                    ByVal Original_Navn2 As String,  _
-                    ByVal Original_Adresse As String,  _
-                    ByVal Original_Adresse2 As String,  _
-                    ByVal Original_PostNr As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Tlf As String,  _
-                    ByVal Original_Fax As String,  _
-                    ByVal Original_CVR As String,  _
-                    ByVal Original_FIK As String,  _
-                    ByVal Original_Kontaktperson As String,  _
-                    ByVal Original_HovedgruppeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemMåned As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemÅr As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemSiden As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Ejerforhold As String,  _
-                    ByVal Original_Koncern As String,  _
-                    ByVal Original_RegionID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_DelOmrådeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_GeoKodeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Totalområde As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_TotalområdePct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Primær As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PrimærPct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Oplag As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_UgedagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Format As String,  _
-                    ByVal Original_OrdredeadlineTekst As String,  _
-                    ByVal Original_OrdredeadlineRubrik As String,  _
-                    ByVal Original_MaterialedeadlineTekst As String,  _
-                    ByVal Original_MaterialedeadlineRubrik As String,  _
-                    ByVal Original_OrdreEmail As String,  _
-                    ByVal Original_OrdrecheckEmail As String,  _
-                    ByVal Original_OrdrecheckSendeDagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_SendetidOrdrecheck As String,  _
-                    ByVal Original_SendIndeværendeUge As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_StamdataEmail As String,  _
-                    ByVal Original_PrisforespørgselEmails As String,  _
-                    ByVal Original_OrienteringEmails As String,  _
-                    ByVal Original_Emails As String,  _
-                    ByVal Original_KontaktpersonerEmails As String,  _
-                    ByVal Original_BogholderiEmails As String,  _
-                    ByVal Original_MedieNetKode As String,  _
-                    ByVal Original_MatGodtBeløb As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Hjemmeside As String,  _
-                    ByVal Original_RedaktionEmail As String,  _
-                    ByVal Original_AnnonceEmail As String,  _
-                    ByVal Original_MaterialeEmail As String,  _
-                    ByVal Original_AnnonceKontrolEmail As String,  _
-                    ByVal Original_BilagsbladeEmail As String,  _
-                    ByVal Original_BogholderiKontaktperson As String,  _
-                    ByVal Original_FakturaGruppeID As Integer,  _
-                    ByVal Original_MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_Ophørt As Boolean,  _
-                    ByVal Original_VisPåWWW As Boolean) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_BladID As Integer) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_BladID,Integer)
-            If (Original_Navn Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Navn")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Navn,String)
-            End If
-            If (Original_Navn2 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_Navn2,String)
-            End If
-            If (Original_Adresse Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Adresse")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Adresse,String)
-            End If
-            If (Original_Adresse2 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Adresse2,String)
-            End If
-            If (Original_PostNr.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_PostNr.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Tlf Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Tlf")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_Tlf,String)
-            End If
-            If (Original_Fax Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Fax")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Fax,String)
-            End If
-            If (Original_CVR Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_CVR,String)
-            End If
-            If (Original_FIK Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_FIK,String)
-            End If
-            If (Original_Kontaktperson Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_Kontaktperson,String)
-            End If
-            If (Original_HovedgruppeID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_HovedgruppeID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemMåned.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_MedlemMåned.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemÅr.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_MedlemÅr.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemSiden.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_MedlemSiden.Value,Date)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Ejerforhold Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Ejerforhold")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(Original_Ejerforhold,String)
-            End If
-            If (Original_Koncern Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(27).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(27).Value = CType(Original_Koncern,String)
-            End If
-            If (Original_RegionID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(29).Value = CType(Original_RegionID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(29).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DelOmrådeID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(Original_DelOmrådeID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(31).Value = Global.System.DBNull.Value
-            End If
-            If (Original_GeoKodeID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(Original_GeoKodeID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(33).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Totalområde.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(Original_Totalområde.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(35).Value = Global.System.DBNull.Value
-            End If
-            If (Original_TotalområdePct.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(Original_TotalområdePct.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(37).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Primær.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(Original_Primær.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(39).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PrimærPct.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(Original_PrimærPct.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(41).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Oplag.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(43).Value = CType(Original_Oplag.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(43).Value = Global.System.DBNull.Value
-            End If
-            If (Original_UgedagID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(45).Value = CType(Original_UgedagID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(44).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(45).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Format Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(46).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(47).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(46).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(Original_Format,String)
-            End If
-            If (Original_OrdredeadlineTekst Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(49).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(Original_OrdredeadlineTekst,String)
-            End If
-            If (Original_OrdredeadlineRubrik Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(50).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(51).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(50).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(Original_OrdredeadlineRubrik,String)
-            End If
-            If (Original_MaterialedeadlineTekst Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(52).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(53).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(52).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(53).Value = CType(Original_MaterialedeadlineTekst,String)
-            End If
-            If (Original_MaterialedeadlineRubrik Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(55).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(54).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(55).Value = CType(Original_MaterialedeadlineRubrik,String)
-            End If
-            If (Original_OrdreEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(57).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(Original_OrdreEmail,String)
-            End If
-            If (Original_OrdrecheckEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(58).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(59).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(58).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(59).Value = CType(Original_OrdrecheckEmail,String)
-            End If
-            If (Original_OrdrecheckSendeDagID.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(61).Value = CType(Original_OrdrecheckSendeDagID.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(60).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(61).Value = Global.System.DBNull.Value
-            End If
-            If (Original_SendetidOrdrecheck Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(62).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(63).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(62).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(63).Value = CType(Original_SendetidOrdrecheck,String)
-            End If
-            If (Original_SendIndeværendeUge.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(Original_SendIndeværendeUge.Value,Boolean)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(64).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(65).Value = Global.System.DBNull.Value
-            End If
-            If (Original_StamdataEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(66).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(67).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(66).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(Original_StamdataEmail,String)
-            End If
-            If (Original_PrisforespørgselEmails Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(68).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(69).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(68).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(69).Value = CType(Original_PrisforespørgselEmails,String)
-            End If
-            If (Original_OrienteringEmails Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(70).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(71).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(70).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(71).Value = CType(Original_OrienteringEmails,String)
-            End If
-            If (Original_Emails Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(72).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(73).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(72).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(73).Value = CType(Original_Emails,String)
-            End If
-            If (Original_KontaktpersonerEmails Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(74).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(75).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(74).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(75).Value = CType(Original_KontaktpersonerEmails,String)
-            End If
-            If (Original_BogholderiEmails Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(77).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(76).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(77).Value = CType(Original_BogholderiEmails,String)
-            End If
-            If (Original_MedieNetKode Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(79).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(78).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(79).Value = CType(Original_MedieNetKode,String)
-            End If
-            If (Original_MatGodtBeløb.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(80).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(81).Value = CType(Original_MatGodtBeløb.Value,Byte)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(80).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(81).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Hjemmeside Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(83).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(82).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(83).Value = CType(Original_Hjemmeside,String)
-            End If
-            If (Original_RedaktionEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(84).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(85).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(84).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(85).Value = CType(Original_RedaktionEmail,String)
-            End If
-            If (Original_AnnonceEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(87).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(86).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(87).Value = CType(Original_AnnonceEmail,String)
-            End If
-            If (Original_MaterialeEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(88).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(89).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(88).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(89).Value = CType(Original_MaterialeEmail,String)
-            End If
-            If (Original_AnnonceKontrolEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(90).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(91).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(90).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(91).Value = CType(Original_AnnonceKontrolEmail,String)
-            End If
-            If (Original_BilagsbladeEmail Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(92).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(93).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(92).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(93).Value = CType(Original_BilagsbladeEmail,String)
-            End If
-            If (Original_BogholderiKontaktperson Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(94).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(95).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(94).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(95).Value = CType(Original_BogholderiKontaktperson,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(96).Value = CType(Original_FakturaGruppeID,Integer)
-            If (Original_MåGiveFarveRabat.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(98).Value = CType(Original_MåGiveFarveRabat.Value,Boolean)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(97).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(98).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.DeleteCommand.Parameters(99).Value = CType(Original_Ophørt,Boolean)
-            Me.Adapter.DeleteCommand.Parameters(100).Value = CType(Original_VisPåWWW,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8235,61 +7543,7 @@ Namespace dstBladStamdataTableAdapters
                     ByVal MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
                     ByVal Ophørt As Boolean,  _
                     ByVal VisPåWWW As Boolean,  _
-                    ByVal Original_BladID As Integer,  _
-                    ByVal Original_Navn As String,  _
-                    ByVal Original_Navn2 As String,  _
-                    ByVal Original_Adresse As String,  _
-                    ByVal Original_Adresse2 As String,  _
-                    ByVal Original_PostNr As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Tlf As String,  _
-                    ByVal Original_Fax As String,  _
-                    ByVal Original_CVR As String,  _
-                    ByVal Original_FIK As String,  _
-                    ByVal Original_Kontaktperson As String,  _
-                    ByVal Original_HovedgruppeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemMåned As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemÅr As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemSiden As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Ejerforhold As String,  _
-                    ByVal Original_Koncern As String,  _
-                    ByVal Original_RegionID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_DelOmrådeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_GeoKodeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Totalområde As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_TotalområdePct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Primær As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PrimærPct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Oplag As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_UgedagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Format As String,  _
-                    ByVal Original_OrdredeadlineTekst As String,  _
-                    ByVal Original_OrdredeadlineRubrik As String,  _
-                    ByVal Original_MaterialedeadlineTekst As String,  _
-                    ByVal Original_MaterialedeadlineRubrik As String,  _
-                    ByVal Original_OrdreEmail As String,  _
-                    ByVal Original_OrdrecheckEmail As String,  _
-                    ByVal Original_OrdrecheckSendeDagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_SendetidOrdrecheck As String,  _
-                    ByVal Original_SendIndeværendeUge As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_StamdataEmail As String,  _
-                    ByVal Original_PrisforespørgselEmails As String,  _
-                    ByVal Original_OrienteringEmails As String,  _
-                    ByVal Original_Emails As String,  _
-                    ByVal Original_KontaktpersonerEmails As String,  _
-                    ByVal Original_BogholderiEmails As String,  _
-                    ByVal Original_MedieNetKode As String,  _
-                    ByVal Original_MatGodtBeløb As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Hjemmeside As String,  _
-                    ByVal Original_RedaktionEmail As String,  _
-                    ByVal Original_AnnonceEmail As String,  _
-                    ByVal Original_MaterialeEmail As String,  _
-                    ByVal Original_AnnonceKontrolEmail As String,  _
-                    ByVal Original_BilagsbladeEmail As String,  _
-                    ByVal Original_BogholderiKontaktperson As String,  _
-                    ByVal Original_FakturaGruppeID As Integer,  _
-                    ByVal Original_MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_Ophørt As Boolean,  _
-                    ByVal Original_VisPåWWW As Boolean) As Integer
+                    ByVal Original_BladID As Integer) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BladID,Integer)
             If (Navn Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Navn")
@@ -8302,7 +7556,7 @@ Namespace dstBladStamdataTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Navn2,String)
             End If
             If (Adresse Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Adresse")
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Adresse,String)
             End If
@@ -8317,12 +7571,12 @@ Namespace dstBladStamdataTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (Tlf Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Tlf")
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Tlf,String)
             End If
             If (Fax Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Fax")
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Fax,String)
             End If
@@ -8565,356 +7819,6 @@ Namespace dstBladStamdataTableAdapters
             Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Ophørt,Boolean)
             Me.Adapter.UpdateCommand.Parameters(57).Value = CType(VisPåWWW,Boolean)
             Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_BladID,Integer)
-            If (Original_Navn Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Navn")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_Navn,String)
-            End If
-            If (Original_Navn2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_Navn2,String)
-            End If
-            If (Original_Adresse Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Adresse")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_Adresse,String)
-            End If
-            If (Original_Adresse2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_Adresse2,String)
-            End If
-            If (Original_PostNr.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_PostNr.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Tlf Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Tlf")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_Tlf,String)
-            End If
-            If (Original_Fax Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Fax")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_Fax,String)
-            End If
-            If (Original_CVR Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_CVR,String)
-            End If
-            If (Original_FIK Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_FIK,String)
-            End If
-            If (Original_Kontaktperson Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(Original_Kontaktperson,String)
-            End If
-            If (Original_HovedgruppeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Original_HovedgruppeID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemMåned.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(Original_MedlemMåned.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemÅr.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(Original_MedlemÅr.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
-            End If
-            If (Original_MedlemSiden.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(Original_MedlemSiden.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Ejerforhold Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Ejerforhold")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_Ejerforhold,String)
-            End If
-            If (Original_Koncern Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_Koncern,String)
-            End If
-            If (Original_RegionID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_RegionID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
-            End If
-            If (Original_DelOmrådeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_DelOmrådeID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
-            End If
-            If (Original_GeoKodeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_GeoKodeID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Totalområde.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_Totalområde.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
-            End If
-            If (Original_TotalområdePct.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_TotalområdePct.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Primær.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_Primær.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PrimærPct.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_PrimærPct.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Oplag.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_Oplag.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
-            End If
-            If (Original_UgedagID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_UgedagID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Format Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(105).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(104).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(105).Value = CType(Original_Format,String)
-            End If
-            If (Original_OrdredeadlineTekst Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(107).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(106).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(107).Value = CType(Original_OrdredeadlineTekst,String)
-            End If
-            If (Original_OrdredeadlineRubrik Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(109).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(108).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(109).Value = CType(Original_OrdredeadlineRubrik,String)
-            End If
-            If (Original_MaterialedeadlineTekst Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(111).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(110).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(111).Value = CType(Original_MaterialedeadlineTekst,String)
-            End If
-            If (Original_MaterialedeadlineRubrik Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(113).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(112).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(113).Value = CType(Original_MaterialedeadlineRubrik,String)
-            End If
-            If (Original_OrdreEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(115).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(114).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(115).Value = CType(Original_OrdreEmail,String)
-            End If
-            If (Original_OrdrecheckEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(117).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(116).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(117).Value = CType(Original_OrdrecheckEmail,String)
-            End If
-            If (Original_OrdrecheckSendeDagID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(119).Value = CType(Original_OrdrecheckSendeDagID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(118).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(119).Value = Global.System.DBNull.Value
-            End If
-            If (Original_SendetidOrdrecheck Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(121).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(120).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(121).Value = CType(Original_SendetidOrdrecheck,String)
-            End If
-            If (Original_SendIndeværendeUge.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(123).Value = CType(Original_SendIndeværendeUge.Value,Boolean)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(122).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(123).Value = Global.System.DBNull.Value
-            End If
-            If (Original_StamdataEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(125).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(124).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(125).Value = CType(Original_StamdataEmail,String)
-            End If
-            If (Original_PrisforespørgselEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(127).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(126).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(127).Value = CType(Original_PrisforespørgselEmails,String)
-            End If
-            If (Original_OrienteringEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(129).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(128).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(129).Value = CType(Original_OrienteringEmails,String)
-            End If
-            If (Original_Emails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(131).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(130).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(131).Value = CType(Original_Emails,String)
-            End If
-            If (Original_KontaktpersonerEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(133).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(132).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(133).Value = CType(Original_KontaktpersonerEmails,String)
-            End If
-            If (Original_BogholderiEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(135).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(134).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(135).Value = CType(Original_BogholderiEmails,String)
-            End If
-            If (Original_MedieNetKode Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(137).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(136).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(137).Value = CType(Original_MedieNetKode,String)
-            End If
-            If (Original_MatGodtBeløb.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(139).Value = CType(Original_MatGodtBeløb.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(138).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(139).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Hjemmeside Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(141).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(140).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(141).Value = CType(Original_Hjemmeside,String)
-            End If
-            If (Original_RedaktionEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(143).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(142).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(143).Value = CType(Original_RedaktionEmail,String)
-            End If
-            If (Original_AnnonceEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(145).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(144).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(145).Value = CType(Original_AnnonceEmail,String)
-            End If
-            If (Original_MaterialeEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(147).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(146).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(147).Value = CType(Original_MaterialeEmail,String)
-            End If
-            If (Original_AnnonceKontrolEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(149).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(148).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(149).Value = CType(Original_AnnonceKontrolEmail,String)
-            End If
-            If (Original_BilagsbladeEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(151).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(150).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(151).Value = CType(Original_BilagsbladeEmail,String)
-            End If
-            If (Original_BogholderiKontaktperson Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(153).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(152).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(153).Value = CType(Original_BogholderiKontaktperson,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(154).Value = CType(Original_FakturaGruppeID,Integer)
-            If (Original_MåGiveFarveRabat.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(156).Value = CType(Original_MåGiveFarveRabat.Value,Boolean)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(155).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(156).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(157).Value = CType(Original_Ophørt,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(158).Value = CType(Original_VisPåWWW,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8992,62 +7896,8 @@ Namespace dstBladStamdataTableAdapters
                     ByVal MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
                     ByVal Ophørt As Boolean,  _
                     ByVal VisPåWWW As Boolean,  _
-                    ByVal Original_BladID As Integer,  _
-                    ByVal Original_Navn As String,  _
-                    ByVal Original_Navn2 As String,  _
-                    ByVal Original_Adresse As String,  _
-                    ByVal Original_Adresse2 As String,  _
-                    ByVal Original_PostNr As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Tlf As String,  _
-                    ByVal Original_Fax As String,  _
-                    ByVal Original_CVR As String,  _
-                    ByVal Original_FIK As String,  _
-                    ByVal Original_Kontaktperson As String,  _
-                    ByVal Original_HovedgruppeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemMåned As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemÅr As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_MedlemSiden As Global.System.Nullable(Of Date),  _
-                    ByVal Original_Ejerforhold As String,  _
-                    ByVal Original_Koncern As String,  _
-                    ByVal Original_RegionID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_DelOmrådeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_GeoKodeID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Totalområde As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_TotalområdePct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Primær As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PrimærPct As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Oplag As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_UgedagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Format As String,  _
-                    ByVal Original_OrdredeadlineTekst As String,  _
-                    ByVal Original_OrdredeadlineRubrik As String,  _
-                    ByVal Original_MaterialedeadlineTekst As String,  _
-                    ByVal Original_MaterialedeadlineRubrik As String,  _
-                    ByVal Original_OrdreEmail As String,  _
-                    ByVal Original_OrdrecheckEmail As String,  _
-                    ByVal Original_OrdrecheckSendeDagID As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_SendetidOrdrecheck As String,  _
-                    ByVal Original_SendIndeværendeUge As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_StamdataEmail As String,  _
-                    ByVal Original_PrisforespørgselEmails As String,  _
-                    ByVal Original_OrienteringEmails As String,  _
-                    ByVal Original_Emails As String,  _
-                    ByVal Original_KontaktpersonerEmails As String,  _
-                    ByVal Original_BogholderiEmails As String,  _
-                    ByVal Original_MedieNetKode As String,  _
-                    ByVal Original_MatGodtBeløb As Global.System.Nullable(Of Byte),  _
-                    ByVal Original_Hjemmeside As String,  _
-                    ByVal Original_RedaktionEmail As String,  _
-                    ByVal Original_AnnonceEmail As String,  _
-                    ByVal Original_MaterialeEmail As String,  _
-                    ByVal Original_AnnonceKontrolEmail As String,  _
-                    ByVal Original_BilagsbladeEmail As String,  _
-                    ByVal Original_BogholderiKontaktperson As String,  _
-                    ByVal Original_FakturaGruppeID As Integer,  _
-                    ByVal Original_MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
-                    ByVal Original_Ophørt As Boolean,  _
-                    ByVal Original_VisPåWWW As Boolean) As Integer
-            Return Me.Update(Original_BladID, Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, OrdredeadlineRubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmail, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, BogholderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, SamannonceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW, Original_BladID, Original_Navn, Original_Navn2, Original_Adresse, Original_Adresse2, Original_PostNr, Original_Tlf, Original_Fax, Original_CVR, Original_FIK, Original_Kontaktperson, Original_HovedgruppeID, Original_MedlemMåned, Original_MedlemÅr, Original_MedlemSiden, Original_Ejerforhold, Original_Koncern, Original_RegionID, Original_DelOmrådeID, Original_GeoKodeID, Original_Totalområde, Original_TotalområdePct, Original_Primær, Original_PrimærPct, Original_Oplag, Original_UgedagID, Original_Format, Original_OrdredeadlineTekst, Original_OrdredeadlineRubrik, Original_MaterialedeadlineTekst, Original_MaterialedeadlineRubrik, Original_OrdreEmail, Original_OrdrecheckEmail, Original_OrdrecheckSendeDagID, Original_SendetidOrdrecheck, Original_SendIndeværendeUge, Original_StamdataEmail, Original_PrisforespørgselEmails, Original_OrienteringEmails, Original_Emails, Original_KontaktpersonerEmails, Original_BogholderiEmails, Original_MedieNetKode, Original_MatGodtBeløb, Original_Hjemmeside, Original_RedaktionEmail, Original_AnnonceEmail, Original_MaterialeEmail, Original_AnnonceKontrolEmail, Original_BilagsbladeEmail, Original_BogholderiKontaktperson, Original_FakturaGruppeID, Original_MåGiveFarveRabat, Original_Ophørt, Original_VisPåWWW)
+                    ByVal Original_BladID As Integer) As Integer
+            Return Me.Update(Original_BladID, Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, OrdredeadlineRubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmail, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, BogholderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, SamannonceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW, Original_BladID)
         End Function
     End Class
     

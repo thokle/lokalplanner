@@ -225,29 +225,30 @@ Public NotInheritable Class frmAbout
         '!!VIGTIGT !!
         'HUSK AT KØRE OPDATERING PÅ tblFarveTillægWebApp, SÅ EVT. NYE BLADID ER OPDATERET!!
         '!!VIGTIGT!!
-        mail.Subject = "RYKKER!! Nye priser pr. 1/1 2018 for " & BladNavn
+        mail.Subject = "RYKKER!! 2. halvårs priser pr. 1/7 2018 for " & BladNavn
         mail.Til = eMail
-        mail.BodyTitle = "RYKKER!! Nye priser pr. 1/1 2018."
-        sendHTML = "<h3>RYKKER!! Nye priser pr. 1. januar 2018.</h3>"
-        'sendHTML = sendHTML + "<br>Så nærmer tiden sig, hvor vi skal indhente jeres priser for 1. halvår 2018.<br><br>"
+        mail.BodyTitle = "Rykker 2. halvårs priser pr. 1/7 2018"
+        sendHTML = "<h3>Prisopdatering for 2. halvår 2018.</h3>"
 
-        sendHTML = sendHTML + "Vi har endnu ikke modtaget priser pr. 1/1 2018 fra jeres blad.<br><br>"
+        sendHTML = sendHTML + "Vi har endnu ikke modtaget priser pr. 1/7 2018 fra jeres blad.<br><br>"
+        sendHTML = sendHTML + "Du bedes opdatere/godkende jeres priser for 2. halvår 2018.<br><br>"
 
         'sendHTML = sendHTML + "Kære alle."
         'sendHTML = sendHTML + "Som nogen af jer har opdaget, er fristen på den tidligere mail forkert.<br>Vi beklager fejlen.<br><br>"
         'sendHTML = sendHTML + "Grundet bureauernes meget stor efterspørgsel på priser pr. 1.januar 2014,<br>skal vi derfor bede dig om at indtaste disse allerede i dag."
+        sendHTML = sendHTML + "Indtast venligst priserne senest <U><b>fredag d. 8. juni 2018.</b></u><br><br>"
 
-        sendHTML = sendHTML + "For at ændre priser, skal du benytte linket nederst i denne mail.<br><br>"
+        sendHTML = sendHTML + "For at ændre/godkende priser, skal du benytte linket nederst i denne mail.<br><br>"
         sendHTML = sendHTML + "De nævnte priser er de p.t. gældende mm-priser og såfremt der ikke er<br>"
         sendHTML = sendHTML + "nogen ændringer (priser, farvetillæg) skal I derfor blot godkende disse.<br><br>"
-        sendHTML = sendHTML + "Indtast venligst priserne senest <U><b>tirsdag d. 5. december 2017.</b></u><br><br>"
         '       sendHTML = sendHTML + "Der må kun bruges kommatal i priserne, hvis der er min/max priser for farver, skal dette være heltal.<br><br>"
         sendHTML = sendHTML + "Det er vigtigt at pointere, at eventuelle prisændringer <U>skal</U> lægges ind via den<br>hjemmeside, der åbnes ved brug af linket forneden.<br><B><I>Det er altså <U>ikke</U> nok, at sende en e-mail med priser/ændringer til DLU.</I></B><br><br>"
 
-        ' sendHTML = sendHTML + "<h3>OBS	OBS	OBS	OBS	OBS	OBS	OBS</h3>"
-        'sendHTML = sendHTML + "Har I endnu ikke 2018 priser klar til torsdag d. 16. november, så meld venligst tilbage på lej@delokaleugeaviser.dk, med hvilken dato I kan indtaste.<br><br>"
+        sendHTML = sendHTML + "<h3>OBS	OBS	Sommerpriser</h3>"
+        sendHTML = sendHTML + "Hvis der er forhøjede priser i sommerperioden skal disse indberettes manuelt<br>i en excel fil på mail til lej@delokaleugeaviser.dk<br><br>"
+        '  sendHTML = sendHTML + "Har I endnu ikke de nye priser så meld venligst tilbage på lej@delokaleugeaviser.dk<br><br>"
 
-        sendHTML = sendHTML + "På forhånd tak<br><br>Lone Ek Jensen<br>lej@delokaleugeaviser.dk<br>tlf: 35259589<br><br>"
+        sendHTML = sendHTML + "På forhånd tak<br><br>Lone Ek Jensen<br>tlf: 35 25 95 89<br><br>"
         sendHTML = sendHTML + "<br><h3>Link:</h3>"
         queryStr = "http://www.DiMP.dk/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
         '  sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">" & queryStr & "</A><br>"
@@ -259,7 +260,7 @@ Public NotInheritable Class frmAbout
         sendHTML = sendHTML + "http://www.DiMP.dk/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
 
         mail.Body = sendHTML 'convertDanishHTML(sendHTML)
-        mail.BodyMappe = "Z:\Forsendelser\mmPriser\01-01-2018 Rykker 2"
+        mail.BodyMappe = "Z:\Forsendelser\mmPriser\01-07-2018 Rykker"
         mail.BodyFilNavn = Trim(BladNavn) & " [" & eMail & "]"
         mail.From = "lej@delokaleugeaviser.dk"
         mail.Send()
@@ -276,10 +277,10 @@ Public NotInheritable Class frmAbout
 
   Private Sub btnNyePriser_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnNyePriser.Click
     ' TestAfIndrykningsDato()
-    Deadlines()
+    'Deadlines()
 
     'DataTilWeb()
-    ' NyePriser()
+    NyePriser()
     ' sendTjeklister()
     'sendPrimærOmråder()
   End Sub

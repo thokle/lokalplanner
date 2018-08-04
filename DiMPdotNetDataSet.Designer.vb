@@ -803,12 +803,9 @@ Partial Public Class DiMPdotNetDataSet
             Me.columnGruppeNavn.AllowDBNull = false
             Me.columnGruppeNavn.MaxLength = 30
             Me.columnNavn2.MaxLength = 30
-            Me.columnAdresse.AllowDBNull = false
             Me.columnAdresse.MaxLength = 30
             Me.columnAdresse2.MaxLength = 30
-            Me.columnTlf.AllowDBNull = false
             Me.columnTlf.MaxLength = 15
-            Me.columnFax.AllowDBNull = false
             Me.columnFax.MaxLength = 15
             Me.columnCVR.MaxLength = 15
             Me.columnRegionNavn.AllowDBNull = false
@@ -1139,7 +1136,11 @@ Partial Public Class DiMPdotNetDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Adresse() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.AdresseColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.AdresseColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Adresse' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.AdresseColumn) = value
@@ -1165,7 +1166,11 @@ Partial Public Class DiMPdotNetDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Tlf() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.TlfColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.TlfColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Tlf' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.TlfColumn) = value
@@ -1176,7 +1181,11 @@ Partial Public Class DiMPdotNetDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Fax() As String
             Get
-                Return CType(Me(Me.tabletblBladStamdata.FaxColumn),String)
+                Try 
+                    Return CType(Me(Me.tabletblBladStamdata.FaxColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fax' in table 'tblBladStamdata' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tabletblBladStamdata.FaxColumn) = value
@@ -1373,6 +1382,18 @@ Partial Public Class DiMPdotNetDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsAdresseNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.AdresseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetAdresseNull()
+            Me(Me.tabletblBladStamdata.AdresseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsAdresse2Null() As Boolean
             Return Me.IsNull(Me.tabletblBladStamdata.Adresse2Column)
         End Function
@@ -1381,6 +1402,30 @@ Partial Public Class DiMPdotNetDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetAdresse2Null()
             Me(Me.tabletblBladStamdata.Adresse2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsTlfNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.TlfColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetTlfNull()
+            Me(Me.tabletblBladStamdata.TlfColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsFaxNull() As Boolean
+            Return Me.IsNull(Me.tabletblBladStamdata.FaxColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetFaxNull()
+            Me(Me.tabletblBladStamdata.FaxColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1653,13 +1698,13 @@ Namespace DiMPdotNetDataSetTableAdapters
                 "    AVG(tblBladDækning.DækningsGrad) AS DækningsGrad, tblRegion.RegionNavn, tblR"& _ 
                 "egion.RegionSortKey, tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
                 "                   tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSor"& _ 
-                "tKey, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, tblDelOmråde.DelOmrådeSortKey"& _ 
-                ", "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStam"& _ 
-                "data.Navn2, tblBladStamdata.Adresse, tblBladStamdata.Adresse2, tblBladStamdata.T"& _ 
-                "lf, tblBladStamdata.Fax, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.CVR, tblBlad"& _ 
-                "Stamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.Ordr"& _ 
-                "edeadlineRubrik, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.MaterialedeadlineTek"& _ 
-                "st, tblBladStamdata.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
+                "tKey, tblBladStamdata.Ejerforhold, tblDelOmråde.DelOmrådeKode AS DelOmrådeNavn, "& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGr"& _ 
+                "upper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, tblBladStamdat"& _ 
+                "a.Adresse2, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.Tlf, tblBladStamdata.Fax,"& _ 
+                " tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.Ordredeadli"& _ 
+                "neTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.OrdredeadlineRubrik, tblBlad"& _ 
+                "Stamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
                 "          tblBladStamdata INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tbl"& _ 
                 "BladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
                 "   tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeI"& _ 
@@ -1697,29 +1742,28 @@ Namespace DiMPdotNetDataSetTableAdapters
                 "lf, tblBladStamdata.Fax, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.CVR, tblBlad"& _ 
                 "Stamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.Ordr"& _ 
                 "edeadlineRubrik, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.MaterialedeadlineTek"& _ 
-                "st, tblBladStamdata.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "          tblBladStamdata INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tbl"& _ 
-                "BladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "   tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeI"& _ 
-                "D INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde ON tblBladStamdata.DelOmråde"& _ 
-                "ID = tblDelOmråde.DelOmrådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrupper ON"& _ 
-                " tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
-                "            tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER JOI"& _ 
-                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.Post"& _ 
-                "Nr LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON tblBladStamdata.B"& _ 
-                "ladID = tblBladDækning.BladID LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage "& _ 
-                "ON tblBladStamdata.UgedagID = tblDage.DagID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblGrupper.Version = "& _ 
-                "1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostN"& _ 
-                "r, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "               tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe"& _ 
-                ".HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
-                "tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblG"& _ 
-                "rupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
-                "              tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax"& _ 
-                ", tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.Ordredeadl"& _ 
-                "ineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.OrdredeadlineRubrik, tblBla"& _ 
-                "dStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik, tblBl"& _ 
-                "adStamdata.Ejerforhold"
+                "st, tblBladStamdata.MaterialedeadlineRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblBladStamdata INN"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblG"& _ 
+                "eoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblHovedGruppe ON tblBladS"& _ 
+                "tamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID"& _ 
+                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrupper ON tblBladStamdata.FakturaGrupp"& _ 
+                "eID = tblGrupper.GruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblRegion ON tblB"& _ 
+                "ladStamdata.RegionID = tblRegion.RegionID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         t"& _ 
+                "blPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                tblBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID"& _ 
+                " LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage ON tblBladStamdata.UgedagID ="& _ 
+                " tblDage.DagID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblGrupper.Version = 1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamdata."& _ 
+                "BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegio"& _ 
+                "n.RegionNavn, tblRegion.RegionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode.Geo"& _ 
+                "KodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGru"& _ 
+                "ppe.HovedGruppeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde.DelOmrådeKode, t"& _ 
+                "blDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladSta"& _ 
+                "mdata.Navn2, tblBladStamdata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata"& _ 
+                ".Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBla"& _ 
+                "dStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
+                "        tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTe"& _ 
+                "kst, tblBladStamdata.MaterialedeadlineRubrik"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
@@ -1734,19 +1778,19 @@ Namespace DiMPdotNetDataSetTableAdapters
                 "                tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamd"& _ 
                 "ata.OrdredeadlineTekst, tblBladStamdata.OrdredeadlineRubrik, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
                 "        tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.Materialedeadlin"& _ 
-                "eRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblBladStamdata INNER JOIN"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON tblBladStamdata.BladID = tblBladDæk"& _ 
-                "ning.BladID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblPostNr ON tblBladDækning.Pos"& _ 
-                "tNr = tblPostNr.PostNr INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tblBla"& _ 
-                "dStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
-                "tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID I"& _ 
-                "NNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage ON tblBladStamdata.UgedagID = tblDag"& _ 
-                "e.DagID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde ON tblBladStamdata.Del"& _ 
-                "OmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrup"& _ 
-                "per ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"       "& _ 
-                "                  tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
-                "ERE        (tblBladDækning.DækningsGrad >= @DækningsGrad) AND (tblBladStamdata.O"& _ 
-                "phørt = 0) AND (tblGrupper.Version = 1) AND (tblHovedGruppe.HovedGruppeID < 2)"
+                "eRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblBladStamdata INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tb"& _ 
+                "lBladDækning ON tblBladStamdata.BladID = tblBladDækning.BladID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                    tblPostNr ON tblBladDækning.PostNr = tblPostNr.PostNr INNER "& _ 
+                "JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoK"& _ 
+                "ode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblHovedGruppe ON tblBladStam"& _ 
+                "data.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
+                "       tblDage ON tblBladStamdata.UgedagID = tblDage.DagID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
+                "                tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOm"& _ 
+                "rådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrupper ON tblBladStamdata.Faktur"& _ 
+                "aGruppeID = tblGrupper.GruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblRegion O"& _ 
+                "N tblBladStamdata.RegionID = tblRegion.RegionID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblBladDækning.Dæ"& _ 
+                "kningsGrad >= @DækningsGrad) AND (tblBladStamdata.Ophørt = 0) AND (tblGrupper.Ve"& _ 
+                "rsion = 1) AND (tblHovedGruppe.HovedGruppeID < 2)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DækningsGrad", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "DækningsGrad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
@@ -1794,29 +1838,28 @@ Namespace DiMPdotNetDataSetTableAdapters
                 "lf, tblBladStamdata.Fax, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.CVR, tblBlad"& _ 
                 "Stamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.Ordr"& _ 
                 "edeadlineRubrik, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.MaterialedeadlineTek"& _ 
-                "st, tblBladStamdata.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "          tblBladStamdata INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON"& _ 
-                " tblBladStamdata.BladID = tblBladDækning.BladID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
-                "     tblGeoKode ON tblBladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                         tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHo"& _ 
-                "vedGruppe.HovedGruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage ON tblBladS"& _ 
-                "tamdata.UgedagID = tblDage.DagID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmrå"& _ 
-                "de ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"       "& _ 
-                "                  tblGrupper ON tblBladStamdata.FakturaGruppeID = tblGrupper.Gru"& _ 
-                "ppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblRegion ON tblBladStamdata.RegionID"& _ 
-                " = tblRegion.RegionID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblPostNr ON tblBladS"& _ 
-                "tamdata.PostNr = tblPostNr.PostNr"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblBladStamdata.BladID = @Ugeav"& _ 
-                "isID) AND (tblGrupper.Version = 1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamdata.BladID, tblBladStam"& _ 
-                "data.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRe"& _ 
-                "gion.RegionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode.GeoKodeNavn, tblGeoKod"& _ 
-                "e.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSort"& _ 
-                "Key, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrå"& _ 
-                "deSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBla"& _ 
-                "dStamdata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.Adresse2, tblBladS"& _ 
-                "tamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktpe"& _ 
-                "rson, tblBladStamdata.OrdredeadlineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStam"& _ 
-                "data.OrdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdat"& _ 
-                "a.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"
+                "st, tblBladStamdata.MaterialedeadlineRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblBladStamdata INN"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON tblBladStamdata.BladID = tbl"& _ 
+                "BladDækning.BladID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tblBladSta"& _ 
+                "mdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblH"& _ 
+                "ovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER"& _ 
+                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage ON tblBladStamdata.UgedagID = tblDage.Da"& _ 
+                "gID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde ON tblBladStamdata.DelOmrå"& _ 
+                "deID = tblDelOmråde.DelOmrådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrupper "& _ 
+                "ON tblBladStamdata.FakturaGruppeID = tblGrupper.GruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              tblRegion ON tblBladStamdata.RegionID = tblRegion.RegionID INNER J"& _ 
+                "OIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblPostNr ON tblBladStamdata.PostNr = tblPostNr.Po"& _ 
+                "stNr"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblBladStamdata.BladID = @UgeavisID) AND (tblGrupper.Version"& _ 
+                " = 1)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamdata.BladID, tblBladStamdata.Navn, tblBladStamdata.Po"& _ 
+                "stNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.RegionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"       "& _ 
+                "                  tblGeoKode.GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGru"& _ 
+                "ppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
+                "   tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, t"& _ 
+                "blGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamdata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"        "& _ 
+                "                 tblBladStamdata.Adresse2, tblBladStamdata.Tlf, tblBladStamdata."& _ 
+                "Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, tblBladStamdata.Ordrede"& _ 
+                "adlineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.OrdredeadlineRubrik, tbl"& _ 
+                "BladStamdata.MaterialedeadlineTekst, tblBladStamdata.MaterialedeadlineRubrik"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UgeavisID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
@@ -1832,33 +1875,31 @@ Namespace DiMPdotNetDataSetTableAdapters
                 "lf, tblBladStamdata.Fax, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.CVR, tblBlad"& _ 
                 "Stamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, tblBladStamdata.Ordr"& _ 
                 "edeadlineRubrik, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.MaterialedeadlineTek"& _ 
-                "st, tblBladStamdata.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "          tblBladStamdata INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tbl"& _ 
-                "BladStamdata.GeoKodeID = tblGeoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "   tblHovedGruppe ON tblBladStamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeI"& _ 
-                "D INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde ON tblBladStamdata.DelOmråde"& _ 
-                "ID = tblDelOmråde.DelOmrådeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblRegion ON "& _ 
-                "tblBladStamdata.RegionID = tblRegion.RegionID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "   tblPostNr ON tblBladStamdata.PostNr = tblPostNr.PostNr INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "               tblMedIGruppe ON tblBladStamdata.BladID = tblMedIGruppe.ID INNER "& _ 
-                "JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGrupper ON tblMedIGruppe.GruppeID = tblGrupper"& _ 
-                ".GruppeID AND tblMedIGruppe.Version = tblGrupper.Version INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
-                "              tblAktivGruppeVersion ON tblGrupper.Version = tblAktivGruppeVersio"& _ 
-                "n.AktivVersion LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON tblBl"& _ 
-                "adStamdata.BladID = tblBladDækning.BladID LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    tblDage ON tblBladStamdata.UgedagID = tblDage.DagID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblBladSt"& _ 
-                "amdata.Ophørt = 0) AND (tblHovedGruppe.HovedGruppeID < 2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamd"& _ 
-                "ata.BladID, tblBladStamdata.Navn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblR"& _ 
-                "egion.RegionNavn, tblRegion.RegionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode"& _ 
-                ".GeoKodeNavn, tblGeoKode.GeoKodeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHove"& _ 
-                "dGruppe.HovedGruppeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde.DelOmrådeKod"& _ 
-                "e, tblDelOmråde.DelOmrådeSortKey, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBla"& _ 
-                "dStamdata.Navn2, tblBladStamdata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStam"& _ 
-                "data.Adresse2, tblBladStamdata.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tb"& _ 
-                "lBladStamdata.Kontaktperson, tblBladStamdata.OrdredeadlineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"             "& _ 
-                "            tblBladStamdata.OrdredeadlineRubrik, tblBladStamdata.Materialedeadli"& _ 
-                "neTekst, tblBladStamdata.MaterialedeadlineRubrik, tblBladStamdata.Ejerforhold"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"O"& _ 
-                "RDER BY tblGrupper.GruppeNavn"
+                "st, tblBladStamdata.MaterialedeadlineRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblBladStamdata INN"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode ON tblBladStamdata.GeoKodeID = tblG"& _ 
+                "eoKode.GeoKodeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblHovedGruppe ON tblBladS"& _ 
+                "tamdata.HovedgruppeID = tblHovedGruppe.HovedGruppeID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          tblDelOmråde ON tblBladStamdata.DelOmrådeID = tblDelOmråde.DelOmrådeID"& _ 
+                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblRegion ON tblBladStamdata.RegionID = tb"& _ 
+                "lRegion.RegionID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblPostNr ON tblBladStamda"& _ 
+                "ta.PostNr = tblPostNr.PostNr INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblMedIGruppe "& _ 
+                "ON tblBladStamdata.BladID = tblMedIGruppe.ID INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "  tblGrupper ON tblMedIGruppe.GruppeID = tblGrupper.GruppeID AND tblMedIGruppe.V"& _ 
+                "ersion = tblGrupper.Version INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblAktivGruppeV"& _ 
+                "ersion ON tblGrupper.Version = tblAktivGruppeVersion.AktivVersion LEFT OUTER JOI"& _ 
+                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladDækning ON tblBladStamdata.BladID = tblBladDæ"& _ 
+                "kning.BladID LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDage ON tblBladStamdat"& _ 
+                "a.UgedagID = tblDage.DagID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (tblBladStamdata.Ophørt = 0) AND (tblHo"& _ 
+                "vedGruppe.HovedGruppeID < 2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY tblBladStamdata.BladID, tblBladStamdata.N"& _ 
+                "avn, tblBladStamdata.PostNr, tblPostNr.PostBy, tblRegion.RegionNavn, tblRegion.R"& _ 
+                "egionSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblGeoKode.GeoKodeNavn, tblGeoKode.GeoK"& _ 
+                "odeSortKey, tblHovedGruppe.HovedGruppeNavn, tblHovedGruppe.HovedGruppeSortKey, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblDelOmråde.DelOmrådeKode, tblDelOmråde.DelOmrådeSort"& _ 
+                "Key, tblDage.DagNavn, tblGrupper.GruppeNavn, tblBladStamdata.Navn2, tblBladStamd"& _ 
+                "ata.Adresse, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.Adresse2, tblBladStamdat"& _ 
+                "a.Tlf, tblBladStamdata.Fax, tblBladStamdata.CVR, tblBladStamdata.Kontaktperson, "& _ 
+                "tblBladStamdata.OrdredeadlineTekst, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         tblBladStamdata.O"& _ 
+                "rdredeadlineRubrik, tblBladStamdata.MaterialedeadlineTekst, tblBladStamdata.Mate"& _ 
+                "rialedeadlineRubrik"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY tblGrupper.GruppeNavn"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1892,9 +1933,13 @@ Namespace DiMPdotNetDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByDækningsGrad(ByVal dataTable As DiMPdotNetDataSet.tblBladStamdataDataTable, ByVal DækningsGrad As Integer) As Integer
+        Public Overloads Overridable Function FillByDækningsGrad(ByVal dataTable As DiMPdotNetDataSet.tblBladStamdataDataTable, ByVal DækningsGrad As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(DækningsGrad,Integer)
+            If (DækningsGrad.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(DækningsGrad.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If

@@ -441,7 +441,7 @@ Partial Class dataSourceMedieplan
       If pris > 20 Then
         pris = pris / arow("Mm")
         arow("MåGiveMmRabat") = False
-        arow("New MmRabat") = 0
+        '   arow("New MmRabat") = 0
       Else
         arow("MåGiveMmRabat") = True
       End If
