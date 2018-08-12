@@ -45,7 +45,7 @@ Partial Class frmCheckTekst
     '
     Me.btnLuk.Anchor = System.Windows.Forms.AnchorStyles.Bottom
     Me.btnLuk.Enabled = False
-    Me.btnLuk.Location = New System.Drawing.Point(392, 584)
+    Me.btnLuk.Location = New System.Drawing.Point(392, 578)
     Me.btnLuk.Name = "btnLuk"
     Me.btnLuk.Size = New System.Drawing.Size(75, 23)
     Me.btnLuk.TabIndex = 1

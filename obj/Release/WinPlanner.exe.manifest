@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Resources\dlulogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="WinPlanner" version="7.6.11.837" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="WinPlanner" version="7.8.10.2023" language="neutral" processorArchitecture="msil" />
     <commandLine file="WinPlanner.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -85,7 +85,7 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="common.dll" size="520568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.dll" size="520568">
       <assemblyIdentity name="Common" version="1.0.0.9" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
@@ -313,14 +313,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4811776">
-      <assemblyIdentity name="WinPlanner" version="7.6.11.837" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4762624">
+      <assemblyIdentity name="WinPlanner" version="7.8.10.2023" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>1HldchFVDKCLB0Qv7XjbHeFsL+s=</dsig:DigestValue>
+        <dsig:DigestValue>qf+YjK3pm/o6vG2x5p6U8MM9pm0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

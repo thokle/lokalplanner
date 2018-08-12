@@ -1462,7 +1462,11 @@ Public Class frmMain
         End If
       End If
     End If
-  End Sub
+    End Sub
+
+    Private Sub frmMain_LocationChanged(sender As Object, e As System.EventArgs) Handles Me.LocationChanged
+
+    End Sub
 
   Private Sub frmMain_MdiChildActivate(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.MdiChildActivate
     If TypeOf (Me.ActiveMdiChild) Is FrmBladStamData Then

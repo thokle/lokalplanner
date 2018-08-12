@@ -7,8 +7,6 @@ H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.application
 H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.exe
 H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.pdb
 H:\Lokal planner.Net\WinPlanner\bin\Release\WinPlanner.xml
-H:\Lokal planner.Net\WinPlanner\bin\Release\AxInterop.InetCtlsObjects.dll
-H:\Lokal planner.Net\WinPlanner\bin\Release\common.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.CrystalReports.Engine.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.ReportSource.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\CrystalDecisions.Shared.dll
@@ -30,8 +28,6 @@ H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinTabControl
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.UltraWinToolbars.v14.2.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
-H:\Lokal planner.Net\WinPlanner\bin\Release\Rebex.Net.Ftp.dll
-H:\Lokal planner.Net\WinPlanner\bin\Release\Rebex.Net.ProxySocket.dll
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Core.v14.2.xml
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Documents.Excel.v14.2.xml
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.v14.2.xml
@@ -49,7 +45,6 @@ H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.Misc.v14.2.xml
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Win.AppStylistSupport.v14.2.xml
 H:\Lokal planner.Net\WinPlanner\bin\Release\Infragistics4.Shared.v14.2.xml
 H:\Lokal planner.Net\WinPlanner\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
-H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmKommentar.resources
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMedieplan.resources
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.frmMiljøTillæg.resources
@@ -100,3 +95,4 @@ H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.application
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.exe
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.xml
 H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.pdb
+H:\Lokal planner.Net\WinPlanner\obj\Release\WinPlanner.vbprojResolveAssemblyReference.cache

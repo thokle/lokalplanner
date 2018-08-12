@@ -99,7 +99,12 @@ Public Class frmMedieplan
     If _modul = "Medieplan" Then
       btnMateriale.Visible = False
       txtMaterialeFølgerFraLeverandør.Visible = False
-      optSammeMateriale.Visible = True
+            optSammeMateriale.Visible = True
+            lblRekvisitionsNr.Visible = False
+
+            txtFakturaBemærkning.Visible = False
+
+
     End If
     If _modul = "Fakturering" Then
       picPipeline.Image = My.Resources.FaktureringHeader
@@ -109,7 +114,8 @@ Public Class frmMedieplan
       txtBemærkningTilAnnoncør.Visible = False
       lblBemærkningTilAnnoncør.Visible = False
       lblRekvisitionsNr.Visible = True
-      txtRekvisitionsNr.Visible = True
+
+            txtFakturaBemærkning.Visible = True
       txtHistorik.Visible = True
     End If
     Me.TblUgeaviserTableAdapter.Fill(Me.UgeavisListeDropdown.tblUgeaviser)
@@ -414,90 +420,94 @@ Public Class frmMedieplan
   Private Function LoadData() As Boolean
     Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
     Dim table As New dstMedieplan.tblMedieplanDataTable
+        Dim fak As String = _fakService.getFakturaBemærkng(_medieplanNr)
 
-        txtRekvisitionsNr.Text = _fakService.getFakturaBemærkng(_medieplanNr)
+      
+        txtFakturaBemærkning.Value = fak
+
+      
 
 
         DataSourceMedieplan.MedieplanNr = _medieplanNr
-    DataSourceMedieplan.Version = _version
-    _DataValues.MedieplanNr = _medieplanNr
-    _DataValues.Version = _version
-    resetGridCellFont()
-    If ta.Fill(table, _medieplanNr, _version) > 0 Then
-      cboAnnoncørNO_.Value = table(0).AnnoncørNo_
-      cboBureauNO_.Value = table(0).BureauNo_
-      txtFormat1.Value = table(0).Format1
-      txtFormat2.Value = table(0).Format2
-      optAntalFarver.Value = table(0).AntalFarver
-      cboDPKulørID.Value = table(0).DPKulørID
-      cboPlaceringID.Value = table(0).PlaceringID
-      numIndrykningsUge.Value = table(0).IndrykningsUge
-      numIndrykningsÅr.Value = table(0).IndrykningsÅr
-      txtBemærkningTilAnnoncør.Value = table(0).BemærkningTilAnnoncør
-      txtBemærkningTilUgeavis.Value = table(0).BemærkningTilBlade
-      txtBeskrivelse.Value = table(0).Beskrivelse
-      _DataValues.Kontaktperson = table(0).Kontaktperson
-      _DataValues.KontaktpersonTilhører = table(0).KontaktpersonTilhører
-      txtOverskrift.Value = table(0).Overskrift
-      optFakturering.Value = table(0).Fakturering
-      txtRekvisitionsNr.Value = table(0).RekvisitionsNr
-      optBilagsBladeTil.Value = table(0).BilagsBladeTil
-      _DataValues.BilagsBladeTilNavn = table(0).BilagsBladeTilNavn
-      _DataValues.BilagsBladeTilAdresse = table(0).BilagsBladeTilAdresse
-      _DataValues.BilagsBladeTilPostNr = table(0).BilagsBladeTilPostNr
-      txtBilagsBladeAtt.Value = table(0).BilagsBladeATT
-      optMaterialeFølgerFra.Value = table(0).MaterialeFølgerFra
-      txtMaterialeFølgerFraLeverandør.Value = table(0).MaterialeFølgerFraLeverandør
-      txtBrugMaterialeFraUge.Value = table(0).BrugMaterialeFraUge
-      optSammeMateriale.Value = table(0).SammeMateriale
-      chkKunForhandlerBundForskellig.Checked = table(0).KunForhandlerBundForskellig
-      txtFællesBureauOrdreNr.Value = table(0).FællesBureauOrdreNr
-      chkFarveSærRabat.Checked = table(0).TilladFarveSærRabat
-      chkMmSærRabat.Checked = table(0).TilladMmSærRabat
-      'chkWebTillægOpkræves.Checked = table(0).WebTillægOpkræves
-      chkMiljøTillægOpkræves.Checked = table(0).MiljøTillægOpkræves
-      clbMiljøTillægOpkræves.SetItemChecked(0, table(0).OpkrævJyskeMiljøTillæg)
-      _DataValues.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
-      DataSourceMedieplan.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
-      clbMiljøTillægOpkræves.SetItemChecked(1, table(0).OpkrævFynskeMiljøTillæg)
-      _DataValues.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
-      DataSourceMedieplan.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
-      clbMiljøTillægOpkræves.SetItemChecked(2, table(0).OpkrævNorthMiljøTillæg)
-      _DataValues.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
-      DataSourceMedieplan.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
-      clbMiljøTillægOpkræves.SetItemChecked(3, table(0).OpkrævDSVPMiljøTillæg)
-      _DataValues.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
-      DataSourceMedieplan.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
-      clbMiljøTillægOpkræves.SetItemChecked(4, table(0).OpkrævJyskeMedierASTillæg)
-      _DataValues.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
-      DataSourceMedieplan.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
-      _DataValues.TilladFarveSærRabat = table(0).TilladFarveSærRabat
-      _DataValues.TilladMmSærRabat = table(0).TilladMmSærRabat
-      _status = table(0).Status
-      _DataValues.RettelserEfterAnnoncekontrol = table(0).RettelserEfterAnnoncekontrol
-      DataSourceMedieplan.Status = table(0).Status
-      _DataValues.Status = _status
-      _DataValues.SetOldValuesToNewValues()
-      lblMedieplanNr.Text = getMedieplanString(_medieplanNr, _version)
-      Me.Text = "P:" & getMedieplanString(_medieplanNr, _version)
-      picGul.Tag = "Off"
-      picGul.Image = My.Resources.StatusLedYellowOff
-      picGrøn.Tag = "On"
-      picGrøn.Image = My.Resources.StatusLedGreenOn
-      picRød.Tag = "Off"
-      picRød.Image = My.Resources.StatusLedRedOff
-      If DataSourceMedieplan.LoadData() Then
-        setStatus(_status)
-        timer365.Enabled = True
-        Return True
-      Else
-        MsgBox("Fejl ved indlæsning af plan Linjer")
-        Return False
-      End If
-    Else
-      MsgBox("Fejl ved indlæsning af plan Hoved")
-      Return False
-    End If
+        DataSourceMedieplan.Version = _version
+        _DataValues.MedieplanNr = _medieplanNr
+        _DataValues.Version = _version
+        resetGridCellFont()
+        If ta.Fill(table, _medieplanNr, _version) > 0 Then
+            cboAnnoncørNO_.Value = table(0).AnnoncørNo_
+            cboBureauNO_.Value = table(0).BureauNo_
+            txtFormat1.Value = table(0).Format1
+            txtFormat2.Value = table(0).Format2
+            optAntalFarver.Value = table(0).AntalFarver
+            cboDPKulørID.Value = table(0).DPKulørID
+            cboPlaceringID.Value = table(0).PlaceringID
+            numIndrykningsUge.Value = table(0).IndrykningsUge
+            numIndrykningsÅr.Value = table(0).IndrykningsÅr
+            txtBemærkningTilAnnoncør.Value = table(0).BemærkningTilAnnoncør
+            txtBemærkningTilUgeavis.Value = table(0).BemærkningTilBlade
+            txtBeskrivelse.Value = table(0).Beskrivelse
+            _DataValues.Kontaktperson = table(0).Kontaktperson
+            _DataValues.KontaktpersonTilhører = table(0).KontaktpersonTilhører
+            txtOverskrift.Value = table(0).Overskrift
+            optFakturering.Value = table(0).Fakturering
+
+            optBilagsBladeTil.Value = table(0).BilagsBladeTil
+            _DataValues.BilagsBladeTilNavn = table(0).BilagsBladeTilNavn
+            _DataValues.BilagsBladeTilAdresse = table(0).BilagsBladeTilAdresse
+            _DataValues.BilagsBladeTilPostNr = table(0).BilagsBladeTilPostNr
+            txtBilagsBladeAtt.Value = table(0).BilagsBladeATT
+            optMaterialeFølgerFra.Value = table(0).MaterialeFølgerFra
+            txtMaterialeFølgerFraLeverandør.Value = table(0).MaterialeFølgerFraLeverandør
+            txtBrugMaterialeFraUge.Value = table(0).BrugMaterialeFraUge
+            optSammeMateriale.Value = table(0).SammeMateriale
+            chkKunForhandlerBundForskellig.Checked = table(0).KunForhandlerBundForskellig
+            txtFællesBureauOrdreNr.Value = table(0).FællesBureauOrdreNr
+            chkFarveSærRabat.Checked = table(0).TilladFarveSærRabat
+            chkMmSærRabat.Checked = table(0).TilladMmSærRabat
+            'chkWebTillægOpkræves.Checked = table(0).WebTillægOpkræves
+            chkMiljøTillægOpkræves.Checked = table(0).MiljøTillægOpkræves
+            clbMiljøTillægOpkræves.SetItemChecked(0, table(0).OpkrævJyskeMiljøTillæg)
+            _DataValues.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
+            DataSourceMedieplan.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(1, table(0).OpkrævFynskeMiljøTillæg)
+            _DataValues.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
+            DataSourceMedieplan.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(2, table(0).OpkrævNorthMiljøTillæg)
+            _DataValues.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
+            DataSourceMedieplan.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(3, table(0).OpkrævDSVPMiljøTillæg)
+            _DataValues.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
+            DataSourceMedieplan.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(4, table(0).OpkrævJyskeMedierASTillæg)
+            _DataValues.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
+            DataSourceMedieplan.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
+            _DataValues.TilladFarveSærRabat = table(0).TilladFarveSærRabat
+            _DataValues.TilladMmSærRabat = table(0).TilladMmSærRabat
+            _status = table(0).Status
+            _DataValues.RettelserEfterAnnoncekontrol = table(0).RettelserEfterAnnoncekontrol
+            DataSourceMedieplan.Status = table(0).Status
+            _DataValues.Status = _status
+            _DataValues.SetOldValuesToNewValues()
+            lblMedieplanNr.Text = getMedieplanString(_medieplanNr, _version)
+            Me.Text = "P:" & getMedieplanString(_medieplanNr, _version)
+            picGul.Tag = "Off"
+            picGul.Image = My.Resources.StatusLedYellowOff
+            picGrøn.Tag = "On"
+            picGrøn.Image = My.Resources.StatusLedGreenOn
+            picRød.Tag = "Off"
+            picRød.Image = My.Resources.StatusLedRedOff
+            If DataSourceMedieplan.LoadData() Then
+                setStatus(_status)
+                timer365.Enabled = True
+                Return True
+            Else
+                MsgBox("Fejl ved indlæsning af plan Linjer")
+                Return False
+            End If
+        Else
+            MsgBox("Fejl ved indlæsning af plan Hoved")
+            Return False
+        End If
   End Function
 
   Private Sub setStatus(ByVal status As StatusKoder)
@@ -4328,5 +4338,5 @@ Public Class frmMedieplan
     End If
   End Sub
 
-   
+
 End Class
