@@ -4338,5 +4338,15 @@ Public Class frmMedieplan
     End If
   End Sub
 
+    Private Sub updateFakturaBemTekst(semder As System.Object, e As System.EventArgs) Handles txtFakturaBemærkning.KeyUp, txtFakturaBemærkning.Leave
+
+        Dim valn As String = txtFakturaBemærkning.Value
+        Dim firsIndex = valn.IndexOf(",")
+        Dim updateString = valn.Substring(firsIndex, valn.Length + 1)
+        If updateString > 0 Then
+            _fakService.UpdateFakuraBemærkning(updateString, _medieplanNr)
+        End If
+
+    End Sub
 
 End Class

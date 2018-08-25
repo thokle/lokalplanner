@@ -839,22 +839,14 @@ Namespace dstFakturaBemærkningTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FakturaBemærkning3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [tblMedieplanNr] SET [FakturaBemærkning1] = @FakturaBemærkning1, [FakturaB"& _ 
-                "emærkning2] = @FakturaBemærkning2, [FakturaBemærkning3] = @FakturaBemærkning3 WH"& _ 
-                "ERE (([MedieplanNr] = @Original_MedieplanNr) AND ([FakturaBemærkning1] = @Origin"& _ 
-                "al_FakturaBemærkning1) AND ([FakturaBemærkning2] = @Original_FakturaBemærkning2)"& _ 
-                " AND ([FakturaBemærkning3] = @Original_FakturaBemærkning3));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MedieplanNr"& _ 
-                ", FakturaBemærkning1, FakturaBemærkning2, FakturaBemærkning3 FROM tblMedieplanNr"& _ 
-                " WHERE (MedieplanNr = @MedieplanNr)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE       tblMedieplanNr"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                FakturaBemærkning3 = @FakturaBemæ"& _ 
+                "rkning3"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MedieplanNr = @Original_MedieplanNr); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MedieplanN"& _ 
+                "r, FakturaBemærkning1, FakturaBemærkning2, FakturaBemærkning3 FROM tblMedieplanN"& _ 
+                "r WHERE (MedieplanNr = @MedieplanNr)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FakturaBemærkning1", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FakturaBemærkning2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FakturaBemærkning3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedieplanNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FakturaBemærkning1", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning1", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FakturaBemærkning2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FakturaBemærkning3", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning3", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MedieplanNr", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FakturaBemærkning3", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "FakturaBemærkning3", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedieplanNr", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MedieplanNr", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1005,39 +997,14 @@ Namespace dstFakturaBemærkningTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal FakturaBemærkning1 As String, ByVal FakturaBemærkning2 As String, ByVal FakturaBemærkning3 As String, ByVal Original_MedieplanNr As Integer, ByVal Original_FakturaBemærkning1 As String, ByVal Original_FakturaBemærkning2 As String, ByVal Original_FakturaBemærkning3 As String, ByVal MedieplanNr As Integer) As Integer
-            If (FakturaBemærkning1 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("FakturaBemærkning1")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(FakturaBemærkning1,String)
-            End If
-            If (FakturaBemærkning2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("FakturaBemærkning2")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(FakturaBemærkning2,String)
-            End If
+        Public Overloads Overridable Function Update(ByVal FakturaBemærkning3 As String, ByVal Original_MedieplanNr As Integer, ByVal MedieplanNr As Integer) As Integer
             If (FakturaBemærkning3 Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("FakturaBemærkning3")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(FakturaBemærkning3,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(FakturaBemærkning3,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_MedieplanNr,Integer)
-            If (Original_FakturaBemærkning1 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FakturaBemærkning1")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_FakturaBemærkning1,String)
-            End If
-            If (Original_FakturaBemærkning2 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FakturaBemærkning2")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_FakturaBemærkning2,String)
-            End If
-            If (Original_FakturaBemærkning3 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FakturaBemærkning3")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_FakturaBemærkning3,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(MedieplanNr,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Original_MedieplanNr,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(MedieplanNr,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1051,14 +1018,6 @@ Namespace dstFakturaBemærkningTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal FakturaBemærkning1 As String, ByVal FakturaBemærkning2 As String, ByVal FakturaBemærkning3 As String, ByVal Original_MedieplanNr As Integer, ByVal Original_FakturaBemærkning1 As String, ByVal Original_FakturaBemærkning2 As String, ByVal Original_FakturaBemærkning3 As String) As Integer
-            Return Me.Update(FakturaBemærkning1, FakturaBemærkning2, FakturaBemærkning3, Original_MedieplanNr, Original_FakturaBemærkning1, Original_FakturaBemærkning2, Original_FakturaBemærkning3, Original_MedieplanNr)
         End Function
     End Class
     
