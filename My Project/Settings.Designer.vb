@@ -57,9 +57,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DLU02;Initial Catalog=DiMPdotNet;Persist Security Info=True;User ID=L"& _ 
-            "ocalPlanner;Password=lp4DLU;MultipleActiveResultSets=True;Connect Timeout=30;Net"& _ 
-            "work Library=dbmssocn")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DLU02;Initial Catalog=DiMPdotNet_Test_23082018;Persist Security Info="& _ 
+            "True;User ID=LocalPlanner;Password=lp4DLU;MultipleActiveResultSets=True;Connect "& _ 
+            "Timeout=30;Network Library=dbmssocn")>  _
         Public ReadOnly Property DiMPdotNetConnectionString() As String
             Get
                 Return CType(Me("DiMPdotNetConnectionString"),String)

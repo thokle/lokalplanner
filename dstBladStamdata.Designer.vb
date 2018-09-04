@@ -7263,45 +7263,51 @@ Namespace dstBladStamdataTableAdapters
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [tblBladStamdata] WHERE (([BladID] = @Original_BladID))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO tblBladStamdata"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Navn, BladID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES     "& _ 
+                "   (@Navn,@BladId)"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Navn", Global.System.Data.SqlDbType.NChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [tblBladStamdata] SET [BladID] = @BladID, [Navn] = @Navn, [Navn2] = @Navn2"& _ 
-                ", [Adresse] = @Adresse, [Adresse2] = @Adresse2, [PostNr] = @PostNr, [Tlf] = @Tlf"& _ 
-                ", [Fax] = @Fax, [CVR] = @CVR, [FIK] = @FIK, [Kontaktperson] = @Kontaktperson, [H"& _ 
-                "ovedgruppeID] = @HovedgruppeID, [MedlemMåned] = @MedlemMåned, [MedlemÅr] = @Medl"& _ 
-                "emÅr, [MedlemSiden] = @MedlemSiden, [Ejerforhold] = @Ejerforhold, [Koncern] = @K"& _ 
-                "oncern, [RegionID] = @RegionID, [DelOmrådeID] = @DelOmrådeID, [GeoKodeID] = @Geo"& _ 
-                "KodeID, [Totalområde] = @Totalområde, [TotalområdePct] = @TotalområdePct, [Primæ"& _ 
-                "r] = @Primær, [PrimærPct] = @PrimærPct, [WWWDækningSomTekst] = @WWWDækningSomTek"& _ 
-                "st, [Oplag] = @Oplag, [UgedagID] = @UgedagID, [Format] = @Format, [Ordredeadline"& _ 
-                "Tekst] = @OrdredeadlineTekst, [OrdredeadlineRubrik] = @OrdredeadlineRubrik, [Mat"& _ 
-                "erialedeadlineTekst] = @MaterialedeadlineTekst, [MaterialedeadlineRubrik] = @Mat"& _ 
-                "erialedeadlineRubrik, [OrdreEmail] = @OrdreEmail, [OrdrecheckEmail] = @Ordrechec"& _ 
-                "kEmail, [OrdrecheckSendeDagID] = @OrdrecheckSendeDagID, [SendetidOrdrecheck] = @"& _ 
-                "SendetidOrdrecheck, [SendIndeværendeUge] = @SendIndeværendeUge, [StamdataEmail] "& _ 
-                "= @StamdataEmail, [PrisforespørgselEmails] = @PrisforespørgselEmails, [Orienteri"& _ 
-                "ngEmails] = @OrienteringEmails, [Emails] = @Emails, [KontaktpersonerEmails] = @K"& _ 
-                "ontaktpersonerEmails, [BogholderiEmails] = @BogholderiEmails, [MedieNetKode] = @"& _ 
-                "MedieNetKode, [MatGodtBeløb] = @MatGodtBeløb, [Hjemmeside] = @Hjemmeside, [Redak"& _ 
-                "tionEmail] = @RedaktionEmail, [AnnonceEmail] = @AnnonceEmail, [MaterialeEmail] ="& _ 
-                " @MaterialeEmail, [AnnonceKontrolEmail] = @AnnonceKontrolEmail, [BilagsbladeEmai"& _ 
-                "l] = @BilagsbladeEmail, [GruppeRabat] = @GruppeRabat, [SamannonceringsRabat] = @"& _ 
-                "SamannonceringsRabat, [BogholderiKontaktperson] = @BogholderiKontaktperson, [Fak"& _ 
-                "turaGruppeID] = @FakturaGruppeID, [MåGiveFarveRabat] = @MåGiveFarveRabat, [Ophør"& _ 
-                "t] = @Ophørt, [VisPåWWW] = @VisPåWWW WHERE (([BladID] = @Original_BladID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
-                "ECT BladID, Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktp"& _ 
-                "erson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, "& _ 
-                "RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct"& _ 
-                ", WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, Ordredeadline"& _ 
-                "Rubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckE"& _ 
-                "mail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmai"& _ 
-                "l, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, Bog"& _ 
-                "holderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEm"& _ 
-                "ail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, Samanno"& _ 
-                "nceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophør"& _ 
-                "t, VisPåWWW FROM tblBladStamdata WHERE (BladID = @BladID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [tblBladStamdata] SET [Navn] = @Navn, [Navn2] = @Navn2, [Adresse] = @Adres"& _ 
+                "se, [Adresse2] = @Adresse2, [PostNr] = @PostNr, [Tlf] = @Tlf, [Fax] = @Fax, [CVR"& _ 
+                "] = @CVR, [FIK] = @FIK, [Kontaktperson] = @Kontaktperson, [HovedgruppeID] = @Hov"& _ 
+                "edgruppeID, [MedlemMåned] = @MedlemMåned, [MedlemÅr] = @MedlemÅr, [MedlemSiden] "& _ 
+                "= @MedlemSiden, [Ejerforhold] = @Ejerforhold, [Koncern] = @Koncern, [RegionID] ="& _ 
+                " @RegionID, [DelOmrådeID] = @DelOmrådeID, [GeoKodeID] = @GeoKodeID, [Totalområde"& _ 
+                "] = @Totalområde, [TotalområdePct] = @TotalområdePct, [Primær] = @Primær, [Primæ"& _ 
+                "rPct] = @PrimærPct, [WWWDækningSomTekst] = @WWWDækningSomTekst, [Oplag] = @Oplag"& _ 
+                ", [UgedagID] = @UgedagID, [Format] = @Format, [OrdredeadlineTekst] = @Ordredeadl"& _ 
+                "ineTekst, [OrdredeadlineRubrik] = @OrdredeadlineRubrik, [MaterialedeadlineTekst]"& _ 
+                " = @MaterialedeadlineTekst, [MaterialedeadlineRubrik] = @MaterialedeadlineRubrik"& _ 
+                ", [OrdreEmail] = @OrdreEmail, [OrdrecheckEmail] = @OrdrecheckEmail, [OrdrecheckS"& _ 
+                "endeDagID] = @OrdrecheckSendeDagID, [SendetidOrdrecheck] = @SendetidOrdrecheck, "& _ 
+                "[SendIndeværendeUge] = @SendIndeværendeUge, [StamdataEmail] = @StamdataEmail, [P"& _ 
+                "risforespørgselEmails] = @PrisforespørgselEmails, [OrienteringEmails] = @Oriente"& _ 
+                "ringEmails, [Emails] = @Emails, [KontaktpersonerEmails] = @KontaktpersonerEmails"& _ 
+                ", [BogholderiEmails] = @BogholderiEmails, [MedieNetKode] = @MedieNetKode, [MatGo"& _ 
+                "dtBeløb] = @MatGodtBeløb, [Hjemmeside] = @Hjemmeside, [RedaktionEmail] = @Redakt"& _ 
+                "ionEmail, [AnnonceEmail] = @AnnonceEmail, [MaterialeEmail] = @MaterialeEmail, [A"& _ 
+                "nnonceKontrolEmail] = @AnnonceKontrolEmail, [BilagsbladeEmail] = @BilagsbladeEma"& _ 
+                "il, [GruppeRabat] = @GruppeRabat, [SamannonceringsRabat] = @SamannonceringsRabat"& _ 
+                ", [BogholderiKontaktperson] = @BogholderiKontaktperson, [FakturaGruppeID] = @Fak"& _ 
+                "turaGruppeID, [MåGiveFarveRabat] = @MåGiveFarveRabat, [Ophørt] = @Ophørt, [VisPå"& _ 
+                "WWW] = @VisPåWWW WHERE (([BladID] = @Original_BladID));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT BladID, Navn, Na"& _ 
+                "vn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID"& _ 
+                ", MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeI"& _ 
+                "D, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst"& _ 
+                ", Oplag, UgedagID, Format, OrdredeadlineTekst, OrdredeadlineRubrik, Materialedea"& _ 
+                "dlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSend"& _ 
+                "eDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmail, PrisforespørgselE"& _ 
+                "mails, OrienteringEmails, Emails, KontaktpersonerEmails, BogholderiEmails, Medie"& _ 
+                "NetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail,"& _ 
+                " AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, SamannonceringsRabat, Bogho"& _ 
+                "lderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW FROM tbl"& _ 
+                "BladStamdata WHERE (BladID = @BladID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Navn", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Navn2", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Navn2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Adresse", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Adresse", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -7360,6 +7366,7 @@ Namespace dstBladStamdataTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Ophørt", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Ophørt", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VisPåWWW", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VisPåWWW", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BladID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7483,9 +7490,34 @@ Namespace dstBladStamdataTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal Navn As String, ByVal BladId As Integer) As Integer
+            If (Navn Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Navn")
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Navn,String)
+            End If
+            Me.Adapter.InsertCommand.Parameters(1).Value = CType(BladId,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
-                    ByVal BladID As Integer,  _
                     ByVal Navn As String,  _
                     ByVal Navn2 As String,  _
                     ByVal Adresse As String,  _
@@ -7543,282 +7575,283 @@ Namespace dstBladStamdataTableAdapters
                     ByVal MåGiveFarveRabat As Global.System.Nullable(Of Boolean),  _
                     ByVal Ophørt As Boolean,  _
                     ByVal VisPåWWW As Boolean,  _
-                    ByVal Original_BladID As Integer) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(BladID,Integer)
+                    ByVal Original_BladID As Integer,  _
+                    ByVal BladID As Integer) As Integer
             If (Navn Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Navn")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Navn,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Navn,String)
             End If
             If (Navn2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Navn2,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Navn2,String)
             End If
             If (Adresse Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Adresse,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Adresse,String)
             End If
             If (Adresse2 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Adresse2,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Adresse2,String)
             End If
             If (PostNr.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(PostNr.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(PostNr.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             If (Tlf Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Tlf,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Tlf,String)
             End If
             If (Fax Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Fax,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Fax,String)
             End If
             If (CVR Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(CVR,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(CVR,String)
             End If
             If (FIK Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(FIK,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(FIK,String)
             End If
             If (Kontaktperson Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Kontaktperson,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Kontaktperson,String)
             End If
             If (HovedgruppeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(HovedgruppeID.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(HovedgruppeID.Value,Byte)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            If (MedlemMåned.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(MedlemMåned.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             End If
-            If (MedlemMåned.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(MedlemMåned.Value,Byte)
+            If (MedlemÅr.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(MedlemÅr.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (MedlemÅr.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(MedlemÅr.Value,Byte)
+            If (MedlemSiden.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(MedlemSiden.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            End If
-            If (MedlemSiden.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(MedlemSiden.Value,Date)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
             If (Ejerforhold Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Ejerforhold")
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Ejerforhold,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Ejerforhold,String)
             End If
             If (Koncern Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Koncern,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Koncern,String)
             End If
             If (RegionID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(RegionID.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(RegionID.Value,Byte)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (DelOmrådeID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(DelOmrådeID.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
-            If (DelOmrådeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(DelOmrådeID.Value,Byte)
+            If (GeoKodeID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(GeoKodeID.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
-            If (GeoKodeID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(GeoKodeID.Value,Byte)
+            If (Totalområde.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Totalområde.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             End If
-            If (Totalområde.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Totalområde.Value,Integer)
+            If (TotalområdePct.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(TotalområdePct.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
-            If (TotalområdePct.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(TotalområdePct.Value,Byte)
+            If (Primær.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Primær.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             End If
-            If (Primær.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Primær.Value,Integer)
+            If (PrimærPct.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(PrimærPct.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
-            If (PrimærPct.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(PrimærPct.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
-            End If
             If (WWWDækningSomTekst Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(WWWDækningSomTekst,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(WWWDækningSomTekst,String)
             End If
             If (Oplag.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Oplag.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Oplag.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (UgedagID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(UgedagID.Value,Byte)
             Else
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             End If
-            If (UgedagID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(UgedagID.Value,Byte)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            End If
             If (Format Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Format,String)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Format,String)
             End If
             If (OrdredeadlineTekst Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(OrdredeadlineTekst,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(OrdredeadlineTekst,String)
             End If
             If (OrdredeadlineRubrik Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(OrdredeadlineRubrik,String)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(OrdredeadlineRubrik,String)
             End If
             If (MaterialedeadlineTekst Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(MaterialedeadlineTekst,String)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(MaterialedeadlineTekst,String)
             End If
             If (MaterialedeadlineRubrik Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(MaterialedeadlineRubrik,String)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(MaterialedeadlineRubrik,String)
             End If
             If (OrdreEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(OrdreEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(OrdreEmail,String)
             End If
             If (OrdrecheckEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(OrdrecheckEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(OrdrecheckEmail,String)
             End If
             If (OrdrecheckSendeDagID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(OrdrecheckSendeDagID.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(OrdrecheckSendeDagID.Value,Byte)
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             If (SendetidOrdrecheck Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(SendetidOrdrecheck,String)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(SendetidOrdrecheck,String)
             End If
             If (SendIndeværendeUge.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(SendIndeværendeUge.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(SendIndeværendeUge.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (StamdataEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(StamdataEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(StamdataEmail,String)
             End If
             If (PrisforespørgselEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(PrisforespørgselEmails,String)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(PrisforespørgselEmails,String)
             End If
             If (OrienteringEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(OrienteringEmails,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(OrienteringEmails,String)
             End If
             If (Emails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Emails,String)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Emails,String)
             End If
             If (KontaktpersonerEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(KontaktpersonerEmails,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(KontaktpersonerEmails,String)
             End If
             If (BogholderiEmails Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(BogholderiEmails,String)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(BogholderiEmails,String)
             End If
             If (MedieNetKode Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(MedieNetKode,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(MedieNetKode,String)
             End If
             If (MatGodtBeløb.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(MatGodtBeløb.Value,Byte)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(MatGodtBeløb.Value,Byte)
             Else
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             End If
             If (Hjemmeside Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Hjemmeside,String)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Hjemmeside,String)
             End If
             If (RedaktionEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(RedaktionEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(RedaktionEmail,String)
             End If
             If (AnnonceEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(AnnonceEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(AnnonceEmail,String)
             End If
             If (MaterialeEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(MaterialeEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(MaterialeEmail,String)
             End If
             If (AnnonceKontrolEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(AnnonceKontrolEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(AnnonceKontrolEmail,String)
             End If
             If (BilagsbladeEmail Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(BilagsbladeEmail,String)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(BilagsbladeEmail,String)
             End If
             If (GruppeRabat Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(GruppeRabat,String)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(GruppeRabat,String)
             End If
             If (SamannonceringsRabat Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(SamannonceringsRabat,String)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(SamannonceringsRabat,String)
             End If
             If (BogholderiKontaktperson Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(BogholderiKontaktperson,String)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(BogholderiKontaktperson,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(54).Value = CType(FakturaGruppeID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(53).Value = CType(FakturaGruppeID,Integer)
             If (MåGiveFarveRabat.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(MåGiveFarveRabat.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(MåGiveFarveRabat.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Ophørt,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(57).Value = CType(VisPåWWW,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_BladID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Ophørt,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(56).Value = CType(VisPåWWW,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_BladID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(58).Value = CType(BladID,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7897,7 +7930,7 @@ Namespace dstBladStamdataTableAdapters
                     ByVal Ophørt As Boolean,  _
                     ByVal VisPåWWW As Boolean,  _
                     ByVal Original_BladID As Integer) As Integer
-            Return Me.Update(Original_BladID, Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, OrdredeadlineRubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmail, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, BogholderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, SamannonceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW, Original_BladID)
+            Return Me.Update(Navn, Navn2, Adresse, Adresse2, PostNr, Tlf, Fax, CVR, FIK, Kontaktperson, HovedgruppeID, MedlemMåned, MedlemÅr, MedlemSiden, Ejerforhold, Koncern, RegionID, DelOmrådeID, GeoKodeID, Totalområde, TotalområdePct, Primær, PrimærPct, WWWDækningSomTekst, Oplag, UgedagID, Format, OrdredeadlineTekst, OrdredeadlineRubrik, MaterialedeadlineTekst, MaterialedeadlineRubrik, OrdreEmail, OrdrecheckEmail, OrdrecheckSendeDagID, SendetidOrdrecheck, SendIndeværendeUge, StamdataEmail, PrisforespørgselEmails, OrienteringEmails, Emails, KontaktpersonerEmails, BogholderiEmails, MedieNetKode, MatGodtBeløb, Hjemmeside, RedaktionEmail, AnnonceEmail, MaterialeEmail, AnnonceKontrolEmail, BilagsbladeEmail, GruppeRabat, SamannonceringsRabat, BogholderiKontaktperson, FakturaGruppeID, MåGiveFarveRabat, Ophørt, VisPåWWW, Original_BladID, Original_BladID)
         End Function
     End Class
     
@@ -8066,8 +8099,8 @@ Namespace dstBladStamdataTableAdapters
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@År", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "År", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO [tblPrislisterPrBladPrUge] ([År], [BladID], [Uge], [PrislisteID]) VAL"& _ 
-                "UES (@År, @BladID, @Uge, @PrislisteID)"
+            Me._commandCollection(2).CommandText = "INSERT INTO tblPrislisterPrBladPrUge"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (År, BladID, Uge, "& _ 
+                "PrislisteID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@År,@BladID,@Uge,@PrislisteID)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@År", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "År", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8216,8 +8249,7 @@ Namespace dstBladStamdataTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function InsertPrislistePrBladPrÅrPrUge(ByVal År As Short, ByVal BladID As Integer, ByVal Uge As Byte, ByVal PrislisteID As Integer) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
             command.Parameters(0).Value = CType(År,Short)
@@ -9502,7 +9534,7 @@ Namespace dstBladStamdataTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT     tblPrislisterPrBladPrÅr.BladID, tblPrislisterPrBladPrÅr.År, tblPrislis"& _ 
@@ -9515,17 +9547,24 @@ Namespace dstBladStamdataTableAdapters
             Me._commandCollection(1).CommandText = "SELECT     tblPrislisterPrBladPrÅr.BladID, tblPrislisterPrBladPrÅr.År, tblPrislis"& _ 
                 "terPrBladPrÅr.PrislisteID, tblPrislister.PrislisteNavn"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tblPrislist"& _ 
                 "erPrBladPrÅr INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblPrislister ON tblPrislisterPrB"& _ 
-                "ladPrÅr.PrislisteID = tblPrislister.PrislisteID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (År = @År)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+                "ladPrÅr.PrislisteID = tblPrislister.PrislisteID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@År", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "År", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "INSERT INTO tblPrislisterPrBladPrÅr"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      (BladID, År, Prisliste"& _ 
-                "ID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES     (@BladID,@År,@PrislisteID)"
+            Me._commandCollection(2).CommandText = "SELECT     tblPrislisterPrBladPrÅr.BladID, tblPrislisterPrBladPrÅr.År, tblPrislis"& _ 
+                "terPrBladPrÅr.PrislisteID, tblPrislister.PrislisteNavn"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         tblPrislist"& _ 
+                "erPrBladPrÅr INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      tblPrislister ON tblPrislisterPrB"& _ 
+                "ladPrÅr.PrislisteID = tblPrislister.PrislisteID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (År = @År)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@År", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "År", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PrislisteID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PrislisteID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "INSERT INTO tblPrislisterPrBladPrÅr"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      (BladID, År, Prisliste"& _ 
+                "ID)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES     (@BladID,@År,@PrislisteID)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BladID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "BladID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@År", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "År", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PrislisteID", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PrislisteID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9545,8 +9584,21 @@ Namespace dstBladStamdataTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByÅr(ByVal dataTable As dstBladStamdata.tblPrislisterPrBladPrÅrDataTable, ByVal År As Short) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As dstBladStamdata.tblPrislisterPrBladPrÅrDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByÅr(ByVal dataTable As dstBladStamdata.tblPrislisterPrBladPrÅrDataTable, ByVal År As Short) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(År,Short)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -9560,7 +9612,7 @@ Namespace dstBladStamdataTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertPrisliste(ByVal BladID As Integer, ByVal År As Short, ByVal PrislisteID As Integer) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(BladID,Integer)
             command.Parameters(1).Value = CType(År,Short)
             command.Parameters(2).Value = CType(PrislisteID,Integer)

@@ -4338,14 +4338,34 @@ Public Class frmMedieplan
     End If
   End Sub
 
-    Private Sub updateFakturaBemTekst(semder As System.Object, e As System.EventArgs) Handles txtFakturaBemærkning.KeyUp, txtFakturaBemærkning.Leave
+    Private Sub updateFakturaBemTekst(semder As System.Object, e As System.EventArgs) Handles btnLuk.Click
 
-        Dim valn As String = txtFakturaBemærkning.Value
-        Dim firsIndex = valn.IndexOf(",")
-        Dim updateString = valn.Substring(firsIndex, valn.Length + 1)
-        If updateString > 0 Then
-            _fakService.UpdateFakuraBemærkning(updateString, _medieplanNr)
+
+
+
+
+
+
+            Dim valn As String = txtFakturaBemærkning.Value
+
+
+
+        If Not IsNothing(valn) Then
+            Dim lastIndexOf = valn.LastIndexOf(",")
+            If lastIndexOf >= 0 Then
+                Dim before = valn.Substring(0, lastIndexOf - 1).TrimEnd().TrimStart()
+                Dim after = valn.Substring(lastIndexOf + 1, valn.Length - lastIndexOf - 1).TrimEnd().TrimStart()
+                _fakService.UpdateFakuraBemærkning(before, after, _medieplanNr)
+            Else
+
+                _fakService.UpdateFakuraBemærkning(valn, _medieplanNr)
+            End If
+
         End If
+
+
+
+
 
     End Sub
 

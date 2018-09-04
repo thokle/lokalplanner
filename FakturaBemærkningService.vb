@@ -36,29 +36,51 @@ Public Class FakturaBemærkningService
         Return Sb.ToString
     End Function
 
-    Public Function UpdateFakuraBemærkning(ByVal newFakturaBem As String, ByVal mediaPlan As Integer) As Boolean
-      
-
-        Dim con As SqlConnection
-        Dim cmd As SqlCommand
-        Dim row As Integer
-        'Dim str As String
-        con = New SqlConnection(My.Settings.DiMPdotNetConnectionString)
-        con.Open()
-        cmd = New SqlCommand("update tblMedieplanNr set FakturaBemærkning3 = @FakturaBem Where MedieplanNr=@MediaPlanNr")
-        cmd.Parameters.AddWithValue("@FakuraBem", newFakturaBem)
-        cmd.Parameters.AddWithValue("@MediaPlanNr", mediaPlan)
-        row = cmd.ExecuteNonQuery
+    Public Function UpdateFakuraBemærkning(Optional ByVal before As String = "", Optional newFakturaBem As String = "", Optional ByVal mediaPlan As Integer = 0) As Boolean
 
 
-        If row > 0 Then
-            Return True
+        If Not IsNothing(newFakturaBem) Then
 
-        Else
-            Return False
+
+
+            Dim con As SqlConnection
+            Dim cmd As SqlCommand
+            Dim row As Integer
+
+            con = New SqlConnection(My.Settings.DiMPdotNetConnectionString)
+            cmd = con.CreateCommand()
+            con.Open()
+
+            If before.Length > 0 Then
+                cmd.CommandText = "update tblMedieplanNr set FakturaBemærkning2=@before,  FakturaBemærkning3 = @fakurabem Where MedieplanNr=@mediePlanNr"
+
+                cmd.Parameters.AddWithValue("@fakurabem", newFakturaBem)
+                cmd.Parameters.AddWithValue("@mediePlanNr", mediaPlan)
+                cmd.Parameters.AddWithValue("@before", before)
+
+            Else
+
+                cmd.CommandText = "update tblMedieplanNr set  FakturaBemærkning3 = @fakurabem Where MedieplanNr=@mediePlanNr"
+
+                cmd.Parameters.AddWithValue("@fakurabem", newFakturaBem)
+                cmd.Parameters.AddWithValue("@mediePlanNr", mediaPlan)
+
+
+            End If
+
+
+            row = cmd.ExecuteNonQuery
+
+
+            If row > 0 Then
+                Return True
+
+            Else
+                Return False
+
+            End If
 
         End If
-
 
 
 
