@@ -214,19 +214,38 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub EndEdit()
-        ' Me.TblBladStamdataBindingSource.EndEdit()'
-        ' Me.TblPrislisterPrBladPrUgeBindingSource.EndEdit()'
-        '  Me.TblBladDækningBindingSource.EndEdit()'
+
+
+        Me.TblBladStamdataBindingSource.AllowNew = True
+   
+        Me.TblBladStamdataBindingSource.EndEdit()
+        Me.TblPrislisterPrBladPrUgeBindingSource.EndEdit()
+        Me.TblBladDækningBindingSource.EndEdit()
     End Sub
 
     Private Sub SaveData()
         Me.Cursor = Cursors.WaitCursor
+        Dim resultat As Boolean
+
         Me.Validate()
-        Me.TblBladStamdataTableAdapter.Update(Me.DstBladStamdata.tblBladStamdata)
-        If frmMain.BrugerNavn = "LEJ" OrElse frmMain.BrugerNavn = "LW" OrElse frmMain.BrugerNavn = "AN" OrElse frmMain.BrugerNavn = "CWS" OrElse frmMain.BrugerNavn = "SMJ" OrElse frmMain.BrugerNavn = "LVL" Then Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
-        Me.TblBladDækningTableAdapter.Update(Me.DstBladStamdata.tblBladDækning)
-        savePriser(_previousBladID, _previousÅr, _previousPrisliste)
-        Me.Cursor = Cursors.Default
+        If Me.TblBladStamdataTableAdapter.Update(Me.DstBladStamdata.tblBladStamdata) > 0 Then
+            resultat = True
+
+
+        End If
+
+        If frmMain.BrugerNavn = "LEJ" OrElse frmMain.BrugerNavn = "LW" OrElse frmMain.BrugerNavn = "AN" OrElse frmMain.BrugerNavn = "CWS" OrElse frmMain.BrugerNavn = "SMJ" OrElse frmMain.BrugerNavn = "LVL" OrElse frmMain.BrugerNavn = "TK" Then
+
+
+            Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
+
+            Me.TblBladDækningTableAdapter.Update(Me.DstBladStamdata.tblBladDækning)
+            savePriser(_previousBladID, _previousÅr, _previousPrisliste)
+            Me.Cursor = Cursors.Default
+        End If
+
+
+
     End Sub
 
     Private Sub savePriser(ByVal bladID As Integer, ByVal år As Integer, ByVal prisListe As Integer)
@@ -245,7 +264,7 @@ Public Class FrmBladStamData
         Dim placeringID As Integer
         Dim proceed As Boolean = False
 
-        If frmMain.BrugerNavn <> "LEJ" AndAlso frmMain.BrugerNavn <> "LW" AndAlso frmMain.BrugerNavn <> "AN" AndAlso frmMain.BrugerNavn <> "CWS" AndAlso frmMain.BrugerNavn <> "SMJ" AndAlso frmMain.BrugerNavn <> "LVL" Then Exit Sub
+        If frmMain.BrugerNavn <> "LEJ" AndAlso frmMain.BrugerNavn <> "LW" AndAlso frmMain.BrugerNavn <> "AN" AndAlso frmMain.BrugerNavn <> "CWS" AndAlso frmMain.BrugerNavn <> "SMJ" AndAlso frmMain.BrugerNavn <> "LVL" AndAlso frmMain.BrugerNavn <> "TK" Then Exit Sub
         If prisListe = 0 OrElse bladID = 0 Then Exit Sub
         ' MessageBox.Show("Gemmer priser for ID:" & bladID & " - År:" & år & " - Prisliste:" & prisListe)
         For Each ctrl As Control In grpPriser.Controls
@@ -302,8 +321,10 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub BindingNavigatorAddNewItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BindingNavigatorAddNewItem.Click
-        'ToDo : Kode der initialiserer felter ved nyoprettelse
-        _nyTilføjet = True
+        MessageBox.Show("Opret nyt stamblad med id " & _previousBladID + 1)
+
+        SaveData()
+
     End Sub
 
     Private Sub indlæsPriser()
@@ -580,17 +601,19 @@ Public Class FrmBladStamData
             Dim i As Integer
             Dim huskPosition As Integer = TblBladStamdataBindingSource.Position
             Dim huskFilter As String = TblBladStamdataBindingSource.Filter
-            EndEdit()
+
             SaveData()
-            TblPrislisterPrBladPrÅrTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.DetteÅr, 1)
+
+            Me.TblPrislisterPrBladPrÅrTableAdapter.FillByÅr(Me.DstBladStamdata.tblPrislisterPrBladPrÅr, frmMain.DetteÅr)
             For i = 1 To 53
                 TblPrislisterPrBladPrUgeTableAdapter.InsertPrislistePrBladPrÅrPrUge(frmMain.DetteÅr, txtUgeavisID.Text, i, 1)
             Next i
             TblBladStamdataBindingSource.Filter = ""
             Me.TblÅrMedPriserTableAdapter.Fill(Me.DstBladStamdata.tblÅrMedPriser)
             Me.TableMedAllePriserTableAdapter.Fill(Me.DstBladStamdata.tableMedAllePriser)
+            Me.TblPrislisterPrBladPrÅrTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.DetteÅr, 1)
             Me.TblPrislisterPrBladPrUgeTableAdapter.FillByÅr(Me.DstBladStamdata.tblPrislisterPrBladPrUge, frmMain.DetteÅr)
-            Me.TblPrislisterPrBladPrÅrTableAdapter.FillByÅr(Me.DstBladStamdata.tblPrislisterPrBladPrÅr, frmMain.DetteÅr)
+
             TblBladStamdataBindingSource.Filter = huskFilter
             If huskPosition > 0 Then TblBladStamdataBindingSource.Position = huskPosition
             _nyTilføjet = False

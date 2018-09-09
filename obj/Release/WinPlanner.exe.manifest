@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Resources\dlulogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="WinPlanner" version="7.9.3.2128" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="WinPlanner" version="7.9.5.2057" language="neutral" processorArchitecture="msil" />
     <commandLine file="WinPlanner.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -313,14 +313,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4763648">
-      <assemblyIdentity name="WinPlanner" version="7.9.3.2128" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4764160">
+      <assemblyIdentity name="WinPlanner" version="7.9.5.2057" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0Iu4RjevhHZOds+ZfZAFR43VKSg=</dsig:DigestValue>
+        <dsig:DigestValue>TAy/N0WtQ1vCZn30p4cuktho5+g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
