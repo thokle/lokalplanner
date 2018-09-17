@@ -127,9 +127,9 @@ Partial Class FrmBladStamData
         Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblPostNr", -1)
-        Dim UltraGridColumn11 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
-        Dim UltraGridColumn12 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
-        Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
+        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
         Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -476,9 +476,9 @@ Partial Class FrmBladStamData
         Me.txtPrimÊr = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.tbpPriser = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.cboPriser≈r = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.TblPrislisterPrBladPrUgeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.cboPrislister = New Infragistics.Win.UltraWinGrid.UltraCombo()
+        Me.TblPrislisterPrBladPrUgeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblPrislisterPrBladPrUgeUltraGrid = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.btnTilf¯jPrisliste = New Infragistics.Win.Misc.UltraButton()
         Me.tabPriser = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
@@ -515,6 +515,7 @@ Partial Class FrmBladStamData
         Me.txtOrdreEmail = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.cboUdsendelsesTidspunkt = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.chkSendIndevÊrendeUge = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabStamdata = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.TblBladStamdataBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -551,7 +552,6 @@ Partial Class FrmBladStamData
         Me.TableMedAllePriserTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tableMedAllePriserTableAdapter()
         Me.TblPrislisterPrBladPr≈rTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tblPrislisterPrBladPr≈rTableAdapter()
         Me.Tbl≈rMedPriserTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tbl≈rMedPriserTableAdapter()
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         lblPrimÊrPct = New System.Windows.Forms.Label()
         lblPrimÊr = New System.Windows.Forms.Label()
         lblTotalomrÂdePct = New System.Windows.Forms.Label()
@@ -737,9 +737,9 @@ Partial Class FrmBladStamData
         CType(Me.txtPrimÊr, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpPriser.SuspendLayout()
         CType(Me.cboPriser≈r, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblPrislisterPrBladPrUgeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPrislister, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblPrislisterPrBladPrUgeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblPrislisterPrBladPrUgeUltraGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tabPriser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabPriser.SuspendLayout()
@@ -776,11 +776,11 @@ Partial Class FrmBladStamData
         CType(Me.txtOrdreEmail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboUdsendelsesTidspunkt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkSendIndevÊrendeUge, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tabStamdata, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabStamdata.SuspendLayout()
         CType(Me.TblBladStamdataBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TblBladStamdataBindingNavigator.SuspendLayout()
-        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblPrimÊrPct
@@ -2502,13 +2502,13 @@ Partial Class FrmBladStamData
         Appearance25.BackColor = System.Drawing.SystemColors.Window
         Appearance25.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboPostNr.DisplayLayout.Appearance = Appearance25
-        UltraGridColumn11.Header.Caption = "Post nr"
-        UltraGridColumn11.Header.VisiblePosition = 0
-        UltraGridColumn12.Header.Caption = "By"
-        UltraGridColumn12.Header.VisiblePosition = 1
-        UltraGridColumn13.Header.VisiblePosition = 2
-        UltraGridColumn13.Hidden = True
-        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn11, UltraGridColumn12, UltraGridColumn13})
+        UltraGridColumn28.Header.Caption = "Post nr"
+        UltraGridColumn28.Header.VisiblePosition = 0
+        UltraGridColumn29.Header.Caption = "By"
+        UltraGridColumn29.Header.VisiblePosition = 1
+        UltraGridColumn30.Header.VisiblePosition = 2
+        UltraGridColumn30.Hidden = True
+        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn28, UltraGridColumn29, UltraGridColumn30})
         Me.cboPostNr.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
         Me.cboPostNr.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboPostNr.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3208,7 +3208,7 @@ Partial Class FrmBladStamData
         '
         Me.cboPriser≈r.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboPriser≈r.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1, "≈r", True))
-        Me.cboPriser≈r.DataSource = Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1
+        Me.cboPriser≈r.DataSource = Me.FKtblPrislisterPrBladPr≈rtblBladStamdataBindingSource
         Me.cboPriser≈r.DisplayMember = "≈r"
         Me.cboPriser≈r.Location = New System.Drawing.Point(77, 18)
         Me.cboPriser≈r.Name = "cboPriser≈r"
@@ -3216,15 +3216,10 @@ Partial Class FrmBladStamData
         Me.cboPriser≈r.TabIndex = 0
         Me.cboPriser≈r.ValueMember = "≈r"
         '
-        'TblPrislisterPrBladPrUgeBindingSource
+        'FKtbl≈rMedPrisertblBladStamdataBindingSource1
         '
-        Me.TblPrislisterPrBladPrUgeBindingSource.DataMember = "FK_tblPrislisterPrBladPrUge_tblBladStamdata"
-        Me.TblPrislisterPrBladPrUgeBindingSource.DataSource = Me.TblBladStamdataBindingSource
-        '
-        'FKtbl≈rMedPrisertblBladStamdataBindingSource
-        '
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource.DataMember = "FK_tbl≈rMedPriser_tblBladStamdata"
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource.DataSource = Me.TblBladStamdataBindingSource
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1.DataMember = "FK_tbl≈rMedPriser_tblBladStamdata"
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1.DataSource = Me.TblBladStamdataBindingSource
         '
         'cboPrislister
         '
@@ -3304,6 +3299,11 @@ Partial Class FrmBladStamData
         Me.cboPrislister.Size = New System.Drawing.Size(100, 23)
         Me.cboPrislister.TabIndex = 2
         Me.cboPrislister.ValueMember = "PrislisteID"
+        '
+        'TblPrislisterPrBladPrUgeBindingSource
+        '
+        Me.TblPrislisterPrBladPrUgeBindingSource.DataMember = "FK_tblPrislisterPrBladPrUge_tblBladStamdata"
+        Me.TblPrislisterPrBladPrUgeBindingSource.DataSource = Me.TblBladStamdataBindingSource
         '
         'TblPrislisterPrBladPrUgeUltraGrid
         '
@@ -3946,6 +3946,11 @@ Partial Class FrmBladStamData
         Me.chkSendIndevÊrendeUge.TabIndex = 112
         Me.chkSendIndevÊrendeUge.Text = "Send liste for indevÊrende uge"
         '
+        'FKtbl≈rMedPrisertblBladStamdataBindingSource
+        '
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource.DataMember = "FK_tbl≈rMedPriser_tblBladStamdata"
+        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource.DataSource = Me.TblBladStamdataBindingSource
+        '
         'tabStamdata
         '
         Me.tabStamdata.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -4247,11 +4252,6 @@ Partial Class FrmBladStamData
         '
         Me.Tbl≈rMedPriserTableAdapter.ClearBeforeFill = True
         '
-        'FKtbl≈rMedPrisertblBladStamdataBindingSource1
-        '
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1.DataMember = "FK_tbl≈rMedPriser_tblBladStamdata"
-        Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1.DataSource = Me.TblBladStamdataBindingSource
-        '
         'FrmBladStamData
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -4397,9 +4397,9 @@ Partial Class FrmBladStamData
         Me.tbpPriser.ResumeLayout(False)
         Me.tbpPriser.PerformLayout()
         CType(Me.cboPriser≈r, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblPrislisterPrBladPrUgeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPrislister, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblPrislisterPrBladPrUgeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblPrislisterPrBladPrUgeUltraGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tabPriser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabPriser.ResumeLayout(False)
@@ -4438,12 +4438,12 @@ Partial Class FrmBladStamData
         CType(Me.txtOrdreEmail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboUdsendelsesTidspunkt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkSendIndevÊrendeUge, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tabStamdata, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabStamdata.ResumeLayout(False)
         CType(Me.TblBladStamdataBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TblBladStamdataBindingNavigator.ResumeLayout(False)
         Me.TblBladStamdataBindingNavigator.PerformLayout()
-        CType(Me.FKtbl≈rMedPrisertblBladStamdataBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

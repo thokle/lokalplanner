@@ -13,7 +13,9 @@ Public Class FrmBladStamData
   Private _prisColl As New Collection
   Private _noSave As Boolean = False
   Private _isLoading As Boolean = True
-  Private _nyTilføjet As Boolean = False
+    Private _nyTilføjet As Boolean = False
+    Private _nyErOprettet As Boolean = False
+
 
   Public Property LockStatus() As Boolean
     Get
@@ -209,8 +211,15 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub TblBladStamdataBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TblBladStamdataBindingNavigatorSaveItem.Click
+
         EndEdit()
         SaveData()
+        If _nyErOprettet Then
+            Me.TblPrislisterPrBladPrÅrTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.DetteÅr, 1)
+            _nyErOprettet = False
+            Me.TblÅrMedPriserTableAdapter.Fill(Me.DstBladStamdata.tblÅrMedPriser)
+        End If
+        indlæsPriser()
     End Sub
 
     Private Sub EndEdit()
@@ -238,10 +247,11 @@ Public Class FrmBladStamData
 
 
             Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
-
+       
             Me.TblBladDækningTableAdapter.Update(Me.DstBladStamdata.tblBladDækning)
             savePriser(_previousBladID, _previousÅr, _previousPrisliste)
             Me.Cursor = Cursors.Default
+            _nyErOprettet = True
         End If
 
 
@@ -318,10 +328,13 @@ Public Class FrmBladStamData
                 End If
             Next
         Next
+        _nyErOprettet = False
+
     End Sub
 
     Private Sub BindingNavigatorAddNewItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BindingNavigatorAddNewItem.Click
         MessageBox.Show("Opret nyt stamblad med id " & _previousBladID + 1)
+        _nyErOprettet = False
 
         SaveData()
 
