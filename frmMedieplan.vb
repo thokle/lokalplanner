@@ -419,16 +419,24 @@ Public Class frmMedieplan
 
 
     Private Function HasMiljøTillæg() As Boolean
-        Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
-        Dim table As New dstMedieplan.tblMedieplanDataTable
-        If ta.HasMiljøTillæg(table, _medieplanNr, _version) > 0 Then
-         
-            If table(0).MiljøTillægOpkræves.Equals(True) OrElse table(0).OpkrævDSVPMiljøTillæg.Equals(1) OrElse table(0).OpkrævFynskeMiljøTillæg.Equals(True) OrElse table(0).OpkrævJyskeMiljøTillæg.Equals(True) OrElse table(0).OpkrævNorthMiljøTillæg.Equals(True) Then
-                chkMiljøTillægVises.Checked = True
-                chkMiljøTillægOpkræves.Checked = True
+        Dim ta As New dstMedieplanLinjerTableAdapters.tblMedieplanLinjerTableAdapter
+
+        Dim table As New dstMedieplanLinjer.tblMedieplanLinjerDataTable
+
+
+        If ta.Fill(table, _medieplanNr, _version) > 0 Then
+
+
+            If table(0).MiljøTillæg > 0 And table(0).MmTotal > 0.0 Then
+
                 grdOrdreLinjer.DisplayLayout.Bands(0).Columns("MiljøTillæg").Hidden = False
                 grdOrdreLinjer.DisplayLayout.Bands(0).Columns("TotalInclTillæg").Hidden = False
+
+
                 DataSourceMedieplan.AnvendtMiljøTillæg = _anvendtMiljøTillæg
+
+
+
 
             End If
 
@@ -1544,9 +1552,10 @@ Public Class frmMedieplan
             _DataValues.IndrykningsUge = numIndrykningsUge.Value
             DataSourceMedieplan.Uge = numIndrykningsUge.Value
             HasMiljøTillæg()
+            MarkerFarveMin()
         Catch
         End Try
-        MarkerFarveMin()
+
     End Sub
 
     Private Sub txtBemærkningTilAnnoncør_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBemærkningTilAnnoncør.TextChanged
