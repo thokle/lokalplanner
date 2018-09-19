@@ -32,7 +32,7 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("7.9.19.1953")> 
-<Assembly: AssemblyFileVersion("7.9.19.1953")> 
+<Assembly: AssemblyVersion("7.9.19.2014")> 
+<Assembly: AssemblyFileVersion("7.9.19.2014")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("da-DK")> 

@@ -419,26 +419,32 @@ Public Class frmMedieplan
 
 
     Private Function HasMiljøTillæg() As Boolean
-        Dim ta As New dstMedieplanLinjerTableAdapters.tblMedieplanLinjerTableAdapter
-
-        Dim table As New dstMedieplanLinjer.tblMedieplanLinjerDataTable
-
-
+          Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
+        Dim table As New dstMedieplan.tblMedieplanDataTable
         If ta.Fill(table, _medieplanNr, _version) > 0 Then
 
 
-            If table(0).MiljøTillæg > 0 And table(0).MmTotal > 0.0 Then
 
-                grdOrdreLinjer.DisplayLayout.Bands(0).Columns("MiljøTillæg").Hidden = False
-                grdOrdreLinjer.DisplayLayout.Bands(0).Columns("TotalInclTillæg").Hidden = False
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("MiljøTillæg").Hidden = False
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("TotalInclTillæg").Hidden = False
+            chkMiljøTillægOpkræves.Checked = table(0).MiljøTillægOpkræves
+            clbMiljøTillægOpkræves.SetItemChecked(0, table(0).OpkrævJyskeMiljøTillæg)
+            _DataValues.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
+            DataSourceMedieplan.OpkrævJyskeMiljøTillæg = table(0).OpkrævJyskeMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(1, table(0).OpkrævFynskeMiljøTillæg)
+            _DataValues.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
+            DataSourceMedieplan.OpkrævFynskeMiljøTillæg = table(0).OpkrævFynskeMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(2, table(0).OpkrævNorthMiljøTillæg)
+            _DataValues.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
+            DataSourceMedieplan.OpkrævNorthMiljøTillæg = table(0).OpkrævNorthMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(3, table(0).OpkrævDSVPMiljøTillæg)
+            _DataValues.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
+            DataSourceMedieplan.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
+            clbMiljøTillægOpkræves.SetItemChecked(4, table(0).OpkrævJyskeMedierASTillæg)
+            _DataValues.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
 
 
-                DataSourceMedieplan.AnvendtMiljøTillæg = _anvendtMiljøTillæg
 
-
-
-
-            End If
 
         End If
 
