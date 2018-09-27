@@ -14,7 +14,7 @@ Public Class FrmBladStamData
   Private _noSave As Boolean = False
   Private _isLoading As Boolean = True
     Private _nyTilf¯jet As Boolean = False
-    Private _nyErOprettet As Boolean = False
+    Private _nyErOprettet As Boolean = True
 
 
   Public Property LockStatus() As Boolean
@@ -215,9 +215,10 @@ Public Class FrmBladStamData
         EndEdit()
         SaveData()
         If _nyErOprettet Then
-            Me.TblPrislisterPrBladPr≈rTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.Dette≈r, 1)
+
             _nyErOprettet = False
             Me.Tbl≈rMedPriserTableAdapter.Fill(Me.DstBladStamdata.tbl≈rMedPriser)
+            Me.TblPrislisterPrBladPr≈rTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.Dette≈r, 1)
         End If
         indlÊsPriser()
     End Sub
@@ -251,7 +252,7 @@ Public Class FrmBladStamData
             Me.TblBladDÊkningTableAdapter.Update(Me.DstBladStamdata.tblBladDÊkning)
             savePriser(_previousBladID, _previous≈r, _previousPrisliste)
             Me.Cursor = Cursors.Default
-            _nyErOprettet = True
+            _nyErOprettet = False
         End If
 
 
@@ -341,6 +342,8 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub indlÊsPriser()
+        _nyErOprettet = False
+
         Dim ta As New dstBladStamdataTableAdapters.tblPriserTableAdapter
         Dim table As New dstBladStamdata.tblPriserDataTable
         Dim i As Integer
