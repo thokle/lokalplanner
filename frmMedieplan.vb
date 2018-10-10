@@ -33,393 +33,371 @@ Public Class frmMedieplan
     Private _Kommentar As String = ""
     Private _fakService As FakturaBemærkningService = New FakturaBemærkningService
 
-  Public ReadOnly Property Version() As Integer
-    Get
-      Return _version
-    End Get
-  End Property
+    Public ReadOnly Property Version() As Integer
+        Get
+            Return _version
+        End Get
+    End Property
 
-  Public ReadOnly Property Status() As StatusKoder
-    Get
-      Return _status
-    End Get
-  End Property
+    Public ReadOnly Property Status() As StatusKoder
+        Get
+            Return _status
+        End Get
+    End Property
 
-  Public ReadOnly Property IsAktiv() As Boolean
-    Get
-      Return _IsAktiv
-    End Get
-  End Property
+    Public ReadOnly Property IsAktiv() As Boolean
+        Get
+            Return _IsAktiv
+        End Get
+    End Property
 
-  Public ReadOnly Property Is6Spaltet() As Boolean
-    Get
-      Return _DataValues.Format1 = 6
-    End Get
-  End Property
+    Public ReadOnly Property Is6Spaltet() As Boolean
+        Get
+            Return _DataValues.Format1 = 6
+        End Get
+    End Property
 
-  Public ReadOnly Property Modul As String
-    Get
-      Return _modul
-    End Get
-  End Property
+    Public ReadOnly Property Modul As String
+        Get
+            Return _modul
+        End Get
+    End Property
+    Public Function getFarveTillæg() As Boolean
+        Dim ta As New dstMedieplanLinjerTableAdapters.tblMedieplanLinjerTableAdapter
+        Dim table As New dstMedieplanLinjer.tblMedieplanLinjerDataTable
+        If ta.Fill(table, _medieplanNr, _version) > 0 Then
 
-  Public ReadOnly Property UgeavisIDListe As String
-    Get
-      Dim liste As String = ""
-      For Each arow As UltraGridRow In grdOrdreLinjer.Rows.GetAllNonGroupByRows
-        liste = liste + Trim(CStr(arow.Cells("UgeavisID").Value)) & ";"
-      Next
-      If Not liste.Length = 0 Then
-        Return liste.Substring(0, liste.Length - 1)
-      Else
-        Return ""
-      End If
-    End Get
-  End Property
 
-  Public Sub New(ByVal modul As String)
-    _modul = modul
-    InitializeComponent()
-    frmBilagsbladeTil.ResetData()
-    _DataValues.Modul = modul
-    DataSourceMedieplan.Modul = modul
-    frmMain.ActiveWindows = Me
-    If _modul = "Booking" Then
-      picPipeline.Image = My.Resources.BookingHeader
-      For Each ctrl As Control In grpMedieplanHoved.Controls
-        If ctrl.Tag = "Toggle" Then ctrl.Visible = Not ctrl.Visible
-      Next
-      _status = StatusKoder.stsOrdreIkkeSendt
-      DataSourceMedieplan.Status = StatusKoder.stsOrdreIkkeSendt
-      txtBeskrivelse.Visible = False
-      lblBeskrivelse.Visible = False
-      lblBemærkningTilAnnoncør.Visible = False
-      txtBemærkningTilAnnoncør.Visible = False
-    End If
-    If _modul = "Medieplan" Then
-      btnMateriale.Visible = False
-      txtMaterialeFølgerFraLeverandør.Visible = False
+        End If
+
+
+    End Function
+    Public ReadOnly Property UgeavisIDListe As String
+        Get
+            Dim liste As String = ""
+            For Each arow As UltraGridRow In grdOrdreLinjer.Rows.GetAllNonGroupByRows
+                liste = liste + Trim(CStr(arow.Cells("UgeavisID").Value)) & ";"
+            Next
+            If Not liste.Length = 0 Then
+                Return liste.Substring(0, liste.Length - 1)
+            Else
+                Return ""
+            End If
+        End Get
+    End Property
+
+    Public Sub New(ByVal modul As String)
+        _modul = modul
+        InitializeComponent()
+        frmBilagsbladeTil.ResetData()
+        _DataValues.Modul = modul
+        DataSourceMedieplan.Modul = modul
+        frmMain.ActiveWindows = Me
+        If _modul = "Booking" Then
+            picPipeline.Image = My.Resources.BookingHeader
+            For Each ctrl As Control In grpMedieplanHoved.Controls
+                If ctrl.Tag = "Toggle" Then ctrl.Visible = Not ctrl.Visible
+            Next
+            _status = StatusKoder.stsOrdreIkkeSendt
+            DataSourceMedieplan.Status = StatusKoder.stsOrdreIkkeSendt
+            txtBeskrivelse.Visible = False
+            lblBeskrivelse.Visible = False
+            lblBemærkningTilAnnoncør.Visible = False
+            txtBemærkningTilAnnoncør.Visible = False
+        End If
+        If _modul = "Medieplan" Then
+            btnMateriale.Visible = False
+            txtMaterialeFølgerFraLeverandør.Visible = False
             optSammeMateriale.Visible = True
             lblRekvisitionsNr.Visible = False
 
             txtFakturaBemærkning.Visible = False
 
 
-    End If
-    If _modul = "Fakturering" Then
-      picPipeline.Image = My.Resources.FaktureringHeader
-      btnMateriale.Visible = False
-      txtMaterialeFølgerFraLeverandør.Visible = False
-      optSammeMateriale.Visible = False
-      txtBemærkningTilAnnoncør.Visible = False
-      lblBemærkningTilAnnoncør.Visible = False
-      lblRekvisitionsNr.Visible = True
+        End If
+        If _modul = "Fakturering" Then
+            picPipeline.Image = My.Resources.FaktureringHeader
+            btnMateriale.Visible = False
+            txtMaterialeFølgerFraLeverandør.Visible = False
+            optSammeMateriale.Visible = False
+            txtBemærkningTilAnnoncør.Visible = False
+            lblBemærkningTilAnnoncør.Visible = False
+            lblRekvisitionsNr.Visible = True
 
             txtFakturaBemærkning.Visible = True
-      txtHistorik.Visible = True
-    End If
-    Me.TblUgeaviserTableAdapter.Fill(Me.UgeavisListeDropdown.tblUgeaviser)
-    Me.TblBureauerTableAdapter.Fill(Me.BureauListeDropdown.tblBureauer)
-    Me.TblAnnoncørerTableAdapter.Fill(Me.AnnoncørListeDropdown.tblAnnoncører)
-    Me.TblPlaceringTableAdapter.Fill(Me.PlaceringListeDropdown.tblPlacering)
-    Me.TblDPKulørTableAdapter.Fill(Me.DPKulørListeDropDown.tblDPKulør)
-    Me.grdOrdreLinjer.DataSource = Me.DataSourceMedieplan
-    numIndrykningsUge.MaxValue = 53 'frmMain.AntalUgerIÅr
-    numIndrykningsUge.Value = frmMain.DenneUge + 1
-    numIndrykningsÅr.MaxValue = frmMain.DetteÅr + 1
-    numIndrykningsÅr.Value = frmMain.DetteÅr
-    cboPlaceringID.Value = 1
-    Me.DataSourceMedieplan.AntalMm = 100
-    Me.DataSourceMedieplan.Uge = numIndrykningsUge.Value
-    Me.DataSourceMedieplan.År = numIndrykningsÅr.Value
-    _DataValues.BrugerCode = frmMain.BrugerNavn
-    _brugtGruppeVersion = frmMain.AktivGruppeVersion
-    DataSourceMedieplan.BrugtGruppeVersion = frmMain.AktivGruppeVersion
-    _anvendtMiljøTillæg = frmMain.AktivMiljøTillæg
-    DataSourceMedieplan.AnvendtMiljøTillæg = frmMain.AktivMiljøTillæg
-    _DataValues.OprindeligtMiljøTillæg = _anvendtMiljøTillæg
-    setStatus(_status)
-    clbMiljøTillægOpkræves.SetItemChecked(0, True)
-    _DataValues.OpkrævJyskeMiljøTillæg = True
-    DataSourceMedieplan.OpkrævJyskeMiljøTillæg = True
-    clbMiljøTillægOpkræves.SetItemChecked(1, True)
-    _DataValues.OpkrævFynskeMiljøTillæg = True
-    DataSourceMedieplan.OpkrævFynskeMiljøTillæg = True
-    clbMiljøTillægOpkræves.SetItemChecked(2, True)
-    _DataValues.OpkrævNorthMiljøTillæg = True
-    DataSourceMedieplan.OpkrævNorthMiljøTillæg = True
-    clbMiljøTillægOpkræves.SetItemChecked(3, True)
-    _DataValues.OpkrævDSVPMiljøTillæg = True
-    DataSourceMedieplan.OpkrævDSVPMiljøTillæg = True
-    clbMiljøTillægOpkræves.SetItemChecked(4, True)
-    _DataValues.OpkrævJyskeMedierASTillæg = True
-    DataSourceMedieplan.OpkrævJyskeMedierASTillæg = True
-    Me.Text = "P: Ny"
+            txtHistorik.Visible = True
+        End If
+        Me.TblUgeaviserTableAdapter.Fill(Me.UgeavisListeDropdown.tblUgeaviser)
+        Me.TblBureauerTableAdapter.Fill(Me.BureauListeDropdown.tblBureauer)
+        Me.TblAnnoncørerTableAdapter.Fill(Me.AnnoncørListeDropdown.tblAnnoncører)
+        Me.TblPlaceringTableAdapter.Fill(Me.PlaceringListeDropdown.tblPlacering)
+        Me.TblDPKulørTableAdapter.Fill(Me.DPKulørListeDropDown.tblDPKulør)
+        Me.grdOrdreLinjer.DataSource = Me.DataSourceMedieplan
+        numIndrykningsUge.MaxValue = 53 'frmMain.AntalUgerIÅr
+        numIndrykningsUge.Value = frmMain.DenneUge + 1
+        numIndrykningsÅr.MaxValue = frmMain.DetteÅr + 1
+        numIndrykningsÅr.Value = frmMain.DetteÅr
+        cboPlaceringID.Value = 1
+        Me.DataSourceMedieplan.AntalMm = 100
+        Me.DataSourceMedieplan.Uge = numIndrykningsUge.Value
+        Me.DataSourceMedieplan.År = numIndrykningsÅr.Value
+        _DataValues.BrugerCode = frmMain.BrugerNavn
+        _brugtGruppeVersion = frmMain.AktivGruppeVersion
+        DataSourceMedieplan.BrugtGruppeVersion = frmMain.AktivGruppeVersion
+        _anvendtMiljøTillæg = frmMain.AktivMiljøTillæg
+        DataSourceMedieplan.AnvendtMiljøTillæg = frmMain.AktivMiljøTillæg
+        _DataValues.OprindeligtMiljøTillæg = _anvendtMiljøTillæg
+        setStatus(_status)
+        clbMiljøTillægOpkræves.SetItemChecked(0, True)
+        _DataValues.OpkrævJyskeMiljøTillæg = True
+        DataSourceMedieplan.OpkrævJyskeMiljøTillæg = True
+        clbMiljøTillægOpkræves.SetItemChecked(1, True)
+        _DataValues.OpkrævFynskeMiljøTillæg = True
+        DataSourceMedieplan.OpkrævFynskeMiljøTillæg = True
+        clbMiljøTillægOpkræves.SetItemChecked(2, True)
+        _DataValues.OpkrævNorthMiljøTillæg = True
+        DataSourceMedieplan.OpkrævNorthMiljøTillæg = True
+        clbMiljøTillægOpkræves.SetItemChecked(3, True)
+        _DataValues.OpkrævDSVPMiljøTillæg = True
+        DataSourceMedieplan.OpkrævDSVPMiljøTillæg = True
+        clbMiljøTillægOpkræves.SetItemChecked(4, True)
+        _DataValues.OpkrævJyskeMedierASTillæg = True
+        DataSourceMedieplan.OpkrævJyskeMedierASTillæg = True
+        Me.Text = "P: Ny"
 
-    If frmMain.Width > 1200 Then
-      lblKommentar.Visible = True
-      txtKommentar.Visible = True
-      If frmMain.Width < 1480 Then
-        Dim bredde As Integer = frmMain.Width - 1130
-        Dim tegnPrLinje As Integer = bredde / 7
-        Dim antalLinjer As Integer = 250 / tegnPrLinje
-        Dim højde As Integer = antalLinjer * 15
-        txtKommentar.Height = højde - 7
-      End If
-    Else
-      btnKommentar.Visible = True
-    End If
+        If frmMain.Width > 1200 Then
+            lblKommentar.Visible = True
+            txtKommentar.Visible = True
+            If frmMain.Width < 1480 Then
+                Dim bredde As Integer = frmMain.Width - 1130
+                Dim tegnPrLinje As Integer = bredde / 7
+                Dim antalLinjer As Integer = 250 / tegnPrLinje
+                Dim højde As Integer = antalLinjer * 15
+                txtKommentar.Height = højde - 7
+            End If
+        Else
+            btnKommentar.Visible = True
+        End If
 
-    txtHistorik.Height = 174
+        txtHistorik.Height = 174
 
-    Me.Cursor = Cursors.Default
-  End Sub
+        Me.Cursor = Cursors.Default
+    End Sub
 
-  Private Sub LockControls(ByVal lock As Boolean)
-    For Each ctrl As Control In Me.Controls
-      ctrl.Enabled = Not lock
-      If lock Then
-        ctrl.Cursor = Cursors.No
-      Else
-        ctrl.Cursor = Cursors.Default
-      End If
-    Next
-    grpMedieplanHoved.Enabled = True
-    grpMedieplanHoved.Cursor = Cursors.Default
-    For Each ctrl As Control In grpMedieplanHoved.Controls
-      ctrl.Enabled = Not lock
-      If lock Then
-        ctrl.Cursor = Cursors.No
-      Else
-        ctrl.Cursor = Cursors.Default
-      End If
-    Next
-  End Sub
+    Private Sub LockControls(ByVal lock As Boolean)
+        For Each ctrl As Control In Me.Controls
+            ctrl.Enabled = Not lock
+            If lock Then
+                ctrl.Cursor = Cursors.No
+            Else
+                ctrl.Cursor = Cursors.Default
+            End If
+        Next
+        grpMedieplanHoved.Enabled = True
+        grpMedieplanHoved.Cursor = Cursors.Default
+        For Each ctrl As Control In grpMedieplanHoved.Controls
+            ctrl.Enabled = Not lock
+            If lock Then
+                ctrl.Cursor = Cursors.No
+            Else
+                ctrl.Cursor = Cursors.Default
+            End If
+        Next
+    End Sub
 
-  Public Sub New(ByVal modul As String, ByVal planNr As Integer, ByVal version As Integer)
-    Me.New(modul)
-    Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
-    Dim cm As SqlCommand = cn.CreateCommand()
-    Dim dr As SqlDataReader
+    Public Sub New(ByVal modul As String, ByVal planNr As Integer, ByVal version As Integer)
+        Me.New(modul)
+        Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
+        Dim cm As SqlCommand = cn.CreateCommand()
+        Dim dr As SqlDataReader
 
-    Me.Cursor = Cursors.WaitCursor
-    _medieplanNr = planNr
-    _version = version
-    _IsLoading = True
-    cm.CommandType = CommandType.Text
-    cm.CommandText = String.Format("SELECT AktivVersion, SupportBilagVedlagt, SupportBilagVist, MaterialeModtaget, BrugtGruppeVersion, OverførtFraPrisforespørgsel, AnvendtMiljøTillæg, Kommentar FROM tblMedieplanNr WHERE (MedieplanNr = {0})", _medieplanNr)
-    cn.Open()
-    dr = cm.ExecuteReader
-    dr.Read()
-    _aktivVersion = dr(0)
-    _supportBilagVedlagt = dr(1)
-    _supportBilagVist = dr(2)
-    chkMaterialeModtaget.Checked = dr(3)
-    _brugtGruppeVersion = dr(4)
-    DataSourceMedieplan.BrugtGruppeVersion = dr(4)
-    _overførtFraPrisforespørgsel = dr(5)
-    _anvendtMiljøTillæg = dr(6)
-    _Kommentar = dr(7)
-    DataSourceMedieplan.AnvendtMiljøTillæg = _anvendtMiljøTillæg
-    _DataValues.OprindeligtMiljøTillæg = _anvendtMiljøTillæg
-    dr.Close()
-    If Not Me.LoadData() Then Me.Close()
-    If _version > 1 Then
-      If modul = "Medieplan" Then
-        cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 1 AND Version < 10) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
-      ElseIf modul = "Booking" Then
-        cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 11 AND Version < 100) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
-      Else
-        cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 11) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
-      End If
-      dr = cm.ExecuteReader
-      While dr.Read
-        txtHistorik.Text = txtHistorik.Text & dr(0) & " >> " & dr(1)
-      End While
-      dr.Close()
-      btnHistorik.Visible = True
-    Else
-      btnHistorik.Visible = False
-    End If
-    If _status >= StatusKoder.stsUdsendtOrdre AndAlso numIndrykningsUge.Value <= frmMain.DenneUge Then
-      If frmMain.HarRollen("Salg") Then
-        'grdOrdreLinjer.DisplayLayout.Bands(0).Columns("Faktureringsbilag").Hidden = False
-        DeAktiverPlan()
+        Me.Cursor = Cursors.WaitCursor
+        _medieplanNr = planNr
+        _version = version
+        _IsLoading = True
+        cm.CommandType = CommandType.Text
+        cm.CommandText = String.Format("SELECT AktivVersion, SupportBilagVedlagt, SupportBilagVist, MaterialeModtaget, BrugtGruppeVersion, OverførtFraPrisforespørgsel, AnvendtMiljøTillæg, Kommentar FROM tblMedieplanNr WHERE (MedieplanNr = {0})", _medieplanNr)
+        cn.Open()
+        dr = cm.ExecuteReader
+        dr.Read()
+        _aktivVersion = dr(0)
+        _supportBilagVedlagt = dr(1)
+        _supportBilagVist = dr(2)
+        chkMaterialeModtaget.Checked = dr(3)
+        _brugtGruppeVersion = dr(4)
+        DataSourceMedieplan.BrugtGruppeVersion = dr(4)
+        _overførtFraPrisforespørgsel = dr(5)
+        _anvendtMiljøTillæg = dr(6)
+        _Kommentar = dr(7)
+        DataSourceMedieplan.AnvendtMiljøTillæg = _anvendtMiljøTillæg
+        _DataValues.OprindeligtMiljøTillæg = _anvendtMiljøTillæg
+        dr.Close()
+        If Not Me.LoadData() Then Me.Close()
+        If _version > 1 Then
+            If modul = "Medieplan" Then
+                cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 1 AND Version < 10) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
+            ElseIf modul = "Booking" Then
+                cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 11 AND Version < 100) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
+            Else
+                cm.CommandText = String.Format("SELECT TOP (100) PERCENT CASE WHEN tblMedieplanÆndringer.Version < 10 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + LTRIM(STR(tblMedieplanÆndringer.Version)) WHEN tblMedieplanÆndringer.Version > 10 AND tblMedieplanÆndringer.Version < 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) WHEN tblMedieplanÆndringer.Version > 100 THEN LTRIM(STR(tblMedieplanÆndringer.MedieplanNr)) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 100), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version / 10), 1) + '-' + RIGHT(LTRIM(tblMedieplanÆndringer.Version), 1) END AS Nr, ÆndringsTekst FROM tblMedieplanÆndringer WHERE (MedieplanNr = {0}) AND (Version > 11) ORDER BY tblMedieplanÆndringer.Version DESC", _medieplanNr)
+            End If
+            dr = cm.ExecuteReader
+            While dr.Read
+                txtHistorik.Text = txtHistorik.Text & dr(0) & " >> " & dr(1)
+            End While
+            dr.Close()
+            btnHistorik.Visible = True
+        Else
+            btnHistorik.Visible = False
+        End If
+        If _status >= StatusKoder.stsUdsendtOrdre AndAlso numIndrykningsUge.Value <= frmMain.DenneUge Then
+            If frmMain.HarRollen("Salg") Then
+                'grdOrdreLinjer.DisplayLayout.Bands(0).Columns("Faktureringsbilag").Hidden = False
+                DeAktiverPlan()
+                grdOrdreLinjer.DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False
+                grdOrdreLinjer.DisplayLayout.Override.AllowDelete = DefaultableBoolean.False
+                grdOrdreLinjer.DisplayLayout.Override.AllowAddNew = AllowAddNew.No
+            End If
+          
+        End If
+
+        grdOrdreLinjer.DisplayLayout.ValueLists.Add("AnsvarListe")
+        If _status = StatusKoder.stsFærdigTjekketOrdre Then
+            cm.CommandText = "SELECT Code FROM Salesperson WHERE (Status = 0)"
+            dr = cm.ExecuteReader
+            While dr.Read
+                grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add(dr(0))
+            End While
+            dr.Close()
+        End If
+        grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("U")
+        grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("M")
+        grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("A")
+        grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("DLU")
+        grdOrdreLinjer.DisplayLayout.Bands(0).Columns("New Ansvar").ValueList = grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe")
+        cn.Close()
+        cm.Dispose()
+        cn.Dispose()
+        If _supportBilagVedlagt AndAlso modul = "Booking" Then
+            btnSupportBilag.Visible = True
+            _visSupportBilag = True
+        Else
+            btnSupportBilag.Visible = False
+            _visSupportBilag = False
+        End If
+
+        If frmMain.Width > 1200 Then
+            If String.IsNullOrEmpty(_Kommentar) Then
+                txtKommentar.Value = Nothing
+            Else
+                txtKommentar.Text = _Kommentar
+            End If
+        Else
+            KommentarToolTip()
+        End If
+
+        If _status = StatusKoder.stsFaktureretOrdre AndAlso frmMain.HarRollen("Fakturering") OrElse frmMain.HarRollen("Admin") Then
+            grdOrdreLinjer.DisplayLayout.ValueLists.Add("FejlListe")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Bestilt for sent - ikke bragt")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Ordre ikke modtaget")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Glemt Annonce")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("DLU har fremsendt forkert matr.")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Vi har indrykket forkert matr.")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert farve")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert placering")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert annonce format")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Glemt farve")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert Pris")
+            grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("System Fejl")
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").ValueList = grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe")
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").ButtonDisplayStyle = UltraWinGrid.ButtonDisplayStyle.Always
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").Style = ColumnStyle.DropDownValidate
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").CellActivation = Activation.AllowEdit
+        End If
+        If modul = "Medieplan" AndAlso _overførtFraPrisforespørgsel Then
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("BemærkningFraPrisforespørgsel").Hidden = False
+            DataSourceMedieplan.Beregn()
+        Else
+            grdOrdreLinjer.DisplayLayout.Bands(0).Columns("BemærkningFraPrisforespørgsel").Hidden = True
+        End If
+        If _aktivVersion > _version AndAlso _aktivVersion > 10 Then DeAktiverPlan()
+        _DataValues.checkValid()
+        setStatus(_status)
+        _IsLoading = False
+        Me.Cursor = Cursors.Default
+        If _DataValues.MaterialeFølgerFra = 1 Then btnMateriale.Enabled = True
+    End Sub
+
+    Private Sub KommentarToolTip()
+        If _Kommentar.Length > 0 Then
+            btnKommentar.BackColor = Color.Yellow
+            btnKommentar.BackgroundImageLayout = ImageLayout.Center
+
+            Dim ord() As String = _Kommentar.Split(" ")
+            Dim linje(5) As String
+            Dim j As Integer = 0
+
+            linje(0) = ord(0)
+            For i As Integer = 1 To UBound(ord)
+                If Len(linje(j) & " " & ord(i)) <= 50 Then
+                    linje(j) = linje(j) & " " & ord(i)
+                Else
+                    linje(j) = linje(j) & "<br>"
+                    j = j + 1
+                    linje(j) = ord(i)
+                End If
+            Next
+
+            Dim toolTipInfo As UltraToolTipInfo = ToolTipManager.GetUltraToolTip(btnKommentar)
+            toolTipInfo.ToolTipTextFormatted = "Klik her for at <B>redigere</B> denne interne Kommentar:<br>" & linje(0) & linje(1) & linje(2) & linje(3) & linje(4) & linje(5)
+            ToolTipManager.SetUltraToolTip(btnKommentar, toolTipInfo)
+        End If
+    End Sub
+
+    Private Sub DeAktiverPlan()
+        _IsAktiv = False
+        LockControls(True)
+        btnKopierTilNy.Enabled = True
+        btnAnnuller.Enabled = True
+        btnLuk.Enabled = True
+        btnUdskriv.Enabled = True
+        btnDækningskort.Enabled = True
+        btnHistorik.Enabled = True
+        grdOrdreLinjer.Enabled = True
         grdOrdreLinjer.DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False
         grdOrdreLinjer.DisplayLayout.Override.AllowDelete = DefaultableBoolean.False
         grdOrdreLinjer.DisplayLayout.Override.AllowAddNew = AllowAddNew.No
-      End If
-      'If frmMain.HarRollen("Support") And Not frmMain.HarRollen("Admin") Then
-      '  grdOrdreLinjer.DisplayLayout.Bands(0).Columns("Faktureringsbilag").Hidden = False
-      '  ' DeAktiverPlan()
-      '  'If _status = StatusKoder.stsUdsendtOrdre AndAlso numIndrykningsUge.Value = frmMain.DenneUge AndAlso frmMain.DenneUgeDag < 4 Then
-      '  '  Dim foundSpærretAvis As Boolean = False
-      '  '  For Each arow As UltraGridRow In grdOrdreLinjer.Rows.GetAllNonGroupByRows
-      '  '    If arow.Cells("UdgivelsesDag").Value < 4 Then
-      '  '      arow.Activation = Activation.ActivateOnly
-      '  '      arow.Cells("Faktureringsbilag").IgnoreRowColActivation = True
-      '  '      foundSpærretAvis = True
-      '  '    Else
-      '  '      arow.Cells("Faktureringsbilag").Activation = Activation.Disabled
-      '  '      arow.Cells("Faktureringsbilag").Style = ColumnStyle.Edit
-      '  '      arow.Cells("Faktureringsbilag").Hidden = True
-      '  '    End If
-      '  '  Next
-      '  '  If foundSpærretAvis Then DeAktiverPlan()
-      '  'Else
-      '  '  grdOrdreLinjer.DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False
-      '  '  grdOrdreLinjer.DisplayLayout.Override.AllowDelete = DefaultableBoolean.False
-      '  '  grdOrdreLinjer.DisplayLayout.Override.AllowAddNew = AllowAddNew.No
-      '  'End If
-      'End If
-      ''If frmMain.HarRollen("Fakturering") Or frmMain.HarRollen("Admin") Then
-      '  grdOrdreLinjer.DisplayLayout.Bands(0).Columns("Faktureringsbilag").Hidden = False
-      '  cm.CommandText = "SELECT MedieplanNr FROM tblFaktureringsBilag WHERE (BemærkningNr = 1) AND (MedieplanNr = " & _medieplanNr & ")"
-      '  If IsDBNull(cm.ExecuteScalar) Then
-      '    btnVisFaktureringsBilag.Visible = False
-      '  Else
-      '    btnVisFaktureringsBilag.Visible = True
-      '  End If
-      'End If
-    End If
-
-    grdOrdreLinjer.DisplayLayout.ValueLists.Add("AnsvarListe")
-    If _status = StatusKoder.stsFærdigTjekketOrdre Then
-      cm.CommandText = "SELECT Code FROM Salesperson WHERE (Status = 0)"
-      dr = cm.ExecuteReader
-      While dr.Read
-        grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add(dr(0))
-      End While
-      dr.Close()
-    End If
-    grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("U")
-    grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("M")
-    grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("A")
-    grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe").ValueListItems.Add("DLU")
-    grdOrdreLinjer.DisplayLayout.Bands(0).Columns("New Ansvar").ValueList = grdOrdreLinjer.DisplayLayout.ValueLists("AnsvarListe")
-    cn.Close()
-    cm.Dispose()
-    cn.Dispose()
-    If _supportBilagVedlagt AndAlso modul = "Booking" Then
-      btnSupportBilag.Visible = True
-      _visSupportBilag = True
-    Else
-      btnSupportBilag.Visible = False
-      _visSupportBilag = False
-    End If
-
-    If frmMain.Width > 1200 Then
-      If String.IsNullOrEmpty(_Kommentar) Then
-        txtKommentar.Value = Nothing
-      Else
-        txtKommentar.Text = _Kommentar
-      End If
-    Else
-      KommentarToolTip()
-    End If
-
-    If _status = StatusKoder.stsFaktureretOrdre AndAlso frmMain.HarRollen("Fakturering") OrElse frmMain.HarRollen("Admin") Then
-      grdOrdreLinjer.DisplayLayout.ValueLists.Add("FejlListe")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Bestilt for sent - ikke bragt")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Ordre ikke modtaget")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Glemt Annonce")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("DLU har fremsendt forkert matr.")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Vi har indrykket forkert matr.")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert farve")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert placering")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert annonce format")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Glemt farve")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("Forkert Pris")
-      grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe").ValueListItems.Add("System Fejl")
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").ValueList = grdOrdreLinjer.DisplayLayout.ValueLists("FejlListe")
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").ButtonDisplayStyle = UltraWinGrid.ButtonDisplayStyle.Always
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").Style = ColumnStyle.DropDownValidate
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("FejlTekst").CellActivation = Activation.AllowEdit
-    End If
-    If modul = "Medieplan" AndAlso _overførtFraPrisforespørgsel Then
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("BemærkningFraPrisforespørgsel").Hidden = False
-      DataSourceMedieplan.Beregn()
-    Else
-      grdOrdreLinjer.DisplayLayout.Bands(0).Columns("BemærkningFraPrisforespørgsel").Hidden = True
-    End If
-    If _aktivVersion > _version AndAlso _aktivVersion > 10 Then DeAktiverPlan()
-    _DataValues.checkValid()
-    setStatus(_status)
-    _IsLoading = False
-    Me.Cursor = Cursors.Default
-    If _DataValues.MaterialeFølgerFra = 1 Then btnMateriale.Enabled = True
-  End Sub
-
-  Private Sub KommentarToolTip()
-    If _Kommentar.Length > 0 Then
-      btnKommentar.BackColor = Color.Yellow
-      btnKommentar.BackgroundImageLayout = ImageLayout.Center
-
-      Dim ord() As String = _Kommentar.Split(" ")
-      Dim linje(5) As String
-      Dim j As Integer = 0
-
-      linje(0) = ord(0)
-      For i As Integer = 1 To UBound(ord)
-        If Len(linje(j) & " " & ord(i)) <= 50 Then
-          linje(j) = linje(j) & " " & ord(i)
-        Else
-          linje(j) = linje(j) & "<br>"
-          j = j + 1
-          linje(j) = ord(i)
+        'btnVisFaktureringsBilag.Enabled = True
+        If _DataValues.MaterialeFølgerFra = 1 Then
+            btnMateriale.Enabled = True
+            btnMateriale.Cursor = Cursors.Default
         End If
-      Next
+        btnTilBlade.Enabled = True
+        btnGenUdsend.Enabled = True
+        picMinMax.Enabled = True
+        grdCC.Enabled = True
 
-      Dim toolTipInfo As UltraToolTipInfo = ToolTipManager.GetUltraToolTip(btnKommentar)
-      toolTipInfo.ToolTipTextFormatted = "Klik her for at <B>redigere</B> denne interne Kommentar:<br>" & linje(0) & linje(1) & linje(2) & linje(3) & linje(4) & linje(5)
-      ToolTipManager.SetUltraToolTip(btnKommentar, toolTipInfo)
-    End If
-  End Sub
+        btnTilExcel.Enabled = True
 
-  Private Sub DeAktiverPlan()
-    _IsAktiv = False
-    LockControls(True)
-    btnKopierTilNy.Enabled = True
-    btnAnnuller.Enabled = True
-    btnLuk.Enabled = True
-    btnUdskriv.Enabled = True
-    btnDækningskort.Enabled = True
-    btnHistorik.Enabled = True
-    grdOrdreLinjer.Enabled = True
-    grdOrdreLinjer.DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False
-    grdOrdreLinjer.DisplayLayout.Override.AllowDelete = DefaultableBoolean.False
-    grdOrdreLinjer.DisplayLayout.Override.AllowAddNew = AllowAddNew.No
-    'btnVisFaktureringsBilag.Enabled = True
-    If _DataValues.MaterialeFølgerFra = 1 Then
-      btnMateriale.Enabled = True
-      btnMateriale.Cursor = Cursors.Default
-    End If
-    btnTilBlade.Enabled = True
-    btnGenUdsend.Enabled = True
-    picMinMax.Enabled = True
-    grdCC.Enabled = True
+        btnKopierTilNy.Cursor = Cursors.Default
+        btnAnnuller.Cursor = Cursors.Default
+        btnLuk.Cursor = Cursors.Default
+        btnUdskriv.Cursor = Cursors.Default
+        btnDækningskort.Cursor = Cursors.Default
+        btnHistorik.Cursor = Cursors.Default
+        grdOrdreLinjer.Cursor = Cursors.Default
+        'btnVisFaktureringsBilag.Cursor = Cursors.Default
+        btnTilBlade.Cursor = Cursors.Default
+        picMinMax.Cursor = Cursors.Default
+        btnGenUdsend.Cursor = Cursors.Default
+        grdCC.Cursor = Cursors.Default
 
-    btnTilExcel.Enabled = True
-
-    btnKopierTilNy.Cursor = Cursors.Default
-    btnAnnuller.Cursor = Cursors.Default
-    btnLuk.Cursor = Cursors.Default
-    btnUdskriv.Cursor = Cursors.Default
-    btnDækningskort.Cursor = Cursors.Default
-    btnHistorik.Cursor = Cursors.Default
-    grdOrdreLinjer.Cursor = Cursors.Default
-    'btnVisFaktureringsBilag.Cursor = Cursors.Default
-    btnTilBlade.Cursor = Cursors.Default
-    picMinMax.Cursor = Cursors.Default
-    btnGenUdsend.Cursor = Cursors.Default
-    grdCC.Cursor = Cursors.Default
-
-    btnTilExcel.Cursor = Cursors.Default
+        btnTilExcel.Cursor = Cursors.Default
     End Sub
 
 
     Private Function HasMiljøTillæg() As Boolean
-          Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
+        Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
         Dim table As New dstMedieplan.tblMedieplanDataTable
         If ta.Fill(table, _medieplanNr, _version) > 0 Then
 
@@ -517,6 +495,7 @@ Public Class frmMedieplan
             clbMiljøTillægOpkræves.SetItemChecked(4, table(0).OpkrævJyskeMedierASTillæg)
             _DataValues.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
             DataSourceMedieplan.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
+
             _DataValues.TilladFarveSærRabat = table(0).TilladFarveSærRabat
             _DataValues.TilladMmSærRabat = table(0).TilladMmSærRabat
             _status = table(0).Status
@@ -4268,7 +4247,7 @@ Public Class frmMedieplan
         skalMiljøTillægVisesCheckVises()
     End Sub
 
-  
+
     Private Sub chkMiljøTillægOpkræves_VisibleChanged(sender As Object, e As System.EventArgs) Handles chkMiljøTillægOpkræves.VisibleChanged
         skalMiljøTillægVisesCheckVises()
     End Sub

@@ -52,33 +52,95 @@ Partial Class frmMedieplan
         Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("", Infragistics.Win.ToolTipImage.Info, "Kommentar", Infragistics.Win.DefaultableBoolean.[True])
         Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMedieplan))
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("OrdreLinjer", -1)
-        Dim SummarySettings1 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("Aviser", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "UgeavisID", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "UgeavisID", -1, True)
+        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RowID")
+        Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UgeavisID")
+        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeNavn")
+        Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeSortKey")
+        Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeNavn")
+        Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HovedGruppeSortKey")
+        Dim UltraGridColumn7 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RabatGruppe")
+        Dim UltraGridColumn8 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Mm")
+        Dim UltraGridColumn9 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NormalMmPris")
+        Dim UltraGridColumn10 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New MmPris")
+        Dim UltraGridColumn11 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old MmPris")
+        Dim UltraGridColumn12 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New MmRabat")
+        Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old MmRabat")
+        Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New MmTotal")
+        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old MmTotal")
+        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveTillæg")
+        Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New FarvePris")
+        Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old FarvePris")
+        Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New FarveRabat")
+        Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old FarveRabat")
+        Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New FarveTotal")
+        Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old FarveTotal")
+        Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New Total")
+        Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old Total")
+        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MåGiveFarveRabat")
+        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MåGiveMmRabat")
+        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New Bemærkning")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old Bemærkning")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New BureauOrdreNr")
+        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old BureauOrdreNr")
+        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RowState")
+        Dim UltraGridColumn32 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FejlTekst")
+        Dim UltraGridColumn33 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("New Ansvar")
+        Dim UltraGridColumn34 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Old Ansvar")
+        Dim UltraGridColumn35 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ManueltÆndret")
+        Dim UltraGridColumn36 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SendeGruppe")
+        Dim UltraGridColumn37 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMin")
+        Dim UltraGridColumn38 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMax")
+        Dim UltraGridColumn39 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MedIGrupper")
+        Dim UltraGridColumn40 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Email")
+        Dim UltraGridColumn41 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrisforespørgselEmails")
+        Dim UltraGridColumn42 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialeNr")
+        Dim UltraGridColumn43 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MedienetKode")
+        Dim UltraGridColumn44 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
+        Dim UltraGridColumn45 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Is365")
+        Dim UltraGridColumn46 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Ejerforhold")
+        Dim UltraGridColumn47 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FakturaGruppe")
+        Dim UltraGridColumn48 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Change Reason")
+        Dim UltraGridColumn49 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Faktureringsbilag")
+        Dim UltraGridColumn50 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UdgivelsesDag")
+        Dim UltraGridColumn51 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ErWeekendGruppe")
+        Dim UltraGridColumn52 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("WebtillægFaktureresHer")
+        Dim UltraGridColumn53 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BemærkningFraPrisforespørgsel")
+        Dim UltraGridColumn54 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MiljøTillæg")
+        Dim UltraGridColumn55 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TotalInclTillæg")
+        Dim UltraGridColumn56 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("MaterialeDeadline")
+        Dim UltraGridColumn57 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Oplag")
+        Dim UltraGridColumn58 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Læsertal")
+        Dim UltraGridColumn59 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KontaktprisOplag")
+        Dim UltraGridColumn60 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KontaktprisLæsertal")
+        Dim UltraGridColumn61 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrisLåst")
+        Dim UltraGridColumn62 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Aviser")
+        Dim SummarySettings1 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("Aviser", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "UgeavisID", 1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "UgeavisID", 1, True)
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings2 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New MmPris", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New MmPris", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New MmPris", -1, True)
+        Dim SummarySettings2 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New MmPris", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New MmPris", 9, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New MmPris", 9, True)
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings3 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New MmTotal", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New MmTotal", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New MmTotal", -1, True)
+        Dim SummarySettings3 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New MmTotal", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New MmTotal", 13, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New MmTotal", 13, True)
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings4 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New FarvePris", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New FarvePris", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New FarvePris", -1, True)
+        Dim SummarySettings4 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New FarvePris", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New FarvePris", 16, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New FarvePris", 16, True)
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings5 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New FarveTotal", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New FarveTotal", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New FarveTotal", -1, True)
+        Dim SummarySettings5 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New FarveTotal", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New FarveTotal", 20, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New FarveTotal", 20, True)
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings6 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New Total", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New Total", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New Total", -1, True)
+        Dim SummarySettings6 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("New Total", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "New Total", 22, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "New Total", 22, True)
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings7 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("MiljøTillæg", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "MiljøTillæg", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "MiljøTillæg", -1, True)
+        Dim SummarySettings7 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("MiljøTillæg", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "MiljøTillæg", 53, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "MiljøTillæg", 53, True)
         Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings8 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("TotalInclTillæg", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "TotalInclTillæg", -1, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "TotalInclTillæg", -1, True)
+        Dim SummarySettings8 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("TotalInclTillæg", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "TotalInclTillæg", 54, True, "OrdreLinjer", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "TotalInclTillæg", 54, True)
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMedieplan))
         Me.cboUgebladListe = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.TblUgeaviserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UgeavisListeDropdown = New WinPlanner.UgeavisListeDropdown()
@@ -168,6 +230,8 @@ Partial Class frmMedieplan
         Me.chkFarveSærRabat = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.btnGenberegn = New Infragistics.Win.Misc.UltraButton()
         Me.grdCC = New Infragistics.Win.UltraWinGrid.UltraGridColumnChooser()
+        Me.grdOrdreLinjer = New Infragistics.Win.UltraWinGrid.UltraGrid()
+        Me.DataSourceMedieplan = New WinPlanner.dataSourceMedieplan(Me.components)
         Me.chkMmSærRabat = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.picMinMax = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.picGrøn = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
@@ -181,8 +245,6 @@ Partial Class frmMedieplan
         Me.TblDPKulørTableAdapter = New WinPlanner.DPKulørListeDropDownTableAdapters.tblDPKulørTableAdapter()
         Me.TblUgeaviserTableAdapter = New WinPlanner.UgeavisListeDropdownTableAdapters.tblUgeaviserTableAdapter()
         Me.TblBureauerTableAdapter = New WinPlanner.BureauListeDropdownTableAdapters.tblBureauerTableAdapter()
-        Me.grdOrdreLinjer = New Infragistics.Win.UltraWinGrid.UltraGrid()
-        Me.DataSourceMedieplan = New WinPlanner.dataSourceMedieplan(Me.components)
         CType(Me.cboUgebladListe, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblUgeaviserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UgeavisListeDropdown, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -227,10 +289,10 @@ Partial Class frmMedieplan
         CType(Me.optGruppering, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkFarveSærRabat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdCC, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cboUgebladListe
@@ -1307,6 +1369,7 @@ Partial Class frmMedieplan
         Me.grdCC.Location = New System.Drawing.Point(186, 185)
         Me.grdCC.MultipleBandSupport = Infragistics.Win.UltraWinGrid.MultipleBandSupport.SingleBandOnly
         Me.grdCC.Name = "grdCC"
+        Me.grdCC.SerializedCurrentBandKey = "OrdreLinjer"
         Me.grdCC.Size = New System.Drawing.Size(179, 232)
         Me.grdCC.SourceGrid = Me.grdOrdreLinjer
         Me.grdCC.StyleLibraryName = ""
@@ -1314,107 +1377,6 @@ Partial Class frmMedieplan
         Me.grdCC.TabIndex = 378
         Me.grdCC.Text = "Vælg Kolonner"
         Me.grdCC.Visible = False
-        '
-        'chkMmSærRabat
-        '
-        Me.chkMmSærRabat.Location = New System.Drawing.Point(422, 222)
-        Me.chkMmSærRabat.Name = "chkMmSærRabat"
-        Me.chkMmSærRabat.Size = New System.Drawing.Size(172, 20)
-        Me.chkMmSærRabat.TabIndex = 379
-        Me.chkMmSærRabat.Text = "Alle må give mm rabat"
-        '
-        'picMinMax
-        '
-        Me.picMinMax.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picMinMax.Image = CType(resources.GetObject("picMinMax.Image"), Object)
-        Me.picMinMax.Location = New System.Drawing.Point(1, 248)
-        Me.picMinMax.Margin = New System.Windows.Forms.Padding(0)
-        Me.picMinMax.Name = "picMinMax"
-        Me.picMinMax.Size = New System.Drawing.Size(22, 22)
-        Me.picMinMax.TabIndex = 362
-        '
-        'picGrøn
-        '
-        Me.picGrøn.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picGrøn.Image = CType(resources.GetObject("picGrøn.Image"), Object)
-        Me.picGrøn.Location = New System.Drawing.Point(687, 7)
-        Me.picGrøn.Name = "picGrøn"
-        Me.picGrøn.Size = New System.Drawing.Size(28, 22)
-        Me.picGrøn.TabIndex = 330
-        Me.picGrøn.Tag = "Off"
-        '
-        'picGul
-        '
-        Me.picGul.AutoSize = True
-        Me.picGul.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picGul.Image = CType(resources.GetObject("picGul.Image"), Object)
-        Me.picGul.Location = New System.Drawing.Point(715, 7)
-        Me.picGul.Name = "picGul"
-        Me.picGul.Size = New System.Drawing.Size(18, 22)
-        Me.picGul.TabIndex = 331
-        Me.picGul.Tag = "Off"
-        '
-        'picStatusKode
-        '
-        Me.picStatusKode.AutoSize = True
-        Me.picStatusKode.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picStatusKode.Image = CType(resources.GetObject("picStatusKode.Image"), Object)
-        Me.picStatusKode.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.picStatusKode.Location = New System.Drawing.Point(261, 14)
-        Me.picStatusKode.Name = "picStatusKode"
-        Me.picStatusKode.Size = New System.Drawing.Size(221, 10)
-        Me.picStatusKode.TabIndex = 339
-        '
-        'picStatus
-        '
-        Me.picStatus.AutoSize = True
-        Me.picStatus.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picStatus.Image = CType(resources.GetObject("picStatus.Image"), Object)
-        Me.picStatus.Location = New System.Drawing.Point(17, 7)
-        Me.picStatus.Name = "picStatus"
-        Me.picStatus.Size = New System.Drawing.Size(750, 23)
-        Me.picStatus.TabIndex = 329
-        '
-        'picPipeline
-        '
-        Me.picPipeline.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picPipeline.AutoSize = True
-        Me.picPipeline.BorderShadowColor = System.Drawing.Color.Empty
-        Me.picPipeline.Image = CType(resources.GetObject("picPipeline.Image"), Object)
-        Me.picPipeline.Location = New System.Drawing.Point(1462, 2)
-        Me.picPipeline.Name = "picPipeline"
-        Me.picPipeline.ScaleImage = Infragistics.Win.ScaleImage.Never
-        Me.picPipeline.Size = New System.Drawing.Size(145, 26)
-        Me.picPipeline.TabIndex = 326
-        '
-        'chkVisLåstePriser
-        '
-        Me.chkVisLåstePriser.Location = New System.Drawing.Point(326, 224)
-        Me.chkVisLåstePriser.Name = "chkVisLåstePriser"
-        Me.chkVisLåstePriser.Size = New System.Drawing.Size(102, 20)
-        Me.chkVisLåstePriser.TabIndex = 382
-        Me.chkVisLåstePriser.Text = "Vis Lås priser"
-        Me.chkVisLåstePriser.Visible = False
-        '
-        'TblAnnoncørerTableAdapter
-        '
-        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
-        '
-        'TblPlaceringTableAdapter
-        '
-        Me.TblPlaceringTableAdapter.ClearBeforeFill = True
-        '
-        'TblDPKulørTableAdapter
-        '
-        Me.TblDPKulørTableAdapter.ClearBeforeFill = True
-        '
-        'TblUgeaviserTableAdapter
-        '
-        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
-        '
-        'TblBureauerTableAdapter
-        '
-        Me.TblBureauerTableAdapter.ClearBeforeFill = True
         '
         'grdOrdreLinjer
         '
@@ -1427,6 +1389,69 @@ Partial Class frmMedieplan
         Appearance4.ForeColorDisabled = System.Drawing.Color.Black
         Me.grdOrdreLinjer.DisplayLayout.Appearance = Appearance4
         Me.grdOrdreLinjer.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
+        UltraGridColumn1.Header.VisiblePosition = 0
+        UltraGridColumn2.Header.VisiblePosition = 1
+        UltraGridColumn3.Header.VisiblePosition = 2
+        UltraGridColumn4.Header.VisiblePosition = 3
+        UltraGridColumn5.Header.VisiblePosition = 4
+        UltraGridColumn6.Header.VisiblePosition = 5
+        UltraGridColumn7.Header.VisiblePosition = 6
+        UltraGridColumn8.Header.VisiblePosition = 7
+        UltraGridColumn9.Header.VisiblePosition = 8
+        UltraGridColumn10.Header.VisiblePosition = 9
+        UltraGridColumn11.Header.VisiblePosition = 10
+        UltraGridColumn12.Header.VisiblePosition = 11
+        UltraGridColumn13.Header.VisiblePosition = 12
+        UltraGridColumn14.Header.VisiblePosition = 13
+        UltraGridColumn15.Header.VisiblePosition = 14
+        UltraGridColumn16.Header.VisiblePosition = 15
+        UltraGridColumn17.Header.VisiblePosition = 16
+        UltraGridColumn18.Header.VisiblePosition = 17
+        UltraGridColumn19.Header.VisiblePosition = 18
+        UltraGridColumn20.Header.VisiblePosition = 19
+        UltraGridColumn21.Header.VisiblePosition = 20
+        UltraGridColumn22.Header.VisiblePosition = 21
+        UltraGridColumn23.Header.VisiblePosition = 22
+        UltraGridColumn24.Header.VisiblePosition = 23
+        UltraGridColumn25.Header.VisiblePosition = 24
+        UltraGridColumn26.Header.VisiblePosition = 25
+        UltraGridColumn27.Header.VisiblePosition = 26
+        UltraGridColumn28.Header.VisiblePosition = 27
+        UltraGridColumn29.Header.VisiblePosition = 28
+        UltraGridColumn30.Header.VisiblePosition = 29
+        UltraGridColumn31.Header.VisiblePosition = 30
+        UltraGridColumn32.Header.VisiblePosition = 31
+        UltraGridColumn33.Header.VisiblePosition = 32
+        UltraGridColumn34.Header.VisiblePosition = 33
+        UltraGridColumn35.Header.VisiblePosition = 34
+        UltraGridColumn36.Header.VisiblePosition = 35
+        UltraGridColumn37.Header.VisiblePosition = 36
+        UltraGridColumn38.Header.VisiblePosition = 37
+        UltraGridColumn39.Header.VisiblePosition = 38
+        UltraGridColumn40.Header.VisiblePosition = 39
+        UltraGridColumn41.Header.VisiblePosition = 40
+        UltraGridColumn42.Header.VisiblePosition = 41
+        UltraGridColumn43.Header.VisiblePosition = 42
+        UltraGridColumn44.Header.VisiblePosition = 43
+        UltraGridColumn45.Header.VisiblePosition = 44
+        UltraGridColumn46.Header.VisiblePosition = 45
+        UltraGridColumn47.Header.VisiblePosition = 46
+        UltraGridColumn48.Header.VisiblePosition = 47
+        UltraGridColumn49.Header.VisiblePosition = 48
+        UltraGridColumn50.Header.VisiblePosition = 49
+        UltraGridColumn51.Header.VisiblePosition = 50
+        UltraGridColumn52.Header.VisiblePosition = 51
+        UltraGridColumn53.Header.VisiblePosition = 52
+        UltraGridColumn54.Header.VisiblePosition = 53
+        UltraGridColumn55.Header.VisiblePosition = 54
+        UltraGridColumn56.Header.VisiblePosition = 55
+        UltraGridColumn57.Header.VisiblePosition = 56
+        UltraGridColumn58.Header.VisiblePosition = 57
+        UltraGridColumn59.Header.VisiblePosition = 58
+        UltraGridColumn60.Header.VisiblePosition = 59
+        UltraGridColumn61.Header.VisiblePosition = 60
+        UltraGridColumn62.Header.VisiblePosition = 61
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58, UltraGridColumn59, UltraGridColumn60, UltraGridColumn61, UltraGridColumn62})
         UltraGridBand1.Indentation = 0
         UltraGridBand1.IndentationGroupByRow = 0
         UltraGridBand1.IndentationGroupByRowExpansionIndicator = 0
@@ -1544,6 +1569,107 @@ Partial Class frmMedieplan
         Me.DataSourceMedieplan.Placering = 1
         Me.DataSourceMedieplan.Version = 0
         '
+        'chkMmSærRabat
+        '
+        Me.chkMmSærRabat.Location = New System.Drawing.Point(422, 222)
+        Me.chkMmSærRabat.Name = "chkMmSærRabat"
+        Me.chkMmSærRabat.Size = New System.Drawing.Size(172, 20)
+        Me.chkMmSærRabat.TabIndex = 379
+        Me.chkMmSærRabat.Text = "Alle må give mm rabat"
+        '
+        'picMinMax
+        '
+        Me.picMinMax.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picMinMax.Image = CType(resources.GetObject("picMinMax.Image"), Object)
+        Me.picMinMax.Location = New System.Drawing.Point(1, 248)
+        Me.picMinMax.Margin = New System.Windows.Forms.Padding(0)
+        Me.picMinMax.Name = "picMinMax"
+        Me.picMinMax.Size = New System.Drawing.Size(22, 22)
+        Me.picMinMax.TabIndex = 362
+        '
+        'picGrøn
+        '
+        Me.picGrøn.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picGrøn.Image = CType(resources.GetObject("picGrøn.Image"), Object)
+        Me.picGrøn.Location = New System.Drawing.Point(687, 7)
+        Me.picGrøn.Name = "picGrøn"
+        Me.picGrøn.Size = New System.Drawing.Size(28, 22)
+        Me.picGrøn.TabIndex = 330
+        Me.picGrøn.Tag = "Off"
+        '
+        'picGul
+        '
+        Me.picGul.AutoSize = True
+        Me.picGul.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picGul.Image = CType(resources.GetObject("picGul.Image"), Object)
+        Me.picGul.Location = New System.Drawing.Point(715, 7)
+        Me.picGul.Name = "picGul"
+        Me.picGul.Size = New System.Drawing.Size(18, 22)
+        Me.picGul.TabIndex = 331
+        Me.picGul.Tag = "Off"
+        '
+        'picStatusKode
+        '
+        Me.picStatusKode.AutoSize = True
+        Me.picStatusKode.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picStatusKode.Image = CType(resources.GetObject("picStatusKode.Image"), Object)
+        Me.picStatusKode.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.picStatusKode.Location = New System.Drawing.Point(261, 14)
+        Me.picStatusKode.Name = "picStatusKode"
+        Me.picStatusKode.Size = New System.Drawing.Size(221, 10)
+        Me.picStatusKode.TabIndex = 339
+        '
+        'picStatus
+        '
+        Me.picStatus.AutoSize = True
+        Me.picStatus.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picStatus.Image = CType(resources.GetObject("picStatus.Image"), Object)
+        Me.picStatus.Location = New System.Drawing.Point(17, 7)
+        Me.picStatus.Name = "picStatus"
+        Me.picStatus.Size = New System.Drawing.Size(750, 23)
+        Me.picStatus.TabIndex = 329
+        '
+        'picPipeline
+        '
+        Me.picPipeline.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picPipeline.AutoSize = True
+        Me.picPipeline.BorderShadowColor = System.Drawing.Color.Empty
+        Me.picPipeline.Image = CType(resources.GetObject("picPipeline.Image"), Object)
+        Me.picPipeline.Location = New System.Drawing.Point(1462, 2)
+        Me.picPipeline.Name = "picPipeline"
+        Me.picPipeline.ScaleImage = Infragistics.Win.ScaleImage.Never
+        Me.picPipeline.Size = New System.Drawing.Size(145, 26)
+        Me.picPipeline.TabIndex = 326
+        '
+        'chkVisLåstePriser
+        '
+        Me.chkVisLåstePriser.Location = New System.Drawing.Point(326, 224)
+        Me.chkVisLåstePriser.Name = "chkVisLåstePriser"
+        Me.chkVisLåstePriser.Size = New System.Drawing.Size(102, 20)
+        Me.chkVisLåstePriser.TabIndex = 382
+        Me.chkVisLåstePriser.Text = "Vis Lås priser"
+        Me.chkVisLåstePriser.Visible = False
+        '
+        'TblAnnoncørerTableAdapter
+        '
+        Me.TblAnnoncørerTableAdapter.ClearBeforeFill = True
+        '
+        'TblPlaceringTableAdapter
+        '
+        Me.TblPlaceringTableAdapter.ClearBeforeFill = True
+        '
+        'TblDPKulørTableAdapter
+        '
+        Me.TblDPKulørTableAdapter.ClearBeforeFill = True
+        '
+        'TblUgeaviserTableAdapter
+        '
+        Me.TblUgeaviserTableAdapter.ClearBeforeFill = True
+        '
+        'TblBureauerTableAdapter
+        '
+        Me.TblBureauerTableAdapter.ClearBeforeFill = True
+        '
         'frmMedieplan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
@@ -1634,10 +1760,10 @@ Partial Class frmMedieplan
         CType(Me.optGruppering, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkFarveSærRabat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grdCC, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grdOrdreLinjer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSourceMedieplan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkMmSærRabat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkVisLåstePriser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
