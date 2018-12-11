@@ -1463,10 +1463,10 @@ Partial Class frmMain
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow3)
         Me._frmMainAutoHideControl.Controls.Add(Me.DockableWindow1)
         Me._frmMainAutoHideControl.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frmMainAutoHideControl.Location = New System.Drawing.Point(982, 44)
+        Me._frmMainAutoHideControl.Location = New System.Drawing.Point(0, 44)
         Me._frmMainAutoHideControl.Name = "_frmMainAutoHideControl"
         Me._frmMainAutoHideControl.Owner = Me.dockManager
-        Me._frmMainAutoHideControl.Size = New System.Drawing.Size(11, 669)
+        Me._frmMainAutoHideControl.Size = New System.Drawing.Size(993, 14)
         Me._frmMainAutoHideControl.TabIndex = 37
         '
         'DockableWindow4
@@ -1493,7 +1493,7 @@ Partial Class frmMain
         Me.DockableWindow1.Location = New System.Drawing.Point(-10000, 0)
         Me.DockableWindow1.Name = "DockableWindow1"
         Me.DockableWindow1.Owner = Me.dockManager
-        Me.DockableWindow1.Size = New System.Drawing.Size(993, 100)
+        Me.DockableWindow1.Size = New System.Drawing.Size(993, 119)
         Me.DockableWindow1.TabIndex = 99
         '
         'statusBar

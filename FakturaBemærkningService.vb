@@ -12,11 +12,6 @@ Public Class FakturaBemærkningService
 
         Dim ta As New dstFakturaBemærkningTableAdapters.tblMedieplanNrTableAdapter
         Dim table As New dstFakturaBemærkning.tblMedieplanNrDataTable
-
-
-
-
-
         If ta.Fill(table, medispal) > 0 Then
 
             If Not String.IsNullOrEmpty(table(0).FakturaBemærkning1) And Not table(0).FakturaBemærkning1.Contains("Fakturabemærkning") Then
@@ -24,7 +19,7 @@ Public Class FakturaBemærkningService
             End If
             If Not String.IsNullOrEmpty(table(0).FakturaBemærkning2) Then
                 Sb.Append(table(0).FakturaBemærkning2)
-                Sb.Append(" , ")
+                Sb.Append(", ")
 
             End If
 

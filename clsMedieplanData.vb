@@ -34,6 +34,7 @@ Public Class MedieplanData
   Public OpkrævNorthMiljøTillæg As Boolean = True
   Public OpkrævDSVPMiljøTillæg As Boolean = True
   Public OpkrævJyskeMedierASTillæg As Boolean = True
+  Public OpkrævHelsingørMiljøTillæg As Boolean = True
   Public FællesBureauOrdreNr As String = ""
   Public BemærkningTilAnnoncør As String = ""
   Public BemærkningTilUgeavis As String = ""
@@ -108,6 +109,8 @@ Public Class MedieplanData
       Case dat1.OpkrævDSVPMiljøTillæg <> dat2.OpkrævDSVPMiljøTillæg
         changes = True
       Case dat1.OpkrævJyskeMedierASTillæg <> dat2.OpkrævJyskeMedierASTillæg
+        changes = True
+      Case dat1.OpkrævHelsingørMiljøTillæg <> dat2.OpkrævHelsingørMiljøTillæg
         changes = True
     End Select
     Return changes

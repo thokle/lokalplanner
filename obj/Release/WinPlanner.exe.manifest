@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Resources\dlulogo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="WinPlanner" version="7.9.25.2003" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="WinPlanner" version="7.12.6.2031" language="neutral" processorArchitecture="msil" />
     <commandLine file="WinPlanner.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -85,14 +85,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.dll" size="520568">
-      <assemblyIdentity name="Common" version="1.0.0.9" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Common.dll" size="200704">
+      <assemblyIdentity name="Common" version="1.0.2676.29250" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>8oDht+hlHXRPGG6NNG6tHXJA6uQ=</dsig:DigestValue>
+        <dsig:DigestValue>RM9l0MmAeU/hQGOjyhbqPG2veVk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -313,14 +313,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4760064">
-      <assemblyIdentity name="WinPlanner" version="7.9.25.2003" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WinPlanner.exe" size="4772352">
+      <assemblyIdentity name="WinPlanner" version="7.12.6.2031" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>HPHPl15LfnudGp6qchrHVol1ksw=</dsig:DigestValue>
+        <dsig:DigestValue>FJz+pwwpR4WmydKy7Adl/thx2PQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

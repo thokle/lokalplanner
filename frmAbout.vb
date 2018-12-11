@@ -49,87 +49,87 @@ Public NotInheritable Class frmAbout
     dr = cm.ExecuteReader
     While dr.Read
       pgbBlade.Value = pgbBlade.Value + 1
-      Application.DoEvents()
-      BladID = dr("BladID")
-      BladNavn = dr("Navn")
-      eMail = dr("StamdataEmail")
-      If eMail.Length > 0 Then
-        Dim mail As New clsEmail
-        'VIGTIGT !!
-        'VIGTIGT !!
-        'HUSK AT SKIFTE LINK AFHÆNGIG AF OM DET ER HELLIGDAGE ELLER "NORMALE" DEADLINES
-        'HUSK AT SKIFTE MAPPEN HVOR UDSENDELSERNE GEMMES
+            Application.DoEvents()
+            BladID = dr("BladID")
+            BladNavn = dr("Navn")
+            eMail = dr("StamdataEmail")
+            If eMail.Length > 0 Then
+                Dim mail As New clsEmail
+                'VIGTIGT !!
+                'VIGTIGT !!
+                'HUSK AT SKIFTE LINK AFHÆNGIG AF OM DET ER HELLIGDAGE ELLER "NORMALE" DEADLINES
+                'HUSK AT SKIFTE MAPPEN HVOR UDSENDELSERNE GEMMES
 
-        mail.Subject = "RYKKER!! Deadlines for udgivelser omkring forårets helligdage 2018"
-        'mail.Subject = "Vigtigt!! Opdatering af generelle Deadlines til DLU."
-        mail.Til = eMail
-        mail.BodyTitle = "Deadlines for udgivelser omkring forårets helligdage 2018"
-        'mail.BodyTitle = "Deadlines til DLU."
-        sendHTML = "<h2>Deadlines for udgivelser omkring forårets helligdage 2018.</h2>"
-        sendHTML = sendHTML + "<b>Uge 17+18</b> St. Bededag - <b>Uge 19+20</b> - Kr. Himmelfart - <b>Uge 21</b> pinse<br><br>"
-        '  sendHTML = sendHTML + "Vi har desværre endnu ikke modtaget din indtastning af ordre- og materiale deadlines for påske og helligdage 2018 – så indtast venligst senest <b>mandag d. 19. februar kl. 12.00</b>, tak.<br><br>"
-        sendHTML = sendHTML + "Vi har brug for din indtastning af ordre- og materiale deadlines for helligdage 2018 – så indtast venligst <b>senest onsdag d. 4. april kl. 12.00</b>, tak.<br><br>"
-        sendHTML = sendHTML + "En samlet oversigt på deadlines for påske og helligdage 2018 lægges på vores hjemmeside og bliver samtidig sendt til mediebureauerne.<br><br>"
-        sendHTML = sendHTML + "Klik ind på nedenstående link og <b>husk at opdatere</b> for afslutning, så sendes dine indtastninger direkte til os.<br><br>"
-        sendHTML = sendHTML + "<b>Uge 17+18</b> St. Bededag - <b>Uge 19+20</b> - Kr. Himmelfart - <b>Uge 21</b> pinse<br><br>"
-        'sendHTML = sendHTML + "<b>Alle ugerne fra påsken i uge 15 til og med 2. pinsedag i uge 23 skal udfyldes – også selvom<br>"
-
-
-        'Rykker
-        'sendHTML = sendHTML + "Vi har endnu ikke modtaget deadlines fra jeres blad omkring julen 2016.<br>"
-        '  sendHTML = sendHTML + "Hvis årsagen til manglende svar skyldes I ikke har oplysningerne endnu, må I meget skrive hvornår<br> det forventes afklaret til lvl@delokaleugeaviser.dk, mange tak.<br>"
-        'sendHTML = sendHTML + "<b>Fra påsken i uge 15-2017 frem til pinsen i uge 23-2017.</b><br><br>"
-
-        '    sendHTML = "<h2>Generelle deadlines for ordrer og annoncemateriale</h2>"
-        '  sendHTML = sendHTML + "Vi har endnu ikke modtaget deadlines fra jeres avis.<br><br>"
-        '   sendHTML = sendHTML + "Kære " & BladNavn & "<br><br>"
-        '  sendHTML = sendHTML + "Vi vil meget gerne sikre, at vi har de korrekte deadlines for modtagelse<br>af ordrer og annoncemateriale registreret i vores ordresystem.<br><br>"
-        ' sendHTML = sendHTML + "Det er oplysninger, som vi bruger hele tiden i dialogen med kunder, reklame-<br>og mediebureauer og det er derfor meget vigtigt, at de altid er opdaterede.<br><br>"
-        ' sendHTML = sendHTML + "I bedes venligst melde de officielle deadlines ind for hhv. <b>annonceordrer</b><br>og <b>annoncemateriale</b> via nedenstående link.<br><br>"
-        'sendHTML = sendHTML + "Skemaet udfyldes ved at vælge <b>ugedag</b> og <b>tidspunkt</b> i ""rullegardinerne"":<br><br>"
+                mail.Subject = "RYKKER!! Deadlines for udgivelser omkring forårets helligdage 2018"
+                'mail.Subject = "Vigtigt!! Opdatering af generelle Deadlines til DLU."
+                mail.Til = eMail
+                mail.BodyTitle = "Deadlines for udgivelser omkring forårets helligdage 2018"
+                'mail.BodyTitle = "Deadlines til DLU."
+                sendHTML = "<h2>Deadlines for udgivelser omkring forårets helligdage 2018.</h2>"
+                sendHTML = sendHTML + "<b>Uge 17+18</b> St. Bededag - <b>Uge 19+20</b> - Kr. Himmelfart - <b>Uge 21</b> pinse<br><br>"
+                '  sendHTML = sendHTML + "Vi har desværre endnu ikke modtaget din indtastning af ordre- og materiale deadlines for påske og helligdage 2018 – så indtast venligst senest <b>mandag d. 19. februar kl. 12.00</b>, tak.<br><br>"
+                sendHTML = sendHTML + "Vi har brug for din indtastning af ordre- og materiale deadlines for helligdage 2018 – så indtast venligst <b>senest onsdag d. 4. april kl. 12.00</b>, tak.<br><br>"
+                sendHTML = sendHTML + "En samlet oversigt på deadlines for påske og helligdage 2018 lægges på vores hjemmeside og bliver samtidig sendt til mediebureauerne.<br><br>"
+                sendHTML = sendHTML + "Klik ind på nedenstående link og <b>husk at opdatere</b> for afslutning, så sendes dine indtastninger direkte til os.<br><br>"
+                sendHTML = sendHTML + "<b>Uge 17+18</b> St. Bededag - <b>Uge 19+20</b> - Kr. Himmelfart - <b>Uge 21</b> pinse<br><br>"
+                'sendHTML = sendHTML + "<b>Alle ugerne fra påsken i uge 15 til og med 2. pinsedag i uge 23 skal udfyldes – også selvom<br>"
 
 
-        'sendHTML = sendHTML + "Benyt nedenstående link og angiv uger og ændringer i deadlines, i forbindelse med de nævnte helligdage.<br><br>"
-        'sendHTML = sendHTML + "<b>Klik på linket herunder og udfyld skemaet:</b><br><br>"
+                'Rykker
+                'sendHTML = sendHTML + "Vi har endnu ikke modtaget deadlines fra jeres blad omkring julen 2016.<br>"
+                '  sendHTML = sendHTML + "Hvis årsagen til manglende svar skyldes I ikke har oplysningerne endnu, må I meget skrive hvornår<br> det forventes afklaret til lvl@delokaleugeaviser.dk, mange tak.<br>"
+                'sendHTML = sendHTML + "<b>Fra påsken i uge 15-2017 frem til pinsen i uge 23-2017.</b><br><br>"
+
+                '    sendHTML = "<h2>Generelle deadlines for ordrer og annoncemateriale</h2>"
+                '  sendHTML = sendHTML + "Vi har endnu ikke modtaget deadlines fra jeres avis.<br><br>"
+                '   sendHTML = sendHTML + "Kære " & BladNavn & "<br><br>"
+                '  sendHTML = sendHTML + "Vi vil meget gerne sikre, at vi har de korrekte deadlines for modtagelse<br>af ordrer og annoncemateriale registreret i vores ordresystem.<br><br>"
+                ' sendHTML = sendHTML + "Det er oplysninger, som vi bruger hele tiden i dialogen med kunder, reklame-<br>og mediebureauer og det er derfor meget vigtigt, at de altid er opdaterede.<br><br>"
+                ' sendHTML = sendHTML + "I bedes venligst melde de officielle deadlines ind for hhv. <b>annonceordrer</b><br>og <b>annoncemateriale</b> via nedenstående link.<br><br>"
+                'sendHTML = sendHTML + "Skemaet udfyldes ved at vælge <b>ugedag</b> og <b>tidspunkt</b> i ""rullegardinerne"":<br><br>"
 
 
-        'sendHTML = sendHTML + "1) Vælg udgivelses ugen i rullegardinet.<br>"
-        '   sendHTML = sendHTML + "<b>Alle ugerne fra påske til og med 2. pinsedag i uge 20 skal udfyldes – også selvom der ikke er ændringer i forhold til den normale deadline.</b><br>"
-        'sendHTML = sendHTML + "2) <i><b>Hvis</b></i> avisen ikke udkommer markeres dette i afkrydsningsfeltet.<br>"
-        'sendHTML = sendHTML + "<small>(De resterende felter for ugen deaktiveres)</small><br>"
-        'sendHTML = sendHTML + "3) Ellers - vælg dato for udgivelsesdag i rullegardinet.<br>"
-        'sendHTML = sendHTML + "4) vælg dato for deadline for annoncer i rullegardinet.<br>"
-        'sendHTML = sendHTML + "5) vælg dato for deadline for materiale i rullegardinet.<br><br>"
-        'sendHTML = sendHTML + "1) Ordre deadline for <I>Tekstside annoncer</I><br>"
-        'sendHTML = sendHTML + "2) Materiale deadline for <I>Tekstside materiale</I><br>"
-        'sendHTML = sendHTML + "3) Ordre deadline for <I>Rubrik annoncer</I><br>"
-        'sendHTML = sendHTML + "4) Materiale deadline for <I>Rubrik materiale</I><br><br>"
-        'sendHTML = sendHTML + "Afslut med tryk på ""Opdater"" og dine indtastninger sendes automatisk til De Lokale Ugeaviser.<br><br>"
-        'sendHTML = sendHTML + "Vi vil gerne bede om at få udfyldt skemaet senest <b><u>onsdag den 28. juni 2017.</u></b><br><br>"
+                'sendHTML = sendHTML + "Benyt nedenstående link og angiv uger og ændringer i deadlines, i forbindelse med de nævnte helligdage.<br><br>"
+                'sendHTML = sendHTML + "<b>Klik på linket herunder og udfyld skemaet:</b><br><br>"
 
-        'VIGTIGT !!
-        'VIGTIGT !!
-        'HUSK AT SKIFTE LINK AFHÆNGIG AF OM DET ER HELLIGDAGE ELLER "NORMALE" DEADLINES
-        'Deadline ændres til Deadline2 hvis det er "Normale"
-        queryStr = "http://www.DiMP.dk/Deadline.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn)
-        ' sendHTML = sendHTML + "<h4>Alternativt Link:</h4>"
-        ' sendHTML = sendHTML + "<small>Prøv dette link, hvis ikke det første virker.</small><br>"
-        ' sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">Klik på dette Link.</A><br><br>"
-        ' sendHTML = sendHTML + "<b><i>Hvis du ikke kan komme ind på siden, eller den melder en fejl, så læs dette:</i></b><br>"
-        ' sendHTML = sendHTML + "Oversigten over deadlines vil blive sendt til mediebureauerne og lagt ud på vores hjemmeside.<br><br>"
-        'sendHTML = sendHTML + "http://www.DiMP.dk/OrdreApp/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
-        sendHTML = sendHTML + "Har du spørgsmål, er du velkommen til at kontakte mig på tlf. 3525 9589 eller mail: lej@delokaleugeaviser.dk<br><br>"
-        sendHTML = sendHTML + "<i><b>Dine oplysninger er vigtige, for vores kunder er afhængige af dem!</b></i><br><br>"
-        sendHTML = sendHTML + "På forhånd tak.<br><br>Med venlig hilsen<br><br>Lone Ek Jensen<br>De Lokale Ugeaviser<br><br>"
-        sendHTML = sendHTML + "<br><h3>Link:</h3>"
-        sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">Klik på dette Link for at angive deadlines</A><br>"
-        mail.Body = sendHTML 'convertDanishHTML(sendHTML)
-        'HUSK AT SKIFTE MAPPEN HVOR UDSENDELSERNE GEMMES    FORMATET ER EN RYKKER UNDERMAPPE
-        mail.BodyMappe = "Z:\Forsendelser\Deadlines\Påske 2018\Helligdage\Rykker"
-        mail.BodyFilNavn = Trim(BladNavn) & " [" & eMail & "]"
-        mail.From = "lej@delokaleugeaviser.dk"
-        mail.Send()
-      End If
+
+                'sendHTML = sendHTML + "1) Vælg udgivelses ugen i rullegardinet.<br>"
+                '   sendHTML = sendHTML + "<b>Alle ugerne fra påske til og med 2. pinsedag i uge 20 skal udfyldes – også selvom der ikke er ændringer i forhold til den normale deadline.</b><br>"
+                'sendHTML = sendHTML + "2) <i><b>Hvis</b></i> avisen ikke udkommer markeres dette i afkrydsningsfeltet.<br>"
+                'sendHTML = sendHTML + "<small>(De resterende felter for ugen deaktiveres)</small><br>"
+                'sendHTML = sendHTML + "3) Ellers - vælg dato for udgivelsesdag i rullegardinet.<br>"
+                'sendHTML = sendHTML + "4) vælg dato for deadline for annoncer i rullegardinet.<br>"
+                'sendHTML = sendHTML + "5) vælg dato for deadline for materiale i rullegardinet.<br><br>"
+                'sendHTML = sendHTML + "1) Ordre deadline for <I>Tekstside annoncer</I><br>"
+                'sendHTML = sendHTML + "2) Materiale deadline for <I>Tekstside materiale</I><br>"
+                'sendHTML = sendHTML + "3) Ordre deadline for <I>Rubrik annoncer</I><br>"
+                'sendHTML = sendHTML + "4) Materiale deadline for <I>Rubrik materiale</I><br><br>"
+                'sendHTML = sendHTML + "Afslut med tryk på ""Opdater"" og dine indtastninger sendes automatisk til De Lokale Ugeaviser.<br><br>"
+                'sendHTML = sendHTML + "Vi vil gerne bede om at få udfyldt skemaet senest <b><u>onsdag den 28. juni 2017.</u></b><br><br>"
+
+                'VIGTIGT !!
+                'VIGTIGT !!
+                'HUSK AT SKIFTE LINK AFHÆNGIG AF OM DET ER HELLIGDAGE ELLER "NORMALE" DEADLINES
+                'Deadline ændres til Deadline2 hvis det er "Normale"
+                queryStr = "http://www.DiMP.dk/Deadline.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn)
+                ' sendHTML = sendHTML + "<h4>Alternativt Link:</h4>"
+                ' sendHTML = sendHTML + "<small>Prøv dette link, hvis ikke det første virker.</small><br>"
+                ' sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">Klik på dette Link.</A><br><br>"
+                ' sendHTML = sendHTML + "<b><i>Hvis du ikke kan komme ind på siden, eller den melder en fejl, så læs dette:</i></b><br>"
+                ' sendHTML = sendHTML + "Oversigten over deadlines vil blive sendt til mediebureauerne og lagt ud på vores hjemmeside.<br><br>"
+                'sendHTML = sendHTML + "http://www.DiMP.dk/OrdreApp/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
+                sendHTML = sendHTML + "Har du spørgsmål, er du velkommen til at kontakte mig på tlf. 3525 9589 eller mail: lej@delokaleugeaviser.dk<br><br>"
+                sendHTML = sendHTML + "<i><b>Dine oplysninger er vigtige, for vores kunder er afhængige af dem!</b></i><br><br>"
+                sendHTML = sendHTML + "På forhånd tak.<br><br>Med venlig hilsen<br><br>Lone Ek Jensen<br>De Lokale Ugeaviser<br><br>"
+                sendHTML = sendHTML + "<br><h3>Link:</h3>"
+                sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">Klik på dette Link for at angive deadlines</A><br>"
+                mail.Body = sendHTML 'convertDanishHTML(sendHTML)
+                'HUSK AT SKIFTE MAPPEN HVOR UDSENDELSERNE GEMMES    FORMATET ER EN RYKKER UNDERMAPPE
+                mail.BodyMappe = "Z:\Forsendelser\Deadlines\Påske 2018\Helligdage\Rykker"
+                mail.BodyFilNavn = Trim(BladNavn) & " [" & eMail & "]"
+                mail.From = "lej@delokaleugeaviser.dk"
+                mail.Send()
+            End If
     End While
     dr.Close()
     cn.Close()
@@ -225,53 +225,57 @@ Public NotInheritable Class frmAbout
         '!!VIGTIGT !!
         'HUSK AT KØRE OPDATERING PÅ tblFarveTillægWebApp, SÅ EVT. NYE BLADID ER OPDATERET!!
         '!!VIGTIGT!!
-        mail.Subject = "RYKKER!! 2. halvårs priser pr. 1/7 2018 for " & BladNavn
+                mail.Subject = "Prisopdatering pr. 1. januar 2019. " & BladNavn
         mail.Til = eMail
-        mail.BodyTitle = "Rykker 2. halvårs priser pr. 1/7 2018"
-        sendHTML = "<h3>Prisopdatering for 2. halvår 2018.</h3>"
+                mail.BodyTitle = "Prisopdatering pr. 1. januar 2019.9."
+                sendHTML = "<h3>Prisopdatering pr. 1. januar 2019.</h3>"
 
-        sendHTML = sendHTML + "Vi har endnu ikke modtaget priser pr. 1/7 2018 fra jeres blad.<br><br>"
-        sendHTML = sendHTML + "Du bedes opdatere/godkende jeres priser for 2. halvår 2018.<br><br>"
+                sendHTML = sendHTML + "Vi har endnu ikke modtaget priser pr. 1/1 2019 fra jeres blad.<br><br>"
+                sendHTML = sendHTML + "For at ændre priser, skal I benytte linket nederst i denne mail.<br><br>"
 
         'sendHTML = sendHTML + "Kære alle."
         'sendHTML = sendHTML + "Som nogen af jer har opdaget, er fristen på den tidligere mail forkert.<br>Vi beklager fejlen.<br><br>"
         'sendHTML = sendHTML + "Grundet bureauernes meget stor efterspørgsel på priser pr. 1.januar 2014,<br>skal vi derfor bede dig om at indtaste disse allerede i dag."
-        sendHTML = sendHTML + "Indtast venligst priserne senest <U><b>fredag d. 8. juni 2018.</b></u><br><br>"
+                sendHTML = sendHTML + "De nævnte priser er de p.t. gældende mm-priser og såfremt der ikke er nogen ændringer (priser, farvetillæg) skal I derfor blot godkende disse.</b></u><br><br>"
 
-        sendHTML = sendHTML + "For at ændre/godkende priser, skal du benytte linket nederst i denne mail.<br><br>"
-        sendHTML = sendHTML + "De nævnte priser er de p.t. gældende mm-priser og såfremt der ikke er<br>"
-        sendHTML = sendHTML + "nogen ændringer (priser, farvetillæg) skal I derfor blot godkende disse.<br><br>"
+                sendHTML = sendHTML + "Indtast venligst priserne <b><u>senest onsdag d. 21 november 2018.</u></b><br><br>"
+                sendHTML = sendHTML + "Det er vigtigt at pointere, at eventuelle prisændringer skal lægges ind via linket.<br><br>"
         '       sendHTML = sendHTML + "Der må kun bruges kommatal i priserne, hvis der er min/max priser for farver, skal dette være heltal.<br><br>"
-        sendHTML = sendHTML + "Det er vigtigt at pointere, at eventuelle prisændringer <U>skal</U> lægges ind via den<br>hjemmeside, der åbnes ved brug af linket forneden.<br><B><I>Det er altså <U>ikke</U> nok, at sende en e-mail med priser/ændringer til DLU.</I></B><br><br>"
+                sendHTML = sendHTML + "<b>Det er altså ikke nok at sende en e-mail med priser/ændringer til DLU.</B><br><br>"
 
-        sendHTML = sendHTML + "<h3>OBS	OBS	Sommerpriser</h3>"
-        sendHTML = sendHTML + "Hvis der er forhøjede priser i sommerperioden skal disse indberettes manuelt<br>i en excel fil på mail til lej@delokaleugeaviser.dk<br><br>"
+                '  sendHTML = sendHTML + "<h3>OBS	OBS	Sommerpriser</h3>"
+                ' sendHTML = sendHTML + "Hvis der er forhøjede priser i sommerperioden skal disse indberettes manuelt<br>i en excel fil på mail til lej@delokaleugeaviser.dk<br><br>"
         '  sendHTML = sendHTML + "Har I endnu ikke de nye priser så meld venligst tilbage på lej@delokaleugeaviser.dk<br><br>"
 
-        sendHTML = sendHTML + "På forhånd tak<br><br>Lone Ek Jensen<br>tlf: 35 25 95 89<br><br>"
+                sendHTML = sendHTML + "På forhånd tak<br>tlf: 35 25 95 89<br><br>"
+                sendHTML = sendHTML + "Lars Jensen<br><br>"
+
+
         sendHTML = sendHTML + "<br><h3>Link:</h3>"
         queryStr = "http://www.DiMP.dk/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
         '  sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">" & queryStr & "</A><br>"
         ' sendHTML = sendHTML + "<h4>Alternativt Link:</h4>"
         'sendHTML = sendHTML + "<small>Prøv dette link, hvis ikke det første virker.</small><br>"
         sendHTML = sendHTML + "<A href=" & Chr(34) & queryStr & Chr(34) & ">Klik på dette Link for at indtaste priser.</A><br><br>"
-        sendHTML = sendHTML + "<b><i>Hvis du ikke kan komme ind på siden, eller den melder en fejl, så læs dette:</i></b><br>"
+       ' sendHTML = sendHTML + "<b><i>Hvis du ikke kan komme ind på siden, eller den melder en fejl, så læs dette:</i></b><br>"
         sendHTML = sendHTML + "Kopier linjen herunder og indsæt det i adresselinjen på din browser.<br><br>"
         sendHTML = sendHTML + "http://www.DiMP.dk/mmPriser.aspx?Query=" & BladID.ToString & "*" & BeregnWebChecksum(BladNavn) & "*0"
 
         mail.Body = sendHTML 'convertDanishHTML(sendHTML)
-        mail.BodyMappe = "Z:\Forsendelser\mmPriser\01-07-2018 Rykker"
+                mail.BodyMappe = "Z:\Forsendelser\mmPriser\01-01-2019 Rykker"
         mail.BodyFilNavn = Trim(BladNavn) & " [" & eMail & "]"
-        mail.From = "lej@delokaleugeaviser.dk"
-        mail.Send()
+                mail.From = "lhj@delokaleugeaviser.dk"
+                mail.Send()
       End If
     End While
     dr.Close()
     cn.Close()
     cm.Dispose()
     cn.Dispose()
-    Cursor = Cursors.Default
-  End Sub
+        Cursor = Cursors.Default
+      
+
+    End Sub
 
 
 
@@ -280,7 +284,7 @@ Public NotInheritable Class frmAbout
     'Deadlines()
 
     'DataTilWeb()
-    NyePriser()
+        NyePriser()
     ' sendTjeklister()
     'sendPrimærOmråder()
   End Sub

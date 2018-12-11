@@ -19,7 +19,7 @@ Public Class clsEmail
     Me.sqlConn = New System.Data.SqlClient.SqlConnection()
     Me.sqlInsertMail = New System.Data.SqlClient.SqlCommand()
     Me.sqlConn.ConnectionString = My.Settings.dimpSQLConnectionString
-    Me.sqlInsertMail.CommandText = "INSERT INTO tblMail (SendTo, Subject, Body, Attachfile1, SendFrom) VALUES (@Modtager, @Emne, @StiTilTekst, @StiTilPDF, @Afsender)"
+        Me.sqlInsertMail.CommandText = "INSERT INTO tblMail (SendTo, Subject, Body, Attachfile1, SendFrom) VALUES (@Modtager, @Emne, @StiTilTekst, @StiTilPDF, @Afsender)"
     Me.sqlInsertMail.Connection = Me.sqlConn
     Me.sqlInsertMail.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Modtager", System.Data.SqlDbType.NVarChar, 50, "SendTo"))
     Me.sqlInsertMail.Parameters.Add(New System.Data.SqlClient.SqlParameter("@Emne", System.Data.SqlDbType.NVarChar, 100, "Subject"))
@@ -50,7 +50,7 @@ Public Class clsEmail
       sqlInsertMail.Parameters("@StiTilPDF").Value = VedhæftetFilSti
       sqlInsertMail.Parameters("@Afsender").Value = From
       Me.sqlConn.Open()
-      sqlInsertMail.ExecuteNonQuery()
+            sqlInsertMail.ExecuteNonQuery()
     Catch
       Return False
     Finally

@@ -14,8 +14,9 @@ Public Class FrmBladStamData
   Private _noSave As Boolean = False
   Private _isLoading As Boolean = True
     Private _nyTilf¯jet As Boolean = False
-    Private _nyErOprettet As Boolean = True
+    Private _nyErOprettet As Boolean = False
 
+    Private _nytBladId As Integer = 0
 
   Public Property LockStatus() As Boolean
     Get
@@ -212,52 +213,123 @@ Public Class FrmBladStamData
 
     Private Sub TblBladStamdataBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TblBladStamdataBindingNavigatorSaveItem.Click
 
-        EndEdit()
-        SaveData()
-        If _nyErOprettet Then
 
-            _nyErOprettet = False
-            Me.Tbl≈rMedPriserTableAdapter.Fill(Me.DstBladStamdata.tbl≈rMedPriser)
-            Me.TblPrislisterPrBladPr≈rTableAdapter.InsertPrisliste(txtUgeavisID.Value, frmMain.Dette≈r, 1)
+        If btnGem.Text.Contains("Gem") Then
+            SaveData()
+
+        ElseIf Not btnGem.Text.Contains("Opdatere") Then
+
+
+            EndEdit()
+
         End If
+
         indlÊsPriser()
     End Sub
 
+    Private Sub SetStatusLabel()
+        If btnGem.Text.Equals("Gem") Then
+            Label_Status.Text = "Nyt stambladOprettet"
+            btnGem.Text = "Opdatere"
+
+        ElseIf Not _btnGem.Text.Equals("Opdatere") Then
+            Label_Status.Text = "Stamblad er blevet opdateret"
+            btnGem.Text = "Gem"
+        End If
+
+
+    End Sub
     Private Sub EndEdit()
 
 
         Me.TblBladStamdataBindingSource.AllowNew = True
-   
+
         Me.TblBladStamdataBindingSource.EndEdit()
+        Me.TblBladStamdataTableAdapter.Update(Me.DstBladStamdata.tblBladStamdata)
         Me.TblPrislisterPrBladPrUgeBindingSource.EndEdit()
+        Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
+
+
         Me.TblBladDÊkningBindingSource.EndEdit()
+        savePriser(txtUgeavisID.Value, cboPriser≈r.Value, cboPrislister.Value)
+        SetStatusLabel()
+
+
     End Sub
 
     Private Sub SaveData()
-        Me.Cursor = Cursors.WaitCursor
-        Dim resultat As Boolean
+        ' Me.Cursor = Cursors.WaitCursor
+
 
         Me.Validate()
-        If Me.TblBladStamdataTableAdapter.Update(Me.DstBladStamdata.tblBladStamdata) > 0 Then
-            resultat = True
-
-
-        End If
-
-        If frmMain.BrugerNavn = "LEJ" OrElse frmMain.BrugerNavn = "LW" OrElse frmMain.BrugerNavn = "AN" OrElse frmMain.BrugerNavn = "CWS" OrElse frmMain.BrugerNavn = "SMJ" OrElse frmMain.BrugerNavn = "LVL" OrElse frmMain.BrugerNavn = "TK" Then
-
-
-            Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
        
-            Me.TblBladDÊkningTableAdapter.Update(Me.DstBladStamdata.tblBladDÊkning)
-            savePriser(_previousBladID, _previous≈r, _previousPrisliste)
-            Me.Cursor = Cursors.Default
-            _nyErOprettet = False
+
+        If frmMain.BrugerNavn = "LEJ" OrElse frmMain.BrugerNavn = "LW" OrElse frmMain.BrugerNavn = "AN" OrElse frmMain.BrugerNavn = "CWS" OrElse frmMain.BrugerNavn = "SMJ" OrElse frmMain.BrugerNavn = "LVL" OrElse frmMain.BrugerNavn = "TK" OrElse frmMain.BrugerNavn = "LHJ" Then
+            If btnGem.Text.Contains("Gem") Then
+                '  Me.TblBladStamdataTableAdapter.Insert(txtNavn.Value, _nytBladId)
+
+
+                Me.TblBladStamdataBindingSource.AllowNew = True
+                Me.TblBladStamdataBindingSource.EndEdit()
+                Me.TblBladStamdataTableAdapter.Update(Me.DstBladStamdata.tblBladStamdata)
+
+
+
+                ' Me.TblBladStamdataTableAdapter.InsertQuery(txtNavn.Value, _nytBladId, txtAdresse.Value, txtAdresse2.Value, cboPostNr.Value, medTlf.Value, medFax.Value, txtCVR.Value, medFax.Value, txtKontaktperson.Value, optHovedgruppe.Value, cboMÂned.Value, cbo≈r.Value, txtEjerforhold.Value)
+
+                Me.TblPrislisterPrBladPrUgeBindingSource.EndEdit()
+                Me.TblPrislisterPrBladPrUgeTableAdapter.Update(Me.DstBladStamdata.tblPrislisterPrBladPrUge)
+
+
+
+
+                Me.TblBladDÊkningTableAdapter.Update(Me.DstBladStamdata.tblBladDÊkning)
+
+
+
+
+
+                Dim i As Integer
+                ' Me.TblBladStamdataTableAdapter.Insert(txtNavn.Value, _nytBladId)
+                Me.TblPrislisterPrBladPr≈rTableAdapter.InsertPrisliste(_nytBladId, Date.Now.Year, 1)
+                For i = 1 To 53
+                    TblPrislisterPrBladPrUgeTableAdapter.InsertPrislistePrBladPr≈rPrUge(Date.Now.Year, _nytBladId, i, 1)
+                Next i
+                savePriser(_previousBladID, _previous≈r, _previousPrisliste)
+                'Me.Cursor = Cursors.Default
+                SetStatusLabel()
+                indlÊsPriser()
+
+                _nyErOprettet = False
+
+
+
+            End If
+
         End If
 
 
 
     End Sub
+
+    Private Function GetNextBladId() As Integer
+        Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
+        Dim cm As SqlCommand = cn.CreateCommand()
+        Dim dr As SqlDataReader
+
+        cm.CommandType = CommandType.Text
+        cm.CommandText = String.Format("select top 1  BladID from  tblBladStamdata ORDER BY BladID desc")
+
+        Dim res As Integer
+        cn.Open()
+        dr = cm.ExecuteReader
+        dr.Read()
+
+        res = dr(0)
+        Return res + 1
+    End Function
+
+
 
     Private Sub savePriser(ByVal bladID As Integer, ByVal Âr As Integer, ByVal prisListe As Integer)
         Dim ta As New dstBladStamdataTableAdapters.tblPriserTableAdapter
@@ -275,7 +347,7 @@ Public Class FrmBladStamData
         Dim placeringID As Integer
         Dim proceed As Boolean = False
 
-        If frmMain.BrugerNavn <> "LEJ" AndAlso frmMain.BrugerNavn <> "LW" AndAlso frmMain.BrugerNavn <> "AN" AndAlso frmMain.BrugerNavn <> "CWS" AndAlso frmMain.BrugerNavn <> "SMJ" AndAlso frmMain.BrugerNavn <> "LVL" AndAlso frmMain.BrugerNavn <> "TK" Then Exit Sub
+    If frmMain.BrugerNavn <> "LEJ" AndAlso frmMain.BrugerNavn <> "LW" AndAlso frmMain.BrugerNavn <> "AN" AndAlso frmMain.BrugerNavn <> "CWS" AndAlso frmMain.BrugerNavn <> "SMJ" AndAlso frmMain.BrugerNavn <> "LVL" AndAlso frmMain.BrugerNavn <> "TK" AndAlso frmMain.BrugerNavn <> "LHJ" Then Exit Sub
         If prisListe = 0 OrElse bladID = 0 Then Exit Sub
         ' MessageBox.Show("Gemmer priser for ID:" & bladID & " - ≈r:" & Âr & " - Prisliste:" & prisListe)
         For Each ctrl As Control In grpPriser.Controls
@@ -334,10 +406,14 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub BindingNavigatorAddNewItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BindingNavigatorAddNewItem.Click
-        MessageBox.Show("Opret nyt stamblad med id " & _previousBladID + 1)
-        _nyErOprettet = False
+        _nytBladId = GetNextBladId()
+        btnGem.Text = "Gem"
 
-        SaveData()
+        MessageBox.Show("Opret nyt stamblad med id " & _nytBladId)
+   
+        _nyErOprettet = True
+
+
 
     End Sub
 
@@ -533,7 +609,15 @@ Public Class FrmBladStamData
 
     Private Sub cboPriser≈r_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboPriser≈r.ValueChanged
         'savePriser(_previousBladID, _previous≈r, _previousPrisliste)
-        Me.TblPrislisterPrBladPrUgeTableAdapter.FillBy≈r(Me.DstBladStamdata.tblPrislisterPrBladPrUge, cboPriser≈r.Value)
+        If Me.DstBladStamdata.tblPrislisterPrBladPrUge.IsInitialized Then
+            If cboPriser≈r.Value Then
+                ' Me.TblPrislisterPrBladPrUgeTableAdapter.FillBy≈r(Me.DstBladStamdata.tblPrislisterPrBladPrUge, cboPriser≈r.Value)
+            Else
+                ' Me.TblPrislisterPrBladPrUgeTableAdapter.FillBy≈r(Me.DstBladStamdata.tblPrislisterPrBladPrUge, Date.Now.Year)
+            End If
+        End If
+
+
 
         'Me.TblPrislisterPrBladPr≈rTableAdapter.FillBy≈r(Me.DstBladStamdata.tblPrislisterPrBladPr≈r, cboPriser≈r.Value)
         '  _previous≈r = CInt(cboPriser≈r.Value)
@@ -581,8 +665,12 @@ Public Class FrmBladStamData
     End Sub
 
     Private Sub btnGem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGem.Click
-        EndEdit()
-        SaveData()
+        If btnGem.Text.Contains("Opdatere") Then
+            EndEdit()
+        ElseIf btnGem.Text.Contains("Gem") Then
+            SaveData()
+        End If
+
     End Sub
 
     Private Sub btnAnnuller_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnnuller.Click
@@ -609,7 +697,7 @@ Public Class FrmBladStamData
         End If
     End Sub
 
-    Private Sub TblBladStamdataBindingSource_PositionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TblBladStamdataBindingSource.PositionChanged
+    Private Sub TblBladStamdataBindingSource_PositionChanged()
         savePriser(_previousBladID, _previous≈r, _previousPrisliste)
         indlÊsPriser()
         If _nyTilf¯jet Then
@@ -618,7 +706,7 @@ Public Class FrmBladStamData
             Dim huskPosition As Integer = TblBladStamdataBindingSource.Position
             Dim huskFilter As String = TblBladStamdataBindingSource.Filter
 
-            SaveData()
+
 
             Me.TblPrislisterPrBladPr≈rTableAdapter.FillBy≈r(Me.DstBladStamdata.tblPrislisterPrBladPr≈r, frmMain.Dette≈r)
             For i = 1 To 53
@@ -802,4 +890,5 @@ Public Class FrmBladStamData
         End If
     End Sub
 
+   
 End Class

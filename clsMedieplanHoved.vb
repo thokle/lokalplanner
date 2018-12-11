@@ -689,6 +689,16 @@ Public Class clsMedieplanHoved
     End Set
   End Property
 
+  Public Property OpkrævHelsingørMiljøTillæg As Boolean
+    Get
+      Return _NyeVærdier.OpkrævHelsingørMiljøTillæg
+    End Get
+    Set(value As Boolean)
+      _NyeVærdier.OpkrævHelsingørMiljøTillæg = value
+      checkValid()
+    End Set
+  End Property
+
   Public Property Status() As StatusKoder
     Get
       Return _status
@@ -847,7 +857,7 @@ Public Class clsMedieplanHoved
   Public Function SaveData() As Boolean
     Dim ta As New dstMedieplanTableAdapters.tblMedieplanTableAdapter
 
-    If ta.Insert(_mediePlanNr, _version, _NyeVærdier.AnnoncørNo_, _NyeVærdier.BureauNo_, _NyeVærdier.Format1, _NyeVærdier.Format2, _NyeVærdier.AntalFarver, _NyeVærdier.DPKulørID, _NyeVærdier.PlaceringID, _NyeVærdier.IndrykningsUge, _NyeVærdier.IndrykningsÅr, _NyeVærdier.Overskrift, _NyeVærdier.Fakturering, _NyeVærdier.RekvisitionsNr, _NyeVærdier.BilagsBladeTil, _NyeVærdier.BilagsBladeAtt, _NyeVærdier.MaterialeFølgerFra, _NyeVærdier.BrugMaterialeFraUge, _samletPris, _brugerCode, _NyeVærdier.TilladFarveSærRabat, _NyeVærdier.SammeMateriale, _NyeVærdier.SammeBureauOrdreNr, _NyeVærdier.FællesBureauOrdreNr, _NyeVærdier.MaterialeFølgerFraLeverandør, _status, _NyeVærdier.Beskrivelse, _NyeVærdier.KontaktPerson, _NyeVærdier.KontaktpersonTilhører, _NyeVærdier.BemærkningTilAnnoncør, _NyeVærdier.BemærkningTilUgeavis, _NyeVærdier.BilagsBladeTilNavn, _NyeVærdier.BilagsBladeTilAdresse, _NyeVærdier.BilagsBladeTilPostNr, _rettelserEfterAnnoncekontrol, _sikkerhedsGodtgørelse, _infoGodtgørelse, _NyeVærdier.TilladMmSærRabat, _NyeVærdier.KunForhandlerBundForskellig, False, _NyeVærdier.MiljøTillægOpkræves, _NyeVærdier.OpkrævJyskeMiljøTillæg, _NyeVærdier.OpkrævFynskeMiljøTillæg, _NyeVærdier.OpkrævNorthMiljøTillæg, _NyeVærdier.OpkrævDSVPMiljøTillæg, _NyeVærdier.OpkrævJyskeMedierASTillæg) > 0 Then
+    If ta.Insert(_mediePlanNr, _version, _NyeVærdier.AnnoncørNo_, _NyeVærdier.BureauNo_, _NyeVærdier.Format1, _NyeVærdier.Format2, _NyeVærdier.AntalFarver, _NyeVærdier.DPKulørID, _NyeVærdier.PlaceringID, _NyeVærdier.IndrykningsUge, _NyeVærdier.IndrykningsÅr, _NyeVærdier.Overskrift, _NyeVærdier.Fakturering, _NyeVærdier.RekvisitionsNr, _NyeVærdier.BilagsBladeTil, _NyeVærdier.BilagsBladeAtt, _NyeVærdier.MaterialeFølgerFra, _NyeVærdier.BrugMaterialeFraUge, _samletPris, _brugerCode, _NyeVærdier.TilladFarveSærRabat, _NyeVærdier.SammeMateriale, _NyeVærdier.SammeBureauOrdreNr, _NyeVærdier.FællesBureauOrdreNr, _NyeVærdier.MaterialeFølgerFraLeverandør, _status, _NyeVærdier.Beskrivelse, _NyeVærdier.KontaktPerson, _NyeVærdier.KontaktpersonTilhører, _NyeVærdier.BemærkningTilAnnoncør, _NyeVærdier.BemærkningTilUgeavis, _NyeVærdier.BilagsBladeTilNavn, _NyeVærdier.BilagsBladeTilAdresse, _NyeVærdier.BilagsBladeTilPostNr, _rettelserEfterAnnoncekontrol, _sikkerhedsGodtgørelse, _infoGodtgørelse, _NyeVærdier.TilladMmSærRabat, _NyeVærdier.KunForhandlerBundForskellig, False, _NyeVærdier.MiljøTillægOpkræves, _NyeVærdier.OpkrævJyskeMiljøTillæg, _NyeVærdier.OpkrævFynskeMiljøTillæg, _NyeVærdier.OpkrævNorthMiljøTillæg, _NyeVærdier.OpkrævDSVPMiljøTillæg, False, _NyeVærdier.OpkrævJyskeMedierASTillæg, _NyeVærdier.OpkrævHelsingørMiljøTillæg) > 0 Then
       _isValid = True
       If _NyeVærdier.RekvisitionsNr <> "" Then
         Dim cn As New SqlConnection(My.Settings.DiMPdotNetConnectionString)
@@ -907,6 +917,7 @@ Public Class clsMedieplanHoved
     _OldVærdier.OpkrævNorthMiljøTillæg = _NyeVærdier.OpkrævNorthMiljøTillæg
     _OldVærdier.OpkrævDSVPMiljøTillæg = _NyeVærdier.OpkrævDSVPMiljøTillæg
     _OldVærdier.OpkrævJyskeMedierASTillæg = _NyeVærdier.OpkrævJyskeMedierASTillæg
+    _OldVærdier.OpkrævHelsingørMiljøTillæg = _NyeVærdier.OpkrævHelsingørMiljøTillæg
     _hasChanges = False
   End Sub
 
@@ -988,6 +999,13 @@ Public Class clsMedieplanHoved
         tekst.Append("Miljøtillæg er ændret til ikke at skulle opkræves." & newLine)
       Else
         tekst.Append("Miljøtillæg er ændret til at skulle opkræves." & newLine)
+      End If
+    End If
+    If _NyeVærdier.OpkrævHelsingørMiljøTillæg <> _OldVærdier.OpkrævHelsingørMiljøTillæg Then
+      If _OldVærdier.OpkrævHelsingørMiljøTillæg Then
+        tekst.Append("Miljøtillæg for Lokalavisen Nordsjælland er ændret til ikke at skulle opkræves." & newLine)
+      Else
+        tekst.Append("Miljøtillæg for Lokalavisen Nordsjælland er ændret til at skulle opkræves." & newLine)
       End If
     End If
     If _NyeVærdier.OpkrævJyskeMiljøTillæg <> _OldVærdier.OpkrævJyskeMiljøTillæg Then

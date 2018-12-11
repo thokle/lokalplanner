@@ -154,6 +154,9 @@ Public Class frmMedieplan
     clbMiljøTillægOpkræves.SetItemChecked(4, True)
     _DataValues.OpkrævJyskeMedierASTillæg = True
     DataSourceMedieplan.OpkrævJyskeMedierASTillæg = True
+    clbMiljøTillægOpkræves.SetItemChecked(5, True)
+    _DataValues.OpkrævHelsingørMiljøTillæg = True
+    DataSourceMedieplan.OpkrævHelsingørTillæg = True
     Me.Text = "P: Ny"
 
     If frmMain.Width > 1200 Then
@@ -480,7 +483,10 @@ Public Class frmMedieplan
             DataSourceMedieplan.OpkrævDSVPMiljøTillæg = table(0).OpkrævDSVPMiljøTillæg
             clbMiljøTillægOpkræves.SetItemChecked(4, table(0).OpkrævJyskeMedierASTillæg)
             _DataValues.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
-            DataSourceMedieplan.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
+      DataSourceMedieplan.OpkrævJyskeMedierASTillæg = table(0).OpkrævJyskeMedierASTillæg
+      clbMiljøTillægOpkræves.SetItemChecked(5, table(0).OpkrævHelsingørMiljøTillæg)
+      _DataValues.OpkrævHelsingørMiljøTillæg = table(0).OpkrævHelsingørMiljøTillæg
+      DataSourceMedieplan.OpkrævHelsingørTillæg = table(0).OpkrævHelsingørMiljøTillæg
             _DataValues.TilladFarveSærRabat = table(0).TilladFarveSærRabat
             _DataValues.TilladMmSærRabat = table(0).TilladMmSærRabat
             _status = table(0).Status
@@ -2831,7 +2837,7 @@ Public Class frmMedieplan
             sHTML.Append("<td width=" & """100%""" & ">")
             sHTML.Append(beginTable & Tr)
             sHTML.Append("<TD width=" & """40%""" & ">" & Fo & "Miljøtillæg" & oFo & dT)
-            If rows(i).Cells("Ejerforhold").Value = "North Media" Then
+            If rows(i).Cells("Ejerforhold").Value = "North Media" OrElse rows(i).Cells("Ejerforhold").Value = "Helsingør Dagblad" Then
               sHTML.Append("<TD width=" & """20%""" & ">0,06" & dT)
               sHTML.Append("<TD width=" & """25%""" & ">0,06x" & antalmm.ToString("#,###") & dT)
               miljøtillægpris = antalmm * 0.06
@@ -3136,6 +3142,9 @@ Public Class frmMedieplan
     clbMiljøTillægOpkræves.SetItemChecked(4, True)
     _DataValues.OpkrævJyskeMedierASTillæg = True
     DataSourceMedieplan.OpkrævJyskeMedierASTillæg = True
+    clbMiljøTillægOpkræves.SetItemChecked(5, True)
+    _DataValues.OpkrævHelsingørMiljøTillæg = True
+    DataSourceMedieplan.OpkrævHelsingørTillæg = True
     setStatus(_status)
     nyFrmKopierTilNy.Close()
     nyFrmKopierTilNy.Dispose()
@@ -3953,7 +3962,7 @@ Public Class frmMedieplan
           If arow.Cells("Is365").Value = False Then
             arow.Cells("UgeavisID").Appearance.FontData.Italic = DefaultableBoolean.True
           End If
-          If arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" OrElse arow.Cells("Ejerforhold").Value = "Den Sydvestjyske Venstrepresse" OrElse arow.Cells("Ejerforhold").Value = "Fynske Medier" OrElse arow.Cells("Ejerforhold").Value = "North Media" OrElse arow.Cells("Ejerforhold").Value = "Jyske Medier A/S" Then
+          If arow.Cells("Ejerforhold").Value = "Helsingør Dagblad" OrElse arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" OrElse arow.Cells("Ejerforhold").Value = "Den Sydvestjyske Venstrepresse" OrElse arow.Cells("Ejerforhold").Value = "Fynske Medier" OrElse arow.Cells("Ejerforhold").Value = "North Media" OrElse arow.Cells("Ejerforhold").Value = "Jyske Medier A/S" Then
             If arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" Then
               If Me.DataSourceMedieplan.Placering = 11 OrElse DataSourceMedieplan.Placering > 12 Then
                 If txtFormat1.Text <> "6" Then
@@ -3978,7 +3987,7 @@ Public Class frmMedieplan
           If arow.Cells("Is365").Value = False Then
             arow.Cells("UgeavisID").Appearance.FontData.Italic = DefaultableBoolean.False
           End If
-          If arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" OrElse arow.Cells("Ejerforhold").Value = "Den Sydvestjyske Venstrepresse" OrElse arow.Cells("Ejerforhold").Value = "Fynske Medier" OrElse arow.Cells("Ejerforhold").Value = "North Media" OrElse arow.Cells("Ejerforhold").Value = "Jyske Medier A/S" Then
+          If arow.Cells("Ejerforhold").Value = "Helsingør Dagblad" OrElse arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" OrElse arow.Cells("Ejerforhold").Value = "Den Sydvestjyske Venstrepresse" OrElse arow.Cells("Ejerforhold").Value = "Fynske Medier" OrElse arow.Cells("Ejerforhold").Value = "North Media" OrElse arow.Cells("Ejerforhold").Value = "Jyske Medier A/S" Then
             If arow.Cells("Ejerforhold").Value = "Midtjyske Medier" OrElse arow.Cells("Ejerforhold").Value = "Berlingske Lokalaviser" Then
               If Me.DataSourceMedieplan.Placering = 11 OrElse DataSourceMedieplan.Placering > 12 Then
                 arow.Cells("UgeavisID").Appearance.FontData.Bold = DefaultableBoolean.True
@@ -4286,6 +4295,12 @@ Public Class frmMedieplan
       Else
         DataSourceMedieplan.OpkrævJyskeMedierASTillæg = False
       End If
+    ElseIf e.Index = 5 Then
+      If e.NewValue = CheckState.Checked Then
+        DataSourceMedieplan.OpkrævHelsingørTillæg = True
+      Else
+        DataSourceMedieplan.OpkrævHelsingørTillæg = False
+      End If
     End If
   End Sub
 
@@ -4342,11 +4357,28 @@ Public Class frmMedieplan
 
         Dim valn As String = txtFakturaBemærkning.Value
         Dim firsIndex = valn.IndexOf(",")
-        Dim updateString = valn.Substring(firsIndex, valn.Length + 1)
-        If updateString > 0 Then
-            _fakService.UpdateFakuraBemærkning(updateString, _medieplanNr)
+        If firsIndex > 0 And valn.Length > 50 Then
+            Dim first = valn.Substring(0, 49)
+            Dim second = valn.Substring(50, valn.ToString.Length)
+            _fakService.UpdateFakuraBemærkning(first, second, _medieplanNr)
+            If valn > 0 And valn.ToString.Length < 49 Then
+                _fakService.UpdateFakuraBemærkning(valn, _medieplanNr)
+            ElseIf valn.Length < 50 Then
+                _fakService.UpdateFakuraBemærkning(valn, _medieplanNr)
+            End If
+            End
+        ElseIf valn.Length > 0 Then
+            Dim secondUpdate = valn
+            If valn.Length > 0 And valn.Length < 49 Then
+                _fakService.UpdateFakuraBemærkning(secondUpdate, _medieplanNr)
+            ElseIf valn.Length > 0 And valn.ToString.Length > 49 Then
+                Dim first = valn.Substring(0, 49)
+                Dim second = valn.Substring(50, secondUpdate.ToString.Length)
+                _fakService.UpdateFakuraBemærkning(first, second, _medieplanNr)
+
+            End If
         End If
 
-    End Sub
 
+    End Sub
 End Class

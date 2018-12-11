@@ -92,9 +92,9 @@ Partial Class FrmBladStamData
         Dim lblKoncern As System.Windows.Forms.Label
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblPostNr", -1)
-        Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
-        Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
-        Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
+        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
+        Dim UltraGridColumn32 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
+        Dim UltraGridColumn33 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -108,10 +108,10 @@ Partial Class FrmBladStamData
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("FK_tblPrislisterPrBladPrÅr_tblBladStamdata", -1)
-        Dim UltraGridColumn7 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn8 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
-        Dim UltraGridColumn9 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
-        Dim UltraGridColumn10 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn")
+        Dim UltraGridColumn34 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn62 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
+        Dim UltraGridColumn63 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
+        Dim UltraGridColumn64 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn")
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -127,9 +127,9 @@ Partial Class FrmBladStamData
         Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblPostNr", -1)
-        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
-        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
-        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
+        Dim UltraGridColumn65 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
+        Dim UltraGridColumn66 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostBy")
+        Dim UltraGridColumn67 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Husstande")
         Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -182,10 +182,10 @@ Partial Class FrmBladStamData
         Dim ValueListItem40 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand4 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblGeoKode", -1)
-        Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeID")
-        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeNavn")
-        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeSortKey")
-        Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
+        Dim UltraGridColumn68 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeID")
+        Dim UltraGridColumn69 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeNavn")
+        Dim UltraGridColumn70 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GeoKodeSortKey")
+        Dim UltraGridColumn71 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
         Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance39 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -199,11 +199,11 @@ Partial Class FrmBladStamData
         Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand5 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblDelOmråde", -1)
-        Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeID")
-        Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeKode")
-        Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeNavn")
-        Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeSortKey")
-        Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
+        Dim UltraGridColumn72 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeID")
+        Dim UltraGridColumn73 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeKode")
+        Dim UltraGridColumn74 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeNavn")
+        Dim UltraGridColumn75 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DelOmrådeSortKey")
+        Dim UltraGridColumn76 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
         Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -217,10 +217,10 @@ Partial Class FrmBladStamData
         Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand6 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblRegion", -1)
-        Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionID")
-        Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionNavn")
-        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionSortKey")
-        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
+        Dim UltraGridColumn77 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionID")
+        Dim UltraGridColumn78 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionNavn")
+        Dim UltraGridColumn79 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RegionSortKey")
+        Dim UltraGridColumn80 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
         Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance64 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -233,16 +233,16 @@ Partial Class FrmBladStamData
         Dim Appearance71 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance72 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand7 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("FK_tblBladDækning_tblBladStamdata", -1)
-        Dim UltraGridColumn39 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn40 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
-        Dim UltraGridColumn41 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Oplag")
-        Dim UltraGridColumn42 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DækningsGrad")
+        Dim UltraGridColumn81 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn82 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PostNr")
+        Dim UltraGridColumn83 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Oplag")
+        Dim UltraGridColumn84 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DækningsGrad")
         Dim Appearance73 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand8 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("FK_tblPrislisterPrBladPrÅr_tblBladStamdata", -1)
-        Dim UltraGridColumn47 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn48 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
-        Dim UltraGridColumn49 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
-        Dim UltraGridColumn50 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn")
+        Dim UltraGridColumn85 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn86 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
+        Dim UltraGridColumn87 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
+        Dim UltraGridColumn88 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn")
         Dim Appearance74 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance75 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance76 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -255,10 +255,10 @@ Partial Class FrmBladStamData
         Dim Appearance83 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance84 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand9 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("FK_tblPrislisterPrBladPrUge_tblBladStamdata", -1)
-        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
-        Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Uge")
-        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
+        Dim UltraGridColumn89 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År")
+        Dim UltraGridColumn90 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn91 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Uge")
+        Dim UltraGridColumn92 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteID")
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab(True)
         Dim UltraTab15 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab16 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -274,35 +274,35 @@ Partial Class FrmBladStamData
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab9 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraGridBand10 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblBladStamdata_tableMedAllePriser", -1)
-        Dim UltraGridColumn51 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
-        Dim UltraGridColumn52 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn", -1, Nothing, 1, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, True)
-        Dim UltraGridColumn53 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Betegnelse")
-        Dim UltraGridColumn54 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FormatFra")
+        Dim UltraGridColumn93 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("BladID")
+        Dim UltraGridColumn94 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrislisteNavn", -1, Nothing, 1, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, True)
+        Dim UltraGridColumn95 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Betegnelse")
+        Dim UltraGridColumn96 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FormatFra")
         Dim Appearance85 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn55 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FormatTil")
+        Dim UltraGridColumn97 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FormatTil")
         Dim Appearance86 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn56 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("mmPris")
+        Dim UltraGridColumn98 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("mmPris")
         Dim Appearance87 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn57 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarvePris")
+        Dim UltraGridColumn99 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarvePris")
         Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn58 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMin")
+        Dim UltraGridColumn100 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMin")
         Dim Appearance89 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn59 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMax")
+        Dim UltraGridColumn101 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FarveMax")
         Dim Appearance90 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn60 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Pris")
+        Dim UltraGridColumn105 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Pris")
         Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn62 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Min")
+        Dim UltraGridColumn106 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Min")
         Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn63 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Max")
+        Dim UltraGridColumn108 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Farve4Max")
         Dim Appearance93 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn64 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, True)
-        Dim UltraGridColumn65 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PlaceringID", -1, Nothing, 2, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
+        Dim UltraGridColumn109 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("År", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, True)
+        Dim UltraGridColumn110 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PlaceringID", -1, Nothing, 2, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand11 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblDage", -1)
-        Dim UltraGridColumn66 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagID")
-        Dim UltraGridColumn67 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
-        Dim UltraGridColumn68 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagType")
-        Dim UltraGridColumn69 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
+        Dim UltraGridColumn111 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagID")
+        Dim UltraGridColumn115 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
+        Dim UltraGridColumn116 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagType")
+        Dim UltraGridColumn117 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -315,10 +315,10 @@ Partial Class FrmBladStamData
         Dim Appearance104 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance105 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand12 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("tblDage", -1)
-        Dim UltraGridColumn70 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagID")
-        Dim UltraGridColumn71 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
-        Dim UltraGridColumn72 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagType")
-        Dim UltraGridColumn73 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
+        Dim UltraGridColumn118 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagID")
+        Dim UltraGridColumn120 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagNavn")
+        Dim UltraGridColumn121 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DagType")
+        Dim UltraGridColumn122 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("timestamp")
         Dim Appearance106 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance107 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -342,8 +342,6 @@ Partial Class FrmBladStamData
         Me.PostNrListeDropdown = New WinPlanner.PostNrListeDropdown()
         Me.cboPrislisterPrÅr = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.FKtblPrislisterPrBladPrÅrtblBladStamdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblBladStamdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DstBladStamdata = New WinPlanner.dstBladStamdata()
         Me.tbpTekstside = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.grpPriser = New Infragistics.Win.Misc.UltraGroupBox()
         Me.txt4FarvertillægMax8 = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -541,11 +539,15 @@ Partial Class FrmBladStamData
         Me.btnUdskriv = New Infragistics.Win.Misc.UltraButton()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.statusLabel = New System.Windows.Forms.Label()
+        Me.Label_Status = New System.Windows.Forms.Label()
         Me.TblPostNrTableAdapter = New WinPlanner.PostNrListeDropdownTableAdapters.tblPostNrTableAdapter()
         Me.TblRegionTableAdapter = New WinPlanner.RegionListeDropdownTableAdapters.tblRegionTableAdapter()
         Me.TblDelOmrådeTableAdapter = New WinPlanner.DelområdeListeDropdownTableAdapters.tblDelOmrådeTableAdapter()
         Me.TblGeoKodeTableAdapter = New WinPlanner.GeoKodeListeDropdownTableAdapters.tblGeoKodeTableAdapter()
         Me.TblDageTableAdapter = New WinPlanner.UgedagListeDropdownTableAdapters.tblDageTableAdapter()
+        Me.TblBladStamdataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DstBladStamdata = New WinPlanner.dstBladStamdata()
         Me.TblBladStamdataTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tblBladStamdataTableAdapter()
         Me.TblBladDækningTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tblBladDækningTableAdapter()
         Me.TblPrislisterPrBladPrUgeTableAdapter = New WinPlanner.dstBladStamdataTableAdapters.tblPrislisterPrBladPrUgeTableAdapter()
@@ -624,8 +626,6 @@ Partial Class FrmBladStamData
         CType(Me.PostNrListeDropdown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPrislisterPrÅr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FKtblPrislisterPrBladPrÅrtblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DstBladStamdata, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpTekstside.SuspendLayout()
         CType(Me.grpPriser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpPriser.SuspendLayout()
@@ -781,6 +781,8 @@ Partial Class FrmBladStamData
         Me.tabStamdata.SuspendLayout()
         CType(Me.TblBladStamdataBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TblBladStamdataBindingNavigator.SuspendLayout()
+        CType(Me.TblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DstBladStamdata, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblPrimærPct
@@ -1414,10 +1416,10 @@ Partial Class FrmBladStamData
         Appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboPostNrDækning.DisplayLayout.Appearance = Appearance1
         Me.cboPostNrDækning.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn4.Header.VisiblePosition = 0
-        UltraGridColumn5.Header.VisiblePosition = 1
-        UltraGridColumn6.Header.VisiblePosition = 2
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn4, UltraGridColumn5, UltraGridColumn6})
+        UltraGridColumn31.Header.VisiblePosition = 0
+        UltraGridColumn32.Header.VisiblePosition = 1
+        UltraGridColumn33.Header.VisiblePosition = 2
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn31, UltraGridColumn32, UltraGridColumn33})
         Me.cboPostNrDækning.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.cboPostNrDækning.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboPostNrDækning.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -1500,14 +1502,14 @@ Partial Class FrmBladStamData
         Appearance13.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboPrislisterPrÅr.DisplayLayout.Appearance = Appearance13
         UltraGridBand2.ColHeadersVisible = False
-        UltraGridColumn7.Header.VisiblePosition = 0
-        UltraGridColumn7.Hidden = True
-        UltraGridColumn8.Header.VisiblePosition = 1
-        UltraGridColumn8.Hidden = True
-        UltraGridColumn9.Header.VisiblePosition = 2
-        UltraGridColumn9.Hidden = True
-        UltraGridColumn10.Header.VisiblePosition = 3
-        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10})
+        UltraGridColumn34.Header.VisiblePosition = 0
+        UltraGridColumn34.Hidden = True
+        UltraGridColumn62.Header.VisiblePosition = 1
+        UltraGridColumn62.Hidden = True
+        UltraGridColumn63.Header.VisiblePosition = 2
+        UltraGridColumn63.Hidden = True
+        UltraGridColumn64.Header.VisiblePosition = 3
+        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn34, UltraGridColumn62, UltraGridColumn63, UltraGridColumn64})
         Me.cboPrislisterPrÅr.DisplayLayout.BandsSerializer.Add(UltraGridBand2)
         Me.cboPrislisterPrÅr.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboPrislisterPrÅr.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -1573,17 +1575,6 @@ Partial Class FrmBladStamData
         '
         Me.FKtblPrislisterPrBladPrÅrtblBladStamdataBindingSource.DataMember = "FK_tblPrislisterPrBladPrÅr_tblBladStamdata"
         Me.FKtblPrislisterPrBladPrÅrtblBladStamdataBindingSource.DataSource = Me.TblBladStamdataBindingSource
-        '
-        'TblBladStamdataBindingSource
-        '
-        Me.TblBladStamdataBindingSource.AllowNew = True
-        Me.TblBladStamdataBindingSource.DataMember = "tblBladStamdata"
-        Me.TblBladStamdataBindingSource.DataSource = Me.DstBladStamdata
-        '
-        'DstBladStamdata
-        '
-        Me.DstBladStamdata.DataSetName = "dstBladStamdata"
-        Me.DstBladStamdata.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tbpTekstside
         '
@@ -2482,7 +2473,7 @@ Partial Class FrmBladStamData
         Me.tbpNavnAdresse.Controls.Add(lblNavn)
         Me.tbpNavnAdresse.Controls.Add(lblBladID)
         Me.tbpNavnAdresse.Controls.Add(lblPostNr)
-        Me.tbpNavnAdresse.Location = New System.Drawing.Point(-10000, -10000)
+        Me.tbpNavnAdresse.Location = New System.Drawing.Point(1, 20)
         Me.tbpNavnAdresse.Name = "tbpNavnAdresse"
         Me.tbpNavnAdresse.Size = New System.Drawing.Size(893, 642)
         '
@@ -2502,13 +2493,13 @@ Partial Class FrmBladStamData
         Appearance25.BackColor = System.Drawing.SystemColors.Window
         Appearance25.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboPostNr.DisplayLayout.Appearance = Appearance25
-        UltraGridColumn28.Header.Caption = "Post nr"
-        UltraGridColumn28.Header.VisiblePosition = 0
-        UltraGridColumn29.Header.Caption = "By"
-        UltraGridColumn29.Header.VisiblePosition = 1
-        UltraGridColumn30.Header.VisiblePosition = 2
-        UltraGridColumn30.Hidden = True
-        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn28, UltraGridColumn29, UltraGridColumn30})
+        UltraGridColumn65.Header.Caption = "Post nr"
+        UltraGridColumn65.Header.VisiblePosition = 0
+        UltraGridColumn66.Header.Caption = "By"
+        UltraGridColumn66.Header.VisiblePosition = 1
+        UltraGridColumn67.Header.VisiblePosition = 2
+        UltraGridColumn67.Hidden = True
+        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn65, UltraGridColumn66, UltraGridColumn67})
         Me.cboPostNr.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
         Me.cboPostNr.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboPostNr.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -2847,15 +2838,15 @@ Partial Class FrmBladStamData
         Me.cboGeoKode.DisplayLayout.Appearance = Appearance37
         Me.cboGeoKode.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
         UltraGridBand4.ColHeadersVisible = False
-        UltraGridColumn14.Header.VisiblePosition = 0
-        UltraGridColumn14.Hidden = True
-        UltraGridColumn15.Header.Caption = "Geo kode"
-        UltraGridColumn15.Header.VisiblePosition = 1
-        UltraGridColumn16.Header.VisiblePosition = 2
-        UltraGridColumn16.Hidden = True
-        UltraGridColumn17.Header.VisiblePosition = 3
-        UltraGridColumn17.Hidden = True
-        UltraGridBand4.Columns.AddRange(New Object() {UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17})
+        UltraGridColumn68.Header.VisiblePosition = 0
+        UltraGridColumn68.Hidden = True
+        UltraGridColumn69.Header.Caption = "Geo kode"
+        UltraGridColumn69.Header.VisiblePosition = 1
+        UltraGridColumn70.Header.VisiblePosition = 2
+        UltraGridColumn70.Hidden = True
+        UltraGridColumn71.Header.VisiblePosition = 3
+        UltraGridColumn71.Hidden = True
+        UltraGridBand4.Columns.AddRange(New Object() {UltraGridColumn68, UltraGridColumn69, UltraGridColumn70, UltraGridColumn71})
         Me.cboGeoKode.DisplayLayout.BandsSerializer.Add(UltraGridBand4)
         Me.cboGeoKode.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboGeoKode.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -2935,17 +2926,17 @@ Partial Class FrmBladStamData
         Appearance49.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboDelområde.DisplayLayout.Appearance = Appearance49
         Me.cboDelområde.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn18.Header.VisiblePosition = 0
-        UltraGridColumn18.Hidden = True
-        UltraGridColumn19.Header.Caption = "Delområde"
-        UltraGridColumn19.Header.VisiblePosition = 1
-        UltraGridColumn20.Header.Caption = "Navn"
-        UltraGridColumn20.Header.VisiblePosition = 2
-        UltraGridColumn21.Header.VisiblePosition = 3
-        UltraGridColumn21.Hidden = True
-        UltraGridColumn22.Header.VisiblePosition = 4
-        UltraGridColumn22.Hidden = True
-        UltraGridBand5.Columns.AddRange(New Object() {UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22})
+        UltraGridColumn72.Header.VisiblePosition = 0
+        UltraGridColumn72.Hidden = True
+        UltraGridColumn73.Header.Caption = "Delområde"
+        UltraGridColumn73.Header.VisiblePosition = 1
+        UltraGridColumn74.Header.Caption = "Navn"
+        UltraGridColumn74.Header.VisiblePosition = 2
+        UltraGridColumn75.Header.VisiblePosition = 3
+        UltraGridColumn75.Hidden = True
+        UltraGridColumn76.Header.VisiblePosition = 4
+        UltraGridColumn76.Hidden = True
+        UltraGridBand5.Columns.AddRange(New Object() {UltraGridColumn72, UltraGridColumn73, UltraGridColumn74, UltraGridColumn75, UltraGridColumn76})
         Me.cboDelområde.DisplayLayout.BandsSerializer.Add(UltraGridBand5)
         Me.cboDelområde.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboDelområde.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3027,16 +3018,16 @@ Partial Class FrmBladStamData
         Me.cboRegion.DisplayLayout.Appearance = Appearance61
         Me.cboRegion.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
         UltraGridBand6.ColHeadersVisible = False
-        UltraGridColumn23.Header.VisiblePosition = 0
-        UltraGridColumn23.Hidden = True
-        UltraGridColumn24.Header.Caption = "Region"
-        UltraGridColumn24.Header.VisiblePosition = 1
-        UltraGridColumn25.Header.Enabled = False
-        UltraGridColumn25.Header.VisiblePosition = 2
-        UltraGridColumn25.Hidden = True
-        UltraGridColumn26.Header.VisiblePosition = 3
-        UltraGridColumn26.Hidden = True
-        UltraGridBand6.Columns.AddRange(New Object() {UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26})
+        UltraGridColumn77.Header.VisiblePosition = 0
+        UltraGridColumn77.Hidden = True
+        UltraGridColumn78.Header.Caption = "Region"
+        UltraGridColumn78.Header.VisiblePosition = 1
+        UltraGridColumn79.Header.Enabled = False
+        UltraGridColumn79.Header.VisiblePosition = 2
+        UltraGridColumn79.Hidden = True
+        UltraGridColumn80.Header.VisiblePosition = 3
+        UltraGridColumn80.Hidden = True
+        UltraGridBand6.Columns.AddRange(New Object() {UltraGridColumn77, UltraGridColumn78, UltraGridColumn79, UltraGridColumn80})
         Me.cboRegion.DisplayLayout.BandsSerializer.Add(UltraGridBand6)
         Me.cboRegion.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboRegion.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3112,16 +3103,16 @@ Partial Class FrmBladStamData
         '
         Me.grdDækning.DataSource = Me.TblBladDækningBindingSource
         Me.grdDækning.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn39.Header.VisiblePosition = 0
-        UltraGridColumn39.Hidden = True
-        UltraGridColumn40.EditorComponent = Me.cboPostNrDækning
-        UltraGridColumn40.Header.VisiblePosition = 1
-        UltraGridColumn40.Width = 73
-        UltraGridColumn41.Header.VisiblePosition = 2
-        UltraGridColumn41.Width = 108
-        UltraGridColumn42.Header.Caption = "Dækningsgrad"
-        UltraGridColumn42.Header.VisiblePosition = 3
-        UltraGridBand7.Columns.AddRange(New Object() {UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42})
+        UltraGridColumn81.Header.VisiblePosition = 0
+        UltraGridColumn81.Hidden = True
+        UltraGridColumn82.EditorComponent = Me.cboPostNrDækning
+        UltraGridColumn82.Header.VisiblePosition = 1
+        UltraGridColumn82.Width = 73
+        UltraGridColumn83.Header.VisiblePosition = 2
+        UltraGridColumn83.Width = 108
+        UltraGridColumn84.Header.Caption = "Dækningsgrad"
+        UltraGridColumn84.Header.VisiblePosition = 3
+        UltraGridBand7.Columns.AddRange(New Object() {UltraGridColumn81, UltraGridColumn82, UltraGridColumn83, UltraGridColumn84})
         Me.grdDækning.DisplayLayout.BandsSerializer.Add(UltraGridBand7)
         Me.grdDækning.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.TemplateOnBottom
         Me.grdDækning.DisplayLayout.Override.AllowColMoving = Infragistics.Win.UltraWinGrid.AllowColMoving.NotAllowed
@@ -3200,7 +3191,7 @@ Partial Class FrmBladStamData
         Me.tbpPriser.Controls.Add(lblPrislistePrUge)
         Me.tbpPriser.Controls.Add(lblÅr)
         Me.tbpPriser.Controls.Add(Me.tabPriser)
-        Me.tbpPriser.Location = New System.Drawing.Point(1, 20)
+        Me.tbpPriser.Location = New System.Drawing.Point(-10000, -10000)
         Me.tbpPriser.Name = "tbpPriser"
         Me.tbpPriser.Size = New System.Drawing.Size(893, 642)
         '
@@ -3230,15 +3221,15 @@ Partial Class FrmBladStamData
         Appearance73.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboPrislister.DisplayLayout.Appearance = Appearance73
         UltraGridBand8.ColHeadersVisible = False
-        UltraGridColumn47.Header.VisiblePosition = 0
-        UltraGridColumn47.Hidden = True
-        UltraGridColumn48.Header.VisiblePosition = 1
-        UltraGridColumn48.Hidden = True
-        UltraGridColumn49.Header.VisiblePosition = 2
-        UltraGridColumn49.Hidden = True
-        UltraGridColumn50.Header.Caption = "Prisliste"
-        UltraGridColumn50.Header.VisiblePosition = 3
-        UltraGridBand8.Columns.AddRange(New Object() {UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50})
+        UltraGridColumn85.Header.VisiblePosition = 0
+        UltraGridColumn85.Hidden = True
+        UltraGridColumn86.Header.VisiblePosition = 1
+        UltraGridColumn86.Hidden = True
+        UltraGridColumn87.Header.VisiblePosition = 2
+        UltraGridColumn87.Hidden = True
+        UltraGridColumn88.Header.Caption = "Prisliste"
+        UltraGridColumn88.Header.VisiblePosition = 3
+        UltraGridBand8.Columns.AddRange(New Object() {UltraGridColumn85, UltraGridColumn86, UltraGridColumn87, UltraGridColumn88})
         Me.cboPrislister.DisplayLayout.BandsSerializer.Add(UltraGridBand8)
         Me.cboPrislister.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboPrislister.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3311,15 +3302,15 @@ Partial Class FrmBladStamData
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.TblPrislisterPrBladPrUgeUltraGrid.DataSource = Me.TblPrislisterPrBladPrUgeBindingSource
         Me.TblPrislisterPrBladPrUgeUltraGrid.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn1.Header.VisiblePosition = 0
-        UltraGridColumn2.Header.VisiblePosition = 1
-        UltraGridColumn2.Hidden = True
-        UltraGridColumn3.Header.VisiblePosition = 2
-        UltraGridColumn3.Width = 39
-        UltraGridColumn27.EditorComponent = Me.cboPrislisterPrÅr
-        UltraGridColumn27.Header.Caption = "Prisliste"
-        UltraGridColumn27.Header.VisiblePosition = 3
-        UltraGridBand9.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn27})
+        UltraGridColumn89.Header.VisiblePosition = 0
+        UltraGridColumn90.Header.VisiblePosition = 1
+        UltraGridColumn90.Hidden = True
+        UltraGridColumn91.Header.VisiblePosition = 2
+        UltraGridColumn91.Width = 39
+        UltraGridColumn92.EditorComponent = Me.cboPrislisterPrÅr
+        UltraGridColumn92.Header.Caption = "Prisliste"
+        UltraGridColumn92.Header.VisiblePosition = 3
+        UltraGridBand9.Columns.AddRange(New Object() {UltraGridColumn89, UltraGridColumn90, UltraGridColumn91, UltraGridColumn92})
         Me.TblPrislisterPrBladPrUgeUltraGrid.DisplayLayout.BandsSerializer.Add(UltraGridBand9)
         Me.TblPrislisterPrBladPrUgeUltraGrid.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand
         Me.TblPrislisterPrBladPrUgeUltraGrid.Location = New System.Drawing.Point(267, 38)
@@ -3409,73 +3400,73 @@ Partial Class FrmBladStamData
         '
         Me.grdAllePriser.DataSource = Me.TableMedAllePriserBindingSource
         Me.grdAllePriser.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns
-        UltraGridColumn51.Header.VisiblePosition = 0
-        UltraGridColumn51.Hidden = True
-        UltraGridColumn52.Header.Caption = "Prisliste"
-        UltraGridColumn52.Header.VisiblePosition = 1
-        UltraGridColumn52.Width = 107
-        UltraGridColumn53.Header.Caption = "Placering"
-        UltraGridColumn53.Header.VisiblePosition = 2
-        UltraGridColumn53.Width = 103
+        UltraGridColumn93.Header.VisiblePosition = 0
+        UltraGridColumn93.Hidden = True
+        UltraGridColumn94.Header.Caption = "Prisliste"
+        UltraGridColumn94.Header.VisiblePosition = 1
+        UltraGridColumn94.Width = 107
+        UltraGridColumn95.Header.Caption = "Placering"
+        UltraGridColumn95.Header.VisiblePosition = 2
+        UltraGridColumn95.Width = 103
         Appearance85.TextHAlignAsString = "Right"
-        UltraGridColumn54.CellAppearance = Appearance85
-        UltraGridColumn54.Format = "#,##0"
-        UltraGridColumn54.Header.Caption = "Fra Mm"
-        UltraGridColumn54.Header.VisiblePosition = 3
-        UltraGridColumn54.Width = 67
+        UltraGridColumn96.CellAppearance = Appearance85
+        UltraGridColumn96.Format = "#,##0"
+        UltraGridColumn96.Header.Caption = "Fra Mm"
+        UltraGridColumn96.Header.VisiblePosition = 3
+        UltraGridColumn96.Width = 67
         Appearance86.TextHAlignAsString = "Right"
-        UltraGridColumn55.CellAppearance = Appearance86
-        UltraGridColumn55.Format = "#,##0"
-        UltraGridColumn55.Header.Caption = "Til Mm"
-        UltraGridColumn55.Header.VisiblePosition = 4
-        UltraGridColumn55.Width = 65
+        UltraGridColumn97.CellAppearance = Appearance86
+        UltraGridColumn97.Format = "#,##0"
+        UltraGridColumn97.Header.Caption = "Til Mm"
+        UltraGridColumn97.Header.VisiblePosition = 4
+        UltraGridColumn97.Width = 65
         Appearance87.TextHAlignAsString = "Right"
-        UltraGridColumn56.CellAppearance = Appearance87
-        UltraGridColumn56.Format = "#,##0.00"
-        UltraGridColumn56.Header.Caption = "Mm Pris"
-        UltraGridColumn56.Header.VisiblePosition = 5
-        UltraGridColumn56.Width = 91
+        UltraGridColumn98.CellAppearance = Appearance87
+        UltraGridColumn98.Format = "#,##0.00"
+        UltraGridColumn98.Header.Caption = "Mm Pris"
+        UltraGridColumn98.Header.VisiblePosition = 5
+        UltraGridColumn98.Width = 91
         Appearance88.TextHAlignAsString = "Right"
-        UltraGridColumn57.CellAppearance = Appearance88
-        UltraGridColumn57.Format = "#,##0.00"
-        UltraGridColumn57.Header.Caption = "Farve pris"
-        UltraGridColumn57.Header.VisiblePosition = 6
-        UltraGridColumn57.Width = 91
+        UltraGridColumn99.CellAppearance = Appearance88
+        UltraGridColumn99.Format = "#,##0.00"
+        UltraGridColumn99.Header.Caption = "Farve pris"
+        UltraGridColumn99.Header.VisiblePosition = 6
+        UltraGridColumn99.Width = 91
         Appearance89.TextHAlignAsString = "Right"
-        UltraGridColumn58.CellAppearance = Appearance89
-        UltraGridColumn58.Format = "#,##0"
-        UltraGridColumn58.Header.Caption = "Min."
-        UltraGridColumn58.Header.VisiblePosition = 7
-        UltraGridColumn58.Width = 91
+        UltraGridColumn100.CellAppearance = Appearance89
+        UltraGridColumn100.Format = "#,##0"
+        UltraGridColumn100.Header.Caption = "Min."
+        UltraGridColumn100.Header.VisiblePosition = 7
+        UltraGridColumn100.Width = 91
         Appearance90.TextHAlignAsString = "Right"
-        UltraGridColumn59.CellAppearance = Appearance90
-        UltraGridColumn59.Format = "#,##0"
-        UltraGridColumn59.Header.Caption = "Max."
-        UltraGridColumn59.Header.VisiblePosition = 8
-        UltraGridColumn59.Width = 91
+        UltraGridColumn101.CellAppearance = Appearance90
+        UltraGridColumn101.Format = "#,##0"
+        UltraGridColumn101.Header.Caption = "Max."
+        UltraGridColumn101.Header.VisiblePosition = 8
+        UltraGridColumn101.Width = 91
         Appearance91.TextHAlignAsString = "Right"
-        UltraGridColumn60.CellAppearance = Appearance91
-        UltraGridColumn60.Format = "#,##0.00"
-        UltraGridColumn60.Header.Caption = "4 Farve pris"
-        UltraGridColumn60.Header.VisiblePosition = 9
-        UltraGridColumn60.Width = 91
+        UltraGridColumn105.CellAppearance = Appearance91
+        UltraGridColumn105.Format = "#,##0.00"
+        UltraGridColumn105.Header.Caption = "4 Farve pris"
+        UltraGridColumn105.Header.VisiblePosition = 9
+        UltraGridColumn105.Width = 91
         Appearance92.TextHAlignAsString = "Right"
-        UltraGridColumn62.CellAppearance = Appearance92
-        UltraGridColumn62.Format = "#,##0"
-        UltraGridColumn62.Header.Caption = "Min."
-        UltraGridColumn62.Header.VisiblePosition = 10
-        UltraGridColumn62.Width = 91
+        UltraGridColumn106.CellAppearance = Appearance92
+        UltraGridColumn106.Format = "#,##0"
+        UltraGridColumn106.Header.Caption = "Min."
+        UltraGridColumn106.Header.VisiblePosition = 10
+        UltraGridColumn106.Width = 91
         Appearance93.TextHAlignAsString = "Right"
-        UltraGridColumn63.CellAppearance = Appearance93
-        UltraGridColumn63.Format = "#,##0"
-        UltraGridColumn63.Header.Caption = "Max."
-        UltraGridColumn63.Header.VisiblePosition = 11
-        UltraGridColumn63.Width = 91
-        UltraGridColumn64.Header.Caption = "Året"
-        UltraGridColumn64.Header.VisiblePosition = 12
-        UltraGridColumn65.Header.VisiblePosition = 13
-        UltraGridColumn65.Hidden = True
-        UltraGridBand10.Columns.AddRange(New Object() {UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58, UltraGridColumn59, UltraGridColumn60, UltraGridColumn62, UltraGridColumn63, UltraGridColumn64, UltraGridColumn65})
+        UltraGridColumn108.CellAppearance = Appearance93
+        UltraGridColumn108.Format = "#,##0"
+        UltraGridColumn108.Header.Caption = "Max."
+        UltraGridColumn108.Header.VisiblePosition = 11
+        UltraGridColumn108.Width = 91
+        UltraGridColumn109.Header.Caption = "Året"
+        UltraGridColumn109.Header.VisiblePosition = 12
+        UltraGridColumn110.Header.VisiblePosition = 13
+        UltraGridColumn110.Hidden = True
+        UltraGridBand10.Columns.AddRange(New Object() {UltraGridColumn93, UltraGridColumn94, UltraGridColumn95, UltraGridColumn96, UltraGridColumn97, UltraGridColumn98, UltraGridColumn99, UltraGridColumn100, UltraGridColumn101, UltraGridColumn105, UltraGridColumn106, UltraGridColumn108, UltraGridColumn109, UltraGridColumn110})
         UltraGridBand10.Indentation = 0
         UltraGridBand10.IndentationGroupByRow = 0
         UltraGridBand10.IndentationGroupByRowExpansionIndicator = 0
@@ -3533,15 +3524,15 @@ Partial Class FrmBladStamData
         Appearance94.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.cboUgedag.DisplayLayout.Appearance = Appearance94
         Me.cboUgedag.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn66.Header.VisiblePosition = 0
-        UltraGridColumn66.Hidden = True
-        UltraGridColumn67.Header.Caption = "Dag"
-        UltraGridColumn67.Header.VisiblePosition = 1
-        UltraGridColumn68.Header.VisiblePosition = 2
-        UltraGridColumn68.Hidden = True
-        UltraGridColumn69.Header.VisiblePosition = 3
-        UltraGridColumn69.Hidden = True
-        UltraGridBand11.Columns.AddRange(New Object() {UltraGridColumn66, UltraGridColumn67, UltraGridColumn68, UltraGridColumn69})
+        UltraGridColumn111.Header.VisiblePosition = 0
+        UltraGridColumn111.Hidden = True
+        UltraGridColumn115.Header.Caption = "Dag"
+        UltraGridColumn115.Header.VisiblePosition = 1
+        UltraGridColumn116.Header.VisiblePosition = 2
+        UltraGridColumn116.Hidden = True
+        UltraGridColumn117.Header.VisiblePosition = 3
+        UltraGridColumn117.Hidden = True
+        UltraGridBand11.Columns.AddRange(New Object() {UltraGridColumn111, UltraGridColumn115, UltraGridColumn116, UltraGridColumn117})
         Me.cboUgedag.DisplayLayout.BandsSerializer.Add(UltraGridBand11)
         Me.cboUgedag.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboUgedag.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3739,15 +3730,15 @@ Partial Class FrmBladStamData
         Me.cboTjeklisteDag.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.TblBladStamdataBindingSource, "OrdrecheckSendeDagID", True))
         Me.cboTjeklisteDag.DataSource = Me.TblDageBindingSource
         Me.cboTjeklisteDag.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ExtendLastColumn
-        UltraGridColumn70.Header.VisiblePosition = 0
-        UltraGridColumn70.Hidden = True
-        UltraGridColumn71.Header.Caption = "Dag"
-        UltraGridColumn71.Header.VisiblePosition = 1
-        UltraGridColumn72.Header.VisiblePosition = 2
-        UltraGridColumn72.Hidden = True
-        UltraGridColumn73.Header.VisiblePosition = 3
-        UltraGridColumn73.Hidden = True
-        UltraGridBand12.Columns.AddRange(New Object() {UltraGridColumn70, UltraGridColumn71, UltraGridColumn72, UltraGridColumn73})
+        UltraGridColumn118.Header.VisiblePosition = 0
+        UltraGridColumn118.Hidden = True
+        UltraGridColumn120.Header.Caption = "Dag"
+        UltraGridColumn120.Header.VisiblePosition = 1
+        UltraGridColumn121.Header.VisiblePosition = 2
+        UltraGridColumn121.Hidden = True
+        UltraGridColumn122.Header.VisiblePosition = 3
+        UltraGridColumn122.Hidden = True
+        UltraGridBand12.Columns.AddRange(New Object() {UltraGridColumn118, UltraGridColumn120, UltraGridColumn121, UltraGridColumn122})
         Me.cboTjeklisteDag.DisplayLayout.BandsSerializer.Add(UltraGridBand12)
         Me.cboTjeklisteDag.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cboTjeklisteDag.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -4157,7 +4148,7 @@ Partial Class FrmBladStamData
         Me.btnGem.ShowOutline = False
         Me.btnGem.Size = New System.Drawing.Size(87, 24)
         Me.btnGem.TabIndex = 337
-        Me.btnGem.Text = "&Gem"
+        Me.btnGem.Text = "Opdatere"
         Me.btnGem.UseHotTracking = Infragistics.Win.DefaultableBoolean.[True]
         '
         'btnAnnuller
@@ -4208,6 +4199,22 @@ Partial Class FrmBladStamData
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'statusLabel
+        '
+        Me.statusLabel.AutoSize = True
+        Me.statusLabel.Location = New System.Drawing.Point(298, 705)
+        Me.statusLabel.Name = "statusLabel"
+        Me.statusLabel.Size = New System.Drawing.Size(0, 13)
+        Me.statusLabel.TabIndex = 369
+        '
+        'Label_Status
+        '
+        Me.Label_Status.AutoSize = True
+        Me.Label_Status.Location = New System.Drawing.Point(253, 705)
+        Me.Label_Status.Name = "Label_Status"
+        Me.Label_Status.Size = New System.Drawing.Size(0, 13)
+        Me.Label_Status.TabIndex = 370
+        '
         'TblPostNrTableAdapter
         '
         Me.TblPostNrTableAdapter.ClearBeforeFill = True
@@ -4227,6 +4234,17 @@ Partial Class FrmBladStamData
         'TblDageTableAdapter
         '
         Me.TblDageTableAdapter.ClearBeforeFill = True
+        '
+        'TblBladStamdataBindingSource
+        '
+        Me.TblBladStamdataBindingSource.AllowNew = True
+        Me.TblBladStamdataBindingSource.DataMember = "tblBladStamdata"
+        Me.TblBladStamdataBindingSource.DataSource = Me.DstBladStamdata
+        '
+        'DstBladStamdata
+        '
+        Me.DstBladStamdata.DataSetName = "dstBladStamdata"
+        Me.DstBladStamdata.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TblBladStamdataTableAdapter
         '
@@ -4259,6 +4277,8 @@ Partial Class FrmBladStamData
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(232, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(985, 739)
+        Me.Controls.Add(Me.Label_Status)
+        Me.Controls.Add(Me.statusLabel)
         Me.Controls.Add(Me.btnUdskriv)
         Me.Controls.Add(Me.btnAnnuller)
         Me.Controls.Add(Me.btnLuk)
@@ -4274,14 +4294,12 @@ Partial Class FrmBladStamData
         Me.Name = "FrmBladStamData"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Lokalaviser - Stamdata"
+        Me.Text = " "
         CType(Me.cboPostNrDækning, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblPostNrBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PostNrListeDropdown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPrislisterPrÅr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FKtblPrislisterPrBladPrÅrtblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DstBladStamdata, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpTekstside.ResumeLayout(False)
         CType(Me.grpPriser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpPriser.ResumeLayout(False)
@@ -4444,7 +4462,10 @@ Partial Class FrmBladStamData
         CType(Me.TblBladStamdataBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TblBladStamdataBindingNavigator.ResumeLayout(False)
         Me.TblBladStamdataBindingNavigator.PerformLayout()
+        CType(Me.TblBladStamdataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DstBladStamdata, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -4663,4 +4684,6 @@ Partial Class FrmBladStamData
     Friend WithEvents txtFormatFra7 As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents txt1Farvetillæg7 As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents FKtblÅrMedPrisertblBladStamdataBindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents statusLabel As System.Windows.Forms.Label
+    Friend WithEvents Label_Status As System.Windows.Forms.Label
 End Class

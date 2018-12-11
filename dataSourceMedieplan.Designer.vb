@@ -33,6 +33,7 @@ Partial Class dataSourceMedieplan
   Private _SammeMateriale As Boolean = True
 
   Private _anvendtMiljøTillæg As Double = 0
+  Private _opkrævHelsingørMiljøTillæg As Boolean = True
   Private _opkrævJyskeMiljøTillæg As Boolean = True
   Private _opkrævFynskeMiljøTillæg As Boolean = True
   Private _opkrævNorthMiljøTillæg As Boolean = True
@@ -170,7 +171,8 @@ Partial Class dataSourceMedieplan
       Else
         arow("Mm") = _antalMm
       End If
-      If arow("Ejerforhold") = "Midtjyske Medier" OrElse arow("Ejerforhold") = "Berlingske Lokalaviser" OrElse arow("Ejerforhold") = "Den Sydvestjyske Venstrepresse" OrElse arow("Ejerforhold") = "Fynske Medier" OrElse arow("Ejerforhold") = "North Media" OrElse arow("Ejerforhold") = "Jyske Medier A/S" Then
+      If arow("Ejerforhold") = "Helsingør Dagblad" OrElse arow("Ejerforhold") = "Midtjyske Medier" OrElse arow("Ejerforhold") = "Berlingske Lokalaviser" OrElse arow("Ejerforhold") = "Den Sydvestjyske Venstrepresse" OrElse arow("Ejerforhold") = "Fynske Medier" OrElse arow("Ejerforhold") = "North Media" OrElse arow("Ejerforhold") = "Jyske Medier A/S" Then
+
         If arow("Ejerforhold") = "Midtjyske Medier" OrElse arow("Ejerforhold") = "Berlingske Lokalaviser" Then
           If _placering = 11 OrElse _placering > 12 Then
             If Not (_is365 AndAlso _kolonner = 6) Then
@@ -178,7 +180,13 @@ Partial Class dataSourceMedieplan
             End If
           End If
         End If
-        If arow("Ejerforhold") = "Midtjyske Medier" OrElse arow("Ejerforhold") = "Berlingske Lokalaviser" Then
+        If arow("Ejerforhold") = "Helsingør Dagblad" Then
+          If _opkrævHelsingørMiljøTillæg Then
+            arow("MiljøTillæg") = arow("Mm") * 0.06 '_anvendtMiljøTillæg
+          Else
+            arow("MiljøTillæg") = 0
+          End If
+        ElseIf arow("Ejerforhold") = "Midtjyske Medier" OrElse arow("Ejerforhold") = "Berlingske Lokalaviser" Then
           If _opkrævJyskeMiljøTillæg Then
             'If arow("UgeavisID") <> 81 AndAlso arow("UgeavisID") <> 275 AndAlso arow("UgeavisID") <> 191 Then
             arow("MiljøTillæg") = arow("Mm") * _anvendtMiljøTillæg
@@ -215,7 +223,7 @@ Partial Class dataSourceMedieplan
         End If
       Else
         arow("MiljøTillæg") = 0
-      End If
+        End If
     Next
     Beregn()
   End Sub
@@ -401,6 +409,13 @@ Partial Class dataSourceMedieplan
   Public WriteOnly Property OpkrævJyskeMedierASTillæg As Boolean
     Set(value As Boolean)
       _opkrævJyskeMedierASTillæg = value
+      BeregnAntalMm()
+    End Set
+  End Property
+
+  Public WriteOnly Property OpkrævHelsingørTillæg As Boolean
+    Set(value As Boolean)
+      _opkrævHelsingørMiljøTillæg = value
       BeregnAntalMm()
     End Set
   End Property
@@ -1125,7 +1140,7 @@ Partial Class dataSourceMedieplan
     Else
       e.Row.Item("Mm") = _antalMm
     End If
-    If e.Row.Item("Ejerforhold") = "Midtjyske Medier" OrElse e.Row.Item("Ejerforhold") = "Berlingske Lokalaviser" OrElse e.Row.Item("Ejerforhold") = "Den Sydvestjyske Venstrepresse" OrElse e.Row.Item("Ejerforhold") = "Fynske Medier" OrElse e.Row.Item("Ejerforhold") = "North Media" OrElse e.Row.Item("Ejerforhold") = "Jyske Medier A/S" Then
+    If e.Row.Item("Ejerforhold") = "Helsingør Dagblad" OrElse e.Row.Item("Ejerforhold") = "Midtjyske Medier" OrElse e.Row.Item("Ejerforhold") = "Berlingske Lokalaviser" OrElse e.Row.Item("Ejerforhold") = "Den Sydvestjyske Venstrepresse" OrElse e.Row.Item("Ejerforhold") = "Fynske Medier" OrElse e.Row.Item("Ejerforhold") = "North Media" OrElse e.Row.Item("Ejerforhold") = "Jyske Medier A/S" Then
       If e.Row.Item("Ejerforhold") = "Midtjyske Medier" OrElse e.Row.Item("Ejerforhold") = "Berlingske Lokalaviser" Then
         If _placering = 11 OrElse _placering > 12 Then
           If Not (_is365 AndAlso _kolonner = 6) Then
@@ -1133,7 +1148,15 @@ Partial Class dataSourceMedieplan
           End If
         End If
       End If
-      If e.Row.Item("Ejerforhold") = "Midtjyske Medier" OrElse e.Row.Item("Ejerforhold") = "Berlingske Lokalaviser" Then
+      If e.Row.Item("Ejerforhold") = "Helsingør Dagblad" Then
+        If _opkrævHelsingørMiljøTillæg Then
+          'If e.Row.Item("UgeavisID") <> 81 AndAlso e.Row.Item("UgeavisID") <> 275 AndAlso e.Row.Item("UgeavisID") <> 191 Then
+          e.Row.Item("MiljøTillæg") = e.Row.Item("Mm") * 0.06
+        Else
+          e.Row.Item("MiljøTillæg") = 0
+          'End If
+        End If
+      ElseIf e.Row.Item("Ejerforhold") = "Midtjyske Medier" OrElse e.Row.Item("Ejerforhold") = "Berlingske Lokalaviser" Then
         If _opkrævJyskeMiljøTillæg Then
           'If e.Row.Item("UgeavisID") <> 81 AndAlso e.Row.Item("UgeavisID") <> 275 AndAlso e.Row.Item("UgeavisID") <> 191 Then
           e.Row.Item("MiljøTillæg") = e.Row.Item("Mm") * _anvendtMiljøTillæg
@@ -1169,108 +1192,108 @@ Partial Class dataSourceMedieplan
     Else
       e.Row.Item("MiljøTillæg") = 0
     End If
-    e.Row.Item("SendeGruppe") = ""
-    e.Row.Item("RowID") = NextAutoNumber
-    cm2.CommandText = "SELECT MåGiveFarveRabat FROM tblBladStamdata WHERE (BladID = " & e.Row.Item("UgeavisID") & ")"
-    e.Row.Item("MåGiveFarveRabat") = cm2.ExecuteScalar
-    If pris > 20 Then
-      pris = pris / e.Row.Item("Mm")
-      e.Row.Item("MåGiveMmRabat") = False
-    Else
-      e.Row.Item("MåGiveMmRabat") = True
-    End If
-    e.Row.Item("NormalMmPris") = pris
-    e.Row.Item("New MmPris") = pris
-    e.Row.Item("Old MmPris") = pris
-    e.Row.Item("New MmRabat") = 0
-    e.Row.Item("Old MmRabat") = 0
-
-    e.Row.Item("New MmTotal") = (e.Row.Item("New MmPris") * (1 - (e.Row.Item("New MmRabat") / 100))) * e.Row.Item("Mm") '_antalMm
-    If _antalFarver = 0 Then
-      e.Row.Item("FarveTillæg") = 0
-      e.Row.Item("New FarvePris") = 0
-    ElseIf _antalFarver = 1 Then
-      e.Row.Item("FarveTillæg") = getPris("FarvePris", e.Row.Item("UgeavisID"), prisListeID)
-      If _farvePlacering > 0 AndAlso _farvePrisListe > 0 Then
-        e.Row.Item("FarveMin") = getPrisFromSQL("FarveMin", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) 'cm.ExecuteScalar
-        e.Row.Item("FarveMax") = getPrisFromSQL("FarveMax", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) ' cm.ExecuteScalar
-        If e.Row.Item("FarveMin") <= 0 Then e.Row.Item("FarveMin") = Nothing
-        If e.Row.Item("FarveMax") <= 0 Then e.Row.Item("FarveMax") = Nothing
+      e.Row.Item("SendeGruppe") = ""
+      e.Row.Item("RowID") = NextAutoNumber
+      cm2.CommandText = "SELECT MåGiveFarveRabat FROM tblBladStamdata WHERE (BladID = " & e.Row.Item("UgeavisID") & ")"
+      e.Row.Item("MåGiveFarveRabat") = cm2.ExecuteScalar
+      If pris > 20 Then
+        pris = pris / e.Row.Item("Mm")
+        e.Row.Item("MåGiveMmRabat") = False
       Else
-        e.Row.Item("FarveMin") = Nothing
-        e.Row.Item("FarveMax") = Nothing
+        e.Row.Item("MåGiveMmRabat") = True
       End If
-    Else
-      e.Row.Item("FarveTillæg") = getPris("Farve4Pris", e.Row.Item("UgeavisID"), prisListeID)
-      If _farvePlacering > 0 AndAlso _farvePrisListe > 0 Then
-        e.Row.Item("FarveMin") = getPrisFromSQL("Farve4Min", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) 'cm.ExecuteScalar
-        e.Row.Item("FarveMax") = getPrisFromSQL("Farve4Max", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) ' cm.ExecuteScalar
-        If e.Row.Item("FarveMin") <= 0 Then e.Row.Item("FarveMin") = Nothing
-        If e.Row.Item("FarveMax") <= 0 Then e.Row.Item("FarveMax") = Nothing
-      Else
-        e.Row.Item("FarveMin") = Nothing
-        e.Row.Item("FarveMax") = Nothing
-      End If
-    End If
-    e.Row.Item("New FarveRabat") = 0
-    e.Row.Item("Old FarveRabat") = 0
+      e.Row.Item("NormalMmPris") = pris
+      e.Row.Item("New MmPris") = pris
+      e.Row.Item("Old MmPris") = pris
+      e.Row.Item("New MmRabat") = 0
+      e.Row.Item("Old MmRabat") = 0
 
-    If _antalFarver > 0 Then
-      If e.Row.Item("FarveTillæg") < 20 Then
-        e.Row.Item("New FarvePris") = e.Row.Item("FarveTillæg") * e.Row.Item("Mm")
-        If Not IsDBNull(e.Row.Item("FarveMin")) Then
-          If e.Row.Item("FarveMin") > 0 Then
-            If _MediePlanNr > 75000 AndAlso _MediePlanNr < 76745 Then
-              If e.Row.Item("New FarvePris") * (1 - (e.Row.Item("New FarveRabat") / 100)) < e.Row.Item("FarveMin") Then
-                e.Row.Item("New FarvePris") = e.Row.Item("FarveMin")
-                e.Row.Item("New FarveRabat") = 0
-              End If
-            Else
-              If e.Row.Item("New FarvePris") < e.Row.Item("FarveMin") Then
-                e.Row.Item("New FarvePris") = e.Row.Item("FarveMin")
+      e.Row.Item("New MmTotal") = (e.Row.Item("New MmPris") * (1 - (e.Row.Item("New MmRabat") / 100))) * e.Row.Item("Mm") '_antalMm
+      If _antalFarver = 0 Then
+        e.Row.Item("FarveTillæg") = 0
+        e.Row.Item("New FarvePris") = 0
+      ElseIf _antalFarver = 1 Then
+        e.Row.Item("FarveTillæg") = getPris("FarvePris", e.Row.Item("UgeavisID"), prisListeID)
+        If _farvePlacering > 0 AndAlso _farvePrisListe > 0 Then
+          e.Row.Item("FarveMin") = getPrisFromSQL("FarveMin", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) 'cm.ExecuteScalar
+          e.Row.Item("FarveMax") = getPrisFromSQL("FarveMax", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) ' cm.ExecuteScalar
+          If e.Row.Item("FarveMin") <= 0 Then e.Row.Item("FarveMin") = Nothing
+          If e.Row.Item("FarveMax") <= 0 Then e.Row.Item("FarveMax") = Nothing
+        Else
+          e.Row.Item("FarveMin") = Nothing
+          e.Row.Item("FarveMax") = Nothing
+        End If
+      Else
+        e.Row.Item("FarveTillæg") = getPris("Farve4Pris", e.Row.Item("UgeavisID"), prisListeID)
+        If _farvePlacering > 0 AndAlso _farvePrisListe > 0 Then
+          e.Row.Item("FarveMin") = getPrisFromSQL("Farve4Min", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) 'cm.ExecuteScalar
+          e.Row.Item("FarveMax") = getPrisFromSQL("Farve4Max", e.Row.Item("UgeavisID"), _farvePlacering, _farvePrisListe) ' cm.ExecuteScalar
+          If e.Row.Item("FarveMin") <= 0 Then e.Row.Item("FarveMin") = Nothing
+          If e.Row.Item("FarveMax") <= 0 Then e.Row.Item("FarveMax") = Nothing
+        Else
+          e.Row.Item("FarveMin") = Nothing
+          e.Row.Item("FarveMax") = Nothing
+        End If
+      End If
+      e.Row.Item("New FarveRabat") = 0
+      e.Row.Item("Old FarveRabat") = 0
+
+      If _antalFarver > 0 Then
+        If e.Row.Item("FarveTillæg") < 20 Then
+          e.Row.Item("New FarvePris") = e.Row.Item("FarveTillæg") * e.Row.Item("Mm")
+          If Not IsDBNull(e.Row.Item("FarveMin")) Then
+            If e.Row.Item("FarveMin") > 0 Then
+              If _MediePlanNr > 75000 AndAlso _MediePlanNr < 76745 Then
+                If e.Row.Item("New FarvePris") * (1 - (e.Row.Item("New FarveRabat") / 100)) < e.Row.Item("FarveMin") Then
+                  e.Row.Item("New FarvePris") = e.Row.Item("FarveMin")
+                  e.Row.Item("New FarveRabat") = 0
+                End If
+              Else
+                If e.Row.Item("New FarvePris") < e.Row.Item("FarveMin") Then
+                  e.Row.Item("New FarvePris") = e.Row.Item("FarveMin")
+                End If
               End If
             End If
           End If
-        End If
-        If Not IsDBNull(e.Row.Item("FarveMax")) Then
-          If e.Row.Item("FarveMax") > 0 Then
-            If e.Row.Item("New FarvePris") > e.Row.Item("FarveMax") Then e.Row.Item("New FarvePris") = e.Row.Item("FarveMax")
+          If Not IsDBNull(e.Row.Item("FarveMax")) Then
+            If e.Row.Item("FarveMax") > 0 Then
+              If e.Row.Item("New FarvePris") > e.Row.Item("FarveMax") Then e.Row.Item("New FarvePris") = e.Row.Item("FarveMax")
+            End If
           End If
+        Else
+          e.Row.Item("New FarvePris") = e.Row.Item("FarveTillæg")
         End If
+        e.Row.Item("New FarveTotal") = (e.Row.Item("New FarvePris") * (1 - (e.Row.Item("New FarveRabat") / 100)))
       Else
-        e.Row.Item("New FarvePris") = e.Row.Item("FarveTillæg")
+        e.Row.Item("New FarveTotal") = 0
       End If
-      e.Row.Item("New FarveTotal") = (e.Row.Item("New FarvePris") * (1 - (e.Row.Item("New FarveRabat") / 100)))
-    Else
-      e.Row.Item("New FarveTotal") = 0
-    End If
-    e.Row.Item("Old FarvePris") = e.Row.Item("New FarvePris")
-    e.Row.Item("ErWeekendGruppe") = False
-    e.Row.Item("New Total") = e.Row.Item("New MmTotal") + e.Row.Item("New FarveTotal")
-    e.Row.Item("TotalInclTillæg") = e.Row.Item("New Total") + e.Row.Item("MiljøTillæg")
-    e.Row.Item("KontaktprisOplag") = (e.Row.Item("TotalInclTillæg") / e.Row.Item("Oplag")) * 1000
-    e.Row.Item("KontaktprisLæsertal") = (e.Row.Item("TotalInclTillæg") / e.Row.Item("Læsertal")) * 1000
-    e.Row.Item("New BureauOrdreNr") = ""
-    e.Row.Item("Old BureauOrdreNr") = ""
-    e.Row.Item("New Bemærkning") = ""
-    e.Row.Item("Old Bemærkning") = ""
-    e.Row.Item("RowState") = "Added"
-    e.Row.Item("FejlTekst") = ""
-    e.Row.Item("New Ansvar") = ""
-    e.Row.Item("Old Ansvar") = ""
-    e.Row.Item("ManueltÆndret") = False
-    e.Row.Item("Old MmTotal") = e.Row.Item("New MmTotal")
-    e.Row.Item("Old FarveTotal") = e.Row.Item("New FarveTotal")
-    e.Row.Item("Old Total") = e.Row.Item("New Total")
-    e.Row.Item("MedIGrupper") = ""
-    e.Row.Item("WebtillægFaktureresHer") = False
-    e.Row.Item("BemærkningFraPrisforespørgsel") = False
-    FindGrupperForAvis(e.Row.Item("UgeavisID"))
-    cn2.Close()
-    cn2.Dispose()
-    ScanGrupper()
-    MyBase.ResumeBindingNotifications()
-    checkChanges()
+      e.Row.Item("Old FarvePris") = e.Row.Item("New FarvePris")
+      e.Row.Item("ErWeekendGruppe") = False
+      e.Row.Item("New Total") = e.Row.Item("New MmTotal") + e.Row.Item("New FarveTotal")
+      e.Row.Item("TotalInclTillæg") = e.Row.Item("New Total") + e.Row.Item("MiljøTillæg")
+      e.Row.Item("KontaktprisOplag") = (e.Row.Item("TotalInclTillæg") / e.Row.Item("Oplag")) * 1000
+      e.Row.Item("KontaktprisLæsertal") = (e.Row.Item("TotalInclTillæg") / e.Row.Item("Læsertal")) * 1000
+      e.Row.Item("New BureauOrdreNr") = ""
+      e.Row.Item("Old BureauOrdreNr") = ""
+      e.Row.Item("New Bemærkning") = ""
+      e.Row.Item("Old Bemærkning") = ""
+      e.Row.Item("RowState") = "Added"
+      e.Row.Item("FejlTekst") = ""
+      e.Row.Item("New Ansvar") = ""
+      e.Row.Item("Old Ansvar") = ""
+      e.Row.Item("ManueltÆndret") = False
+      e.Row.Item("Old MmTotal") = e.Row.Item("New MmTotal")
+      e.Row.Item("Old FarveTotal") = e.Row.Item("New FarveTotal")
+      e.Row.Item("Old Total") = e.Row.Item("New Total")
+      e.Row.Item("MedIGrupper") = ""
+      e.Row.Item("WebtillægFaktureresHer") = False
+      e.Row.Item("BemærkningFraPrisforespørgsel") = False
+      FindGrupperForAvis(e.Row.Item("UgeavisID"))
+      cn2.Close()
+      cn2.Dispose()
+      ScanGrupper()
+      MyBase.ResumeBindingNotifications()
+      checkChanges()
   End Sub
 
   Private Sub FindGrupperForAvis(ByVal UgeavisID As Integer)

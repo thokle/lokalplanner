@@ -375,6 +375,10 @@ Partial Public Class dstMedieplan
         
         Private columnOpkrævJyskeMedierASTillæg As Global.System.Data.DataColumn
         
+        Private columnOpkrævNordjyskeTillæg As Global.System.Data.DataColumn
+        
+        Private columnOpkrævHelsingørMiljøTillæg As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -779,6 +783,22 @@ Partial Public Class dstMedieplan
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property OpkrævNordjyskeTillægColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOpkrævNordjyskeTillæg
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property OpkrævHelsingørMiljøTillægColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOpkrævHelsingørMiljøTillæg
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -861,9 +881,11 @@ Partial Public Class dstMedieplan
                     ByVal OpkrævFynskeMiljøTillæg As Boolean,  _
                     ByVal OpkrævNorthMiljøTillæg As Boolean,  _
                     ByVal OpkrævDSVPMiljøTillæg As Boolean,  _
-                    ByVal OpkrævJyskeMedierASTillæg As Boolean) As tblMedieplanRow
+                    ByVal OpkrævJyskeMedierASTillæg As Boolean,  _
+                    ByVal OpkrævNordjyskeTillæg As Boolean,  _
+                    ByVal OpkrævHelsingørMiljøTillæg As Boolean) As tblMedieplanRow
             Dim rowtblMedieplanRow As tblMedieplanRow = CType(Me.NewRow,tblMedieplanRow)
-            Dim columnValuesArray() As Object = New Object() {MedieplanNr, Version, Format1, Format2, AntalFarver, PlaceringID, IndrykningsUge, Overskrift, RekvisitionsNr, BilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraUge, KonsulentCode, SammeMateriale, DPKulørID, Fakturering, BilagsBladeTil, SamletPris, TilladFarveSærRabat, SammeBureauOrdreNr, FællesBureauOrdreNr, AnnoncørNo_, BureauNo_, MaterialeFølgerFraLeverandør, Status, Beskrivelse, BemærkningTilAnnoncør, BemærkningTilBlade, IndrykningsÅr, Kontaktperson, KontaktpersonTilhører, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævJyskeMedierASTillæg}
+            Dim columnValuesArray() As Object = New Object() {MedieplanNr, Version, Format1, Format2, AntalFarver, PlaceringID, IndrykningsUge, Overskrift, RekvisitionsNr, BilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraUge, KonsulentCode, SammeMateriale, DPKulørID, Fakturering, BilagsBladeTil, SamletPris, TilladFarveSærRabat, SammeBureauOrdreNr, FællesBureauOrdreNr, AnnoncørNo_, BureauNo_, MaterialeFølgerFraLeverandør, Status, Beskrivelse, BemærkningTilAnnoncør, BemærkningTilBlade, IndrykningsÅr, Kontaktperson, KontaktpersonTilhører, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævJyskeMedierASTillæg, OpkrævNordjyskeTillæg, OpkrævHelsingørMiljøTillæg}
             rowtblMedieplanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowtblMedieplanRow)
             Return rowtblMedieplanRow
@@ -938,6 +960,8 @@ Partial Public Class dstMedieplan
             Me.columnOpkrævNorthMiljøTillæg = MyBase.Columns("OpkrævNorthMiljøTillæg")
             Me.columnOpkrævDSVPMiljøTillæg = MyBase.Columns("OpkrævDSVPMiljøTillæg")
             Me.columnOpkrævJyskeMedierASTillæg = MyBase.Columns("OpkrævJyskeMedierASTillæg")
+            Me.columnOpkrævNordjyskeTillæg = MyBase.Columns("OpkrævNordjyskeTillæg")
+            Me.columnOpkrævHelsingørMiljøTillæg = MyBase.Columns("OpkrævHelsingørMiljøTillæg")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1035,6 +1059,10 @@ Partial Public Class dstMedieplan
             MyBase.Columns.Add(Me.columnOpkrævDSVPMiljøTillæg)
             Me.columnOpkrævJyskeMedierASTillæg = New Global.System.Data.DataColumn("OpkrævJyskeMedierASTillæg", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnOpkrævJyskeMedierASTillæg)
+            Me.columnOpkrævNordjyskeTillæg = New Global.System.Data.DataColumn("OpkrævNordjyskeTillæg", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOpkrævNordjyskeTillæg)
+            Me.columnOpkrævHelsingørMiljøTillæg = New Global.System.Data.DataColumn("OpkrævHelsingørMiljøTillæg", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOpkrævHelsingørMiljøTillæg)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnMedieplanNr, Me.columnVersion}, true))
             Me.columnMedieplanNr.AllowDBNull = false
             Me.columnVersion.AllowDBNull = false
@@ -1775,6 +1803,37 @@ Partial Public Class dstMedieplan
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property OpkrævNordjyskeTillæg() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblMedieplan.OpkrævNordjyskeTillægColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OpkrævNordjyskeTillæg' in table 'tblMedieplan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblMedieplan.OpkrævNordjyskeTillægColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property OpkrævHelsingørMiljøTillæg() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tabletblMedieplan.OpkrævHelsingørMiljøTillægColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OpkrævHelsingørMiljøTillæg' in table 'tblMedieplan' is DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletblMedieplan.OpkrævHelsingørMiljøTillægColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsWebTillægOpkrævesNull() As Boolean
             Return Me.IsNull(Me.tabletblMedieplan.WebTillægOpkrævesColumn)
         End Function
@@ -1855,6 +1914,30 @@ Partial Public Class dstMedieplan
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetOpkrævJyskeMedierASTillægNull()
             Me(Me.tabletblMedieplan.OpkrævJyskeMedierASTillægColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsOpkrævNordjyskeTillægNull() As Boolean
+            Return Me.IsNull(Me.tabletblMedieplan.OpkrævNordjyskeTillægColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetOpkrævNordjyskeTillægNull()
+            Me(Me.tabletblMedieplan.OpkrævNordjyskeTillægColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsOpkrævHelsingørMiljøTillægNull() As Boolean
+            Return Me.IsNull(Me.tabletblMedieplan.OpkrævHelsingørMiljøTillægColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetOpkrævHelsingørMiljøTillægNull()
+            Me(Me.tabletblMedieplan.OpkrævHelsingørMiljøTillægColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2040,6 +2123,8 @@ Namespace dstMedieplanTableAdapters
             tableMapping.ColumnMappings.Add("OpkrævNorthMiljøTillæg", "OpkrævNorthMiljøTillæg")
             tableMapping.ColumnMappings.Add("OpkrævDSVPMiljøTillæg", "OpkrævDSVPMiljøTillæg")
             tableMapping.ColumnMappings.Add("OpkrævJyskeMedierASTillæg", "OpkrævJyskeMedierASTillæg")
+            tableMapping.ColumnMappings.Add("OpkrævNordjyskeTillæg", "OpkrævNordjyskeTillæg")
+            tableMapping.ColumnMappings.Add("OpkrævHelsingørMiljøTillæg", "OpkrævHelsingørMiljøTillæg")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -2061,29 +2146,31 @@ Namespace dstMedieplanTableAdapters
                 "], [RettelserEfterAnnoncekontrol], [SikkerhedsGodt], [InfoGodt], [TilladMmSærRab"& _ 
                 "at], [KunForhandlerBundForskellig], [WebTillægOpkræves], [MiljøTillægOpkræves], "& _ 
                 "[OpkrævJyskeMiljøTillæg], [OpkrævFynskeMiljøTillæg], [OpkrævNorthMiljøTillæg], ["& _ 
-                "OpkrævDSVPMiljøTillæg], [OpkrævJyskeMedierASTillæg]) VALUES (@MedieplanNr, @Vers"& _ 
-                "ion, @AnnoncørNo_, @BureauNo_, @Format1, @Format2, @AntalFarver, @DPKulørID, @Pl"& _ 
-                "aceringID, @IndrykningsUge, @IndrykningsÅr, @Overskrift, @Fakturering, @Rekvisit"& _ 
-                "ionsNr, @BilagsBladeTil, @BilagsBladeATT, @MaterialeFølgerFra, @BrugMaterialeFra"& _ 
-                "Uge, @SamletPris, @KonsulentCode, @TilladFarveSærRabat, @SammeMateriale, @SammeB"& _ 
-                "ureauOrdreNr, @FællesBureauOrdreNr, @MaterialeFølgerFraLeverandør, @Status, @Bes"& _ 
-                "krivelse, @Kontaktperson, @KontaktpersonTilhører, @BemærkningTilAnnoncør, @Bemær"& _ 
-                "kningTilBlade, @BilagsBladeTilNavn, @BilagsBladeTilAdresse, @BilagsBladeTilPostN"& _ 
-                "r, @RettelserEfterAnnoncekontrol, @SikkerhedsGodt, @InfoGodt, @TilladMmSærRabat,"& _ 
-                " @KunForhandlerBundForskellig, @WebTillægOpkræves, @MiljøTillægOpkræves, @Opkræv"& _ 
-                "JyskeMiljøTillæg, @OpkrævFynskeMiljøTillæg, @OpkrævNorthMiljøTillæg, @OpkrævDSVP"& _ 
-                "MiljøTillæg, @OpkrævJyskeMedierASTillæg);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MedieplanNr, Version, Annoncør"& _ 
-                "No_, BureauNo_, Format1, Format2, AntalFarver, DPKulørID, PlaceringID, Indryknin"& _ 
-                "gsUge, IndrykningsÅr, Overskrift, Fakturering, RekvisitionsNr, BilagsBladeTil, B"& _ 
-                "ilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraUge, SamletPris, KonsulentCod"& _ 
-                "e, TilladFarveSærRabat, SammeMateriale, SammeBureauOrdreNr, FællesBureauOrdreNr,"& _ 
-                " MaterialeFølgerFraLeverandør, Status, Beskrivelse, Kontaktperson, Kontaktperson"& _ 
-                "Tilhører, BemærkningTilAnnoncør, BemærkningTilBlade, BilagsBladeTilNavn, BilagsB"& _ 
-                "ladeTilAdresse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGo"& _ 
-                "dt, InfoGodt, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, "& _ 
-                "MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNort"& _ 
-                "hMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævJyskeMedierASTillæg FROM tblMedieplan"& _ 
-                " WHERE (MedieplanNr = @MedieplanNr) AND (Version = @Version)"
+                "OpkrævDSVPMiljøTillæg], [OpkrævNordjyskeTillæg], [OpkrævJyskeMedierASTillæg], [O"& _ 
+                "pkrævHelsingørMiljøTillæg]) VALUES (@MedieplanNr, @Version, @AnnoncørNo_, @Burea"& _ 
+                "uNo_, @Format1, @Format2, @AntalFarver, @DPKulørID, @PlaceringID, @IndrykningsUg"& _ 
+                "e, @IndrykningsÅr, @Overskrift, @Fakturering, @RekvisitionsNr, @BilagsBladeTil, "& _ 
+                "@BilagsBladeATT, @MaterialeFølgerFra, @BrugMaterialeFraUge, @SamletPris, @Konsul"& _ 
+                "entCode, @TilladFarveSærRabat, @SammeMateriale, @SammeBureauOrdreNr, @FællesBure"& _ 
+                "auOrdreNr, @MaterialeFølgerFraLeverandør, @Status, @Beskrivelse, @Kontaktperson,"& _ 
+                " @KontaktpersonTilhører, @BemærkningTilAnnoncør, @BemærkningTilBlade, @BilagsBla"& _ 
+                "deTilNavn, @BilagsBladeTilAdresse, @BilagsBladeTilPostNr, @RettelserEfterAnnonce"& _ 
+                "kontrol, @SikkerhedsGodt, @InfoGodt, @TilladMmSærRabat, @KunForhandlerBundForske"& _ 
+                "llig, @WebTillægOpkræves, @MiljøTillægOpkræves, @OpkrævJyskeMiljøTillæg, @Opkræv"& _ 
+                "FynskeMiljøTillæg, @OpkrævNorthMiljøTillæg, @OpkrævDSVPMiljøTillæg, @OpkrævNordj"& _ 
+                "yskeTillæg, @OpkrævJyskeMedierASTillæg, @OpkrævHelsingørMiljøTillæg);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Me"& _ 
+                "dieplanNr, Version, AnnoncørNo_, BureauNo_, Format1, Format2, AntalFarver, DPKul"& _ 
+                "ørID, PlaceringID, IndrykningsUge, IndrykningsÅr, Overskrift, Fakturering, Rekvi"& _ 
+                "sitionsNr, BilagsBladeTil, BilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraU"& _ 
+                "ge, SamletPris, KonsulentCode, TilladFarveSærRabat, SammeMateriale, SammeBureauO"& _ 
+                "rdreNr, FællesBureauOrdreNr, MaterialeFølgerFraLeverandør, Status, Beskrivelse, "& _ 
+                "Kontaktperson, KontaktpersonTilhører, BemærkningTilAnnoncør, BemærkningTilBlade,"& _ 
+                " BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, RettelserEfter"& _ 
+                "Annoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhandlerBundFor"& _ 
+                "skellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævF"& _ 
+                "ynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævNordjyske"& _ 
+                "Tillæg, OpkrævJyskeMedierASTillæg, OpkrævHelsingørMiljøTillæg FROM tblMedieplan "& _ 
+                "WHERE (MedieplanNr = @MedieplanNr) AND (Version = @Version)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MedieplanNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Version", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Version", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2130,7 +2217,9 @@ Namespace dstMedieplanTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævFynskeMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævFynskeMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævNorthMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævNorthMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævDSVPMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævDSVPMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævNordjyskeTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævNordjyskeTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævJyskeMedierASTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævJyskeMedierASTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævHelsingørMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævHelsingørMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [tblMedieplan] SET [MedieplanNr] = @MedieplanNr, [Version] = @Version, [An"& _ 
@@ -2155,20 +2244,22 @@ Namespace dstMedieplanTableAdapters
                 "ves, [MiljøTillægOpkræves] = @MiljøTillægOpkræves, [OpkrævJyskeMiljøTillæg] = @O"& _ 
                 "pkrævJyskeMiljøTillæg, [OpkrævFynskeMiljøTillæg] = @OpkrævFynskeMiljøTillæg, [Op"& _ 
                 "krævNorthMiljøTillæg] = @OpkrævNorthMiljøTillæg, [OpkrævDSVPMiljøTillæg] = @Opkr"& _ 
-                "ævDSVPMiljøTillæg, [OpkrævJyskeMedierASTillæg] = @OpkrævJyskeMedierASTillæg WHER"& _ 
-                "E (([MedieplanNr] = @Original_MedieplanNr) AND ([Version] = @Original_Version));"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MedieplanNr, Version, AnnoncørNo_, BureauNo_, Format1, Format2, AntalFa"& _ 
-                "rver, DPKulørID, PlaceringID, IndrykningsUge, IndrykningsÅr, Overskrift, Fakture"& _ 
-                "ring, RekvisitionsNr, BilagsBladeTil, BilagsBladeATT, MaterialeFølgerFra, BrugMa"& _ 
-                "terialeFraUge, SamletPris, KonsulentCode, TilladFarveSærRabat, SammeMateriale, S"& _ 
-                "ammeBureauOrdreNr, FællesBureauOrdreNr, MaterialeFølgerFraLeverandør, Status, Be"& _ 
-                "skrivelse, Kontaktperson, KontaktpersonTilhører, BemærkningTilAnnoncør, Bemærkni"& _ 
-                "ngTilBlade, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, Ret"& _ 
-                "telserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhan"& _ 
-                "dlerBundForskellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTill"& _ 
-                "æg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, Opkr"& _ 
-                "ævJyskeMedierASTillæg FROM tblMedieplan WHERE (MedieplanNr = @MedieplanNr) AND ("& _ 
-                "Version = @Version)"
+                "ævDSVPMiljøTillæg, [OpkrævNordjyskeTillæg] = @OpkrævNordjyskeTillæg, [OpkrævJysk"& _ 
+                "eMedierASTillæg] = @OpkrævJyskeMedierASTillæg, [OpkrævHelsingørMiljøTillæg] = @O"& _ 
+                "pkrævHelsingørMiljøTillæg WHERE (([MedieplanNr] = @Original_MedieplanNr) AND ([V"& _ 
+                "ersion] = @Original_Version));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT MedieplanNr, Version, AnnoncørNo_, Bureau"& _ 
+                "No_, Format1, Format2, AntalFarver, DPKulørID, PlaceringID, IndrykningsUge, Indr"& _ 
+                "ykningsÅr, Overskrift, Fakturering, RekvisitionsNr, BilagsBladeTil, BilagsBladeA"& _ 
+                "TT, MaterialeFølgerFra, BrugMaterialeFraUge, SamletPris, KonsulentCode, TilladFa"& _ 
+                "rveSærRabat, SammeMateriale, SammeBureauOrdreNr, FællesBureauOrdreNr, MaterialeF"& _ 
+                "ølgerFraLeverandør, Status, Beskrivelse, Kontaktperson, KontaktpersonTilhører, B"& _ 
+                "emærkningTilAnnoncør, BemærkningTilBlade, BilagsBladeTilNavn, BilagsBladeTilAdre"& _ 
+                "sse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGod"& _ 
+                "t, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTillæg"& _ 
+                "Opkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæ"& _ 
+                "g, OpkrævDSVPMiljøTillæg, OpkrævNordjyskeTillæg, OpkrævJyskeMedierASTillæg, Opkr"& _ 
+                "ævHelsingørMiljøTillæg FROM tblMedieplan WHERE (MedieplanNr = @MedieplanNr) AND "& _ 
+                "(Version = @Version)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MedieplanNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Version", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Version", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2215,7 +2306,9 @@ Namespace dstMedieplanTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævFynskeMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævFynskeMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævNorthMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævNorthMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævDSVPMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævDSVPMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævNordjyskeTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævNordjyskeTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævJyskeMedierASTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævJyskeMedierASTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OpkrævHelsingørMiljøTillæg", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OpkrævHelsingørMiljøTillæg", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_MedieplanNr", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Version", Global.System.Data.SqlDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Version", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
@@ -2243,18 +2336,27 @@ Namespace dstMedieplanTableAdapters
                 "ærkningTilBlade, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr"& _ 
                 ", RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
                 "     TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTill"& _ 
-                "ægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTil"& _ 
-                "læg, OpkrævDSVPMiljøTillæg, OpkrævJyskeMedierASTillæg"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblMediep"& _ 
-                "lan"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MedieplanNr = @MedieplanNr) AND (Version = @Version)"
+                "ægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                 "& _ 
+                "        OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævNordjyskeTillæg, Op"& _ 
+                "krævJyskeMedierASTillæg, OpkrævHelsingørMiljøTillæg"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            tblMediepla"& _ 
+                "n"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MedieplanNr = @MedieplanNr) AND (Version = @Version)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MedieplanNr", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Version", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "Version", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        MedieplanNr, Version, OpkrævDSVPMiljøTillæg, OpkrævNorthMiljøTillæg"& _ 
-                ", OpkrævFynskeMiljøTillæg, OpkrævJyskeMiljøTillæg, MiljøTillægOpkræves"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM    "& _ 
-                "        tblMedieplan"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (MedieplanNr = @MediePlanNr) AND (Version = @"& _ 
-                "Version)"
+            Me._commandCollection(1).CommandText = "SELECT AnnoncørNo_, AntalFarver, BemærkningTilAnnoncør, BemærkningTilBlade, Beskr"& _ 
+                "ivelse, BilagsBladeATT, BilagsBladeTil, BilagsBladeTilAdresse, BilagsBladeTilNav"& _ 
+                "n, BilagsBladeTilPostNr, BrugMaterialeFraUge, BureauNo_, DPKulørID, Fakturering,"& _ 
+                " Format1, Format2, FællesBureauOrdreNr, IndrykningsUge, IndrykningsÅr, InfoGodt,"& _ 
+                " KonsulentCode, Kontaktperson, KontaktpersonTilhører, KunForhandlerBundForskelli"& _ 
+                "g, MaterialeFølgerFra, MaterialeFølgerFraLeverandør, MedieplanNr, MiljøTillægOpk"& _ 
+                "ræves, OpkrævDSVPMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævJyskeMedierASTillæg"& _ 
+                ", OpkrævJyskeMiljøTillæg, OpkrævNorthMiljøTillæg, Overskrift, PlaceringID, Rekvi"& _ 
+                "sitionsNr, RettelserEfterAnnoncekontrol, SamletPris, SammeBureauOrdreNr, SammeMa"& _ 
+                "teriale, SikkerhedsGodt, Status, TilladFarveSærRabat, TilladMmSærRabat, Version,"& _ 
+                " WebTillægOpkræves FROM tblMedieplan WHERE (MedieplanNr = @MediePlanNr) AND (Ver"& _ 
+                "sion = @Version)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@MediePlanNr", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "MedieplanNr", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Version", Global.System.Data.SqlDbType.SmallInt, 2, Global.System.Data.ParameterDirection.Input, 0, 0, "Version", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -2403,7 +2505,9 @@ Namespace dstMedieplanTableAdapters
                     ByVal OpkrævFynskeMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævNorthMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævDSVPMiljøTillæg As Global.System.Nullable(Of Boolean),  _
-                    ByVal OpkrævJyskeMedierASTillæg As Global.System.Nullable(Of Boolean)) As Integer
+                    ByVal OpkrævNordjyskeTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævJyskeMedierASTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævHelsingørMiljøTillæg As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(MedieplanNr,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(Version,Short)
             If (AnnoncørNo_ Is Nothing) Then
@@ -2529,10 +2633,20 @@ Namespace dstMedieplanTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(44).Value = Global.System.DBNull.Value
             End If
-            If (OpkrævJyskeMedierASTillæg.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(45).Value = CType(OpkrævJyskeMedierASTillæg.Value,Boolean)
+            If (OpkrævNordjyskeTillæg.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(45).Value = CType(OpkrævNordjyskeTillæg.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(45).Value = Global.System.DBNull.Value
+            End If
+            If (OpkrævJyskeMedierASTillæg.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(46).Value = CType(OpkrævJyskeMedierASTillæg.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(46).Value = Global.System.DBNull.Value
+            End If
+            If (OpkrævHelsingørMiljøTillæg.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(47).Value = CType(OpkrævHelsingørMiljøTillæg.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(47).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2599,7 +2713,9 @@ Namespace dstMedieplanTableAdapters
                     ByVal OpkrævFynskeMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævNorthMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævDSVPMiljøTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævNordjyskeTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævJyskeMedierASTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævHelsingørMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_MedieplanNr As Integer,  _
                     ByVal Original_Version As Short) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(MedieplanNr,Integer)
@@ -2727,13 +2843,23 @@ Namespace dstMedieplanTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
             End If
-            If (OpkrævJyskeMedierASTillæg.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(OpkrævJyskeMedierASTillæg.Value,Boolean)
+            If (OpkrævNordjyskeTillæg.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(OpkrævNordjyskeTillæg.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_MedieplanNr,Integer)
-            Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_Version,Short)
+            If (OpkrævJyskeMedierASTillæg.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(OpkrævJyskeMedierASTillæg.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+            End If
+            If (OpkrævHelsingørMiljøTillæg.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(OpkrævHelsingørMiljøTillæg.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_MedieplanNr,Integer)
+            Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_Version,Short)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2797,10 +2923,12 @@ Namespace dstMedieplanTableAdapters
                     ByVal OpkrævFynskeMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævNorthMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævDSVPMiljøTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævNordjyskeTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal OpkrævJyskeMedierASTillæg As Global.System.Nullable(Of Boolean),  _
+                    ByVal OpkrævHelsingørMiljøTillæg As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_MedieplanNr As Integer,  _
                     ByVal Original_Version As Short) As Integer
-            Return Me.Update(Original_MedieplanNr, Original_Version, AnnoncørNo_, BureauNo_, Format1, Format2, AntalFarver, DPKulørID, PlaceringID, IndrykningsUge, IndrykningsÅr, Overskrift, Fakturering, RekvisitionsNr, BilagsBladeTil, BilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraUge, SamletPris, KonsulentCode, TilladFarveSærRabat, SammeMateriale, SammeBureauOrdreNr, FællesBureauOrdreNr, MaterialeFølgerFraLeverandør, Status, Beskrivelse, Kontaktperson, KontaktpersonTilhører, BemærkningTilAnnoncør, BemærkningTilBlade, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævJyskeMedierASTillæg, Original_MedieplanNr, Original_Version)
+            Return Me.Update(Original_MedieplanNr, Original_Version, AnnoncørNo_, BureauNo_, Format1, Format2, AntalFarver, DPKulørID, PlaceringID, IndrykningsUge, IndrykningsÅr, Overskrift, Fakturering, RekvisitionsNr, BilagsBladeTil, BilagsBladeATT, MaterialeFølgerFra, BrugMaterialeFraUge, SamletPris, KonsulentCode, TilladFarveSærRabat, SammeMateriale, SammeBureauOrdreNr, FællesBureauOrdreNr, MaterialeFølgerFraLeverandør, Status, Beskrivelse, Kontaktperson, KontaktpersonTilhører, BemærkningTilAnnoncør, BemærkningTilBlade, BilagsBladeTilNavn, BilagsBladeTilAdresse, BilagsBladeTilPostNr, RettelserEfterAnnoncekontrol, SikkerhedsGodt, InfoGodt, TilladMmSærRabat, KunForhandlerBundForskellig, WebTillægOpkræves, MiljøTillægOpkræves, OpkrævJyskeMiljøTillæg, OpkrævFynskeMiljøTillæg, OpkrævNorthMiljøTillæg, OpkrævDSVPMiljøTillæg, OpkrævNordjyskeTillæg, OpkrævJyskeMedierASTillæg, OpkrævHelsingørMiljøTillæg, Original_MedieplanNr, Original_Version)
         End Function
     End Class
 End Namespace
